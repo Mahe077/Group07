@@ -1,13 +1,17 @@
 <?php
-class Test{
-    
+class Test extends Controller
+{
+
     function __construct()
     {
-        
+        parent::__construct();
     }
 
-    function Index(){
-        echo "Hello,I am from Test.php";
+    function index()
+    {
+        $this->view->users = $this->model->getData();
+        $this->model->insertData();
+        $this->model->deteleData();
+        $this->view->render('Test');
     }
-    
 }
