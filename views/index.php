@@ -15,7 +15,7 @@ session_start();
     <title>SL MINI Spares</title>
 
     <!-- custom css file link  -->
-    <link rel="stylesheet" type='text/css'  href="views/css/reset-style.css">
+    <link rel="stylesheet" type='text/css' href="views/css/reset-style.css">
 
     <!-- swiper -->
     <link rel="stylesheet" type='text/css' href="views/css/swiper-bundle.min.css" />
@@ -34,7 +34,7 @@ session_start();
 
     <?php
     $this_page = "index.php";
-    include_once 'layout/header-ws.php';
+    include_once 'global/header-ws.php';
     ?>
     <!-- home section starts  -->
     <main>
@@ -42,7 +42,7 @@ session_start();
             <div class="content">
                 <!--  error alerting will display here -->
                 <?php
-                include_once 'layout/alert.php';
+                include_once 'global/alert.php';
                 ?>
                 <h3>Welcome to <br>SL MINI Spares</h3>
                 <p>Your vehicle is save in our hands. We are specilize in complete auto care at a low cost and in a professional manner.</p>
@@ -187,7 +187,7 @@ session_start();
             </h1>
             <div class="row">
                 <div class="image">
-                    <img src="assets/car/animated/5.jpg" alt="">
+                    <img src="assets/car/animated/1.jpg" alt="">
                 </div>
                 <form action="">
                     <div class="inputBox">
@@ -241,7 +241,7 @@ session_start();
     </main>
 
     <?php
-    include_once 'layout/footer.php';
+    include_once 'global/footer.php';
     ?>
 
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
