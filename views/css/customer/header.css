@@ -1,0 +1,332 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+:root {
+  --main-color: #228693;
+  --black: #042434;
+  --bg: #042434;
+  --border: 0.1rem solid rgba(255, 255, 255, 0.3);
+  --icon: #fff;
+  --icon: white;
+  --hover: #83c8d1;
+  --white: white;
+  --contain: #bfddde;
+  --content: #24305e;
+  --input-inside: #f7f7f7;
+  --special: red;
+}
+
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: 0.2s linear;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-padding-top: 9rem;
+  scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar {
+  width: 0.8rem;
+}
+
+html::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: #fff;
+  border-radius: 5rem;
+}
+
+body {
+  background: var(--white);
+}
+
+section {
+  padding: 2rem 7%;
+}
+
+button {
+  background: var(--icon);
+  border: none;
+}
+
+.heading {
+  text-align: center;
+  color: var(--black);
+  text-transform: uppercase;
+  padding-bottom: 3.5rem;
+  font-size: 4rem;
+}
+
+.heading span {
+  color: var(--main-color);
+  text-transform: uppercase;
+}
+.btn {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 0.9rem 3rem;
+  font-size: 1.7rem;
+  color: var(--icon) !important;
+  background: var(--main-color) !important;
+  cursor: pointer;
+  border-radius: unset !important;
+}
+
+.btn:hover {
+  letter-spacing: 0.2rem;
+}
+
+.header {
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 5%;
+  border-bottom: var(--border);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.header .logo img {
+  height: 8.5rem;
+  margin-left: -4rem;
+}
+
+.header .navbar a {
+  margin: 0 1rem;
+  font-size: 1.7rem;
+  font-weight: 550;
+  color: var(--icon);
+}
+
+.header .navbar a:hover {
+  color: var(--hover);
+  border-bottom: 0.2rem solid var(--hover);
+  padding-bottom: 0.5rem;
+}
+
+.header .icons div {
+  color: var(--icon);
+  cursor: pointer;
+  font-size: 2.5rem;
+
+  margin-left: 2rem;
+}
+
+.header .icons div:hover {
+  color: var(--hover);
+}
+
+#menu-btn {
+  display: none;
+}
+
+.header .search-form {
+  position: absolute;
+  top: 115%;
+  right: 7%;
+  background: var(--icon);
+  width: 50rem;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  transform: scaleY(0);
+  transform-origin: top;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.8);
+}
+
+.header .search-form.active {
+  transform: scaleY(1);
+}
+
+.header .search-form input {
+  height: 100%;
+  width: 100%;
+  font-size: 1.6rem;
+  color: var(--black);
+  padding: 1rem;
+  text-transform: none;
+}
+
+.header .search-form i {
+  cursor: pointer;
+  font-size: 2.2rem;
+  margin-right: 1.5rem;
+  color: var(--black);
+}
+
+.header .search-form i:hover {
+  color: var(--hover);
+}
+
+.header .cart-body {
+  overflow: auto;
+}
+
+.header .cart-items-container {
+  position: absolute;
+  top: 100%;
+  right: -100%;
+  height: calc(100vh - 9.5rem);
+  width: 35rem;
+  background: var(--icon);
+  padding: 0 1.5rem;
+}
+
+.header .cart-items-container.active {
+  right: 0;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.8);
+  overflow: auto;
+}
+.header .cart-items-container .cart-item {
+  position: relative;
+  margin: 2rem 0;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem; /*look what is it */
+}
+
+.header .fa-bell .fa-bell-span {
+  position: absolute;
+  top: 25px;
+  margin-left: 7px;
+  width: 25px;
+  height: 25px;
+  z-index: 5000;
+  font-size: 12px;
+  background-color: var(--main-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.header .fa-shopping-cart .fa-shopping-cart-span {
+  position: absolute;
+  top: 25px;
+  width: 25px;
+  height: 25px;
+  z-index: 5000;
+  font-size: 12px;
+  background-color: var(--main-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.header .cart-items-container .cart-item .fa-times {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--black);
+}
+
+.header .cart-items-container .cart-item .fa-times:hover {
+  color: var(--hover);
+}
+
+.header .cart-items-container .cart-item img {
+  height: 7rem;
+  width: 10rem;
+}
+
+.header .cart-items-container .cart-item .content h3 {
+  font-size: 2rem;
+  color: var(--black);
+  padding-bottom: 0.5rem;
+}
+
+.header .cart-items-container .cart-item .content .price {
+  font-size: 1.5rem;
+  color: var(--main-color);
+}
+
+.header .cart-items-container .btn {
+  width: 100%;
+  text-align: center;
+}
+
+.header .profile-container {
+  position: absolute;
+  top: 115%;
+  right: 5%;
+  width: 15rem;
+  height: 9rem;
+  background-color: var(--icon);
+  margin: 0 1rem;
+  transform-origin: top;
+  transform: scaleY(0);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.8);
+}
+
+.header .profile-container.active {
+  transform: scaleY(1);
+}
+
+.header .profile-container a {
+  display: block;
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: var(--black);
+  line-height: 1rem;
+  text-align: center;
+  padding: 0 0.5rem 0.5rem 0.5rem;
+  margin: 1.5rem;
+  padding: 0.5rem;
+}
+
+.header .profile-container a:hover {
+  color: var(--hover);
+  border-bottom: 0.1rem solid var(--hover);
+  padding-bottom: 0.5rem;
+}
+
+@media (max-width: 925px) {
+  #menu-btn {
+    display: inline-block;
+  }
+  .header .navbar {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background: var(--icon);
+    width: 30rem;
+    height: calc(100vh - 9.5rem);
+  }
+  .header .navbar.active {
+    right: 0;
+  }
+  .header .navbar a {
+    color: var(--black);
+    display: block;
+    margin: 3rem 1.5rem;
+    padding: 0.5rem;
+    font-size: 2rem;
+  }
+
+  .header .search-form {
+    width: 90%;
+    right: 2rem;
+  }
+}
+@media (max-width: 490px) {
+  html {
+    font-size: 50%;
+  }
+}
