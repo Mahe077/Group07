@@ -9,6 +9,6 @@
 <body>
     <h1>Hello World!</h1>
     <h2>User</h2>
-    <?php print_r($this->users)?>
+    <!-- <?php print_r($this->users)?> -->
 </body>
 </html>
