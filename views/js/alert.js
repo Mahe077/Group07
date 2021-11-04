@@ -1,13 +1,12 @@
+let container = document.querySelector(".floating-container");
+let container_close = document.querySelector(".remove-alert");
 
-  function close(){
-    let alerts = document.querySelectorAll('.remove-alert');
-    // console.log(alerts);
-    for (let i = 0 ; i < alerts.length; i++) {
-      alerts[i].addEventListener('click',()=>{
-        alerts[i].parentElement.style.display = 'none';
-        // console.log();
-      })
-    }
-  }
+// window.onscroll = () => {
+//   container.classList.add("active");
+// };
 
-  close();
+if (container_close != null) {
+  container_close.addEventListener("click", () => {
+    container.classList.add("active");
+  });
+}

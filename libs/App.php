@@ -7,6 +7,7 @@ class App
 
     function __construct()
     {
+        session_start();
         $this->_getURL();
         if (empty($this->_url[0])) {
             $this->_loadDefualtController();

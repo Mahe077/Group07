@@ -50,9 +50,9 @@
         <?php
         if (isset($_SESSION['username'])) {
             echo "<a href='profile.php'>Profile</a>";
-            echo "<a href='../controller/logout.inc.php'>Log Out</a>";
+            echo "<a href='Log_out'>Log Out</a>";
         } else {
-            echo "<a href='signin.php'>Log In</a>";
+            echo "<a href='Log_in'>Log In</a>";
             echo "<a href='signup.php'>Sign Up</a>";
         }
         ?>

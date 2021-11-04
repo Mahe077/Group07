@@ -5,13 +5,12 @@ class Log_out extends Controller {
         parent::__construct();
     }
 
-    public function logOut()
+    function index()
     {
         session_start();
         session_unset();
         session_destroy();
-        $this->view->op="logout";
-        $this->view->render('index');
+        header("location: index");
     }
     
 }
