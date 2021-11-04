@@ -53,7 +53,7 @@
             echo "<a href='Log_out'>Log Out</a>";
         } else {
             echo "<a href='Log_in'>Log In</a>";
-            echo "<a href='signup.php'>Sign Up</a>";
+            echo "<a href='Sign_up'>Sign Up</a>";
         }
         ?>
 

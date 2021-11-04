@@ -70,12 +70,11 @@ class Log_in extends Controller
                 header("location:http://localhost/G7/Group07/Log_in");
                 exit();
             }
-
-            // loginUser($conn, $username, $password);
         } else {
             $_SESSION['error'] = "invalidAccess";
             header("location:http://localhost/G7/Group07/Log_in");
             exit();
         }
     }
+    
 }

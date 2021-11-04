@@ -1,0 +1,198 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+* {
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+.header {
+  background-color: #141a26;
+}
+.logo {
+  width: 20%;
+  height: auto;
+}
+.topic01 {
+  color: #141a26;
+  font-size: 30px;
+}
+
+.topic02 {
+  color: #253140;
+  font-size: 25px;
+}
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  font-size: 30px;
+  text-align: center;
+}
+
+.flex-item-left {
+  background-color: #e6e9ece1;
+  padding: 10px;
+  flex: 50%;
+  float: center;
+}
+
+.imageleft {
+  max-width: 100%;
+  height: auto;
+  object-fit: fill;
+}
+
+.rightcontent {
+  font-size: 20px;
+  color: #141a26;
+}
+
+.rightcontainer {
+  padding-top: 25px;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+  align-items: center;
+  background-color: #fff;
+}
+
+.flex-item-right {
+  background-color: #e6e9ece1;
+  padding: 10px;
+  flex: 50%;
+  float: right;
+  border: none;
+}
+
+.input {
+  border: none;
+  background-color: #f4f4f4;
+  border-radius: 5px;
+  margin: 5px;
+  align-items: center;
+  width: 90%;
+}
+
+.input-field {
+  border: none;
+  width: 380px;
+  align-items: center;
+  outline: none;
+  position: relative;
+  background-color: #f4f4f4;
+}
+
+.input i {
+  text-align: center;
+  line-height: 30px;
+  color: #acacac;
+  font-size: 1.1rem;
+}
+
+#select {
+  color: #817f7f;
+}
+
+.input::placeholder {
+  font-size: 25px;
+}
+
+.show-hide i {
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.show-hide:hover i:before {
+  content: "\f070";
+}
+
+.imageupload {
+  font-size: 15px;
+  border: none;
+  margin: 0;
+  padding: 0;
+  color: #817f7f;
+}
+
+.image {
+  font-size: 15px;
+  font-family: "Poppins", sans-serif;
+  margin-top: 10px;
+  background: #fff;
+  border-radius: 50px;
+  box-shadow: 5px 5px 10px black;
+  width: 250px;
+  outline: none;
+}
+::-webkit-file-upload-button {
+  color: white;
+  background: #253140;
+  padding: 15px;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 1px 0 1px 1px #6b4559;
+  outline: none;
+}
+::-webkit-file-upload-button:hover {
+  background: #141a26;
+}
+
+.submitbutton {
+  background-color: #a6372d;
+  color: #fff;
+  padding: 5px;
+  width: 140px;
+  height: 50px;
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+.submitbutton:hover {
+  letter-spacing: 0.2rem;
+}
+
+/* The message box is shown when the user clicks on the password field */
+#message {
+  display: none;
+  background: #f1f1f1;
+  color: #000;
+  position: relative;
+  padding: 4px;
+  margin-top: 2px;
+  align-items: center;
+}
+
+.heading {
+  font-size: 20px;
+  font-weight: 100;
+}
+#message p {
+  padding: 2px 2px;
+  font-size: 12px;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Add a green text color and a checkmark when the requirements are right */
+.valid {
+  color: green;
+}
+
+.valid:before {
+  position: relative;
+  left: -35px;
+  content: "✔";
+}
+
+/* Add a red text color and an "x" when the requirements are wrong */
+.invalid {
+  color: red;
+}
+
+.invalid:before {
+  position: relative;
+  left: -35px;
+  content: "✖";
+}
+
+/* Responsive layout - makes a one column-layout instead of two-column layout */
+@media (max-width: 800px) {
+  .flex-container {
+    flex-direction: column;
+  }
+}

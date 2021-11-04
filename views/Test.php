@@ -23,5 +23,9 @@
         // }
     } 
     ?>
+    <form action="/Test/A" method="post">
+    <input type="text" name="username">
+    <input type="submit" value="submit">
+</form>
 </body>
 </html>

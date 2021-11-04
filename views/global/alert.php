@@ -131,7 +131,7 @@ if (isset($_SESSION['error'])) {
 	               <a  href='#'  class='remove-alert' data-dismiss='alert' aria-label='close'>&times;</a>
 	               <strong>Danger!</strong> Wrong credentials.
 	          </div>
-          <div>";
+          </div>";
      } else if ($_SESSION['error'] == 'createUserSuccess') {
           echo "
           <div class='floating-container'>
@@ -189,7 +189,7 @@ if (isset($_SESSION['error'])) {
                     <a href='#'  class='remove-alert' data-dismiss='alert' aria-label='close'>&times;</a>
                      <strong>Warning!</strong> Please log in.
               </div>
-          <div>";
+          </div>";
      } else if ($_SESSION['error'] == 'loginSuccess') {
           echo "
           <div class='floating-container'>
@@ -198,13 +198,13 @@ if (isset($_SESSION['error'])) {
                     <strong>Success!</strong> You have successfully logged in .
                </div>
           </div>";
-     } else if ($_SESSION['error'] == 'logoutSuccess') {
+     } else if ($_SESSION['error'] == 'invalidAccess2') {
           echo "
           <div class='floating-container'>
-               <div class='alert alert-success alert-dismissible popup'>
+               <div class='alert alert-warning alert-dismissible popup'>
                     <a href='#'  class='remove-alert' data-dismiss='alert' aria-label='close'>&times;</a>
-                    <strong>Success!</strong> You have successfully log out .
-               </div>
+                     <strong>Warning!</strong> Invalid access ! Please try again .
+              </div>
           </div>";
      }
 }
