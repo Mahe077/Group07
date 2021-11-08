@@ -206,8 +206,25 @@ if (isset($_SESSION['error'])) {
                      <strong>Warning!</strong> Invalid access ! Please try again .
               </div>
           </div>";
+     } else if ($_SESSION['error'] == 'UpadateSuccess') {
+          echo "
+          <div class='floating-container'>
+               <div class='alert alert-success alert-dismissible popup'>
+                    <a href='#'  class='remove-alert' data-dismiss='alert' aria-label='close'>&times;</a>
+                    <strong>Success!</strong> You have updated your details successfully .
+              </div>
+          </div>";
+     }else if ($_SESSION['error'] == 'UpadateUnsuccess') {
+          echo "
+          <div class='floating-container'>
+               <div class='alert alert-warning alert-dismissible popup'>
+                    <a href='#'  class='remove-alert' data-dismiss='alert' aria-label='close'>&times;</a>
+                    <strong>Warning!</strong> You have not updated your details successfully .
+              </div>
+          </div>";
      }
 }
 
 $_SESSION['error'] = "";
 ?>
+

@@ -16,8 +16,6 @@ class Sign_up extends Controller
 
         if (isset($_POST['submit'])) {
 
-
-
             $fname = $_POST['fname'];
             $sname = $_POST['sname'];
             $username = $_POST['username'];
@@ -33,7 +31,6 @@ class Sign_up extends Controller
 
             if (empty($fname) || empty($sname) || empty($username) || empty($email) || empty($password) || empty($repassword) || empty($city) || empty($contact) || empty($district) || empty($address) || empty($postalcode)) {
                 $_SESSION['error'] = "emptyinput";
-                echo "in sign function";
                 header("location:http://localhost/G7/Group07/Sign_up");
                 exit();
             } elseif (invalidName($fname) !== false) {

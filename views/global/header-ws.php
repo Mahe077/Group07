@@ -14,7 +14,7 @@
     <nav class="navbar">
         <?php
         if ($this_page != "index.php") {
-            echo "<a href='index.php'>Home</a>";
+            echo "<a href='Index'>Home</a>";
         } else {
             echo "<a href='#home'>Home</a>";
         }
@@ -24,8 +24,8 @@
         <a href="quotation.php">Quotation</a>
         <?php
         if ($this_page != "index.php") {
-            echo "<a href='index.php#about'>About</a>";
-            echo "<a href='index.php#contact'>Contact</a>";
+            echo "<a href='Index#about'>About</a>";
+            echo "<a href='Index#contact'>Contact</a>";
         } else {
             echo "<a href='#about'>About</a>";
             echo "<a href='#contact'>Contact</a>";
@@ -49,7 +49,7 @@
     <div class="profile-container">
         <?php
         if (isset($_SESSION['username'])) {
-            echo "<a href='profile.php'>Profile</a>";
+            echo "<a href='Profile'>Profile</a>";
             echo "<a href='Log_out'>Log Out</a>";
         } else {
             echo "<a href='Log_in'>Log In</a>";

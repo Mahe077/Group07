@@ -1,0 +1,174 @@
+/**************************************** home start  *************************/
+
+.home {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  justify-content: center;
+  flex-flow: column;
+}
+
+.home .content {
+  max-width: 60rem;
+  text-align: center;
+  z-index: 500;
+}
+
+.home .content h3 {
+  font-size: 6rem;
+  text-transform: uppercase;
+  color: var(--icon);
+  text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
+}
+
+.home .content p {
+  font-size: 2rem;
+  font-weight: normal;
+  line-height: 1.8;
+  padding: 1rem 0;
+  color: var(--p-color);
+  text-shadow: 2px 5px 5px rgba(0, 0, 0, 1);
+}
+
+.home .bg-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 810px) {
+  .home {
+    background-position: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .home .content h3 {
+    font-size: 4.5rem;
+  }
+
+  .home .content p {
+    font-size: 1.5rem;
+  }
+}
+
+/************************ home ends ***********************************/
+
+/************************ about start ***********************************/
+
+.about .row {
+  display: flex;
+  align-items: center;
+  background: var(--black);
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.8);
+}
+
+.about .row .image {
+  flex: 1 1 45rem;
+}
+
+.about .row .image img {
+  width: 100%;
+}
+
+.about .row .content {
+  flex: 1 1 45rem;
+  padding: 2rem;
+}
+
+.about .row .content h3 {
+  font-size: 3rem;
+  color: #fff;
+}
+
+.about .row .content p {
+  font-size: 1.6rem;
+  color: #ccc;
+  padding: 1rem 0;
+  line-height: 1.8;
+  text-transform: none;
+}
+
+/* ***************contact******************************** */
+.contact .row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding: 1rem;
+  align-items: center;
+  background: var(--white);
+  border-radius: 0.5rem;
+  box-shadow: 0.5rem 0.5rem 2rem rgba(255, 255, 255, 0.2);
+}
+
+.contact .row .image {
+  flex: 1 1 35rem;
+}
+
+.contact .row .image img {
+  width: 100%;
+}
+
+.contact .row form {
+  background: var(--black);
+  flex: 1 1 50rem;
+  padding: 2rem;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.8);
+  border-radius: 0.5rem;
+}
+
+.contact .row form .inputBox {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.contact .row form .inputBox input,
+.contact .row form textarea {
+  width: 49%;
+  margin: 1rem 0;
+  padding: 1rem;
+  font-size: 1.7rem;
+  color: #333;
+  background: #f7f7f7;
+  text-transform: none;
+  border-radius: 0.5rem;
+}
+
+.contact .row form textarea {
+  height: 15rem;
+  resize: none;
+  width: 100%;
+}
+
+/************************ brands ********************************************/
+.brand-container .swiper-container .swiper-wrapper {
+  width: 25%;
+}
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: var(--border);
+  height: 20rem;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.8);
+  border-radius: 0.5rem;
+}
+
+.brand-container img {
+  width: 100%;
+}
+
+@media (max-width: 490px) {
+  .contact .row form .inputBox input {
+    width: 100%;
+  }
+}

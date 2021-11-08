@@ -17,7 +17,7 @@ class Database extends PDO
         return $stmt->fetchAll();
     }
 
-    public function select2($query , $data)
+    public function select2($query, $data)
     {
         $stmt = $this->prepare($query);
 
@@ -34,13 +34,36 @@ class Database extends PDO
 
         return;
     }
+    public function update($query, $data)
+    {
+        $stmt = $this->prepare($query);
+
+        if ($stmt->execute($data)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    public function insert($query, $data)
+    {
+        $stmt = $this->prepare($query);
+
+        if ($stmt->execute($data)) {
+            $lastid = $this->lastInsertId();
+            return $lastid;
+        } else {
+            return false;
+        }
+    }
 
     public function delete($query, $data = null)
     {
         $stmt = $this->prepare($query);
 
-        $stmt->execute($data);
-
-        return;
+        if ($stmt->execute($data)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

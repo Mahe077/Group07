@@ -41,14 +41,13 @@ class Log_in extends Controller
                     $_SESSION['contact'] = $user[0]['contact'];
                     $_SESSION['email'] = $user[0]['email'];
                     $_SESSION['address'] = $user[0]['address'];
-                    $_SESSION['nic'] = $user[0]['nic'];
                     $_SESSION['image_path'] = $user[0]['image_path'];
                     if ($user[0]['position'] === 'CU') {
 
                         $CustomerInfo = $this->model->customerInfo($user[0]['id']);
-                        $_SESSION['district'] = $CustomerInfo['district'];
-                        $_SESSION['city'] = $CustomerInfo['city'];
-                        $_SESSION['postal_code'] = $CustomerInfo['postal_code'];
+                        $_SESSION['district'] = $CustomerInfo[0]['district'];
+                        $_SESSION['city'] = $CustomerInfo[0]['city'];
+                        $_SESSION['postal_code'] = $CustomerInfo[0]['postal_code'];
                         print_r($CustomerInfo);
                     }
                     $_SESSION['error'] = "loginSuccess";
