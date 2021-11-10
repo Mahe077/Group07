@@ -48,7 +48,7 @@ require 'config/PathConf.php';
     <!-- header section starts  -->
 
     <?php
-    $this_page = "profile.php";
+    $this_page = "notification.php";
     include_once 'views/global/header-ws.php';
     ?>
     <!--  error alerting will display here -->
@@ -113,6 +113,7 @@ require 'config/PathConf.php';
     <script type="text/javascript" src="views/js/customer/main-ws.js"></script>
     <script type="text/javascript" src="views/js/customer/order.js"></script>
     <script type="text/javascript" src="views/js/customer/cart.js"></script>
+    <!-- <script type="text/javascript" src="views/js/alert.js"></script> -->
     <script>
         let msg = document.querySelector(".message-icon-holder");
 

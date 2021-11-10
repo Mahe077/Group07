@@ -68,7 +68,7 @@ input {
   line-height: 3rem;
   display: flex;
   justify-content: space-around !important;
-  align-content: center !important;
+  align-items: center !important;
   border-radius: 50%;
   box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.5);
 }

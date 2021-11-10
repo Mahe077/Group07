@@ -5,7 +5,7 @@
         if ($this_page === 'index.php') {
             echo "<img src='assets/logo.png' alt=''>";
         } else {
-            echo "<img src='.$localhost.'assets/logo.png alt=''>";
+            echo "<img src=".$localhost."assets/logo.png alt=''>";
         }
         ?>
     </a>
@@ -19,8 +19,8 @@
         }
         ?>
         <a href="product.php">Products</a>
-        <a href="service.php">Services</a>
-        <a href="quotation.php">Quotation</a>
+        <a href="Service">Services</a>
+        <a href="Quotation">Quotation</a>
         <?php
         if ($this_page != "index.php") {
             echo "<a href='Index#about'>About</a>";
