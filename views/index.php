@@ -1,7 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-
+<?php require 'config/PathConf.php'; ?>
 <head>
 
     <meta charset="utf-8">
@@ -13,18 +12,18 @@
     <title>SL MINI Spares</title>
 
     <!-- custom css file link  -->
-    <link rel="stylesheet" type='text/css' href="http://localhost/G7/Group07/views/css/reset-style.css">
+    <link rel="stylesheet" type='text/css' href="<?php echo $localhost; ?>views/css/reset-style.css">
 
     <!-- swiper -->
-    <link rel="stylesheet" type='text/css' href="http://localhost/G7/Group07/views/css/swiper-bundle.min.css" />
-    <!-- <link rel="stylesheet" href="http://localhost/G7/Group07/views/css/swiper.css" /> -->
+    <link rel="stylesheet" type='text/css' href="<?php echo $localhost; ?>views/css/swiper-bundle.min.css" />
+    <!-- <link rel="stylesheet" href="<?php echo $localhost; ?>views/css/swiper.css" /> -->
 
 
     <!-- font awesome cdn link  -->
     <link rel="stylesheet" type='text/css' href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel='stylesheet' type='text/css' href="http://localhost/G7/Group07/views/css/customer/index.css">
-    <link rel='stylesheet' type='text/css' href="http://localhost/G7/Group07/views/css/swiper.css">
-    <link rel="stylesheet" type='text/css' href="http://localhost/G7/Group07/views/css/alert.css">
+    <link rel='stylesheet' type='text/css' href="<?php echo $localhost; ?>views/css/customer/index.css">
+    <link rel='stylesheet' type='text/css' href="<?php echo $localhost; ?>views/css/swiper.css">
+    <link rel="stylesheet" type='text/css' href="<?php echo $localhost; ?>views/css/alert.css">
 </head>
 
 <body>

@@ -14,6 +14,7 @@ class Log_in extends Controller
 
     public function logIn()
     {
+        require 'config/PathConf.php';
         if (isset($_POST['submit'])) {
 
             $username = $_POST['username'];
@@ -25,7 +26,7 @@ class Log_in extends Controller
 
             if (empty($username) || empty($password)) {
                 $_SESSION['error'] = "emptyinput";
-                header("location:http://localhost/G7/Group07/Log_in");
+                header("location:".$localhost."Log_in");
                 exit();
             }
             $user = $this->model->login($username);
@@ -52,28 +53,27 @@ class Log_in extends Controller
                     }
                     $_SESSION['error'] = "loginSuccess";
                     if ($user[0]['position'] === 'OW') {
-                        header("location:http://localhost/G7/Group07/owner_updated");
+                        header("location:".$localhost."owner_updated");
                     } elseif ($user[0]['position'] === 'SM') {
-                        header("location:http://localhost/G7/Group07/stockmanagerdashboardhome");
+                        header("location:".$localhost."stockmanagerdashboardhome");
                     } elseif ($user[0]['position'] === 'CU') {
-                        header("location:http://localhost/G7/Group07/index");
+                        header("location:".$localhost."index");
                     }
                     exit();
                 } else {
                     $_SESSION['error'] = "wronglogin";
-                    header("location:http://localhost/G7/Group07/Log_in");
+                    header("location:".$localhost."Log_in");
                     exit();
                 }
             } else {
                 $_SESSION['error'] = "wronglogin";
-                header("location:http://localhost/G7/Group07/Log_in");
+                header("location:".$localhost."Log_in");
                 exit();
             }
         } else {
             $_SESSION['error'] = "invalidAccess";
-            header("location:http://localhost/G7/Group07/Log_in");
+            header("location:".$localhost."Log_in");
             exit();
         }
     }
-    
 }

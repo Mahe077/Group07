@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php require 'config/PathConf.php'; ?>
 
 <head>
     <meta charset="UTF-8">
@@ -7,9 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SL MINI Spares</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" type="text/css" href="http://localhost/G7/Group07/views/css/customer/header.css">
-    <link rel="stylesheet" type="text/css" href="http://localhost/G7/Group07/views/css/form.css">
-    <link rel="stylesheet" href="http://localhost/G7/Group07/views/css/alert.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo $localhost; ?>views/css/customer/header.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo $localhost; ?>views/css/form.css">
+    <link rel="stylesheet" href="<?php echo $localhost; ?>views/css/alert.css">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
@@ -86,7 +87,7 @@
             </div>
         </section>
     </div>
-    <script type="text/javascript" src="http://localhost/G7/Group07/views/js/alert.js"></script>
+    <script type="text/javascript" src="<?php echo $localhost; ?>views/js/alert.js"></script>
 </body>
 
 </html>

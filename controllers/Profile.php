@@ -12,7 +12,7 @@ class Profile extends Controller
     public function updateUser()
     {
         require 'config/function.conf.php';
-
+        require 'config/PathConf.php';
         if (isset($_POST['submit'])) {
             $fname = $_POST['fname'];
             $sname = $_POST['sname'];
@@ -34,7 +34,7 @@ class Profile extends Controller
                     echo "fname error";
                 } elseif (invalidName($sname) !== false) {
                     $_SESSION['error'] = "invalidsname";
-                    header("location:http://localhost/G7/Group07/Profile");
+                    header("location:".$localhost."Profile");
                     exit();
                     echo "lanme error";
                 } else {
@@ -44,42 +44,42 @@ class Profile extends Controller
 
                     if ($userEmail != null && $userEmail[0][6] != $email) {
                         $_SESSION['error'] = "invlidemail";
-                        header("location:http://localhost/G7/Group07/Profile");
+                        header("location:".$localhost."Profile");
                         exit();
                         echo "invlidemail";
                     } elseif (invalidAddress($address) !== false) {
                         $_SESSION['error'] = "invalidaddress";
                         echo "postalcode error<br>";
-                        header("location:http://localhost/G7/Group07/Profile");
+                        header("location:".$localhost."Profile");
                         exit();
                     } elseif (invalidName($city) !== false) {
                         $_SESSION['error'] = "invalidcity";
                         echo "postalcode error<br>";
-                        header("location:http://localhost/G7/Group07/Profile");
+                        header("location:".$localhost."Profile");
                         exit();
                     } elseif (invalidName($district) !== false) {
                         $_SESSION['error'] = "invaliddistrict";
                         echo "postalcode error<br>";
-                        header("location:http://localhost/G7/Group07/Profile");
+                        header("location:".$localhost."Profile");
                         exit();
                     } elseif (invalidPositiveNumber($postalcode) !== false) {
                         $_SESSION['error'] = "invalidPostalCode";
                         echo "postalcode error<br>";
-                        header("location:http://localhost/G7/Group07/Profile");
+                        header("location:".$localhost."Profile");
                         exit();
                     } elseif (empty($_FILES['image']['name'])) {
                         echo "<br>image is empty<br>";
                         $status1 = $this->model->updateUserInfo($fname, $sname, $email, $city, $contact, $district, $address, $postalcode, $_FILES['image']);
-                        $this->updateSessions($status1, $fname, $sname, $email, $city, $contact, $district, $address, $postalcode, 0 );
+                        $this->updateSessions($status1, $fname, $sname, $email, $city, $contact, $district, $address, $postalcode, 0);
                         $_SESSION['error'] = "UpadateSuccess";
-                        header("location:http://localhost/G7/Group07/Profile");
+                        header("location:".$localhost."Profile");
                     } else {
                         echo " ok";
                         $image = filseSize($_FILES['image'], 'user_images');
                         $status2 = $this->model->updateUserInfo($fname, $sname, $email, $city, $contact, $district, $address, $postalcode, $image);
                         $this->updateSessions($status2, $fname, $sname, $email, $city, $contact, $district, $address, $postalcode, $image);
                         $_SESSION['error'] = "UpadateSuccess";
-                        header("location:http://localhost/G7/Group07/Profile");
+                        header("location:".$localhost."Profile");
                     }
                 }
             }

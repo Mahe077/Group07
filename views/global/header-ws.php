@@ -4,10 +4,9 @@
         <?php
         if ($this_page === 'index.php') {
             echo "<img src='assets/logo.png' alt=''>";
+        } else {
+            echo "<img src='.$localhost.'assets/logo.png alt=''>";
         }
-        // } else {
-        //     echo "<img src='../img/logo.png' alt=''>";
-        // }
         ?>
     </a>
 
@@ -34,7 +33,7 @@
     </nav>
 
     <div class="icons">
-        <a href="message.php">
+        <a href="Notification">
             <div class='fas fa-bell' id='bell-btn'>
                 <div class ="fa-bell-span">+9</div>
             </div>
