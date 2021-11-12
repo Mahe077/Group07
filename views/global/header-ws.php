@@ -18,7 +18,7 @@
             echo "<a href='#home'>Home</a>";
         }
         ?>
-        <a href="product.php">Products</a>
+        <a href="Product">Products</a>
         <a href="Service">Services</a>
         <a href="Quotation">Quotation</a>
         <?php
@@ -63,7 +63,7 @@
             <!-- cart items render here -->
 
         </div>
-        <a href="checkout.php" class="btn">checkout now</a>
+        <a href="Checkout" class="btn">checkout now</a>
     </div>
 </header>
 

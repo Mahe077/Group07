@@ -150,6 +150,14 @@ if (isset($_SESSION['error'])) {
                     <strong>Success!</strong> Your request has been successfully sent.
                </div>
           </div>";
+     }else if ($_SESSION['error'] == 'UnSuccess') {
+               echo "
+               <div class='floating-container'>
+                    <div class='alert alert-warning alert-dismissible popup'>
+                         <a href='#'  class='remove-alert' data-dismiss='alert' aria-label='close'>&times;</a>
+                         <strong>Warning!</strong> Your request was unsuccess .
+                    </div>
+               </div>";
      } elseif ($_SESSION['error'] == 'invalidName') {
           echo "
           <div class='floating-container'>
@@ -206,7 +214,7 @@ if (isset($_SESSION['error'])) {
                      <strong>Warning!</strong> Invalid access ! Please try again .
               </div>
           </div>";
-     } else if ($_SESSION['error'] == 'UpadateSuccess') {
+     } else if ($_SESSION['error'] == 'UpdateSuccess') {
           echo "
           <div class='floating-container'>
                <div class='alert alert-success alert-dismissible popup'>
@@ -214,7 +222,7 @@ if (isset($_SESSION['error'])) {
                     <strong>Success!</strong> You have updated your details successfully .
               </div>
           </div>";
-     }else if ($_SESSION['error'] == 'UpadateUnsuccess') {
+     }else if ($_SESSION['error'] == 'UpdateUnsuccess') {
           echo "
           <div class='floating-container'>
                <div class='alert alert-warning alert-dismissible popup'>

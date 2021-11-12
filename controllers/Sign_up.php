@@ -12,7 +12,7 @@ class Sign_up extends Controller
     }
     public function sign()
     {
-        require 'config/function.conf.php';
+        require 'config/FunctionConf.php';
         require 'config/PathConf.php';
         if (isset($_POST['submit'])) {
 
@@ -78,11 +78,6 @@ class Sign_up extends Controller
                     exit();
                 } else {
                     $image = filseSize($_FILES['userimage'], 'user_images');
-                    if ($image === false) {
-                        $_SESSION['error'] = "imageUploadUnsuccess";
-                        header("location:".$localhost."Sign_up");
-                        exit();
-                    }
                 }
             }
             $hashedPwd = password_hash($password, PASSWORD_DEFAULT);
@@ -92,7 +87,7 @@ class Sign_up extends Controller
             exit();
         } else {
             $_SESSION['error'] = "invalidAccess2";
-            header("location:http://localhost/G7/Group07");
+            header("location:".$localhost."Sign_up");
             exit();
         }
     }

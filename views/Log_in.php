@@ -36,7 +36,7 @@
                 </div>
                 <div class="bottom-text">
                     <br>
-                    <p class="btmtxt">Don't have an account? Create account <a href="signup.php" class="form-link"><strong>Sign Up</strong></a></p>
+                    <p class="btmtxt">Don't have an account? Create account <a href="Sign_up" class="form-link"><strong>Sign Up</strong></a></p>
                 </div>
             </form>
         </div>
