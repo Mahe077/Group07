@@ -121,17 +121,17 @@ function filseSize($image, $folder)
 
 //     mysqli_stmt_close($stmt);
 // }
-// function invalidStringWithNumber($tmp){
-//     if (empty($tmp))
-//       $result = true;
-//     elseif (preg_match("/^[a-zA-Z0-9-#]*$/", $tmp)) {
-//       $result = false;
-//     }
-//     else{
-//       $result = true;
-//     }
-//     return $result;
-// } 
+function invalidStringWithNumber($tmp){
+    if (empty($tmp))
+      $result = true;
+    elseif (preg_match("/^[a-zA-Z0-9-#]*$/", $tmp)) {
+      $result = false;
+    }
+    else{
+      $result = true;
+    }
+    return $result;
+} 
 function invalidPositiveNumber($tmp)
 {
   if (empty($tmp))

@@ -9,8 +9,6 @@ class Profile_Model extends Model
     {
 
         if (empty($image['name'])) {
-            echo "in uodate funstuon<br>";
-            echo $fname . " " . $sname . " " . $email . " " . $city . " " . $contact . " " . $district . " " . $address . " " . $postalcode . " " . $_SESSION['userid'];
             if ($this->db->update("UPDATE `person` SET `fname`=:fname,`lname`=:lname,`email`=:email,`contact`=:contact,`address`=:address WHERE `id`=:id ", ['id' =>  $_SESSION['userid'], 'fname' => $fname, 'lname' => $sname, 'email' => $email, 'contact' => $contact, 'address' => $address])) {
                 if ($this->db->update("UPDATE `customer` SET `district`=:district,`city`=:city,`postal_code`=:postal_code WHERE `id`=:id", ['id' => $_SESSION['userid'], 'district' => $district, 'city' => $city, 'postal_code' => $postalcode])) {
                     return true;
