@@ -117,6 +117,7 @@ header {
 .sidebar .nav-links li .sub-menu a:hover,
 .sidebar .nav-links li .sub-menu .filter-links:hover {
   opacity: 1;
+  cursor: pointer;
 }
 .sidebar.close .nav-links li .sub-menu {
   position: absolute;
@@ -135,6 +136,7 @@ header {
   opacity: 1;
   pointer-events: auto;
   transition: all 0.4s ease;
+  cursor: pointer;
 }
 .sidebar .nav-links li .sub-menu .link_name {
   display: none;

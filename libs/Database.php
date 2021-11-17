@@ -66,4 +66,41 @@ class Database extends PDO
             return false;
         }
     }
+    public function transaction($data)
+    {
+        try {
+            $this->beginTransaction();
+            foreach ($data as $key => $value) {
+                $stmt = $this->prepare($data[$key][0]);
+                $stmt->execute($data[$key][1]);
+                $stmt->closeCursor();
+            }
+            $this->commit();
+            return true;
+        } catch (PDOException $e) {
+            $this->rollBack();
+            die($e->getMessage());
+            return false;
+        }
+    }
+
+    // first array items must contain a insert query
+    // public function transaction_with_last_inseted_Id($data)
+    // {
+    //     try {
+    //         $this->beginTransaction();
+    //         $stmt = $this->prepare($data[0][0]);
+    //         $id =  $stmt->execute($data[0][1]);
+    //         $stmt->closeCursor();
+    //         $stmt = $this->prepare($data[1][0]);
+    //         $stmt->execute($data[1][1] + ['id' => $id]);
+    //         $stmt->closeCursor();
+    //         $this->commit();
+    //         return true;
+    //     } catch (PDOException $e) {
+    //         $this->rollBack();
+    //         die($e->getMessage());
+    //         return false;
+    //     }
+    // }
 }

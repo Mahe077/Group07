@@ -7,6 +7,31 @@ class Profile_Model extends Model
     }
     public function updateUserInfo($fname, $sname, $email, $city, $contact, $district, $address, $postalcode, $image)
     {
+
+        // if (empty($image['name'])) {
+        //     if ($this->db->update("UPDATE `person` SET `fname`=:fname,`lname`=:lname,`email`=:email,`contact`=:contact,`address`=:address WHERE `id`=:id ", ['id' =>  $_SESSION['userid'], 'fname' => $fname, 'lname' => $sname, 'email' => $email, 'contact' => $contact, 'address' => $address])) {
+        //         if ($this->db->update("UPDATE `customer` SET `district`=:district,`city`=:city,`postal_code`=:postal_code WHERE `id`=:id", ['id' => $_SESSION['userid'], 'district' => $district, 'city' => $city, 'postal_code' => $postalcode])) {
+        //             return true;
+        //         } else {
+        //             return false;
+        //         }
+        //     } else {
+        //         return false;
+        //     }
+        // } else {
+        //     if ($this->db->update(
+        //         "UPDATE `person` SET `fname`=:fname,`lname`=:lname,`email`=:email,`contact`=:contact,`address`=:address,`image_path`=:image_path WHERE `id`=:id ",
+        //         ['id' => $_SESSION['userid'], 'fname' => $fname, 'lname' => $sname, 'email' => $email, 'contact' => $contact, 'address' => $address, 'image_path' => $image]
+        //     )) {
+        //         if ($this->db->update("UPDATE `customer` SET `district`=:district,`city`=:city,`postal_code`=:postal_code WHERE `id`=:id", ['id' => $_SESSION['userid'], 'district' => $district, 'city' => $city, 'postal_code' => $postalcode])) {
+        //             return true;
+        //         } else {
+        //             return false;
+        //         }
+        //     } else {
+        //         return false;
+        //     }
+        // }
         if (empty($image['name'])) {
             return $this->db->transaction(array(
                 array(

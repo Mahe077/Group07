@@ -1,0 +1,68 @@
+input[type="radio"] {
+  display: none;
+}
+
+.color-options {
+  display: flex;
+  justify-content: flex-start !important;
+  align-content: center;
+  padding: 1rem 0 1rem 0;
+}
+
+.color-options .color {
+  display: block;
+  width: 20px;
+  height: 20px;
+  margin-right: 1rem;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.color-options .color:hover {
+  box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.5) !important;
+}
+
+input[type="number"] {
+  width: 6rem !important;
+}
+
+.description {
+  padding: 1rem 0 0 0;
+}
+p {
+  color: var(--black);
+  padding: 0.8rem 0 0 0;
+  font-size: 1.3rem;
+  font-weight: 550;
+}
+
+.sub-head {
+  display: inline-block;
+  width: 10rem;
+  font-weight: 600;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.btn {
+  width: 20rem;
+}
+
+.btn:hover {
+  letter-spacing: 0.3rem !important;
+}
+
+.sub-head-1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  width: 20rem;
+}
+
+.sub-head-1 .sub-head-2 {
+  display: inline-block;
+  width: 8rem;
+}

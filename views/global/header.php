@@ -3,9 +3,9 @@
     <a href="#" class="logo">
         <?php
         if ($this_page === 'index.php') {
-            echo "<img src='../img/logo.png' alt=''>";
+            echo "<img src='assets/logo.png' alt=''>";
         } else {
-            echo "<img src='../img/logo.png' alt=''>";
+            echo "<img src=" . $localhost . "assets/logo.png alt=''>";
         }
         ?>
     </a>
@@ -13,18 +13,18 @@
     <nav class="navbar">
         <?php
         if ($this_page != "index.php") {
-            echo "<a href='index.php'>Home</a>";
+            echo "<a href='Index'>Home</a>";
         } else {
             echo "<a href='#home'>Home</a>";
         }
         ?>
-        <a href="product.php">Products</a>
-        <a href="service.php">Services</a>
-        <a href="quotation.php">Quotation</a>
+        <a href="Product">Products</a>
+        <a href="Service">Services</a>
+        <a href="Quotation">Quotation</a>
         <?php
         if ($this_page != "index.php") {
-            echo "<a href='index.php#about'>About</a>";
-            echo "<a href='index.php#contact'>Contact</a>";
+            echo "<a href='Index#about'>About</a>";
+            echo "<a href='Index#contact'>Contact</a>";
         } else {
             echo "<a href='#about'>About</a>";
             echo "<a href='#contact'>Contact</a>";
@@ -36,7 +36,7 @@
         <div class='fas fa-search' id='search-btn'></div>
         <a href="message.php">
             <div class='fas fa-bell' id='bell-btn'>
-                <div class ="fa-bell-span">+9</div>
+                <div class="fa-bell-span">+9</div>
             </div>
         </a>
         <div class="fas fa-shopping-cart" id="cart-btn">
@@ -54,8 +54,8 @@
     <div class="profile-container">
         <?php
         if (isset($_SESSION['username'])) {
-            echo "<a href='profile.php'>Profile</a>";
-            echo "<a href='../controller/logout.inc.php'>Log Out</a>";
+            echo "<a href='Profile'>Profile</a>";
+            echo "<a href='Log_out'>Log Out</a>";
         } else {
             echo "<a href='Log_in'>Log In</a>";
             echo "<a href='Sign_up'>Sign Up</a>";
@@ -67,7 +67,7 @@
         <div class="cart-body">
             <!-- cart items render here -->
         </div>
-        <a href="checkout.php" class="btn">checkout now</a>
+        <a href="Checkout" class="btn">checkout now</a>
     </div>
 </header>
 
