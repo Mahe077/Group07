@@ -21,8 +21,9 @@ class Product extends Controller
         echo json_encode(count($items) == 0 ? null : $items);
     }
     public function itemRender($id)
-    {
-        $id;
+    {   
+        $item = $this->model->item($id);
+        $_SESSION['item'] = $item;
         $this->view->render('customer/Item_page');
     }
 }
