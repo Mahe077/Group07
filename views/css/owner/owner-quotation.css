@@ -1,0 +1,111 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .norti-container-n{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .norti-content-n{
+      width: 750px;
+      height: 100%;
+      border-radius: 5px;
+      position: relative;
+      border-top: 120px;
+  }
+  .home-content{
+    position: absolute;
+    background: #F5F6FA;
+    min-height: 100vh;
+    width: 100%;
+    transition: all 0.5s ease;
+  }
+
+  /* content msg */
+  .msg-container{
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  
+  .notifi-img img{
+    border-radius: 50%;
+
+  }
+  .notifi-img{
+    width: 25%;
+      padding-left: 10px;
+
+  }
+  .notifi{
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    display: flex;
+    background-color: rgb(252, 253, 253);
+    border-radius: 5px;
+    border-left: 7px solid #ca5e5a;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+  }
+  .notifi-details{
+    margin-top: 25px;  
+    padding-left: 10px;
+    height: 150px;
+    display: inline;
+    width: 50%;
+  }
+ 
+  .name{
+    color: #08343e;
+    font-size: 13px;
+    text-align: left;
+  }
+  
+  .date{
+    color: #08343e;
+    font-size: 13px;
+    text-align: left;
+  }
+  .brand{
+    color: #08343e;
+    font-size: 13px;
+    text-align: left;
+  }
+  .part{
+    color: #08343e;
+    font-size: 13px;
+    text-align: left;
+  }
+  .amount{
+    color: #08343e;
+    font-size: 13px;
+    text-align: left;
+  }
+.respond{
+    width: 25%;
+}
+  .msg-container{
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border:1px solid transparent;
+  }
+  .content-msg{
+    height: 50px;
+    width: calc(100%-300px);
+    color: #3c763d;
+    text-align: center;
+    align-items: center;
+    background-color: #dff0d8;
+    padding-top: 10px;
+    border-radius: 3px;
+    border-color:#d6e9c6;
+  }
