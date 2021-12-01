@@ -47,7 +47,7 @@ require 'config/PathConf.php';
                     <h3><?php echo ($_SESSION['item'][0][11]); ?></h3>
 
                     <div class="inputBox">
-                        <input type="number" min="0" value="1" max="<?php echo ($_SESSION['item'][0][8]); ?>" name="">
+                        <input type="number" min="1" value="1" max="<?php echo ($_SESSION['item'][0][8]); ?>" name="">
                         <div>
                             <p class="sub-head-1"><span class="sub-head-2">Available </span>: <?php echo ($_SESSION['item'][0][8]); ?></p>
                             <p class="sub-head-1"><span class="sub-head-2">Price </span>: Rs <?php echo ($_SESSION['item'][0][4]); ?></p>
@@ -57,19 +57,22 @@ require 'config/PathConf.php';
                     <div class="inputBox">
                         <div class="color-options">
                             <?php
-                            // foreach ($_SESSION['item'][0][10] as $key => $value) {
-                            //     echo "input type='radio' name='color-options' id='color' value=" . $key . "<label class='color' style='background-color:.$key.' for='color'></label>";
-                            // }
-                            echo "<input type='radio' name='color-options' id='color' value=" . $_SESSION['item'][0][10] . "><label class='color' style='background-color:" . $_SESSION['item'][0][10] . "' for='color'></label>";
+                            // print_r($_SESSION['item_color']);
+                            foreach ($_SESSION['item_color'] as $key => $value) {
+                                // print_r($value);
+                                echo "<input type='radio' name='color-options' id='color' value=".$value[1].">
+                                <label class='color' style='background-color:".$value[1]."' for='color'></label>";
+                            }
+                            // echo "<input type='radio' name='color-options' id='color' value=" . $_SESSION['item'][0][10] . "><label class='color' style='background-color:" . $_SESSION['item'][0][10] . "' for='color'></label>";
                             ?>
-                            <input type="radio" name="color-options" id="color" value="yellow">
+                            <!-- <input type="radio" name="color-options" id="color" value="yellow">
                             <label class="color" style="background-color:yellow" for="color"></label>
                             <input type="radio" name="color-options" id="color" value="white">
                             <label class="color" style="background-color:white" for="color"></label>
                             <input type="radio" name="color-options" id="color" value="orange">
                             <label class="color" style="background-color:orange" for="color"></label>
                             <input type="radio" name="color-options" id="color" value="red">
-                            <label class="color" style="background-color:red" for="color"></label>
+                            <label class="color" style="background-color:red" for="color"></label> -->
                         </div>
                     </div>
 

@@ -16,7 +16,7 @@ require 'config/PathConf.php';
     <link rel="stylesheet" type="text/css" href="<?php echo $localhost; ?>views/css/alert.css">
 </head>
 
-<body>
+<body onload="removeItem()">
 
     <?php
     $this_page = "quotation.php";

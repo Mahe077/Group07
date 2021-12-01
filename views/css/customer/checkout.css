@@ -1,0 +1,162 @@
+main {
+  margin-top: 110px;
+}
+section {
+  padding: 2rem 1% !important;
+  margin: 10px;
+}
+
+.table {
+  border-radius: 10px !important;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+.row {
+  display: block;
+  display: grid;
+  grid-template-columns: 1fr 0.7fr 1.3fr;
+  padding: 0.3rem;
+  grid-gap: 0.3rem;
+  grid-template-areas: "col-1 col-2 col-3 ";
+}
+
+input[type="number"] {
+  height: 1.6rem;
+  font-size: 1.2rem !important;
+  width: 4rem;
+  background-color: transparent;
+}
+
+.col {
+  /*font-size: 50rem;*/
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.col-1 {
+  grid-area: col-1;
+  border-right: 1px solid white;
+}
+
+.col-2 {
+  grid-area: col-2;
+  border-right: 1px solid white;
+}
+
+.col-3 {
+  grid-area: col-3;
+}
+
+.row:nth-child(odd) {
+  background-color: #fafafa;
+}
+
+.row:nth-child(even) {
+  background: rgb(200, 200, 200);
+}
+
+.row-header {
+  text-transform: uppercase;
+  font-weight: 500;
+  background-color: black !important;
+  color: white;
+}
+
+.row-data .col-3 {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1.5fr 0.5fr;
+  grid-template-areas: "col-4 col-5";
+  padding: 0;
+}
+
+.row-data .col-1,
+.row-data .col-2 {
+  /* font-size: 1.2rem !important; */
+  line-height: 2rem;
+  padding: 0;
+  border-right: 1px solid black;
+}
+
+.col-4 {
+  grid-area: col-4;
+  margin-right: 0.2rem;
+  border-right: 1px solid black;
+}
+
+.col-5 {
+  grid-area: col-5;
+  margin-left: 0.2rem;
+}
+
+#sub-total {
+  font-size: 1rem !important;
+  text-align: right;
+}
+
+#sub-total span {
+  margin-left: 1em;
+}
+
+.links ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.links ul li {
+  display: inline-block;
+}
+
+.btn {
+  font-size: 1.2rem !important;
+  display: block;
+  height: 2.5rem !important;
+  line-height: 1.5rem !important;
+  width: 150px;
+  white-space: nowrap;
+  padding: 0.2rem 0;
+  margin: 0.5rem;
+}
+
+.btn:hover {
+  letter-spacing: 0.1rem;
+}
+
+.links ul li a {
+  text-align: center;
+}
+
+.fa-check-circle {
+  color: green;
+  font-size: 1.8rem !important;
+}
+
+.fa-trash-alt {
+  color: black;
+  font-size: 1.8rem;
+}
+
+.fa-trash-alt:hover {
+  color: red;
+  font-size: 1.8rem !important;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 490px) {
+  .col {
+    font-size: 1.5rem;
+    padding: 0.5rem;
+  }
+  .btn {
+    height: 3rem !important;
+    font-size: 1.5rem !important;
+    line-height: 2.2rem !important;
+  }
+  .row-data .col {
+    padding: 0.5rem !important;
+  }
+  #sub-total {
+    font-size: 1.5rem !important;
+  }
+}

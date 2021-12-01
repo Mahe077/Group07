@@ -28,7 +28,7 @@
         }
     </style>
 
-    <body>
+    <body onload="removeItem()">
         <?php
         $this_page = "profile.php";
         include_once 'views/global/header-ws.php';
