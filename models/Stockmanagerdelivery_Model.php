@@ -5,15 +5,14 @@ class Stockmanagerdelivery_Model extends Model
     {
         parent::__construct();
     }
-    public function displaydelivery()
+    
+    function Updatedelivery($orderid , $company , $status)
     {
-        return  $this->db->select("SELECT order_ID , delivery_company FROM delivery);
+        $this->db->update("UPDATE `delivery` SET `delivery_company`=:delivery_company,`status`=:status WHERE `order_id`=:order_id", ['delivery_company' => $company, 'status' => $status, 'order_id' => $orderid]);
     }
-    -- public function updatedelivery($id)
-    -- {
-    --     $this->db->update("UPDATE `delivery` SET `delivery_company`=:company WHERE `order_id`=:id ",
-    --         ['order_id' => $id]);
-        
-    -- }
+
+    function displaydelivery(){
+        return  $this->db->select("SELECT `order_ID` , `approximate_delivery_date` , `address` , `delivery_company`  FROM `delivery` ");
+    }
 
 }

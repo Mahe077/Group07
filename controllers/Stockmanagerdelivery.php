@@ -12,12 +12,20 @@ class Stockmanagerdelivery extends Controller{
 
     public function Displaydelivery()
     {
-        $this->model->displaydelivey();
+        $data = $this->model->displaydelivey();
+        return $data;
     }
 
-    public function updatedelivery($order_ID)
+    public function updatedelivery()
     {
-        $this->model->Updatedelivery($order_ID);
+        require 'config/PathConf.php';
+        if (isset($_POST['submit'])) {
+            $orderid = $_POST['order_ID'];
+            $company = $_POST['company'];
+            $status = 1;
+            $this->model->Updatedelivery($orderid , $company , $status);
+
+        }
     }
     
 }

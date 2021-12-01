@@ -34,4 +34,5 @@ class Product_Model extends Model
             ['id'=>$search]
         );
     }
+    
 }
