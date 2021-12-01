@@ -34,36 +34,45 @@ require 'config/PathConf.php';
     include_once 'views/global/header-ws.php';
     ?>
 
-    <main onload="item_render()">
+    <main>
         <section class="form-content">
             <h1 class="heading">
                 <span>Iteam</span> page
             </h1>
             <div class="row">
                 <div class="image">
-                    <img src="../../assets/parts/engine/air-filter-1.png" alt="">
+                    <img src="<?php echo $localhost . $_SESSION['item'][0]['image_path']; ?>" alt="">
                 </div>
                 <form class="form" name="form" action="buy-now.php">
-                    <h3>air-filter</h3>
+                    <h3><?php echo ($_SESSION['item'][0][11]); ?></h3>
 
                     <div class="inputBox">
-                        <input type="number" min="0" value="1" name="">
+                        <input type="number" min="1" value="1" max="<?php echo ($_SESSION['item'][0][8]); ?>" name="">
                         <div>
-                            <p class="sub-head-1"><span class="sub-head-2">Available </span>: 5</p>
-                            <p class="sub-head-1"><span class="sub-head-2">Price </span>: Rs 5000000.00</p>
+                            <p class="sub-head-1"><span class="sub-head-2">Available </span>: <?php echo ($_SESSION['item'][0][8]); ?></p>
+                            <p class="sub-head-1"><span class="sub-head-2">Price </span>: Rs <?php echo ($_SESSION['item'][0][4]); ?></p>
                         </div>
 
                     </div>
                     <div class="inputBox">
                         <div class="color-options">
-                            <input type="radio" name="color-options" id="color" value="yellow">
+                            <?php
+                            // print_r($_SESSION['item_color']);
+                            foreach ($_SESSION['item_color'] as $key => $value) {
+                                // print_r($value);
+                                echo "<input type='radio' name='color-options' id='color' value=".$value[1].">
+                                <label class='color' style='background-color:".$value[1]."' for='color'></label>";
+                            }
+                            // echo "<input type='radio' name='color-options' id='color' value=" . $_SESSION['item'][0][10] . "><label class='color' style='background-color:" . $_SESSION['item'][0][10] . "' for='color'></label>";
+                            ?>
+                            <!-- <input type="radio" name="color-options" id="color" value="yellow">
                             <label class="color" style="background-color:yellow" for="color"></label>
                             <input type="radio" name="color-options" id="color" value="white">
                             <label class="color" style="background-color:white" for="color"></label>
                             <input type="radio" name="color-options" id="color" value="orange">
                             <label class="color" style="background-color:orange" for="color"></label>
                             <input type="radio" name="color-options" id="color" value="red">
-                            <label class="color" style="background-color:red" for="color"></label>
+                            <label class="color" style="background-color:red" for="color"></label> -->
                         </div>
                     </div>
 
@@ -71,17 +80,30 @@ require 'config/PathConf.php';
 
                         <h3>Description</h3>
 
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <p><?php echo ($_SESSION['item'][0][13]); ?></p>
 
-                        <p><span class="sub-head">Manufacture </span>: BMW</p>
-                        <p><span class="sub-head">Model </span>: BMW</p>
-                        <p><span class="sub-head">Part number </span>: 4591362194</p>
-                        
+                        </br>
+                        <ul>
+                            <li>
+                                <p><span class="sub-head">Manufacture </span>: <?php echo ($_SESSION['item'][0][6]); ?></p>
+                            </li>
+                            <li>
+                                <p><span class="sub-head">Model </span>: BMW</p>
+                            </li>
+                            <li>
+                                <p><span class="sub-head">Part number </span>: <?php echo ($_SESSION['item'][0][7]); ?></p>
+                            </li>
+                            <?php if ($_SESSION['item'][0][5]) {
+                                echo "<li><p><span class='sub-head'>Part size </span>: " . $_SESSION['item'][0][5] . "</p></li>";
+                            } ?>
+                            <li>
+                                <p><span class="sub-head">Type</span>: <?php echo ($_SESSION['item'][0][12]); ?></p>
+                            </li>
+                        </ul>
+                        </br>
+                        <p>Refund only valid within 7 days from the receving date.</p>
+                        <!-- <p><span class="sub-head" style="color:red !important;"><?php echo ($_SESSION['item'][0][3]); ?></span></p> -->
+                        </br>
                     </div>
                     <div class="actions">
                         <input type="submit" name="submit" class="btn" value="Add to cart">

@@ -28,7 +28,7 @@ require 'config/PathConf.php';
     <link rel="stylesheet" type="text/css" href="<?php echo $localhost; ?>views/css/customer/product.css">
 </head>
 
-<body onload="productload()">
+<body onload="productload(),removeItem()" id="product_page">
     <!-- header section starts  -->
     <?php
     $this_page = "profile.php";
@@ -40,7 +40,7 @@ require 'config/PathConf.php';
     ?>
     <!-- header section ends  -->
 
-    <main>
+    <main >
 
         <div class="sidebar close">
             <ul class="nav-links">

@@ -44,7 +44,7 @@ require 'config/PathConf.php';
     </style>
 </head>
 
-<body>
+<body onload="removeItem()">
     <!-- header section starts  -->
 
     <?php
