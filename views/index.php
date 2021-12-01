@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <?php require 'config/PathConf.php'; ?>
+
 <head>
 
     <meta charset="utf-8">
@@ -24,7 +25,7 @@
     <link rel="stylesheet" type='text/css' href="<?php echo $localhost; ?>views/css/alert.css">
 </head>
 
-<body>
+<body onload="index_loader(),removeItem()">
     <!-- header section starts  -->
 
     <?php
@@ -104,70 +105,8 @@
             <h1 class="heading">
                 <span>Feed</span>back
             </h1>
-            <div class="row">
-                <div class="swiper-container review-slider">
-
-                    <div class="swiper-wrapper ">
-
-                        <div class="swiper-slide">
-                            <div class="box">
-                                <img src="assets/users/pic1.png" alt="">
-                                <h3>john deo</h3>
-                                <p>Compliant product, correct packing, good seller</p>
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="box">
-                                <img src="assets/users/pic2.png" alt="">
-                                <h3>john deo</h3>
-                                <p>I 've already installed the spare parts, they look great !</p>
-                                <div class="stars">
-                                    <i class="fas fa-star" checked></i>
-                                    <i class="fas fa-star" checked></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="box">
-                                <img src="assets/users/pic3.png" alt="">
-                                <h3>john deo</h3>
-                                <p>Perfect, delivered in 10 days, good finish of the product.</p>
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="box">
-                                <img src="assets/users/pic4.png" alt="">
-                                <h3>john deo</h3>
-                                <p>Very good quality. Very satisfied with the purchase. I'll buy again.</p>
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
+            <div class="swiper-container review-slider">
+                <div class="swiper-wrapper" id="review-slider_wrapper">
                 </div>
             </div>
 
@@ -241,9 +180,12 @@
 
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script type="text/javascript" src="views/js/customer/main-ws.js"></script>
+    <script type="text/javascript" src="views/js/customer/index_loader.js"></script>
     <script type="text/javascript" src="views/js/swiper.js"></script>
     <script type="text/javascript" src="views/js/alert.js"></script>
     <script type="text/javascript" src="views/js/customer/cart.js"></script>
+    <script type="text/javascript" src="views/js/customer/index_loader.js"></script>
+
 </body>
 
 </html>

@@ -1,7 +1,7 @@
 function doSearch() {
   var data = new FormData();
   data.append("search", document.getElementById("search-box").value);
-  
+
   var xhr = new XMLHttpRequest();
   xhr.open("POST", "Product/searchAll");
   xhr.onload = function () {
@@ -63,7 +63,6 @@ function productload() {
   xhr.onload = function () {
     let products = document.querySelector(".product-items");
     var search = JSON.parse(this.response);
-
     // console.log(search);
     products.innerHTML = "";
     if (search !== null) {
@@ -107,7 +106,6 @@ function productload() {
     }
     loadItemOptions(search);
   };
-
   xhr.send();
   return false;
 }

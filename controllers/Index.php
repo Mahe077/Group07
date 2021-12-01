@@ -9,5 +9,8 @@ class Index extends Controller{
     function index(){
         $this->view->render('index');
     }
-    
+    public function rating_loader(){
+        $results = $this->model->rating_loader();
+        echo json_encode(count($results) == 0 ? null : $results);
+    }
 }

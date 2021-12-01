@@ -36,11 +36,11 @@
         <div class='fas fa-search' id='search-btn'></div>
         <a href="message.php">
             <div class='fas fa-bell' id='bell-btn'>
-                <div class="fa-bell-span">+9</div>
+                <div class="fa-bell-span">0</div>
             </div>
         </a>
         <div class="fas fa-shopping-cart" id="cart-btn">
-            <div class="fa-shopping-cart-span">+9</div>
+            <div class="fa-shopping-cart-span">0</div>
         </div>
         <div class="fas fa-user-circle" id="profile-btn"></div>
         <div class="fas fa-bars" id="menu-btn"></div>
