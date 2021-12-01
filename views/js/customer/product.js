@@ -64,6 +64,7 @@ function productload() {
     let products = document.querySelector(".product-items");
     var search = JSON.parse(this.response);
 
+    // console.log(search);
     products.innerHTML = "";
     if (search !== null) {
       for (let s of search) {

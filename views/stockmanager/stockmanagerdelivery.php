@@ -36,11 +36,11 @@
                         <span class="close-button">X</span>
                         
                         
-                        <!-- start -->
-                        <div class="container">
+                            <!-- start -->
+                            <div class="container">
     <div class="title">Assign Delivery</div>
     <div class="content">
-      <form action="Stockmanagerdelivery/updatedelivery" method="post" enctype="multipart/form-data">
+      <form action="Stockmanagerdelivery/updatedelivery" method="POST" enctype="multipart/form-data">
         <div class="user-details">
           <div class="input-box">
           
@@ -93,31 +93,8 @@
 </thead>
 
 
-<!-- <?php
 
-include "../model/database.inc.php"; // Using database connection file here
 
-$query = "select order_id,approximate_deliver_date,address,delivery_company from delivery";
-
-$records = mysqli_query($conn, $query) or die( mysqli_error($conn));
-
-while($data = mysqli_fetch_assoc($records))
-{
-?>
-<tbody>
-  <tr>
-    <td><?php echo $data['order_id']; ?></td>
-    <td><?php echo $data['approximate_deliver_date']; ?></td>
-    <td><?php echo $data['address']; ?></td>
-    <td><?php echo $data['delivery_company']; ?></td>
-  </tr>	
-  </tbody>
-<?php
-}
-?>
-</table>
-
-<?php mysqli_close($conn); // Close connection ?> -->
 
                 </div>
                   </div>
