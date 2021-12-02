@@ -14,7 +14,6 @@ class Stockmanagerorderlist extends Controller{
     
     function Neworder()
     {
-        // echo "pavi";
         $new =  $this->model->Neworders();
         return $new;
     }
@@ -23,11 +22,13 @@ class Stockmanagerorderlist extends Controller{
         $pending =  $this->model->Pendingorders();
         return $pending;
     }
+
     public function Cancelorder()
     {
         $cancel =  $this->model->Cancelorders();
         return $cancel;
     }
+
     public function Returnorder()
     {
         $return =  $this->model->Returnorders();
