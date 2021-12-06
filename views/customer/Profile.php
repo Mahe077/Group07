@@ -58,7 +58,7 @@
                     </div>
                     <ul class="sub-menu">
                         <li><a class="link_name" style="white-space: nowrap;" href="#">Order Manager</a></li>
-                        <li><a href="order.php">General orders</a></li>
+                        <li><a href="Order">General orders</a></li>
                         <li><a href="special-order.php">Special orders</a></li>
                     </ul>
                 </li>
