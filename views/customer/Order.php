@@ -25,7 +25,7 @@ require 'config/PathConf.php';
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 </head>
 
-<body onload="orderload(<?php echo $_SESSION['userid'] ?>),removeItem(),tableItemsRemomver()">
+<body onload="orderload(<?php echo $_SESSION['userid'] ?>),removeItem()">
     <!-- header section starts  -->
 
     <?php
@@ -42,77 +42,29 @@ require 'config/PathConf.php';
 
         <h2 class="heading">Order <span>Management</span></h2>
         <section class="cart-table table">
-            <form action="test.html" method="post">
+            <!-- <form action="test.html" method="post"> -->
                 <div class="row row-header">
                     <div class="col col-1">item</div>
                     <div class="col col-2">Qty</div>
                     <div class="col col-3">Price</div>
                 </div>
                 <div class="table-body">
-                    <!-- <a href="Order/loadAll(14)"></a> -->
-                    <!-- <div class="row row-data">
-                        <div class="col col-1" id="rd-1">
-                            </i>Air filter
-                        </div>
-                        <div class="col col-2">
-                            <input type="number" min="0" name="amount" value="1" />
-                        </div>
-                        <div class="col col-3">
-                            <div class="col col-4">Rs: 50000.00</div>
-                            <div class="col col-5"> <i class="fas remove fa-trash-alt"></i></div>
-                        </div>
-                    </div>
-                    <div class="row row-data" id="rd-2">
-                        <div class="col col-1">
-                            Air filter
-                        </div>
-                        <div class="col col-2">
-                            <input type="number" min="0" name="amount" value="1" />
-                        </div>
-                        <div class="col col-3">
-                            <div class="col col-4">Rs: 50000.00</div>
-                            <div class="col col-5"><i class="fas fa-check-circle"></i></div>
-                        </div>
-                    </div>
-                    <div class="row row-data" id="rd-3">
-                        <div class="col col-1">
-                            Air filter
-                        </div>
-                        <div class="col col-2">
-                            <input type="number" min="0" name="amount" value="1" />
-                        </div>
-                        <div class="col col-3">
-                            <div class="col col-4">Rs: 50000.00</div>
-                            <div class="col col-5"><i class="fas fa-check-circle"></i></div>
-                        </div>
-                    </div>
-                    <div class="row row-data" id="rd-4">
-                        <div class="col col-1">
-                            Air filter
-                        </div>
-                        <div class="col col-2">
-                            <input type="number" min="0" name="amount" value="1" />
-                        </div>
-                        <div class="col col-3">
-                            <div class="col col-4">Rs: 50000.00</div>
-                            <div class="col col-5"> <i class="fas remove fa-trash-alt"></i></div>
-                        </div>
-                    </div> -->
+                 
                 </div>
-            </form>
+            <!-- </form> -->
         </section>
         <section class="total">
             <p id="sub-total">
-                <strong>Total</strong>: <span id="stotal">Rs 10000.00</span><br>
+                <strong>Total</strong>: Rs<span id="stotal"></span>.00<br>
             </p>
         </section>
-        <section class="links">
+        <!-- <section class="links">
             <ul id="shopping-cart-actions">
                 <li>
                     <input type="submit" name="update" id="update-cart" class="btn" value="Update" />
                 </li>
             </ul>
-        </section>
+        </section> -->
     </main>
     <script type="text/javascript" src="<?php echo $localhost; ?>views/js/customer/main-ws.js"></script>
     <script type="text/javascript" src="<?php echo $localhost; ?>views/js/customer/cart.js"></script>

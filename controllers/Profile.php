@@ -98,6 +98,9 @@ class Profile extends Controller
             $_SESSION['city'] = $city;
             $_SESSION['postal_code'] = $postalcode;
             if ($image != 0) {
+                if (file_exists($_SESSION['image_path'])) {                   
+                  unlink($_SESSION['image_path']);
+                }
                 $_SESSION['image_path'] = $image;
             }
         } else {

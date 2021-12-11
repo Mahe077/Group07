@@ -22,7 +22,7 @@ require 'config/PathConf.php';
 
 </head>
 
-<body onload="removeItem(),tableItemsRemomver()">
+<body onload="displayCheckout(),removeItem(),tableItemsRemomver()">
     <!-- header section starts  -->
 
     <?php
@@ -43,23 +43,23 @@ require 'config/PathConf.php';
                     <div class="col col-2">Qty</div>
                     <div class="col col-3">Price</div>
                 </div>
-                <div class="table-body">
+                <div class="table-body checkout">
                    
                 </div>
             </form>
         </section>
         <section class="total">
             <p id="sub-total">
-                <strong>Total</strong> : <span id="stotal"></span>
+                <strong>Total</strong> : RS<span id="stotal">0</span>.00
             </p>
         </section>
         <section class="links">
             <ul id="shopping-cart-actions">
-                <li>
+                <!-- <li>
                     <input type="submit" name="update" id="update-cart" class="btn" value="Update Cart">
-                </li>
+                </li> -->
                 <li>
-                    <input type="submit" name="delete" id="empty-cart" class="btn" value="Empty Cart">
+                    <input type="submit" name="delete" id="empty-cart" class="btn" value="Empty Cart" onclick="ClearAll()">
                 </li>
                 <li>
                     <a href="Product" class="btn">Products</a>
@@ -75,6 +75,7 @@ require 'config/PathConf.php';
     <script type="text/javascript" src="<?php echo $localhost; ?>views/js/customer/cart.js"></script>
     <script type="text/javascript" src="<?php echo $localhost; ?>views/js/alert.js"></script>
     <script type="text/javascript" src="<?php echo $localhost; ?>views/js/customer/order.js"></script>
+   
 </body>
 
 </html>

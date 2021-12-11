@@ -53,6 +53,7 @@ function onloadCart() {
   let cart_container = document.querySelector(".cart-body");
   cartItems = JSON.parse(cartItems);
 
+  cart_container.innerHTML = "";
   if (cartItems != null) {
     for (var i in cartItems) {
       cart_container.innerHTML += `
@@ -201,7 +202,6 @@ function removeItem() {
                 }
               }
             }
-
             // console.log("deletetion complete...");
           }
         }

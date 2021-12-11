@@ -7,7 +7,7 @@ class Profile_Model extends Model
     }
     public function updateUserInfo($fname, $sname, $email, $city, $contact, $district, $address, $postalcode, $image)
     {
-        if (empty($image['name'])) {
+        if ($image === 0) {
             return $this->db->transaction(array(
                 array(
                     "UPDATE `person` SET `fname`=:fname,`lname`=:lname,`email`=:email,`contact`=:contact,`address`=:address WHERE `id`=:id ",
