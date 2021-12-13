@@ -43,8 +43,9 @@ class Log_in extends Controller
                     $_SESSION['email'] = $user[0]['email'];
                     $_SESSION['address'] = $user[0]['address'];
                     $_SESSION['image_path'] = $user[0]['image_path'];
-                    if ($user[0]['position'] === 'CU') {
+                    $_SESSION['position'] = $user[0]['position'];
 
+                    if ($user[0]['position'] === 'CU') {
                         $CustomerInfo = $this->model->customerInfo($user[0]['id']);
                         $_SESSION['district'] = $CustomerInfo[0]['district'];
                         $_SESSION['city'] = $CustomerInfo[0]['city'];
