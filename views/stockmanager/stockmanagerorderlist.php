@@ -59,10 +59,10 @@
 
 
 
-    <div class="table-container1" id="container1">
+    <div class="table-container1" id="container1" onload="loadneworders();">
 
     <h3 class="one"> New Orders </h3>
-    <table class="table" >
+    <table class="table" id="table" >
     <thead>
     <tr >
     <th>Order_ID</th>
@@ -72,31 +72,15 @@
     <th>Approximate_Deliver_date</th>
     </tr>
     </thead>
-     <!-- <?php $new ?> = <a href="Stockmanagerorderlist/Neworder"></a> -->
-   <?php
-   while ($data = $this->$new->fetch()) {
-     ?>
-<tbody>
-<tr>
-<td><?php echo $data['order_id']; ?></td>
-<td><?php echo $data['order_date']; ?></td>
-<td><?php echo $data['payment']; ?></td>
-<td><?php echo $data['total_payment']; ?></td>
-<td><?php echo $data['approximate_d_date']; ?></td>
-    </tr>
-</tbody>
-<?php
-}
-
-?>
+    
 </table>
 </div>
 
 
-<div class="table-container2" id="container2">
+<div class="table-container2" id="container2" onload="loadpendingorders();">
 
 <h3 class="two"> Pending Orders </h3>
-<table class="table" >
+<table class="table" id="table1" >
 <thead>
 <tr >
 <th>Order_ID</th>
@@ -106,32 +90,17 @@
 
 </tr>
 </thead>
-<!--  <?php $pending ?> = <a href="Stockmanagerorderlist/Pendingorder"></a>
-   <?php
-   while ($data = $pending->fetch()) {
-     ?>
-<tbody>
-<tr>
-<td>.<?php echo $data['order_id']; ?></td>
-<td><?php echo $data['order_date']; ?></td>
-<td><?php echo $data['payment']; ?></td>
-<td><?php echo $data['total_payment']; ?></td>
-    </tr>
-</tbody>
-<?php
-}
 
-?> -->
 </table>
 
 
 
 </div>
 
-<div class="table-container3" id="container3">
+<div class="table-container3" id="container3" onload="loadcancelorders();">
 
 <h3 class="three"> Cancel Orders </h3>
-<table class="table" >
+<table class="table" id="table2">
 <thead>
 <tr >
 <th>Order_ID</th>
@@ -141,33 +110,17 @@
 <th>Reason</th>
 </tr>
 </thead>
-<!--  <?php $cancel ?> = <a href="Stockmanagerorderlist/Cancelorder"></a>
-   <?php
-   while ($data = $cancel->fetch()) {
-     ?>
-<tbody>
-<tr>
-<td>.<?php echo $data['order_id']; ?></td>
-<td><?php echo $data['order_date']; ?></td>
-<td><?php echo $data['approximate_d_date']; ?></td>
-<td><?php echo $data['total_payment']; ?></td>
-<td><?php echo $data['reason']; ?></td>
-    </tr>
-</tbody>
-<?php
-}
 
-?> -->
 </table>
 
 
 
 </div>
 
-<div class="table-container4" id="container4">
+<div class="table-container4" id="container4" onload="loadreturnorders();">
 
 <h3 class="four"> Return Orders </h3>
-<table class="table" >
+<table class="table" id="table3" >
 <thead>
 <tr >
 <th>Order_ID</th>
@@ -178,24 +131,7 @@
 <th>reason</th>
 </tr>
 </thead>
-<!--  <?php $return ?> = <a href="Stockmanagerorderlist/Returnorder"></a>
-   <?php
-   while ($data = $return->fetch()) {
-     ?>
-<tbody>
-<tr>
-<td>.<?php echo $data['order_id']; ?></td>
-<td><?php echo $data['order_date']; ?></td>
-<td><?php echo $data['payment']; ?></td>
-<td><?php echo $data['total_payment']; ?></td>
-<td><?php echo $data['approximate_d_date']; ?></td>
-<td><?php echo $data['reason']; ?></td>
-    </tr>
-</tbody>
-<?php
-}
 
-?> -->
 </table>
 
 
@@ -211,41 +147,7 @@
 
 
   </section> 
-  <script>
-      function display1() {
-  document.getElementById("container1").style.display = "block";
-  document.getElementById("container2").style.display = "none";
-  document.getElementById("container3").style.display = "none";
-  document.getElementById("container4").style.display = "none";
-}
-function display2() {
-  document.getElementById("container1").style.display = "none";
-  document.getElementById("container2").style.display = "block";
-  document.getElementById("container3").style.display = "none";
-  document.getElementById("container4").style.display = "none";
-}
-function display3() {
-  document.getElementById("container1").style.display = "none";
-  document.getElementById("container2").style.display = "none";
-  document.getElementById("container3").style.display = "block";
-  document.getElementById("container4").style.display = "none";
-}
-function display4() {
-  document.getElementById("container1").style.display = "none";
-  document.getElementById("container2").style.display = "none";
-  document.getElementById("container3").style.display = "none";
-  document.getElementById("container4").style.display = "block";
-}
-  
-    let sidebar = document.querySelector(".sidebar");
-    let sidebarBtn = document.querySelector(".sidebarBtn");
-     sidebarBtn.onclick = function() {
-       sidebar.classList.toggle("active");
-       if(sidebar.classList.contains("active")){
-       sidebarBtn.classList.replace("bx-menu" ,"bx-menu-alt-right");
-     }else
-       sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
-     }
-      </script>
+  <script type="text/javascript" src="views/js/stockmanager/orderlist.js"></script>
+ 
 </body>
 </html>

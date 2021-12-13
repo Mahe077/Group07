@@ -11,27 +11,106 @@ class Stockmanagerorderlist extends Controller{
        
     }
 
-    
+
+
+
+
     function Neworder()
     {
-        $new =  $this->model->Neworders();
-        return $new;
+        $username = $_SESSION['username'];
+        $id = $this->model->getinfo($username);
+            foreach($id as $row)
+            {
+                
+                $idn = htmlentities($row['id']);
+            }
+           
+            $warehouse = $this->model->getwarehouse($idn);
+            foreach($warehouse as $rows)
+            {
+                
+                $wh = htmlentities($rows['warehouse_id']);
+                
+
+               
+            }
+            $type = "new";
+            $new = $this->model->Neworders($type , $wh);
+            echo json_encode(count($new) == 0 ? null : $new);
     }
+
     public function Pendingorder()
     {
-        $pending =  $this->model->Pendingorders();
-        return $pending;
+        $username = $_SESSION['username'];
+        $id = $this->model->getinfo($username);
+            foreach($id as $row)
+            {
+                
+                $idn = htmlentities($row['id']);
+            }
+           
+            $warehouse = $this->model->getwarehouse($idn);
+            foreach($warehouse as $rows)
+            {
+                
+                $wh = htmlentities($rows['warehouse_id']);
+                
+
+               
+            }
+        $type = "pending";
+        $pending =  $this->model->Pendingorders($type,$wh);
+        echo json_encode(count($pending) == 0 ? null : $pending);
     }
 
     public function Cancelorder()
     {
-        $cancel =  $this->model->Cancelorders();
-        return $cancel;
+        $username = $_SESSION['username'];
+        $id = $this->model->getinfo($username);
+            foreach($id as $row)
+            {
+                
+                $idn = htmlentities($row['id']);
+            }
+           
+            $warehouse = $this->model->getwarehouse($idn);
+            foreach($warehouse as $rows)
+            {
+                
+                $wh = htmlentities($rows['warehouse_id']);
+                
+
+               
+            }
+
+        $type = "cancel";
+        $cancel =  $this->model->Cancelorders($type , $wh);
+        echo json_encode(count($cancel) == 0 ? null : $cancel);
     }
 
     public function Returnorder()
     {
-        $return =  $this->model->Returnorders();
-        return $return;
+        $username = $_SESSION['username'];
+        $id = $this->model->getinfo($username);
+            foreach($id as $row)
+            {
+                
+                $idn = htmlentities($row['id']);
+            }
+           
+            $warehouse = $this->model->getwarehouse($idn);
+            foreach($warehouse as $rows)
+            {
+                
+                $wh = htmlentities($rows['warehouse_id']);
+                
+
+               
+            }
+
+
+        $type = "return";
+        $return =  $this->model->Returnorders($type , $wh);
+        echo json_encode(count($return) == 0 ? null : $return);
     }
 }

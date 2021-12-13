@@ -6,24 +6,44 @@ class Stockmanagerorderlist_Model extends Model
         parent::__construct();
     }
 
-    function Neworders()
+    function getinfo($username = null)
     {
-        return  $this->db->select2("SELECT order_ID , order_date , payment , total_payment , approximate_d_date FROM orders WHERE order_type = :order_type", ['order_type' => 'new']); 
+        return $this->db->select2("SELECT id FROM person WHERE username = :username", ['username' => $username]);
     }
 
-    public function Pendingorders()
+    function getwarehouse($idn = null)
     {
-        return  $this->db->select2("SELECT order_ID , order_date , payment , total_payment  FROM orders WHERE order_type = :order_type", ['order_type' => 'pending']);
+        return $this->db->select2("SELECT warehouse_id FROM warehouse_manager WHERE id = :id", ['id' => $idn]);
     }
 
-    public function Cancelorders()
+    function Neworders($type , $wh)
     {
-        return  $this->db->select2("SELECT order_ID , order_date  , approximate_d_date  , total_payment , reason FROM orders WHERE order_type = :order_type", ['order_type' => 'cancel']);
+        return  $this->db->select2("SELECT `order_ID` , `order_date` , `payment` , `total_payment` , `approximate_d_date` FROM `orders` WHERE order_type = :order_type AND warehouse_id = :warehouse_id ",   ['order_type' => $type , 'warehouse_id' => $wh ]);
     }
 
-    public function Returnorders()
+    public function Pendingorders($type , $wh)
     {
-        return  $this->db->select2("SELECT order_ID , order_date , payment , total_payment , approximate_d_date , reason FROM orders WHERE order_type = :order_type", ['order_type' => 'return']);
+        return  $this->db->select2("SELECT `order_ID` , `order_date` , `payment` , `total_payment` FROM `orders` WHERE `order_type` = :order_type  AND warehouse_id = :warehouse_id ", ['order_type' => $type , 'warehouse_id' => $wh]);
+    }
+
+    public function Cancelorders($type , $wh)
+    {
+        return  $this->db->select2("SELECT `order_ID` , `order_date` , `approximate_d_date`  , `total_payment` , `reason` FROM `orders` WHERE `order_type` = :order_type  AND warehouse_id = :warehouse_id ", ['order_type' => $type , 'warehouse_id' => $wh]);
+    }
+
+    public function Returnorders($type,$wh)
+    {
+        return  $this->db->select2("SELECT `order_ID` , `order_date` , `payment` , `total_payment` , `approximate_d_date` , `reason` FROM `orders` WHERE `order_type` = :order_type  AND warehouse_id = :warehouse_id ", ['order_type' => $type , 'warehouse_id' => $wh]);
+    }
+
+    public function callwarehouse($id)
+    {
+        return $this->db->select2("SELECT `warehouse_id`  FROM `warehouse_manager` WHERE `id` = :id", ['id' => $id]);
+    }
+
+    public function getid($username)
+    {
+        return $this->db->select2("SELECT `id`  FROM `person` WHERE `username` = :username", ['username' => $username]);
     }
 
 }

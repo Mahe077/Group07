@@ -1,5 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+    if (!isset($_SESSION['userid'])) {
+        $_SESSION['error'] = 'invalidAccess';
+        header("location: Log_in");
+        exit();
+    }
+    require 'config/PathConf.php';
+    ?>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">

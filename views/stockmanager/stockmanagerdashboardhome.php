@@ -1,12 +1,4 @@
-<!-- <?php
 
-$conn = mysqli_connect("localhost","root","","projectsample");
-
-if($conn)
-{
-    // echo "connected";
-}
-?> -->
 
 
 <?php
@@ -28,35 +20,7 @@ if($conn)
     <link rel="stylesheet" href="css/stockmanagerdashboardhome.css">
     <link rel='stylesheet' type='text/css' href="<?php echo $localhost; ?>views/css/stockmanager/stockmanagerdashboardhome.css">
 
-<!-- chart starts-->
-    <!-- <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      google.charts.load("current", {packages:["corechart"]});
-      google.charts.setOnLoadCallback(drawChart);
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['order', 'number'],
-          <?php
-             $sql = "SELECT * FROM orderoverview";
-            $fire = mysqli_query($conn, $sql);
-            while($result = mysqli_fetch_assoc($fire))
-            {
-                echo "['".$result['order_type']."', ".$result['number']."],";
-            }
 
-?>
-        ]);
-
-        var options = {
-          title: 'Order Overview',
-          is3D: true,
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
-        chart.draw(data, options);
-      }
-    </script> -->
-<!-- chart ends -->
 
 
 </head>
