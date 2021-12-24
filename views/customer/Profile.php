@@ -101,7 +101,7 @@
                         <div class="name-job">
                             <div class="profile_name"><?php echo $_SESSION['username'] ?></div>
                         </div>
-                        <a href="../controller/logout.inc.php"><i class='bx bx-log-out'></i></a>
+                        <a href="<?php echo $localhost; ?>Log_out"><i class='bx bx-log-out'></i></a>
                     </div>
                 </li>
             </ul>
