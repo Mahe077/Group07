@@ -64,6 +64,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
   cursor: pointer;
 }
 
+
 h2{
   padding: 10px 15px 10px 15px;
 }
@@ -339,4 +340,133 @@ form .button input:hover{
       display: none;
     }
 }
-  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+* {
+  box-sizing: border-box;
+}
+.form-content{
+  padding-top: 100px;
+}
+.content{
+  background-color: #bfddde;
+}
+.openBtn {
+  display: flex;
+  justify-content: center;
+}
+.openButton {
+  border: none;
+  border-radius: 5px;
+  background-color: #042434;
+  color: white;
+  padding: 14px 20px;
+  cursor: pointer;
+  position: fixed;
+}
+.openButton:hover{
+  letter-spacing: .2rem;
+    transition: .5s;
+}
+.loginPopup {
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+.formPopup {
+  display: none;
+  position: fixed;
+  width: auto;
+  left: 50%;
+  top: 25%;
+  transform: translate(-50%, 5%);
+  border: 3px solid #999999;
+  background-color: #fff;
+  z-index: 9;
+}
+.formContainer {
+  max-width: 600px;
+  padding: 20px;
+  background-color: #fff;
+}
+.formContainer input[type=text],
+.formContainer input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 20px 0;
+  border: none;
+  background: #eee;
+}
+.formContainer input[type=text]:focus,
+.formContainer input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+.formContainer .btn {
+  padding: 12px 20px;
+  border: none;
+  background-color: #042434;
+  color: #fff;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 15px;
+  opacity: 0.8;
+}
+.formContainer .cancel {
+  background-color: #042434;
+}
+.formContainer .btn:hover,
+.openButton:hover {
+  opacity: 1;
+  letter-spacing: .2rem;
+    transition: .5s;
+}
