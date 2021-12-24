@@ -8,27 +8,26 @@ function loadItemOptions(product_items) {
   for (let i = 0; i < carts.length; i += 1) {
     carts[i].addEventListener("click", () => {
       setItems(product_items[i], i);
-      //console.log("after setitems ");
+      // console.log("after setitems ");
       removeItem();
     });
     // console.log("after event listners ");
   }
   // console.log("in loadoprtion next call reove items");
+
 }
 
-// ******************************************************* onloadShowCartNumbers(products) ********************************************************************
+// ******************************************************* onloadCartNumbers(products) ********************************************************************
 
-function onloadShowCartNumbers(products) {
-  // console.log(products);
+function onloadCartNumbers(products) {
+  console.log(products);
   cart_numbers = 0;
   for (j in products) {
     cart_numbers += parseInt(products[j].InCart);
-    // console.log(products[j].InCart);
     if (cart_numbers > 9) {
       document.querySelector(".fa-shopping-cart-span").textContent = "+9";
     } else {
-      document.querySelector(".fa-shopping-cart-span").textContent =
-        cart_numbers;
+      document.querySelector(".fa-shopping-cart-span").textContent = cart_numbers;
     }
   }
   localStorage.setItem("cartNumbers", cart_numbers);
@@ -64,7 +63,7 @@ function onloadCart() {
   var xhr = new XMLHttpRequest();
   xhr.open("POST", "Checkout/Load");
   xhr.onload = function () {
-    if (JSON.parse(this.response) != null) {
+    if (this.response != null) {
       var cart = JSON.parse(this.response);
       for (let l = 0; l < cart[0].length; l++) {
         for (let k = 0; k < cart[1].length; k++) {
@@ -73,25 +72,48 @@ function onloadCart() {
           }
         }
       }
-      let cartItems = localStorage.getItem("productInCart");
-      cartItems = JSON.parse(cartItems);
-      onloadShowCartNumbers(cartItems);
-      onloadtotalCost(cartItems);
     }
+    onloadCartNumbers(cart[0]);
   };
   xhr.send();
+
+  // load cart from the localstorage
+  // let cartItems = localStorage.getItem("productInCart");
+  // let cart_container = document.querySelector(".cart-body");
+  // cartItems = JSON.parse(cartItems);
+  // console.log(cartItems);
+  // cart_container.innerHTML = "";
+  // if (cartItems != null) {
+  //   for (var i in cartItems) {
+  //     cart_container.innerHTML += `
+	// 		<div class="cart-item">
+	// 			<div class="id">
+	// 				<input type="hidden" id="cart_item_id" value="${cartItems[i].id}">
+  //       </div>
+  //       <span class="fas fa-times" id="remove-btn"></span>
+				
+	// 			<img src="${localhost}${cartItems[i].image_path}" alt="">
+  //         <div class="content">
+  //           <h3>${cartItems[i].name}</h3>
+  //           <div class="price">Rs ${cartItems[i].price * cartItems[i].InCart}/-
+  //           </div>
+  //         </div>    
+  //     </div>`;
+  //   }
+  // }
+  // console.log("in onloadcart ***");
+  // onloadCartNumbers(cartItems);
   return;
 }
 
-// ******************************************************* onloadtotalCost() ******************************************************************************
-
-function onloadtotalCost(products) {
-  let Cost = 0;
-  for (j in products) {
-    Cost += parseFloat((products[j].price * products[j].InCart).toFixed(2));
-    //console.log(products[j].price, products[j].InCart, Cost);
+function onloadtotalCost(product) {
+  let cartCost = localStorage.getItem("totalCost");
+  if (cartCost != null) {
+    cartCost = parseInt(cartCost);
+    localStorage.setItem("totalCost", parseInt(cartCost + parseInt(product.price)));
+  } else {
+    localStorage.setItem("totalCost", parseInt(product.price));
   }
-  localStorage.setItem("totalCost", Cost);
   return;
 }
 
@@ -103,36 +125,16 @@ function onloadsetItems(product_item, qty) {
   cartItems = JSON.parse(cartItems);
 
   if (cartItems != null) {
-    // console.log("cart not null")
     if (cartItems[product_item.id] == undefined) {
       cartItems = {
         ...cartItems,
         [product_item.id]: product_item,
       };
       product_item.InCart = qty;
-      // console.log("onloaditem undefied",product_item.id)
       cart_container.innerHTML += `
 			<div class="cart-item">
       <div class="id">
-      <input type="hidden" id="cart_item_id" value="${
-        cartItems[product_item.id].id
-      }">
-    </div>
-        <span class="fas fa-times" id="remove-btn"></span>
-        <img src="${localhost}${product_item.image_path}" alt="">
-        <div class="content">
-            <h3>${product_item.name}</h3>
-            <div class="price">Rs ${product_item.price}/-</div>
-        </div>
-      </div>	`;
-    } else {
-      // console.log("onloaditem defined")
-      cart_container.innerHTML += `
-			<div class="cart-item">
-      <div class="id">
-      <input type="hidden" id="cart_item_id" value="${
-        cartItems[product_item.id].id
-      }">
+      <input type="hidden" id="cart_item_id" value="${cartItems[product_item.id].id}">
     </div>
         <span class="fas fa-times" id="remove-btn"></span>
         <img src="${localhost}${product_item.image_path}" alt="">
@@ -150,9 +152,7 @@ function onloadsetItems(product_item, qty) {
     cart_container.innerHTML += `
 			<div class="cart-item">
       <div class="id">
-      <input type="hidden" id="cart_item_id" value="${
-        cartItems[product_item.id].id
-      }">
+      <input type="hidden" id="cart_item_id" value="${cartItems[product_item.id].id}">
     </div>
         <span class="fas fa-times" id="remove-btn"></span>
         <img src="${localhost}${product_item.image_path}" alt="">
@@ -161,10 +161,8 @@ function onloadsetItems(product_item, qty) {
           <div class="price">Rs ${product_item.price}/-</div>
         </div>
       </div>	`;
-    // console.log("onloadcart null",product_item.InCart)
   }
   localStorage.setItem("productInCart", JSON.stringify(cartItems));
-
   return;
 }
 
@@ -174,6 +172,15 @@ function setItems(product_item, i) {
   let cart_container = document.querySelector(".cart-body");
   let cartItems = localStorage.getItem("productInCart");
   cartItems = JSON.parse(cartItems);
+
+  // var AddItem = new FormData();
+  // AddItem.append(
+  //       "id",
+  //       product_item.id
+  //     );
+  // var xhr = new XMLHttpRequest();
+  // xhr.open("POST", "Checkout/Add");
+  // xhr.send(AddItem);
 
   if (cartItems != null) {
     if (cartItems[product_item.id] == undefined) {
@@ -186,10 +193,8 @@ function setItems(product_item, i) {
       cart_container.innerHTML += `
 			<div class="cart-item">
       <div class="id">
-      <input type="hidden" id="cart_item_id" value="${
-        cartItems[product_item.id].id
-      }">
-      </div>
+      <input type="hidden" id="cart_item_id" value="${cartItems[product_item.id].id}">
+    </div>
         <span class="fas fa-times" id="remove-btn"></span>
         <img src="${localhost}${product_item.image_path}" alt="">
         <div class="content">
@@ -199,22 +204,11 @@ function setItems(product_item, i) {
       </div>	`;
       cartNumbers(cartItems[product_item.id], i);
       totalCost(cartItems[product_item.id]);
-      
-      // update the cartitem table when cart is not empty
-      // item is not in the table status = 0
-      AddUpdate(product_item.id,1,0);
-
     } else {
-      if (
-        cartItems[product_item.id].amount > cartItems[product_item.id].InCart
-      ) {
+      if (cartItems[product_item.id].amount > cartItems[product_item.id].InCart) {
         cartItems[product_item.id].InCart += 1;
         cartNumbers(cartItems[product_item.id], i);
         totalCost(cartItems[product_item.id]);
-        // update the cartitem table when cart is not empty
-        // item is in the table qty must change status = 1
-        AddUpdate(product_item.id,parseInt(cartItems[product_item.id].InCart),1);
-
       } else {
         // console.log("out of range");
       }
@@ -228,9 +222,7 @@ function setItems(product_item, i) {
     cart_container.innerHTML += `
 			<div class="cart-item">
       <div class="id">
-      <input type="hidden" id="cart_item_id" value="${
-        cartItems[product_item.id].id
-      }">
+      <input type="hidden" id="cart_item_id" value="${cartItems[product_item.id].id}">
     </div>
         <span class="fas fa-times" id="remove-btn"></span>
         <img src="${localhost}${product_item.image_path}" alt="">
@@ -241,11 +233,6 @@ function setItems(product_item, i) {
       </div>	`;
     cartNumbers(cartItems[product_item.id], i);
     totalCost(cartItems[product_item.id]);
-
-    // update the cartitem table when cart is empty
-    // item is not in the table status = 2
-    AddUpdate(product_item.id,1,2);
-
   }
   localStorage.setItem("productInCart", JSON.stringify(cartItems));
   // console.log("in setitems ");
@@ -257,10 +244,10 @@ function setItems(product_item, i) {
 function totalCost(product) {
   let cartCost = localStorage.getItem("totalCost");
   if (cartCost != null) {
-    cartCost = parseFloat(cartCost);
-    localStorage.setItem("totalCost", (cartCost + parseFloat(product.price)).toFixed(2));
+    cartCost = parseInt(cartCost);
+    localStorage.setItem("totalCost", parseInt(cartCost + parseInt(product.price)));
   } else {
-    localStorage.setItem("totalCost", parseFloat(product.price));
+    localStorage.setItem("totalCost", parseInt(product.price));
   }
   return;
 }
@@ -278,6 +265,7 @@ function removeItem() {
 
   productInCart = JSON.parse(productInCart);
 
+
   for (let i = 0; i < removebtns.length; i++) {
     removebtns[i].addEventListener("click", () => {
       itemToRemove =
@@ -287,11 +275,11 @@ function removeItem() {
 
       for (var j in productInCart) {
         if (productInCart[j].id == itemToRemove) {
+
           noOfItems = parseInt(noOfItems);
           noOfItems = noOfItems - productInCart[j].InCart;
           localStorage.setItem("cartNumbers", noOfItems);
-          document.querySelector(".fa-shopping-cart-span").textContent =
-            noOfItems;
+          document.querySelector(".fa-shopping-cart-span").textContent = noOfItems;
           // console.log(noOfItems, cartCost);
 
           cartCost = parseInt(cartCost);
@@ -303,61 +291,27 @@ function removeItem() {
 
           // console.log(cartCost);
 
+
           // console.log("items id: ", productInCart[j].id, i, "in cart :", productInCart[j].InCart, " id: ", productInCart[j].id);
           if (productInCart[j].id == itemToRemove) {
             // console.log("deletetion process...:", productInCart[j].id);
             delete productInCart[j];
-            localStorage.setItem(
-              "productInCart",
-              JSON.stringify(productInCart)
-            );
+            localStorage.setItem("productInCart", JSON.stringify(productInCart));
             removebtns[i].parentElement.style.display = "none";
             if (table_remover.length > 0) {
               // console.log(table_remover);
               for (let k = 0; k < table_remover.length; k++) {
-                if (
-                  table_remover[k].childNodes[1].childNodes[1].value ==
-                  itemToRemove
-                ) {
+                if (table_remover[k].childNodes[1].childNodes[1].value == itemToRemove) {
                   table_remover[k].style.display = "none";
                 }
               }
             }
             // console.log("deletetion complete...");
-            DeleteUpdate(itemToRemove);
           }
         }
       }
     });
   }
-  return;
-}
-
-function DeleteUpdate(itemID) {
-  var data = new FormData();
-  data.append("data", parseInt(itemID));
-  // console.log(itemID,data);
-  var xhr = new XMLHttpRequest();
-  xhr.open("POST", "Checkout/Delete");
-  // xhr.onload = function () {
-  //   console.log(this.response);
-  // };
-  xhr.send(data);
-  return;
-}
-
-function AddUpdate(itemID,qty,status) {
-  var data = new FormData();
-  data.append("itemID", parseInt(itemID));
-  data.append("qty", parseInt(qty));
-  data.append("status",parseInt(status));
-  // console.log(itemID,data);
-  var xhr = new XMLHttpRequest();
-  xhr.open("POST", "Checkout/Add");
-  // xhr.onload = function () {
-  //   console.log(this.response);
-  // };
-  xhr.send(data);
   return;
 }
 

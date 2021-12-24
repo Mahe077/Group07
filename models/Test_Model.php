@@ -26,4 +26,23 @@ class Test_Model extends Model
     {
         return $this->db->delete("DELETE FROM `rating` WHERE id=:id", ['id' => 6]);
     }
+    public function getCartId($userid)
+    {
+        return $_SESSION['cartid'] = $this->db->select2("SELECT `id` FROM `cart` WHERE userId = :userid;", ['userid' => $userid]);
+    }
+    public function getItem($itemid)
+    {
+        return $this->db->select2("SELECT * FROM `item` WHERE id = :itemid;", ['itemid' => $itemid]);
+    }
+    public function test($userid)
+    {
+        $this->getCartId($userid);
+        $cart = $this->db->select2("SELECT `itemId`, `qty` FROM `cart_item` WHERE cartId = :cartid;", ['cartid' => $_SESSION['cartid'][0][0]]);
+        $cart_item = [];
+        foreach ($cart as $key => $value) {
+            $cart_item = array_merge($cart_item,$this->getItem($value[0]));
+        }
+        return [$cart_item,$cart];
+        
+    }
 }

@@ -16,10 +16,10 @@ function tableItemsRemomver() {
         trash_alt[i].parentElement.parentElement.parentElement.childNodes[1]
           .childNodes[1].value;
       cartIdToRemove = parseInt(cartIdToRemove);
-      // console.log("deleting....", i, " id ", cartIdToRemove);
+      //console.log("deleting....", i, " id ", cartIdToRemove);
 
       for (var j in productInCart) {
-        if (productInCart[j].cartId == cartIdToRemove) {
+        if (productInCart[j].id == cartIdToRemove) {
           noOfItems = parseInt(noOfItems);
           noOfItems = noOfItems - productInCart[j].InCart;
           localStorage.setItem("cartNumbers", noOfItems);
@@ -33,11 +33,11 @@ function tableItemsRemomver() {
             cartCost = 0;
           }
           localStorage.setItem("totalCost", cartCost);
-          total.innerHTML = `Rs ${cartCost}.00`;
+          total.innerHTML = `${parseInt(cartCost)}`;
           // console.log(cartCost);
 
           // console.log("items id: ", productInCart[j].id, i, "in cart :", productInCart[j].InCart, " cartId: ", productInCart[j].cartId);
-          if (productInCart[j].cartId == cartIdToRemove) {
+          if (productInCart[j].id == cartIdToRemove) {
             // console.log("deletetion process...:", productInCart[j].cartId);
             delete productInCart[j];
             localStorage.setItem(
@@ -49,7 +49,7 @@ function tableItemsRemomver() {
             ].parentElement.parentElement.parentElement.style.display = "none";
             cart_items = document.querySelectorAll(".cart-item");
             if (cart_items.length > 0) {
-              console.log(cart_items);
+              // console.log(cart_items);
               for (let k = 0; k < cart_items.length; k++) {
                 if (
                   cart_items[k].childNodes[1].childNodes[1].value ==
@@ -60,6 +60,7 @@ function tableItemsRemomver() {
               }
             }
             // console.log("deletetion complete...");
+            DeleteUpdate(cartIdToRemove);
           }
         }
       }
@@ -76,10 +77,11 @@ function displayCheckout() {
   if (cartItems && cartTableBody) {
     cartTableBody.innerHTML = "";
     Object.values(cartItems).map((item) => {
+      // console.log(item);
       cartTableBody.innerHTML += `
             <div class="row row-data" id="rd-4">
               <div class="id">
-                <input type="hidden" id="cart_item_id" value="${item.cartId}">
+              <input type="hidden" id="cart_item_id" value="${item.id}">
               </div>
               <div class="col col-1">
                   ${item.name}
@@ -92,8 +94,8 @@ function displayCheckout() {
               </div>
               <div class="col col-3">
                 <div class="col col-4">Rs: ${
-                  parseInt(item.price) * parseInt(item.InCart)
-                }.00</div>
+                  (parseFloat(item.price) * parseFloat(item.InCart)).toFixed(2)
+                }</div>
                   <div class="col col-5" style="display: flex;justify-content:space-around;align-items: center;"> <i class="fas remove fa-trash-alt"></i>
                       <a href="buy-now.php"><i class="fas fa-shopping-cart"></i></a>
                   </div>
@@ -105,7 +107,7 @@ function displayCheckout() {
 
     let total = document.querySelector("#stotal");
     let totalCost = localStorage.getItem("totalCost");
-    total.innerHTML = `${parseInt(totalCost)}`;
+    total.innerHTML = `${parseFloat(totalCost).toFixed(2)}`;
   }
 }
 
@@ -147,17 +149,19 @@ function item_remover(id) {
             .childNodes[1].childNodes[1].textContent
         );
       total.innerHTML = `${parseInt(Total)}`;
+      DeleteUpdate(id);
     }
   }
 }
 
 function ClearAll(){
-  console.log("hello")
+  // console.log("hello")
   localStorage.clear("productInCart");
   let table_body = document.querySelector(".table-body");
   table_body.innerHTML = "";
   document.querySelector(".fa-shopping-cart-span").textContent = 0;
   let total = document.querySelector("#stotal");
   total.innerHTML = `0`;
+  DeleteUpdate(-1);
 }
 
