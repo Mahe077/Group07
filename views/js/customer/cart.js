@@ -60,11 +60,14 @@ function cartNumbers(product_item, i) {
 // ******************************************************* onloadCart() **********************************************************************************
 
 function onloadCart() {
+  // console.log("oloadsdsfsdf");
   // load cart from the database
   var xhr = new XMLHttpRequest();
-  xhr.open("POST", "Checkout/Load");
+  xhr.open("POST", localhost+"Checkout/Load");
   xhr.onload = function () {
+    // console.log(this.response,"HERE");
     if (JSON.parse(this.response) != null) {
+      // console.log(this.response);
       var cart = JSON.parse(this.response);
       for (let l = 0; l < cart[0].length; l++) {
         for (let k = 0; k < cart[1].length; k++) {

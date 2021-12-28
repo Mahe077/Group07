@@ -136,7 +136,7 @@ function invalidPositiveNumber($tmp)
 {
   if (empty($tmp))
     $result = true;
-  elseif (preg_match("/^[0-9]*$/", $tmp)) {
+  elseif (preg_match("/^[0-9].*$/", $tmp)) {
     $result = false;
   } else {
     $result = true;

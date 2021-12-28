@@ -23,7 +23,10 @@
     //     // }
     // } 
     // echo $data;
-    print_r($this->users);
+    // print_r($this->users);
+    // print_r($this->id);
+    // print_r($_SESSION['cartid'][0][0])
+    print_r($this->amount);
     // foreach ($this->users as $key => $value) {
     //     // $this->getItem($this->users);
     //     print_r($value[0]);

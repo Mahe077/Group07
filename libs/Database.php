@@ -83,24 +83,27 @@ class Database extends PDO
             return false;
         }
     }
+    
+    public function special_1($user_id, $item_id, $total,$Advanced, $city, $address, $district, $qty)
+    {                   
+        try {
+            $this->beginTransaction();
+            $stmt = $this->prepare("INSERT INTO `orders`(`item_id`, `user_id`, `total_payment`, `payment`, `qty`) VALUES (:item_id, :user_id, :total_payment, :payment, :qty)");
+            $stmt->execute(['item_id' => $item_id, 'user_id' => $user_id, 'total_payment' => $total, 'payment' => $Advanced, 'qty' => $qty]);
+            $stmt->closeCursor();
 
-    // first array items must contain a insert query
-    // public function transaction_with_last_inseted_Id($data)
-    // {
-    //     try {
-    //         $this->beginTransaction();
-    //         $stmt = $this->prepare($data[0][0]);
-    //         $id =  $stmt->execute($data[0][1]);
-    //         $stmt->closeCursor();
-    //         $stmt = $this->prepare($data[1][0]);
-    //         $stmt->execute($data[1][1] + ['id' => $id]);
-    //         $stmt->closeCursor();
-    //         $this->commit();
-    //         return true;
-    //     } catch (PDOException $e) {
-    //         $this->rollBack();
-    //         die($e->getMessage());
-    //         return false;
-    //     }
-    // }
+            $id= $this->lastInsertId();
+
+            $stmt = $this->prepare("INSERT INTO `delivery`(`user_id`, `order_id`, `district`, `city`, `address`) VALUES (:user_id, :id, :district, :city ,:address)");
+            $stmt->execute(['user_id' => $user_id, 'city' => $city, 'address' => $address, 'district' => $district, 'id' => $id]);
+            $stmt->closeCursor();
+
+            $this->commit();
+            return true;
+        } catch (\Throwable $e) {
+            $this->rollBack();
+            die($e->getMessage());
+            return false;
+        }
+    }
 }

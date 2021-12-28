@@ -9,6 +9,9 @@ function orderload(id) {
     Total = 0;
     let products = document.querySelector(".table-body");
 
+    let noOfItems = localStorage.getItem("cartNumbers");
+    let cartCost = localStorage.getItem("totalCost");
+
     var search = JSON.parse(this.response);
     // console.log(search);
     products.innerHTML = "";
@@ -16,6 +19,32 @@ function orderload(id) {
       let count = 0;
       for (let s of search) {
         if (s.status == 0) {
+          cartItems = localStorage.getItem("productInCart");
+          cartItems = JSON.parse(cartItems)
+          if (cartItems[s.item_id] != undefined) {
+            //  remove the item on cart from here
+            noOfItems = parseInt(noOfItems);
+            // console.log(noOfItems, cartItems[s.item_id].InCart,s.item_id);
+            noOfItems = noOfItems - parseInt(cartItems[s.item_id].InCart);
+            // console.log(noOfItems, cartCost);
+            localStorage.setItem("cartNumbers", noOfItems);
+            document.querySelector(".fa-shopping-cart-span").textContent = noOfItems;
+            // console.log(noOfItems, cartCost);
+            cartCost = parseInt(cartCost);
+            cartCost -=
+            cartItems[s.item_id].InCart * cartItems[s.item_id].price;
+            if (cartCost < 1) {
+              cartCost = 0;
+            }
+            localStorage.setItem("totalCost", cartCost);
+            // console.log(cartItems[s.item_id])
+            delete cartItems[s.item_id];
+            localStorage.setItem(
+              "productInCart",
+              JSON.stringify(cartItems)
+            );
+            DeleteUpdate(s.item_id);
+          }
           products.innerHTML += ` 
             <div class="row row-data" id="rd-4">
                 <div class="id">
@@ -35,7 +64,9 @@ function orderload(id) {
                     }" name="amount" value="${s.qty}" />
                 </div>
                 <div class="col col-3">
-                    <div class="col col-4">Rs:<span>${parseInt(s.total_payment)}</span>.00
+                    <div class="col col-4">Rs:<span>${parseInt(
+                      s.total_payment
+                    )}</span>.00
                     </div>
                     <div class="col col-5"> 
                         <i class="fas remove fa-trash-alt" onclick="item_remover(${count++})"></i>
@@ -63,7 +94,9 @@ function orderload(id) {
                     }" name="amount" value="${s.qty}" />
                 </div>
                 <div class="col col-3">
-                    <div class="col col-4">Rs: <span>${parseInt(s.total_payment)}</span>.00
+                    <div class="col col-4">Rs: <span>${parseInt(
+                      s.total_payment
+                    )}</span>.00
                     </div>
                     <div class="col col-5">
                         <i class="fas fa-check-circle"></i>

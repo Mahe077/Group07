@@ -1,3 +1,4 @@
+var localhost = "http://localhost/G7/Group07/";
 function tableItemsRemomver() {
   // console.log("in tableItemsRemomver items function 1 ");
   let trash_alt = document.querySelectorAll(".fa-trash-alt");
@@ -97,7 +98,7 @@ function displayCheckout() {
                   (parseFloat(item.price) * parseFloat(item.InCart)).toFixed(2)
                 }</div>
                   <div class="col col-5" style="display: flex;justify-content:space-around;align-items: center;"> <i class="fas remove fa-trash-alt"></i>
-                      <a href="buy-now.php"><i class="fas fa-shopping-cart"></i></a>
+                      <a href="${localhost}Payment/RenderBuy/${item.id}"><i class="fas fa-shopping-cart"></i></a>
                   </div>
                 </div>
               </div>

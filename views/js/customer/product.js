@@ -21,7 +21,7 @@ function doSearch() {
                                       <button type = "button" class = "btn-cart"> add to cart
                                           <span><i class = "fas fa-plus"></i></span>
                                       </button>
-                                     <form action="buy-now.php" method="post">
+                                     <form action="buy_now" method="post">
                                                   <button type = "submit" class = "btn-buy"> buy now
                                                       <span><i class = "fas fa-shopping-cart"></i></span>
                                                   </button>
@@ -44,7 +44,7 @@ function doSearch() {
       }
     } else {
       products.innerHTML = `<div class="product">
-                                      <form action="quotation.php">
+                                      <form action="Quotation">
                                              <button type = "submit" class = "btn-cart" >
                                                  Add quatation
                                              </button>
@@ -76,7 +76,7 @@ function productload() {
                                               <button type = "button" class = "btn-cart"> add to cart
                                                   <span><i class = "fas fa-plus"></i></span>
                                               </button>
-                                              <form action="buy-now.php" method="post">
+                                              <form action="Buy-now" method="post">
                                                   <button type = "submit" class = "btn-buy"> buy now
                                                       <span><i class = "fas fa-shopping-cart"></i></span>
                                                   </button>

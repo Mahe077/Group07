@@ -13,9 +13,10 @@ class Test extends Controller
         // $this->model->insertData();
         // $this->model->deteleData();
         // $_SESSION['error'] = "hi123";
-        $cartItems = $this->model->test(10);
+        $cartItems = $this->model->test(32);
         
         $this->view->users = json_encode(count($cartItems) == 0 ? null : $cartItems);
+        $this->view->id = $_SESSION["userid"];
         // $this->view->users = $cartItems;
         // json_encode(count($cartItems) == 0 ? null : $cartItems)
         $this->view->render('Test');

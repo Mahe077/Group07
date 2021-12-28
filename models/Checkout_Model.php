@@ -11,11 +11,11 @@ class Checkout_Model extends Model
     }
     public function getItem($itemid)
     {
-        return $this->db->select2("SELECT temp.*,product.name FROM product, ( SELECT item.*,image_path FROM `item`,itemimage WHERE item.id = :itemid AND itemimage.id = :itemid) temp WHERE temp.productId = product.id;", ['itemid' => $itemid]);
+        return $this->db->select2("SELECT temp.*,product.name FROM product, ( SELECT tmp.* FROM (SELECT item.*,image_path FROM `item`,itemimage WHERE item.id = itemimage.id ) tmp WHERE tmp.id = :itemid) temp WHERE temp.productId = product.id;", ['itemid' => $itemid]);
     }
     public function load($userid)
     {
-        $this->getCartId($userid);
+        // $this->getCartId($userid);
         $cart = $this->db->select2("SELECT `itemId`, `qty` FROM `cart_item` WHERE cartId = :cartid;", ['cartid' => $_SESSION['cartid'][0][0]]);
         $cart_item = [];
         foreach ($cart as $key => $value) {

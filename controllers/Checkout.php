@@ -10,6 +10,7 @@ class Checkout extends Controller{
     public function Load()
     {
         if(isset($_SESSION['userid'])){
+            $this->model->getCartId($_SESSION['userid']);
             if(isset($_SESSION['cartid'][0][0])){
                 $user_id = $_SESSION['userid'];
                 $cart = $this->model->load($user_id);
