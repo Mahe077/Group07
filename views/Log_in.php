@@ -9,6 +9,13 @@
     <link rel="stylesheet" type='text/css' href="<?php echo $localhost; ?>views/css/alert.css">
     <title>SL MINI Spares</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <?php
+    if (!isset($_SESSION['userid'])) {
+        echo "<script type='text/javascript'>
+            localStorage.clear();
+        </script>";
+    }
+    ?>
 </head>
 
 <body>

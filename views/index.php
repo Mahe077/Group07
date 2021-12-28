@@ -5,7 +5,7 @@
 <head>
     <?php
     if (!isset($_SESSION['userid'])) {
-        echo"<script type='text/javascript'>
+        echo "<script type='text/javascript'>
             localStorage.clear();
         </script>";
     }

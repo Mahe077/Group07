@@ -11,7 +11,7 @@ require 'config/PathConf.php';
 
 <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>SL MINI Spares</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="<?php echo $localhost; ?>views/css/reset-style.css">
     <link rel="stylesheet" type="text/css" href="<?php echo $localhost; ?>views/css/customer/header.css">
