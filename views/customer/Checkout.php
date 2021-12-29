@@ -37,7 +37,7 @@ require 'config/PathConf.php';
         ?>
         <h2 class="heading">Check <span>Out</span></h2>
         <section class="cart-table table">
-            <form action="test.html" method="post">
+            <!-- <form action="test.html" method="post"> -->
                 <div class="row row-header">
                     <div class="col col-1">item</div>
                     <div class="col col-2">Qty</div>
@@ -46,7 +46,7 @@ require 'config/PathConf.php';
                 <div class="table-body checkout">
                    
                 </div>
-            </form>
+            <!-- </form> -->
         </section>
         <section class="total">
             <p id="sub-total">

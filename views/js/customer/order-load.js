@@ -1,3 +1,4 @@
+var localhost = "http://localhost/G7/Group07/";
 function orderload(id) {
   var data = new FormData();
   data.append("search", id);
@@ -18,7 +19,7 @@ function orderload(id) {
     if (search !== null) {
       let count = 0;
       for (let s of search) {
-        if (s.status == 0) {
+        if (s.status == 0 || s.status == 6) {
           cartItems = localStorage.getItem("productInCart");
           cartItems = JSON.parse(cartItems)
           if (cartItems[s.item_id] != undefined) {
@@ -68,13 +69,14 @@ function orderload(id) {
                       s.total_payment
                     )}</span>.00
                     </div>
+                    <div class="col col-6">${s.status == 0 ? "Pending" : "PreOrder Req"}</div>
                     <div class="col col-5"> 
                         <i class="fas remove fa-trash-alt" onclick="item_remover(${count++})"></i>
                     </div>
                 </div>
             </div>`;
           Total = Total + parseInt(s.total_payment);
-        } else if (s.status != 4) {
+        } else{
           products.innerHTML += ` 
             <div class="row row-data" id="rd-4">
                 <div class="id">
@@ -98,6 +100,7 @@ function orderload(id) {
                       s.total_payment
                     )}</span>.00
                     </div>
+                    <div class="col col-6">${s.status == 1 ? "Accepted" : s.status == 3 ? "Pickup" : s.status == 4 ? "Done" : s.status == 7 ? "PreOrder Acc" : "Return"}</div>
                     <div class="col col-5">
                         <i class="fas fa-check-circle"></i>
                     </div>

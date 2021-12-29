@@ -1,3 +1,4 @@
+var localhost = "http://localhost/G7/Group07/";
 function doSearch() {
   var data = new FormData();
   data.append("search", document.getElementById("search-box").value);
@@ -21,7 +22,7 @@ function doSearch() {
                                       <button type = "button" class = "btn-cart"> add to cart
                                           <span><i class = "fas fa-plus"></i></span>
                                       </button>
-                                     <form action="buy_now" method="post">
+                                     <form action="${localhost}Payment/RenderBuy/${s.id}" method="post">
                                                   <button type = "submit" class = "btn-buy"> buy now
                                                       <span><i class = "fas fa-shopping-cart"></i></span>
                                                   </button>
@@ -76,7 +77,7 @@ function productload() {
                                               <button type = "button" class = "btn-cart"> add to cart
                                                   <span><i class = "fas fa-plus"></i></span>
                                               </button>
-                                              <form action="Buy-now" method="post">
+                                              <form action="Payment/RenderBuy/${s.id}" method="post">
                                                   <button type = "submit" class = "btn-buy"> buy now
                                                       <span><i class = "fas fa-shopping-cart"></i></span>
                                                   </button>

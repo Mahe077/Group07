@@ -91,12 +91,13 @@ function displayCheckout() {
               <div class="col col-2">
                   <input type="number" min="1" max="${
                     item.amount
-                  }" name="amount" value="${item.InCart}" />
+                  }" name="amount" id="amount" value="${item.InCart}" onchange="changeInCart(${item.id},${item.price})"/>
               </div>
               <div class="col col-3">
                 <div class="col col-4">Rs: ${
                   (parseFloat(item.price) * parseFloat(item.InCart)).toFixed(2)
                 }</div>
+                  <div class="col col-6"></div>
                   <div class="col col-5" style="display: flex;justify-content:space-around;align-items: center;"> <i class="fas remove fa-trash-alt"></i>
                       <a href="${localhost}Payment/RenderBuy/${item.id}"><i class="fas fa-shopping-cart"></i></a>
                   </div>
@@ -165,4 +166,20 @@ function ClearAll(){
   total.innerHTML = `0`;
   DeleteUpdate(-1);
 }
+
+function changeInCart(id,Unitprice) {
+  // console.log("Incart need to change");
+  let qtyField = document.querySelectorAll("#amount");
+  // console.log(qtyField[1].parentElement.parentElement.childNodes[1].childNodes[1].value);
+  for (let index = 0; index < qtyField.length; index++) {
+    if(id == qtyField[index].parentElement.parentElement.childNodes[1].childNodes[1].value){
+      // console.log(qtyField[index],parseInt(qtyField[index].value)*Unitprice);
+      newqty = qtyField[index].value;
+      qtyField[index].parentElement.parentElement.childNodes[7].childNodes[1].textContent = "Rs. " + (parseInt(newqty)*Unitprice).toFixed(2);
+      let buttonArea =  qtyField[index].parentElement.parentElement.childNodes[7].childNodes[3];
+      qtyField[index].parentElement.parentElement.childNodes[7].childNodes[3].innerHTML = `<button class = "btn" onclick="updateCart(${id},${newqty},1)" style="width:30px"><i class="fas fa-user-edit"></i></button>`
+    }
+  }
+}
+
 

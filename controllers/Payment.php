@@ -68,6 +68,14 @@ class Payment extends Controller
                     header("location:" . $localhost . "Checkout");
                     exit();
                 }
+            }elseif ($delivery == 'No') {
+                if($this->model->insertOrder($user_id, $item_id, $total,$Advanced, $qty)){
+                    header("location:" . $localhost . "Order");
+                    exit();
+                }else{
+                    header("location:" . $localhost . "Checkout");
+                    exit();
+                }
             }
         } else {
             $_SESSION['error'] = "invalidAccess";

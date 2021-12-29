@@ -63,7 +63,7 @@ function onloadCart() {
   // console.log("oloadsdsfsdf");
   // load cart from the database
   var xhr = new XMLHttpRequest();
-  xhr.open("POST", localhost+"Checkout/Load");
+  xhr.open("POST", localhost + "Checkout/Load");
   xhr.onload = function () {
     // console.log(this.response,"HERE");
     if (JSON.parse(this.response) != null) {
@@ -117,9 +117,8 @@ function onloadsetItems(product_item, qty) {
       cart_container.innerHTML += `
 			<div class="cart-item">
       <div class="id">
-      <input type="hidden" id="cart_item_id" value="${
-        cartItems[product_item.id].id
-      }">
+      <input type="hidden" id="cart_item_id" value="${cartItems[product_item.id].id
+        }">
     </div>
         <span class="fas fa-times" id="remove-btn"></span>
         <img src="${localhost}${product_item.image_path}" alt="">
@@ -133,9 +132,8 @@ function onloadsetItems(product_item, qty) {
       cart_container.innerHTML += `
 			<div class="cart-item">
       <div class="id">
-      <input type="hidden" id="cart_item_id" value="${
-        cartItems[product_item.id].id
-      }">
+      <input type="hidden" id="cart_item_id" value="${cartItems[product_item.id].id
+        }">
     </div>
         <span class="fas fa-times" id="remove-btn"></span>
         <img src="${localhost}${product_item.image_path}" alt="">
@@ -153,8 +151,7 @@ function onloadsetItems(product_item, qty) {
     cart_container.innerHTML += `
 			<div class="cart-item">
       <div class="id">
-      <input type="hidden" id="cart_item_id" value="${
-        cartItems[product_item.id].id
+      <input type="hidden" id="cart_item_id" value="${cartItems[product_item.id].id
       }">
     </div>
         <span class="fas fa-times" id="remove-btn"></span>
@@ -189,9 +186,8 @@ function setItems(product_item, i) {
       cart_container.innerHTML += `
 			<div class="cart-item">
       <div class="id">
-      <input type="hidden" id="cart_item_id" value="${
-        cartItems[product_item.id].id
-      }">
+      <input type="hidden" id="cart_item_id" value="${cartItems[product_item.id].id
+        }">
       </div>
         <span class="fas fa-times" id="remove-btn"></span>
         <img src="${localhost}${product_item.image_path}" alt="">
@@ -202,10 +198,10 @@ function setItems(product_item, i) {
       </div>	`;
       cartNumbers(cartItems[product_item.id], i);
       totalCost(cartItems[product_item.id]);
-      
+
       // update the cartitem table when cart is not empty
       // item is not in the table status = 0
-      AddUpdate(product_item.id,1,0);
+      AddUpdate(product_item.id, 1, 0);
 
     } else {
       if (
@@ -216,7 +212,7 @@ function setItems(product_item, i) {
         totalCost(cartItems[product_item.id]);
         // update the cartitem table when cart is not empty
         // item is in the table qty must change status = 1
-        AddUpdate(product_item.id,parseInt(cartItems[product_item.id].InCart),1);
+        AddUpdate(product_item.id, parseInt(cartItems[product_item.id].InCart), 1);
 
       } else {
         // console.log("out of range");
@@ -231,8 +227,7 @@ function setItems(product_item, i) {
     cart_container.innerHTML += `
 			<div class="cart-item">
       <div class="id">
-      <input type="hidden" id="cart_item_id" value="${
-        cartItems[product_item.id].id
+      <input type="hidden" id="cart_item_id" value="${cartItems[product_item.id].id
       }">
     </div>
         <span class="fas fa-times" id="remove-btn"></span>
@@ -247,7 +242,7 @@ function setItems(product_item, i) {
 
     // update the cartitem table when cart is empty
     // item is not in the table status = 2
-    AddUpdate(product_item.id,1,2);
+    AddUpdate(product_item.id, 1, 2);
 
   }
   localStorage.setItem("productInCart", JSON.stringify(cartItems));
@@ -349,12 +344,12 @@ function DeleteUpdate(itemID) {
   return;
 }
 
-function AddUpdate(itemID,qty,status) {
+function AddUpdate(itemID, qty, status) {
   var data = new FormData();
   data.append("itemID", parseInt(itemID));
   data.append("qty", parseInt(qty));
-  data.append("status",parseInt(status));
-  // console.log(itemID,data);
+  data.append("status", parseInt(status));
+  // console.log(itemID,qty,status);
   var xhr = new XMLHttpRequest();
   xhr.open("POST", "Checkout/Add");
   // xhr.onload = function () {
@@ -363,5 +358,53 @@ function AddUpdate(itemID,qty,status) {
   xhr.send(data);
   return;
 }
+
+
+function updateCart(itemID, qty, status) {
+  // console.log("hi");
+  let cartItems = localStorage.getItem("productInCart");
+  cartItems = JSON.parse(cartItems);
+  if (cartItems[itemID] != undefined) {
+    oldQty = cartItems[itemID].InCart
+    cartItems[itemID].InCart = qty;
+    localStorage.setItem("productInCart", JSON.stringify(cartItems));
+    updateCartNumbers(oldQty, qty);
+    updateTotalCost(oldQty, qty, cartItems[itemID].price);
+    AddUpdate(itemID, parseInt(cartItems[itemID].InCart), status);
+
+    let tableArea =document.querySelectorAll("#rd-4");
+    
+    for (let index = 0; index < tableArea.length; index++) {
+      if(tableArea[index].childNodes[1].childNodes[1].value == itemID){
+        tableArea[index].childNodes[7].childNodes[3].innerHTML = "";
+      }
+    }
+  }
+  return;
+}
+
+function updateCartNumbers(oldQty, qty) {
+  let productNumbers = localStorage.getItem("cartNumbers");
+  productNumbers = parseInt(productNumbers);
+  productNumbers -= parseInt(oldQty);
+  productNumbers += parseInt(qty);
+  localStorage.setItem("cartNumbers", productNumbers);
+  if (productNumbers > 9) {
+    document.querySelector(".fa-shopping-cart-span").textContent = "+9";
+  } else {
+    document.querySelector(".fa-shopping-cart-span").textContent =
+      productNumbers;
+  }
+  return;
+}
+
+function updateTotalCost(oldQty, qty, Unitprice) {
+  let cartCost = localStorage.getItem("totalCost");
+  cartCost -=parseFloat(parseInt(oldQty) * parseFloat(Unitprice)); 
+  cartCost +=parseFloat(parseInt(qty) * parseFloat(Unitprice));
+  localStorage.setItem("totalCost", cartCost.toFixed(2));
+  return;
+}
+
 
 onloadCart();
