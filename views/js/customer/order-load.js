@@ -14,7 +14,7 @@ function orderload(id) {
     let cartCost = localStorage.getItem("totalCost");
 
     var search = JSON.parse(this.response);
-    // console.log(search);
+    console.log(search);
     products.innerHTML = "";
     if (search !== null) {
       let count = 0;
@@ -60,9 +60,9 @@ function orderload(id) {
                     ${s.name}
                 </div>
                 <div class="col col-2">
-                    <input type="number" min="1" max="${
-                      s.amount
-                    }" name="amount" value="${s.qty}" />
+                ${
+                  s.qty
+                }
                 </div>
                 <div class="col col-3">
                     <div class="col col-4">Rs:<span>${parseInt(
@@ -91,9 +91,9 @@ function orderload(id) {
                     ${s.name}
                 </div>
                 <div class="col col-2">
-                    <input type="number" min="1" max="${
-                      s.amount
-                    }" name="amount" value="${s.qty}" />
+                   ${
+                      s.qty
+                    }
                 </div>
                 <div class="col col-3">
                     <div class="col col-4">Rs: <span>${parseInt(

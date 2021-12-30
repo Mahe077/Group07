@@ -129,16 +129,16 @@
                 <div class="image">
                     <img src="assets/car/animated/1.jpg" alt="">
                 </div>
-                <form action="">
+                <form action="Index/AddNotification" method="POST">
                     <div class="inputBox">
-                        <input type="text" placeholder="Name">
-                        <input type="email" placeholder="Email">
+                        <input type="text" name="name" placeholder="Name">
+                        <input type="email" name="email" placeholder="Email">
                     </div>
                     <div class="inputBox">
-                        <input type="text" placeholder="Contact number"><!-- look here  -->
-                        <input type="text" placeholder="Subject">
+                        <input type="text" name="tp" placeholder="Contact number"><!-- look here  -->
+                        <input type="text" name="subject" placeholder="Subject">
                     </div>
-                    <textarea placeholder="Message" name="" id="" cols="30" rows="10"></textarea>
+                    <textarea placeholder="Message" name="msg" id="" cols="30" rows="10"></textarea>
                     <input type="submit" class="btn" value="send message">
                 </form>
             </div>

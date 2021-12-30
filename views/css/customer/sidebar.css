@@ -78,7 +78,7 @@ header {
   text-decoration: none;
 }
 .sidebar .nav-links li a .link_name {
-  font-size: 18px;
+  font-size: 1.5rem;
   font-weight: 400;
   color: var(--white);
   transition: all 0.4s ease;
@@ -99,16 +99,16 @@ header {
 .sidebar .nav-links li .sub-menu a,
 .sidebar .nav-links li .sub-menu p {
   color: var(--white);
-  font-size: 15px;
+  font-size: 1.3rem;
   padding: 5px 0;
-  /* white-space: nowrap;*/
+  white-space: nowrap;
   opacity: 0.6;
   transition: all 0.3s ease;
 }
 
 .sidebar .nav-links li .sub-menu output {
   color: var(--white);
-  font-size: 12px;
+  font-size: 1.2rem;
   padding: 5px 0;
   white-space: nowrap;
   opacity: 0.6;
