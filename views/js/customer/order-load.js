@@ -14,7 +14,7 @@ function orderload(id) {
     let cartCost = localStorage.getItem("totalCost");
 
     var search = JSON.parse(this.response);
-    console.log(search);
+    // console.log(search);
     products.innerHTML = "";
     if (search !== null) {
       let count = 0;
