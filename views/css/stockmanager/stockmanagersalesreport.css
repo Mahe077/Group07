@@ -7,62 +7,78 @@
     justify-content: center;
     text-align: center;
     width: auto;
-}
-.printbutton{
-    font-size: 18px;
-    color: #fff;
-    background-color: #042434;
-    cursor: pointer;
-    padding: 10px 15px 10px 15px;
+    padding-left: 20px;
+    padding-right: 60px;
     
 }
-.viewbutton{
-    font-size: 12px;
-    color: #fff;
-    background-color: #042434;
-    cursor: pointer;
-    padding: 10px 15px 10px 15px;
+.print-container{
+  /* float: right; */
+  /* width: 200px; */
+  justify-content: right;
+  padding: 20px;
 }
-.printbutton:hover{
-    letter-spacing: .2rem;
+.print{
+  font-size: 20px;
+  padding: 10px;
+  background-color: #075061;
+  color: #fff;
+  border: none;
+}
+.print:hover{
+  letter-spacing: .2rem;
     transition: .5s;
 }
-.report-container{
-    justify-content: space-between;
-    display: flex;
-    padding-top: 60px;
-    padding-left:60px;
-    padding-right:60px;
+.duration-container{
+  display: flex;
+  justify-content: space-between;
 }
-.graphcontainer{
-    background-color: #bfddde;
-    padding: 20px;
-    border-radius: 10px;
-    width: 60%;
-}
-.selectoptions{
-    background-color: #bfddde;
-    padding: 20px;
-    border-radius: 10px;
-    width: 30%;
-}
-h3{
-    padding-bottom: 30px;
-}
-.selections{
-    padding:10px;
-    background-color: #fff;
-    margin-bottom:50px ;
-}
-label{
-    padding: 3px;
-    margin: 2px;
-}
-.button-container{
-    justify-content: space-between;
-
+.dropbtn1 {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
 }
 
+.dropdown1 {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content1 {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content1 a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content1 a:hover {background-color: #ddd;}
+
+.dropdown1:hover .dropdown-content1 {display: block;}
+
+.dropdown1:hover .dropbtn1 {background-color: #3e8e41;}
+
+.card-container{
+  padding: 30px;
+  display: flex;
+  /* flex-direction: row; */
+  justify-content: space-between;
+}
+.card-count , .card-sum , .card-profit{
+  background-color: #c0e6ee;
+  width: 200px;
+  height: 150px;
+  padding: 10px;
+}
 .table-container{
     padding: 20px 25px 20px 25px;
 }

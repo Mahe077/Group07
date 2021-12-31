@@ -35,7 +35,7 @@
                 </div>
                 <button name="submit" id="btn">Log In</button><br>
                 <div class="bottom-text">
-                    <p class="btmtxt">Forgot your <strong>Username</strong> or <a href="forgetpasswordsetpassword.php" class="form-link"><strong>Password</strong></a>?
+                    <p class="btmtxt">Forgot your <strong>Username</strong> or <a href="Forget_password" class="form-link"><strong>Password</strong></a>?
                 </div>
                 <div class="bottom-text">
                     <br>

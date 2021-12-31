@@ -16,7 +16,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel='stylesheet' type='text/css' href="<?php echo $localhost; ?>views/css/stockmanager/stockmanagerproduct.css">
-</head>
+    <!-- <link rel="stylesheet" type="text/css" href="<?php echo $localhost; ?>views/css/alert.css"> -->
 <body>
 <?php
     $this_page = "stockmanagerproduct.php";
@@ -25,37 +25,74 @@
 
 
 <div class="form-content">
+<?php
+    if(isset($_SESSION['error1']))
+    {
+      ?>
 
-    <div class="openBtn">
-      <button class="openButton" onclick="openForm()"><strong>Update Stocks</strong></button>
-    </div>
-    <div class="loginPopup">
-      <div class="formPopup" id="popupForm">
-      <h2>Update Stocks</h2>
-      <div class="content">
-        <form action="Stockmanagerproduct/Updatestocks" class="formContainer">
+  <!-- Modal content -->
+  <div class="alert">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+  
+    <p class="ale"><?php  echo $_SESSION['error1']; ?></p>
+  </div>
+
+      <?php
+    }
+    ?>
+<!-- Trigger/Open The Modal -->
+<div class="button-container">
+
+<button id="myBtn">Update Stocks</button>
+</div>
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <div class="container">
+    <div class="title">Update Amount</div>
+    <div class="content">
+      <form action="Stockmanagerproduct/Updatestocks" method="POST" enctype="multipart/form-data">
         <div class="user-details">
           <div class="input-box">
+          
             <input type="text" placeholder="Enter Item ID" name="item_ID" required>
           </div>
           <div class="input-box">
-            <input type="number" placeholder="Enter Amount" name="amount" required>
+        
+          <input type="number" placeholder="Enter Amount" name="amount" required>
           </div>
-</div>
-          <button type="submit" name = "submit" class="btn">Update</button>
-          <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-        </form>
-</div>
-      </div>
+          <div class="button">
+          <input type="submit" name="submit" value="Update" id="myBtn1">
+		</div>
+          </div>
+      </form>
     </div>
- 
-    </div>
+</div>
+  </div>
+  </div>
+
+</div>
+
+
+
+</div>
+
 
     <div class="items" id="items"  >
-      <!-- products load here -->
+      
+      <div class="menu">
+        
+        <div class="box-container" id="box-container">  
+          <!-- products load here -->
+  </div>
+      </div>
      
     </div>
   <script type="text/javascript" src="views/js/stockmanager/product.js"></script>
+  <!-- <script type="text/javascript" src="views/js/alert.js"></script> -->
     
 </body>
 </html>

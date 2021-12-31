@@ -25,17 +25,23 @@ class Stockmanagerproduct extends Controller{
             $itemid = $_POST['item_ID'];
             $amount = $_POST['amount'];
     
-            // echo "sanda";
-            // print_r $amount;
-            $result = $this->model->updatestocks($itemid , $amount);
+            echo $itemid;
+            echo $amount;
+            $result = $this->model->updatestocks($amount,$itemid);
 
             if($result)
             {
-                echo "success";
+                $_SESSION['error1']= "Stock updated succesfully";
+                header("Location:".$localhost."Stockmanagerproduct");
+                exit();
+                
             }
             else
             {
-                echo "failed";
+                $_SESSION['error1']= "Stock updated failed";
+                header("Location:".$localhost."Stockmanagerproduct");
+                exit();
+                
             }
 
         }   
