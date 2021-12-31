@@ -79,7 +79,7 @@ require 'config/PathConf.php';
                             <input type="text" name="address" value="<?php echo $_SESSION['address']; ?>">
                             <input type="text" name="country" value="Sri Lanka">
                             <input type="text" name="city" value="<?php echo $_SESSION['city']; ?>">
-                            <input type="text" name="district" value="<?php echo $_SESSION['city']; ?>">
+                            <input type="text" name="district" value="<?php echo $_SESSION['district']; ?>">
                         </div>
                         <div class="box"><input type="checkbox" name="delivery" id="delivery" value="Yes">
                             <label for="delivery" style="font-size: 15px; font-weight: 600; color: black;">Do you need delivery services</label>

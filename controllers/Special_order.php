@@ -1,5 +1,5 @@
 <?php
-class Order extends Controller
+class Special_order extends Controller
 {
     function __construct()
     {
@@ -7,12 +7,12 @@ class Order extends Controller
     }
     public function index()
     {
-        $this->view->render('customer/Order');
+        $this->view->render('customer/Special_order');
     }
-    public function loadAll()
+    public function loadAllSpecial()
     {
         $id = $_POST['search'];
-        $items = $this->model->loadAll($id);
+        $items = $this->model->loadAllSpecial($id);
         echo json_encode(count($items) == 0 ? null : $items);
     }
     public function Remove()
