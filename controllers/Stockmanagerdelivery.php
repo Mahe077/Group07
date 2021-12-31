@@ -10,11 +10,8 @@ class Stockmanagerdelivery extends Controller{
         $this->view->render('stockmanager/stockmanagerdelivery');
     }
 
-
     public function Displaydelivery()
     {
-      
-        
         $username = $_SESSION['username'];
         $id = $this->model->getinfo($username);
             foreach($id as $row)
