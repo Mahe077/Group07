@@ -53,6 +53,7 @@
 <input type="submit" class="printbutton" name="submit" value="Back">
 </div>
 </div>
+
 </div>
 </div>
 <div class="table-container">
