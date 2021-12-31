@@ -532,6 +532,51 @@ form{
   color: #042434;
   border: none;
 }
+#table .tbody{
+  height: 100%;
+ }
+ .tbl{
+   width: 100%;
+ }
+ .tbl td{
+   padding: 20px 20px;
+   text-align: center;
+   font-size: 12px;
+   border: none;
+ }
+ .txt{
+   font-size: 50px;
+   text-align: center;
+   font-weight: 500;
+ 
+ }
+ .tbl th{
+   padding: 20px 20px;
+   text-align: center;
+   font-size: 15px;
+   color: #042434;
+   border: none;
+ }
+ .bordered {
+   border-bottom: 2px solid #042434;
+   width:50%;
+ }
+ .tbl-nor{
+   width: 100%;
+ }
+ .tbl-nor td{
+   padding: 20px 20px;
+   text-align: center;
+   font-size: 12px;
+   border: none;
+ }
+ .tbl-nor th{
+   padding: 20px 20px;
+   text-align: center;
+   font-size: 15px;
+   color: #042434;
+   border: none;
+ }
 /*form related css*/
 .form-cont{
   display: flex;

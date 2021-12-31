@@ -16,8 +16,9 @@
         require 'config/PathConf.php';
         if(isset($_POST['submit'])){
             //$cat_id=$_POST['cat_id']);
+            $productId=$_POST['productId'];
             $brand=$_POST['brand'];
-            //$type=$_POST['type'];
+            $type=$_POST['type'];
             $price=$_POST['price'];
             $size=$_POST['size'];
             // $part=$_POST['part'];
@@ -39,7 +40,7 @@
 
             // if(in_array($img_correct_ext , $allow)){
             //         if($imgSize <=100000){
-                        $this->model->createItem($brand,$price,$size,$partNo,$partNo_Manufacturer,$amount);
+                        $this->model->createItem($productId,$brand,$type,$price,$size,$partNo,$partNo_Manufacturer,$amount);
                         $_SESSION['error'] = "Successfully entered";
                         header("location:".$localhost."Log_in");
                         exit();
