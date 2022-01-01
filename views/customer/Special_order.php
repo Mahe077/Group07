@@ -25,7 +25,7 @@ require 'config/PathConf.php';
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 </head>
 
-<body onload="orderload(<?php echo $_SESSION['userid'] ?>),removeItem()">
+<body onload="special_orderload(<?php echo $_SESSION['userid'] ?>),removeItem()">
     <!-- header section starts  -->
 
     <?php
@@ -40,37 +40,26 @@ require 'config/PathConf.php';
         include_once 'views/global/alert.php';
         ?>
 
-        <h2 class="heading">Order <span>Management</span></h2>
+        <h2 class="heading">Special Order <span>Management</span></h2>
         <section class="cart-table table">
-            <!-- <form action="test.html" method="post"> -->
-                <div class="row row-header">
-                    <div class="col col-1">item</div>
-                    <div class="col col-2">Qty</div>
-                    <div class="col col-3">Price</div>
-                </div>
-                <div class="table-body">
-                 
-                </div>
-            <!-- </form> -->
+            <div class="row row-header">
+                <div class="col col-1">item</div>
+                <div class="col col-2">Qty</div>
+                <div class="col col-3">Price</div>
+            </div>
+            <div class="table-body"></div>
         </section>
         <section class="total">
             <p id="sub-total">
                 <strong>Total</strong>: Rs<span id="stotal"></span><br>
             </p>
         </section>
-        <!-- <section class="links">
-            <ul id="shopping-cart-actions">
-                <li>
-                    <input type="submit" name="update" id="update-cart" class="btn" value="Update" />
-                </li>
-            </ul>
-        </section> -->
     </main>
     <script type="text/javascript" src="<?php echo $localhost; ?>views/js/customer/main-ws.js"></script>
     <script type="text/javascript" src="<?php echo $localhost; ?>views/js/customer/cart.js"></script>
     <script type="text/javascript" src="<?php echo $localhost; ?>views/js/alert.js"></script>
-    <script type="text/javascript" src="<?php echo $localhost; ?>views/js/customer/order-load.js"></script>
-    <script type="text/javascript" src="<?php echo $localhost; ?>views/js/customer/order.js"></script>
+    <script type="text/javascript" src="<?php echo $localhost; ?>views/js/customer/special_order_load.js"></script>
+    <!-- <script type="text/javascript" src="<?php echo $localhost; ?>views/js/customer/order.js"></script> -->
 
 </body>
 

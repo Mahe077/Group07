@@ -22,6 +22,7 @@ function orderload(id) {
         if (s.status == 0 || s.status == 6) {
           cartItems = localStorage.getItem("productInCart");
           cartItems = JSON.parse(cartItems)
+          if(cartItems != null){
           if (cartItems[s.item_id] != undefined) {
             //  remove the item on cart from here
             noOfItems = parseInt(noOfItems);
@@ -46,6 +47,7 @@ function orderload(id) {
             );
             DeleteUpdate(s.item_id);
           }
+        }
           products.innerHTML += ` 
             <div class="row row-data" id="rd-4">
                 <div class="id">
@@ -65,9 +67,9 @@ function orderload(id) {
                 }
                 </div>
                 <div class="col col-3">
-                    <div class="col col-4">Rs:<span>${parseInt(
+                    <div class="col col-4">Rs:<span>${parseFloat(
                       s.total_payment
-                    )}</span>.00
+                    ).toFixed(2)}</span>
                     </div>
                     <div class="col col-6">${s.status == 0 ? "Pending" : "PreOrder Req"}</div>
                     <div class="col col-5"> 
@@ -75,7 +77,7 @@ function orderload(id) {
                     </div>
                 </div>
             </div>`;
-          Total = Total + parseInt(s.total_payment);
+          Total = Total + parseFloat(s.total_payment);
         } else{
           products.innerHTML += ` 
             <div class="row row-data" id="rd-4">
@@ -96,22 +98,22 @@ function orderload(id) {
                     }
                 </div>
                 <div class="col col-3">
-                    <div class="col col-4">Rs: <span>${parseInt(
-                      s.total_payment
-                    )}</span>.00
+                <div class="col col-4">Rs:<span>${parseFloat(
+                  s.total_payment
+                ).toFixed(2)}</span>
                     </div>
-                    <div class="col col-6">${s.status == 1 ? "Accepted" : s.status == 3 ? "Pickup" : s.status == 4 ? "Done" : s.status == 7 ? "PreOrder Acc" : "Return"}</div>
+                    <div class="col col-6">${s.status == 1 ? "Accepted" : s.status == 3 ? "Pickup" : s.status == 4 ? "Done" : s.status == 7 ? "PreOrder Acc" : s.status == 2 ? "Cancel":"Return"}</div>
                     <div class="col col-5">
-                        <i class="fas fa-check-circle"></i>
+                    ${s.status == 2 ?"<i class='fas fa-check-circle' style='color:red'>":"<i class='fas fa-check-circle'>"}</i>
                     </div>
                 </div>
             </div>`;
-          Total = Total + parseInt(s.total_payment);
+          Total = Total + parseFloat(s.total_payment);
         }
       }
     }
     let total = document.querySelector("#stotal");
-    total.innerHTML += `${parseInt(Total)}`;
+    total.innerHTML += `${parseFloat(Total).toFixed(2)}`;
   };
   xhr.send(data);
 

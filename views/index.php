@@ -139,7 +139,7 @@
                         <input type="text" name="subject" placeholder="Subject">
                     </div>
                     <textarea placeholder="Message" name="msg" id="" cols="30" rows="10"></textarea>
-                    <input type="submit" class="btn" value="send message">
+                    <input type="submit" name="submit" class="btn" value="send message">
                 </form>
             </div>
         </section>
@@ -179,7 +179,6 @@
             </div>
         </section>
     </main>
-
     <?php
     include_once 'global/footer.php';
     ?>
