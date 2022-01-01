@@ -42,7 +42,7 @@
             //         if($imgSize <=100000){
                         $this->model->createItem($productId,$brand,$type,$price,$size,$partNo,$partNo_Manufacturer,$amount);
                         $_SESSION['error'] = "Successfully entered";
-                        header("location:".$localhost."Log_in");
+                        header("location:".$localhost."Productlist");
                         exit();
             //         }else{
             //             $_SESSION['error'] = "Image is too big";

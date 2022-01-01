@@ -9,9 +9,10 @@ class Insert_item_Model extends Model
     {
         $this->db->alter(
             "INSERT INTO `item`
-            (`productId` , `brand`, `type`,`price`, `size`, `partNo`, `partNo_Manufacturer`,`amount`) 
+           (`productId` , `brand`, `type`,`price`, `size`, `partNo`, `partNo_Manufacturer`,`amount`)  
             VALUES 
-            ('$productId','$brand', '$type', '$price',' $size','$partNo', '$partNo_Manufacturer','$amount')"
+            (:productId , :brand, :type,:price, :size, :partNo, :partNo_Manufacturer,:amount)",
+            ['productId' => $productId,'brand' => $brand,'type' => $type,'price' => $price,'size' => $size,'partNo' => $partNo,'partNo_Manufacturer' => $partNo_Manufacturer,'amount' => $amount]
         );
     }
 }
