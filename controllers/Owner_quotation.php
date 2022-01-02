@@ -9,5 +9,11 @@
         {
             $this->view->render('owner/Owner_quotation');
         }
+        public function Displayquotation()
+        {
+            $data = $this->model->Displayquotation();
+            echo json_encode($data);
+            return $data;
+        }
     }
 ?>
