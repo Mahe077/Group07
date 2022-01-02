@@ -150,8 +150,8 @@ if (isset($_SESSION['error'])) {
                     <strong>Success!</strong> Your request has been successfully sent.
                </div>
           </div>";
-     }else if ($_SESSION['error'] == 'UnSuccess') {
-               echo "
+     } else if ($_SESSION['error'] == 'UnSuccess') {
+          echo "
                <div class='floating-container'>
                     <div class='alert alert-warning alert-dismissible popup'>
                          <a href='#'  class='remove-alert' data-dismiss='alert' aria-label='close'>&times;</a>
@@ -222,7 +222,7 @@ if (isset($_SESSION['error'])) {
                     <strong>Success!</strong> You have updated your details successfully .
               </div>
           </div>";
-     }else if ($_SESSION['error'] == 'UpdateUnsuccess') {
+     } else if ($_SESSION['error'] == 'UpdateUnsuccess') {
           echo "
           <div class='floating-container'>
                <div class='alert alert-warning alert-dismissible popup'>
@@ -230,9 +230,32 @@ if (isset($_SESSION['error'])) {
                     <strong>Warning!</strong> You have not updated your details successfully .
               </div>
           </div>";
+     } else if ($_SESSION['error'] == 'MsgSended') {
+          echo "
+          <div class='floating-container'>
+               <div class='alert alert-success alert-dismissible popup'>
+                    <a href='#'  class='remove-alert' data-dismiss='alert' aria-label='close'>&times;</a>
+                    <strong>Success!</strong> You have send the message successfully .
+              </div>
+          </div>";
+     } else if ($_SESSION['error'] == 'MsgNotSended') {
+          echo "
+          <div class='floating-container'>
+               <div class='alert alert-warning alert-dismissible popup'>
+                    <a href='#'  class='remove-alert' data-dismiss='alert' aria-label='close'>&times;</a>
+                    <strong>Warning!</strong> message send unsuccessfully .
+              </div>
+          </div>";
+     } elseif ($_SESSION['error'] == 'invalidstrinWithNumber') {
+          echo "
+          <div class='floating-container'>
+               <div class='alert alert-warning alert-dismissible popup'>
+                    <a href='#'  class='remove-alert' data-dismiss='alert' aria-label='close'>&times;</a>
+                    <strong>Warning!</strong> Invalid string format ,may include only 'a-z A-Z 0-9 - \ / , : . s'
+               </div>
+          </div>";
      }
 }
 
 $_SESSION['error'] = "";
 ?>
-

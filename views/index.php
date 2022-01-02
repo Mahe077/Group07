@@ -3,7 +3,13 @@
 <?php require 'config/PathConf.php'; ?>
 
 <head>
-
+    <?php
+    if (!isset($_SESSION['userid'])) {
+        echo "<script type='text/javascript'>
+            localStorage.clear();
+        </script>";
+    }
+    ?>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -123,17 +129,17 @@
                 <div class="image">
                     <img src="assets/car/animated/1.jpg" alt="">
                 </div>
-                <form action="">
+                <form action="Index/AddNotification" method="POST">
                     <div class="inputBox">
-                        <input type="text" placeholder="Name">
-                        <input type="email" placeholder="Email">
+                        <input type="text" name="name" placeholder="Name">
+                        <input type="email" name="email" placeholder="Email">
                     </div>
                     <div class="inputBox">
-                        <input type="text" placeholder="Contact number"><!-- look here  -->
-                        <input type="text" placeholder="Subject">
+                        <input type="text" name="tp" placeholder="Contact number"><!-- look here  -->
+                        <input type="text" name="subject" placeholder="Subject">
                     </div>
-                    <textarea placeholder="Message" name="" id="" cols="30" rows="10"></textarea>
-                    <input type="submit" class="btn" value="send message">
+                    <textarea placeholder="Message" name="msg" id="" cols="30" rows="10"></textarea>
+                    <input type="submit" name="submit" class="btn" value="send message">
                 </form>
             </div>
         </section>
@@ -173,7 +179,6 @@
             </div>
         </section>
     </main>
-
     <?php
     include_once 'global/footer.php';
     ?>

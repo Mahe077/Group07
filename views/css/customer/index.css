@@ -308,6 +308,7 @@ button {
     background: var(--icon);
     width: 30rem;
     height: calc(100vh - 9.5rem);
+    box-shadow: 0 1rem 2rem rgb(0 0 0 / 8)
   }
   .header .navbar.active {
     right: 0;
@@ -411,12 +412,12 @@ button {
 }
 
 .about .row .content h3 {
-  font-size: 3rem;
+  font-size: 2.5rem;
   color: #fff;
 }
 
 .about .row .content p {
-  font-size: 1.6rem;
+  font-size: 1.3rem;
   color: var(--white);
   padding: 1rem 0;
   line-height: 1.8;
@@ -453,7 +454,7 @@ button {
 
 .review .box p {
   color: #666;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   padding: 1rem 0;
   text-transform: none;
 }
@@ -501,7 +502,7 @@ button {
   width: 49%;
   margin: 1rem 0;
   padding: 1rem;
-  font-size: 1.7rem;
+  font-size: 1.2rem;
   color: #333;
   background: var(--input-inside);
   text-transform: none;
@@ -560,7 +561,7 @@ button {
 }
 
 .footer .box-container .box p {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 600;
   padding: 0.7rem 0;
   color: #eee;
@@ -606,7 +607,7 @@ button {
   text-align: center;
   padding: 2rem 1rem;
   margin-top: 1rem;
-  font-size: 2rem;
+  font-size: 1.7rem;
   font-weight: normal;
   color: #fff;
   border-top: 0.1rem solid rgba(255, 255, 255, 0.2);

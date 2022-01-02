@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type='text/css' href="<?php echo $localhost; ?>views/css/signin.css">
     <link rel="stylesheet" type='text/css' href="<?php echo $localhost; ?>views/css/alert.css">
+    <script type='text/javascript'>
+        localStorage.clear();
+    </script>
     <title>SL MINI Spares</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
@@ -32,7 +35,7 @@
                 </div>
                 <button name="submit" id="btn">Log In</button><br>
                 <div class="bottom-text">
-                    <p class="btmtxt">Forgot your <strong>Username</strong> or <a href="forgetpasswordsetpassword.php" class="form-link"><strong>Password</strong></a>?
+                    <p class="btmtxt">Forgot your <strong>Username</strong> or <a href="Forget_password" class="form-link"><strong>Password</strong></a>?
                 </div>
                 <div class="bottom-text">
                     <br>

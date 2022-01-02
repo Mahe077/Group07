@@ -121,6 +121,7 @@ function filseSize($image, $folder)
 
 //     mysqli_stmt_close($stmt);
 // }
+
 function invalidStringWithNumber($tmp){
     if (empty($tmp))
       $result = true;
@@ -136,58 +137,10 @@ function invalidPositiveNumber($tmp)
 {
   if (empty($tmp))
     $result = true;
-  elseif (preg_match("/^[0-9]*$/", $tmp)) {
+  elseif (preg_match("/^[0-9].*$/", $tmp)) {
     $result = false;
   } else {
     $result = true;
   }
   return $result;
 } 
-
-// function insertQuotation($conn,$part_name,$amount,$part_image,$part_no,$brand,$user_id){
-//   $sql ="INSERT INTO special_item (name, amount, old_image , part_number, brand, customer_id) VALUES ( ?, ?, ?, ?, ?, ?);";
-//     $stmt = mysqli_stmt_init($conn);
-//     if (!mysqli_stmt_prepare($stmt, $sql)) {
-//         header("location: ../view/quotation.php?error=stmtfailed");
-//         exit();
-//     }
-//     mysqli_stmt_bind_param($stmt, "ssssss", $part_name,$amount,$part_image,$part_no,$brand,$user_id);
-//     mysqli_stmt_execute($stmt);
-//     mysqli_stmt_close($stmt);
-//     header("location: ../view/quotation.php?error=Success");
-//     exit();
-
-// }
-
-// function insertDelivery($conn,$user_id,$order_id,$city,$address,$district){
-//     $sql ="INSERT INTO `delivery`(`user_id`, `order_id`, `district`, `city`,`address`) VALUES (?, ?, ?, ?, ?)";
-//     $stmt = mysqli_stmt_init($conn);
-//     if (!mysqli_stmt_prepare($stmt, $sql)) {
-//         header("location: ../view/buy-now.php?error=stmtfailed");
-//         exit();
-//     }
-//     mysqli_stmt_bind_param($stmt, "sssss", $user_id, $order_id, $district, $city, $address);
-//     mysqli_stmt_execute($stmt);
-//     mysqli_stmt_close($stmt);
-// }
-
-// function createpayemnt($user_id,$order_id,$payhere_amount,$payment_id){
-//     $sql = "INSERT INTO `orders`(`item_id`, `user_id`, `warehouse_id`, `order_date`, `approximate_d_date`, `status`, `amount`, `payment`) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?);";
-
-//     $stmt = mysqli_stmt_init($conn);
-//     if (!mysqli_stmt_prepare($stmt, $sql)) {
-//         header("location: ../view/chechout.php?error=stmtfailed");
-//     }
-//     $today = date("Y-m-d");
-//     $advance = 0;
-//     $amount = 10000;
-//     if($payhere_amount == $amount){
-//       $advance =1;
-//     }
-//     $id = 1;
-//     mysqli_stmt_bind_param($stmt, "ssssssss",$id,$user_id,$id,$today,$today,$advance,$amount,$payhere_amount);
-//     mysqli_stmt_execute($stmt);
-//     mysqli_stmt_close($stmt);
-//     header("location: ../view/chechout.php?error=$user_id,'1',$today,$today,$advance,$amount,$payhere_amount");
-//     exit();
-// }

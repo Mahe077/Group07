@@ -33,7 +33,7 @@ require 'config/PathConf.php';
             </h1>
             <div class="row">
                 <div class="image">
-                    <img src="assets/car/animated/3.jpg" alt="">
+                    <img src="assets/car/animated/2.jpg" alt="">
                 </div>
                 <form class="form" name="form" action="Quotation/addQuotation" method="post" enctype="multipart/form-data">
                     <div class="inputBox">

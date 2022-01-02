@@ -11,7 +11,7 @@ require 'config/PathConf.php';
 
 <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>SL MINI Spares</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="<?php echo $localhost; ?>views/css/reset-style.css">
     <link rel="stylesheet" type="text/css" href="<?php echo $localhost; ?>views/css/customer/header.css">
@@ -37,7 +37,7 @@ require 'config/PathConf.php';
         ?>
         <h2 class="heading">Check <span>Out</span></h2>
         <section class="cart-table table">
-            <form action="test.html" method="post">
+            <!-- <form action="test.html" method="post"> -->
                 <div class="row row-header">
                     <div class="col col-1">item</div>
                     <div class="col col-2">Qty</div>
@@ -46,11 +46,11 @@ require 'config/PathConf.php';
                 <div class="table-body checkout">
                    
                 </div>
-            </form>
+            <!-- </form> -->
         </section>
         <section class="total">
             <p id="sub-total">
-                <strong>Total</strong> : RS<span id="stotal">0</span>.00
+                <strong>Total</strong> : RS<span id="stotal">0</span>
             </p>
         </section>
         <section class="links">

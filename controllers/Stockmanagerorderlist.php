@@ -29,7 +29,7 @@ class Stockmanagerorderlist extends Controller{
             foreach($warehouse as $rows)
             {
                 
-                $wh = htmlentities($rows['warehouse_id']);
+                $wh = htmlentities($rows['id']);
                 
 
                
@@ -53,12 +53,12 @@ class Stockmanagerorderlist extends Controller{
             foreach($warehouse as $rows)
             {
                 
-                $wh = htmlentities($rows['warehouse_id']);
+                $wh = htmlentities($rows['id']);
                 
 
                
             }
-        $type = "pending";
+        $type = "0";
         $pending =  $this->model->Pendingorders($type,$wh);
         echo json_encode(count($pending) == 0 ? null : $pending);
     }
@@ -77,13 +77,13 @@ class Stockmanagerorderlist extends Controller{
             foreach($warehouse as $rows)
             {
                 
-                $wh = htmlentities($rows['warehouse_id']);
+                $wh = htmlentities($rows['id']);
                 
 
                
             }
 
-        $type = "cancel";
+        $type = "2";
         $cancel =  $this->model->Cancelorders($type , $wh);
         echo json_encode(count($cancel) == 0 ? null : $cancel);
     }
@@ -102,14 +102,14 @@ class Stockmanagerorderlist extends Controller{
             foreach($warehouse as $rows)
             {
                 
-                $wh = htmlentities($rows['warehouse_id']);
+                $wh = htmlentities($rows['id']);
                 
 
                
             }
 
 
-        $type = "return";
+        $type = "5";
         $return =  $this->model->Returnorders($type , $wh);
         echo json_encode(count($return) == 0 ? null : $return);
     }

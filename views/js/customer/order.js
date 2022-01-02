@@ -1,3 +1,4 @@
+var localhost = "http://localhost/G7/Group07/";
 function tableItemsRemomver() {
   // console.log("in tableItemsRemomver items function 1 ");
   let trash_alt = document.querySelectorAll(".fa-trash-alt");
@@ -16,10 +17,10 @@ function tableItemsRemomver() {
         trash_alt[i].parentElement.parentElement.parentElement.childNodes[1]
           .childNodes[1].value;
       cartIdToRemove = parseInt(cartIdToRemove);
-      // console.log("deleting....", i, " id ", cartIdToRemove);
+      //console.log("deleting....", i, " id ", cartIdToRemove);
 
       for (var j in productInCart) {
-        if (productInCart[j].cartId == cartIdToRemove) {
+        if (productInCart[j].id == cartIdToRemove) {
           noOfItems = parseInt(noOfItems);
           noOfItems = noOfItems - productInCart[j].InCart;
           localStorage.setItem("cartNumbers", noOfItems);
@@ -33,11 +34,11 @@ function tableItemsRemomver() {
             cartCost = 0;
           }
           localStorage.setItem("totalCost", cartCost);
-          total.innerHTML = `Rs ${cartCost}.00`;
+          total.innerHTML = `${parseInt(cartCost)}`;
           // console.log(cartCost);
 
           // console.log("items id: ", productInCart[j].id, i, "in cart :", productInCart[j].InCart, " cartId: ", productInCart[j].cartId);
-          if (productInCart[j].cartId == cartIdToRemove) {
+          if (productInCart[j].id == cartIdToRemove) {
             // console.log("deletetion process...:", productInCart[j].cartId);
             delete productInCart[j];
             localStorage.setItem(
@@ -49,7 +50,7 @@ function tableItemsRemomver() {
             ].parentElement.parentElement.parentElement.style.display = "none";
             cart_items = document.querySelectorAll(".cart-item");
             if (cart_items.length > 0) {
-              console.log(cart_items);
+              // console.log(cart_items);
               for (let k = 0; k < cart_items.length; k++) {
                 if (
                   cart_items[k].childNodes[1].childNodes[1].value ==
@@ -60,6 +61,7 @@ function tableItemsRemomver() {
               }
             }
             // console.log("deletetion complete...");
+            DeleteUpdate(cartIdToRemove);
           }
         }
       }
@@ -76,10 +78,11 @@ function displayCheckout() {
   if (cartItems && cartTableBody) {
     cartTableBody.innerHTML = "";
     Object.values(cartItems).map((item) => {
+      // console.log(item);
       cartTableBody.innerHTML += `
             <div class="row row-data" id="rd-4">
               <div class="id">
-                <input type="hidden" id="cart_item_id" value="${item.cartId}">
+              <input type="hidden" id="cart_item_id" value="${item.id}">
               </div>
               <div class="col col-1">
                   ${item.name}
@@ -88,14 +91,15 @@ function displayCheckout() {
               <div class="col col-2">
                   <input type="number" min="1" max="${
                     item.amount
-                  }" name="amount" value="${item.InCart}" />
+                  }" name="amount" id="amount" value="${item.InCart}" onchange="changeInCart(${item.id},${item.price})"/>
               </div>
               <div class="col col-3">
                 <div class="col col-4">Rs: ${
-                  parseInt(item.price) * parseInt(item.InCart)
-                }.00</div>
+                  (parseFloat(item.price) * parseFloat(item.InCart)).toFixed(2)
+                }</div>
+                  <div class="col col-6"></div>
                   <div class="col col-5" style="display: flex;justify-content:space-around;align-items: center;"> <i class="fas remove fa-trash-alt"></i>
-                      <a href="buy-now.php"><i class="fas fa-shopping-cart"></i></a>
+                      <a href="${localhost}Payment/RenderBuy/${item.id}"><i class="fas fa-shopping-cart"></i></a>
                   </div>
                 </div>
               </div>
@@ -105,7 +109,7 @@ function displayCheckout() {
 
     let total = document.querySelector("#stotal");
     let totalCost = localStorage.getItem("totalCost");
-    total.innerHTML = `${parseInt(totalCost)}`;
+    total.innerHTML = `${parseFloat(totalCost).toFixed(2)}`;
   }
 }
 
@@ -147,17 +151,35 @@ function item_remover(id) {
             .childNodes[1].childNodes[1].textContent
         );
       total.innerHTML = `${parseInt(Total)}`;
+      DeleteUpdate(id);
     }
   }
 }
 
 function ClearAll(){
-  console.log("hello")
+  // console.log("hello")
   localStorage.clear("productInCart");
   let table_body = document.querySelector(".table-body");
   table_body.innerHTML = "";
   document.querySelector(".fa-shopping-cart-span").textContent = 0;
   let total = document.querySelector("#stotal");
   total.innerHTML = `0`;
+  DeleteUpdate(-1);
 }
+
+function changeInCart(id,Unitprice) {
+  // console.log("Incart need to change");
+  let qtyField = document.querySelectorAll("#amount");
+  // console.log(qtyField[1].parentElement.parentElement.childNodes[1].childNodes[1].value);
+  for (let index = 0; index < qtyField.length; index++) {
+    if(id == qtyField[index].parentElement.parentElement.childNodes[1].childNodes[1].value){
+      // console.log(qtyField[index],parseInt(qtyField[index].value)*Unitprice);
+      newqty = qtyField[index].value;
+      qtyField[index].parentElement.parentElement.childNodes[7].childNodes[1].textContent = "Rs. " + (parseInt(newqty)*Unitprice).toFixed(2);
+      let buttonArea =  qtyField[index].parentElement.parentElement.childNodes[7].childNodes[3];
+      qtyField[index].parentElement.parentElement.childNodes[7].childNodes[3].innerHTML = `<button class = "btn" onclick="updateCart(${id},${newqty},1)" style="width:30px"><i class="fas fa-user-edit"></i></button>`
+    }
+  }
+}
+
 

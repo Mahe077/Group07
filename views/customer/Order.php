@@ -55,7 +55,7 @@ require 'config/PathConf.php';
         </section>
         <section class="total">
             <p id="sub-total">
-                <strong>Total</strong>: Rs<span id="stotal"></span>.00<br>
+                <strong>Total</strong>: Rs<span id="stotal"></span><br>
             </p>
         </section>
         <!-- <section class="links">

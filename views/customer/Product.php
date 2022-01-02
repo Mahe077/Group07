@@ -40,7 +40,7 @@ require 'config/PathConf.php';
     ?>
     <!-- header section ends  -->
 
-    <main >
+    <main>
 
         <div class="sidebar close">
             <ul class="nav-links">
@@ -53,78 +53,86 @@ require 'config/PathConf.php';
                         <li><a class="link_name" href="#">Dashboard</a></li>
                     </ul>
                 </li>
-                <li>
-                    <div class="iocn-link">
-                        <a href="#">
-                            <i class='bx bxs-car-garage'></i>
-                            <span class="link_name">Products</span>
-                        </a>
-                        <i class='bx bxs-chevron-down arrow'></i>
-                    </div>
-                    <ul class="sub-menu">
-                        <li><a class="link_name" href="#">Products</a></li>
-                        <li><a href="product.php">ALL</a></li>
-                        <form action="return category()">
+                <form action="" method="post">
+                    <li>
+                        <div class="iocn-link">
+                            <a href="#">
+                                <i class='bx bxs-car-mechanic'></i>
+                                <span class="link_name">Products</span>
+                            </a>
+                            <i class='bx bxs-chevron-down arrow'></i>
+                        </div>
+                        <ul class="sub-menu">
+                            <li><a class="link_name" href="#">Products</a></li>
+                            <li><a href="Product">ALL</a></li>
                             <li>
-                                <p class="filter-links"><input type="hidden" value="Engine">Engine</p>
+                                <p class="filter-links"><input type="radio" id="product-type" name="product-type" onclick="filterclicked('Engine')" value="Engine"> Engine</p>
                             </li>
                             <li>
-                                <p class="filter-links"><input type="hidden" value="Brake">Brake</p>
+                                <p class="filter-links"><input type="radio" id="product-type" name="product-type" onclick="filterclicked('Brake')" value="Brake"> Brake</p>
                             </li>
                             <li>
-                                <p class="filter-links"><input type="hidden" value="Suspension & steering">Suspension & steering</p>
+                                <p class="filter-links"><input type="radio" id="product-type" name="product-type" onclick="filterclicked('Suspension')" value="Suspension & steering"> Suspension & steering</p>
                             </li>
                             <li>
-                                <p class="filter-links"><input type="hidden" value="Transmission">Transmission</p>
+                                <p class="filter-links"><input type="radio" id="product-type" name="product-type" onclick="filterclicked('Transmission')" value="Transmission"> Transmission</p>
                             </li>
                             <li>
-                                <p class="filter-links"><input type="hidden" value="Cooling & heating">Cooling & heating</p>
+                                <p class="filter-links"><input type="radio" id="product-type" name="product-type" onclick="filterclicked('Cooling')" value="Cooling & heating"> Cooling & heating</p>
                             </li>
                             <li>
-                                <p class="filter-links"><input type="hidden" value="Eletrical & lighting">Eletrical & lighting</p>
+                                <p class="filter-links"><input type="radio" id="product-type" name="product-type" onclick="filterclicked('Eletrical')" value="Eletrical & lighting"> Eletrical & lighting</p>
                             </li>
                             <li>
-                                <p class="filter-links"><input type="hidden" value="body & exhaust">Body & exhaust</p>
+                                <p class="filter-links"><input type="radio" id="product-type" name="product-type" onclick="filterclicked('body')" value="body & exhaust"> Body & exhaust</p>
                             </li>
-                        </form>
-                    </ul>
-                </li>
-                <li>
-                    <div class="iocn-link">
-                        <a href="#">
-                            <i class='bx bx-filter-alt'></i>
-                            <span class="link_name">Filters</span>
-                        </a>
-                        <i class='bx bxs-chevron-down arrow'></i>
-                    </div>
-                    <ul class="sub-menu">
-                        <li><a class="link_name" href="#">filters</a></li>
-                        <li><a href="product.php">ALL</a></li>
-                        <form>
-                            <li>
-                                <p class="filter-links"><input type="radio" name="genuiness" value="genuine">Genuine</p>
-                            </li>
-                            <li>
-                                <p class="filter-links"><input type="radio" name="genuiness" value="Compatible">Compatible</p>
-                            </li>
-                            <!-- <hr> -->
-                            <!-- <li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div class="iocn-link">
+                            <a href="#">
+                                <i class='fas fa-stethoscope'></i>
+                                <span class="link_name">Condition</span>
+                            </a>
+                            <i class='bx bxs-chevron-down arrow'></i>
+                        </div>
+                        <ul class="sub-menu">
+                            <li><a class="link_name" href="#">Condition</a></li>
+                            <li><a href="Product">ALL</a></li>
+                            <form>
+                                <li>
+                                    <p class="filter-links"><input type="radio" id="product-genuiness" name="genuiness" onclick="filterGenlicked('genuine')" value="genuine"> Genuine</p>
+                                </li>
+                                <li>
+                                    <p class="filter-links"><input type="radio" id="product-genuiness" name="genuiness"  onclick="filterGenlicked('Compatible')" value="Compatible"> Compatible</p>
+                                </li>
+                                <!-- <hr> -->
+                                <!-- <li>
                                 <p class="filter-links">price</p><input min="0" max="1000000" type="range" name="price" id="price" step="100" value="Compatible">
                                 <output class="price-output" for="price"></output>
                             </li> -->
 
-                        </form>
-                    </ul>
-                </li>
+                            </form>
+                        </ul>
+                    </li>
+                    <li>
+                        <div class="iocn-link">
+                            <a href="#" onclick="filterItems()">
+                                <i class="fas fa-filter"></i>
+                                <span class="link_name">Filter</span>
+                            </a>
+                        </div>
+                    </li>
+                </form>
             </ul>
         </div>
         <div class="home-section outer-container">
             <div class="products">
                 <div class="container">
-                    <h1 class="lg-title">Lowerst price from us</h1>
-                    <p class="text-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    <!-- <h1 class="lg-title">Lowerst price from us</h1> -->
+                    <!-- <p class="text-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco.</p>
+                        quis nostrud exercitation ullamco.</p> -->
                     <h2 class="backToProduct sm-title"></h2>
 
                     <div class="product-items">

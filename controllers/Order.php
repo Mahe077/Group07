@@ -13,7 +13,6 @@ class Order extends Controller
     {
         $id = $_POST['search'];
         $items = $this->model->loadAll($id);
-        // print_r($items);
         echo json_encode(count($items) == 0 ? null : $items);
     }
     public function Remove()

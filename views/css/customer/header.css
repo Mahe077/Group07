@@ -107,7 +107,7 @@ button {
 
 .header .navbar a {
   margin: 0 1rem;
-  font-size: 1.7rem;
+  font-size: 1.7rem !important;
   font-weight: 550;
   color: var(--icon);
 }
@@ -308,6 +308,7 @@ button {
     background: var(--icon);
     width: 30rem;
     height: calc(100vh - 9.5rem);
+    box-shadow: 0 1rem 2rem rgb(0 0 0 / 8)
   }
   .header .navbar.active {
     right: 0;

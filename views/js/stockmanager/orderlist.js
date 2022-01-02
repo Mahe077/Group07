@@ -117,7 +117,7 @@ httprequest3.onreadystatechange = function()
                     '<td>' + obj2[i].order_date + ' </td>' +
                     '<td>' + obj2[i].approximate_d_date + ' </td>' +
                     '<td>' + obj2[i].total_payment + '</td>' +
-                    '<td>' + obj2[i].reason + '</td>' +
+                    
                        
                        '</tr>' + 
                     '</tbody>'
@@ -153,7 +153,7 @@ httprequest4.onreadystatechange = function()
                     '<td>' + obj[i].payment + ' </td>' +
                     '<td>' + obj[i].total_payment + '</td>' +
                     '<td>' + obj[i].approximate_d_date + '</td>' +
-                    '<td>' + obj[i].reason + '</td>' +
+                   
                        
                        '</tr>' + 
                     '</tbody>'
@@ -165,6 +165,9 @@ httprequest4.send();
 
 
 
+
+
+     
 
 
 

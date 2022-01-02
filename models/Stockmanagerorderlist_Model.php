@@ -13,7 +13,7 @@ class Stockmanagerorderlist_Model extends Model
 
     function getwarehouse($idn = null)
     {
-        return $this->db->select2("SELECT warehouse_id FROM warehouse_manager WHERE id = :id", ['id' => $idn]);
+        return $this->db->select2("SELECT id FROM warehouse_details WHERE stockmanager_id = :stockmanager_id", ['stockmanager_id' => $idn]);
     }
 
     function Neworders($type , $wh)
@@ -28,12 +28,12 @@ class Stockmanagerorderlist_Model extends Model
 
     public function Cancelorders($type , $wh)
     {
-        return  $this->db->select2("SELECT `order_ID` , `order_date` , `approximate_d_date`  , `total_payment` , `reason` FROM `orders` WHERE `order_type` = :order_type  AND warehouse_id = :warehouse_id ", ['order_type' => $type , 'warehouse_id' => $wh]);
+        return  $this->db->select2("SELECT `order_ID` , `order_date` , `approximate_d_date`  , `total_payment`  FROM `orders` WHERE `order_type` = :order_type  AND warehouse_id = :warehouse_id ", ['order_type' => $type , 'warehouse_id' => $wh]);
     }
 
     public function Returnorders($type,$wh)
     {
-        return  $this->db->select2("SELECT `order_ID` , `order_date` , `payment` , `total_payment` , `approximate_d_date` , `reason` FROM `orders` WHERE `order_type` = :order_type  AND warehouse_id = :warehouse_id ", ['order_type' => $type , 'warehouse_id' => $wh]);
+        return  $this->db->select2("SELECT `order_ID` , `order_date` , `payment` , `total_payment` , `approximate_d_date`  FROM `orders` WHERE `order_type` = :order_type  AND warehouse_id = :warehouse_id ", ['order_type' => $type , 'warehouse_id' => $wh]);
     }
 
     public function callwarehouse($id)
