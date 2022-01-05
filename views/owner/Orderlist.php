@@ -5,8 +5,6 @@
           exit();
         }
         require 'config/PathConf.php';
-        //  $db= new Functions_orderlist();
-        //  $value=$db->view_order();
 ?>
 <!DOCTYPE html>
 
@@ -52,10 +50,54 @@
           </div>
         </div>
       </div>
-      <div class="orders">
-         <!-- orders will load here -->
-      </div>
-  </section>   
+      <div  class="table_body_new">
+            <table class="tbl" collspacing="0">
+              <tr>
+                <th>Order id</th>
+                <th>Order date</th>
+                <th>Approximated date</th>
+                <th>Delivery request</th>
+                <th>Total payment</th>
+                <th>Payment</th>
+              </tr> 
+              <tr class="bordered"></tr>
+              <tbody id="data">
+              <!-- new orders will be displayed here -->
+              </tbody>
+            </table> 
+          </div> 
+  </section>
+  <script>
+var httprequest  = new XMLHttpRequest();
+
+httprequest.open("POST", "Orderlist/Displayorder" , true);
+const rows = document.getElementById("data");
+httprequest.send();
+httprequest.onreadystatechange = function()
+{
+  if( httprequest.readyState == 4 && httprequest.status == 200)
+  {
+        var obj = JSON.parse(httprequest.responseText);
+        var html = "";
+        for(var i = 0 ; i< obj.length ; i++)
+        {
+          rows.innerHTML +=
+                    '<tbody> ' +
+                    '<tr> ' +
+                    '<td> ' +  obj[i].order_id  +  '</td>' +  
+                    '<td> ' + obj[i].order_date  + ' </td>' +
+                    '<td> ' + obj[i].approximated_date + ' </td>' +
+                    '<td> ' + obj[i].delivery_request + ' </td>' +
+                    '<td> ' + obj[i].total_payment + ' </td>' +
+                    '<td> ' + obj[i].payment + ' </td>' + 
+                       '</tr>' + 
+                    '</tbody>'
+        }
+  }
+
+}
+
+  </script>   
   <script type="text/javascript" src="views/js/owner/owner-reports.js"></script>
   <script type="text/javascript" src="views/js/owner/displayorders.js"></script>
 </body>

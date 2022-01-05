@@ -60,11 +60,14 @@ require 'config/PathConf.php';
             <table class="tbl" collspacing="0">
               <thead>
                 <tr>
-                  <th>Order Id</th>
-                  <th>Order date</th>
-                  <th>Total Payment</th>
-                  <th>Payment</th>
-                  <th>Approximated_date</th>
+                <th>Order id</th>
+                <th>Item id</th>
+                <th>Order date</th>
+                <th>Approximated date</th>
+                <th>Delivery request</th>
+                <th>Total payment</th>
+                <th>Payment</th>
+                <th  colspan="2" class="text-center">Operations</th>
                 </tr>
                 <tr class="bordered"></tr>
                 <tbody id="data">
@@ -90,17 +93,21 @@ httprequest.onreadystatechange = function()
         for(var i = 0 ; i< obj.length ; i++)
         {
           rows.innerHTML +=
-                    '<tbody> ' +
-                    '<tr> ' +
-                    '<td> ' +  obj[i].order_id  +  '</td>' +  
-                    '<td> ' + obj[i].item_id + ' </td>' +
-                    '<td> ' + obj[i].order_date + ' </td>' +
-                    '<td> ' + obj[i].payment + ' </td>' +
-                    '<td> ' + obj[i].total_payment + ' </td>' +
-                   
-                       
-                       '</tr>' + 
-                    '</tbody>'
+          `<tbody> 
+                    <tr> 
+                    <td>   ${obj[i].order_id}   </td>
+                    <td>   ${obj[i].item_id}   </td>  
+                    <td>  ${obj[i].order_date}   </td>
+                    <td>  ${obj[i].approximated_date}  </td>
+                    <td>  ${obj[i].delivery_request}  </td>
+                    <td>  ${obj[i].total_payment}  </td>
+                    <td>  ${obj[i].payment}  </td>
+                    <td class="text-center"> 
+                              <a href="cancel-st-update.php?opr=accept&id=.$row['order_id']."class='btn-ac'> Accept </a>
+                              <a href="cancel-st-update.php?opr=reject&id=.$row['order_id']."class='btn-rj'> Reject </a>
+                   </td> 
+                       </tr> 
+                    </tbody>`
         }
   }
 

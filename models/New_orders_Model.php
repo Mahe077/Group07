@@ -12,7 +12,7 @@ class New_orders_Model extends Model
     // }
 
      function Displayorder(){
-         return  $this->db->select("SELECT `order_id` ,`item_id` , `order_date` , `payment` , `total_payment`  FROM `orders` WHERE response = '0'");
+         return  $this->db->select("SELECT `order_id` ,`item_id` ,`approximated_date`, `delivery_request`, `order_date` , `payment` , `total_payment`  FROM `orders` WHERE response = '0'");
      }
 
 }

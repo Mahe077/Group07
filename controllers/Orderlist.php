@@ -9,5 +9,11 @@
         {
             $this->view->render('owner/Orderlist');
         }
+        public function Displayorder()
+        {
+            $data = $this->model->Displayorder();
+            echo json_encode($data);
+            return $data;
+        }
     }
 ?>

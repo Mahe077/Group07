@@ -96,6 +96,48 @@ require 'config/PathConf.php';
         </div>
       </div>
     </div> 
+    <div class="overview-boxes">
+        <div class="view_table_order">
+          <div class="view_table_btn">
+          <img src="assets/parts/brake/abs-ring.png" alt="" class="logo">
+          </div>
+          <div class="view_table_btn">
+              <p>Home / Brake</p>
+              <h1>Abs-ring</h1>
+              <h4>Rs. 1200.00</h4>
+          </div>
+        </div>
+        <div class="view_table_order">
+          <div class="view_table_btn">
+          <img src="assets/parts/brake/brake-disk.png" alt="" class="logo">
+          </div>
+          <div class="view_table_btn">
+              <p>Home / Brake</p>
+              <h1>Brake-disk</h1>
+              <h4>Rs. 1200.00</h4>
+          </div>
+        </div>
+        <div class="view_table_order">
+          <div class="view_table_btn">
+          <img src="assets/parts/brake/brake-drum.png" alt="" class="logo">
+          </div>
+          <div class="view_table_btn">
+              <p>Home / Brake</p>
+              <h1>Brake-drum</h1>
+              <h4>Rs. 1200.00</h4> 
+          </div>
+        </div>
+        <div class="view_table_order">
+          <div class="view_table_btn">
+          <img src="assets/parts/brake/vacuum-pump.png" alt="" class="logo">
+          </div>
+          <div class="view_table_btn">
+              <p>Home / Brake</p>
+              <h1>Vacuum-pump</h1>
+              <h4>Rs. 1200.00</h4>  
+          </div>
+        </div>
+      </div>
   </section> 
   <script>
 var httprequest  = new XMLHttpRequest();

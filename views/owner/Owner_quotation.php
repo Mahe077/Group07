@@ -40,7 +40,7 @@ if (!isset($_SESSION['userid'])) {
                                     <?php ///$image=$row['old_image']; 
                                     //$id=$row['id'];?>
                                     <td data-label='order_id'>
-                                        <div class="notifi">
+                                        <div id="notifi">
                                             
                                         </div>
                                         </div>
@@ -73,13 +73,14 @@ httprequest.onreadystatechange = function()
         var html = "";
         for(var i = 0 ; i< obj.length ; i++)
         {
+            console.log(obj[i].name);
           rows.innerHTML +=
         `<div class="notifi-details">
         <div class="name"> +${obj[i].name} +</div>
-        <div class="amount"> obj[i].amount</div>
-        <div class="part"> obj[i].part_number</div>
-        <div class="brand"> obj[i].brand </div>
-        <div class="date"> obj[i].recieved_date </div>
+        <div class="amount"> ${obj[i].amount}</div>
+        <div class="part"> ${obj[i].part_number}</div>
+        <div class="brand"> ${obj[i].brand} </div>
+        <div class="date"> ${obj[i].recieved_date} </div>
         </div>
         <div class="respond">
                                             
