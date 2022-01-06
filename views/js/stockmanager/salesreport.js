@@ -30,7 +30,7 @@ httprequest1.send();
 
 
 
-// load profit
+// load sum
 const httprequest2  = new XMLHttpRequest();
 const sum = document.getElementById("card-sum");
 httprequest2.open("POST", "Stockmanagersalesreport/sum/" + value_select , true);
@@ -51,6 +51,32 @@ httprequest2.onreadystatechange = function()
   }
 };
 httprequest2.send();
+
+
+// load profit
+const httprequest4  = new XMLHttpRequest();
+// const profit = document.getElementById("card-profit");
+httprequest4.open("POST", "Stockmanagersalesreport/profit/" + value_select , true);
+httprequest4.onreadystatechange = function()
+{
+  console.log("onreadystatechange");
+  if( httprequest4.readyState === 4 && httprequest4.status === 200)
+  {
+    console.log(httprequest4.responseText);
+    // const obj4 = JSON.parse(httprequest1.responseText);
+    //     console.log(obj4);
+        // for(var i = 0 ; i< obj4.length ; i++)
+        // {
+        // //   count.innerHTML +=
+        // //             '<p>' + 'sum of the total orders are ' + '</p>'
+        //               obj4[i].cancelsum
+        // }
+  }
+};
+httprequest4.send();
+
+
+
 
 
 
