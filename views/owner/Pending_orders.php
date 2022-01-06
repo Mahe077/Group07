@@ -5,9 +5,6 @@ if (!isset($_SESSION['userid'])) {
   exit();
 }
 require 'config/PathConf.php';
-        //  require_once('../config/dbconfig.php');
-        //  $db= new Functions_orderlist();
-        //  $value=$db->view_pend_order();
 ?>
 <!DOCTYPE html>
 
@@ -70,25 +67,46 @@ require 'config/PathConf.php';
                   <th>Approximated_date</th>
                 </tr>
                 <tr class="bordered"></tr>
-                <tr>
-                  <?php
-                      while($row = mysqli_fetch_assoc($value)){
-                        ?>
-                        <td data-label='order_id'><?php echo $row['order_id']; ?></td>
-                        <td data-label='order_date'><?php echo $row['order_date'] ?></td>
-                        <td data-label='total_payment'><?php echo $row['total_payment']; ?></td>
-                        <td data-label='payment'><?php echo $row['payment']; ?></td>
-                        <td data-label='approximated_date'><?php echo $row['approximate_d_date'] ?></td>
-                        </tr>
-                        <?php  
-                      }
-                      ?>
+                <tbody id="data">
+
+                </tbody>     
               </thead>
             </table>
           </div> 
         </div> 
   </section> 
-  
+  <script>
+var httprequest  = new XMLHttpRequest();
+
+httprequest.open("POST", "Pending_orders/Displayorder" , true);
+const rows = document.getElementById("data");
+httprequest.send();
+httprequest.onreadystatechange = function()
+{
+  if( httprequest.readyState == 4 && httprequest.status == 200)
+  {
+        var obj = JSON.parse(httprequest.responseText);
+        var html = "";
+        for(var i = 0 ; i< obj.length ; i++)
+        {
+          rows.innerHTML +=
+                    '<tbody> ' +
+                    '<tr> ' +
+                    '<td> ' +  obj[i].order_id  +  '</td>' +  
+                    '<td> ' + obj[i].item_id + ' </td>' +
+                    '<td> ' + obj[i].order_date + ' </td>' +
+                    '<td> ' + obj[i].payment + ' </td>' +
+                    '<td> ' + obj[i].total_payment + ' </td>' +
+                   
+                       
+                       '</tr>' + 
+                    '</tbody>'
+        }
+  }
+
+}
+
+  </script> 
   <script type="text/javascript" src="views/js/owner/owner-reports.js"></script>
 </body>
 </html>

@@ -9,5 +9,11 @@
         {
             $this->view->render('owner/Stock_manager');
         }
+        public function Displaystock()
+        {
+            $data = $this->model->Displaystock();
+            echo json_encode($data);
+            return $data;
+        }
     }
 ?>

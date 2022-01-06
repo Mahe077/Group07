@@ -46,7 +46,7 @@
                         </select> 
                       </div> -->
                       <div class="item-form">
-                          <input class="input" name="productId"type="text" placeholder="Product Id" required>
+                          <input class="input" name="productId"type="text" placeholder="productId" required>
                       </div>
                       <div class="item-form">
                         <input class="input" name="brand" type="text" placeholder="brand " required>

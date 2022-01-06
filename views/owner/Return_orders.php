@@ -54,7 +54,6 @@ require 'config/PathConf.php';
         </div>
       </div>
         <div class="view_table_cancel" id="view_table_cancel">
-        <?php $db->display_msg();?>
               <div class="topic-row">
                 <div class="topic-txt">
                   Manage Returned Orders
@@ -73,34 +72,47 @@ require 'config/PathConf.php';
                     <th  colspan="2" class="text-center">Operations</th>
                   </tr>
                   <tr class="bordered"></tr>
-                  <tr>
-                    <?php
-                        while($row = mysqli_fetch_assoc($result)){
-                          ?>
-                          <td data-label='order_id'><?php echo $row['order_id']; ?></td>
-                          <td data-label='item'><?php echo $row['item']; ?></td>
-                          <td data-label='order_date'><?php echo $row['order_date'] ?></td>
-                          <td data-label='payment'><?php echo $row['payment']; ?></td>
-                          <td data-label='reason'><?php echo $row['reason']; ?></td>
-                          <td data-label='Status'><?php echo $row['state']; ?></td>
-                          <td class="text-center">
-                            <?php
-                              echo "<a href='return-st-update.php?opr=accept&id=".$row['order_id']."'class='btn-ac'> Accept </a>";
-                              echo "<a href='return-st-update.php?opr=reject&id=".$row['order_id']."'class='btn-rj'> Reject </a>";
-                            ?>
-                             <a href="money-refund.php?id=<?php echo $row['order_id']?>"class='btn-res'>Respond</a>
-                          </td>
-                          </tr>
-                          <?php  
-                        }
-                        ?>
+                  <tbody id="data">
+
+                  </tbody>
                 </thead>
               </table>
             </div>
           </div>       
     </div>  
   </section> 
-  
+  <script>
+var httprequest  = new XMLHttpRequest();
+
+httprequest.open("POST", "Return_orders/Displayorder" , true);
+const rows = document.getElementById("data");
+httprequest.send();
+httprequest.onreadystatechange = function()
+{
+  if( httprequest.readyState == 4 && httprequest.status == 200)
+  {
+        var obj = JSON.parse(httprequest.responseText);
+        var html = "";
+        for(var i = 0 ; i< obj.length ; i++)
+        {
+          rows.innerHTML +=
+                    '<tbody> ' +
+                    '<tr> ' +
+                    '<td> ' +  obj[i].order_id  +  '</td>' +  
+                    '<td> ' + obj[i].item_id + ' </td>' +
+                    '<td> ' + obj[i].order_date + ' </td>' +
+                    '<td> ' + obj[i].payment + ' </td>' +
+                    '<td> ' + obj[i].total_payment + ' </td>' +
+                   
+                       
+                       '</tr>' + 
+                    '</tbody>'
+        }
+  }
+
+}
+
+  </script> 
   <script type="text/javascript" src="views/js/owner/owner-reports.js"></script>
 </body>
 </html>

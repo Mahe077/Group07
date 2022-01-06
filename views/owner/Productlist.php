@@ -32,9 +32,6 @@ require 'config/PathConf.php';
       <div class="btn-section">
         <a href="Insert_item" id="insert-btn" class="insert-btn"><div class="btn-txt">Insert New Item</div></a>
       </div>
-      <?php 
-          $db->display_msg();  
-        ?>
       <div class="view_table">
         <div class="topic-row">
           <div class="topic-txt">
@@ -54,48 +51,85 @@ require 'config/PathConf.php';
                 <th>Status</th>
                 <th colspan="3" class="text-center">Operations</th>
                </tr>
+               <tr class="bordered"></tr>
+              <tbody id="data">
+
+              </tbody>
                <tr>
                  <?php
-                    while($row = mysqli_fetch_assoc($result)){
+                    //while($row = mysqli_fetch_assoc($result)){
                       ?>
-                      <td data-label='id'><?php echo $row['id']; ?></td>
-                      <td data-label='brand'><?php echo $row['brand'] ;?></td>
-                      <td data-label='price'><?php echo $row['price']; ?></td>
-                      <td data-label='size'><?php echo $row['size']; ?></td>
-                      <td data-label='partNo'><?php echo $row['partNo'] ;?></td>
-                      <td data-label='amount'><?php echo $row['amount']; ?></td>
+                      <td data-label='id'><?php //echo $row['id']; ?></td>
+                      <td data-label='brand'><?php //echo $row['brand'] ;?></td>
+                      <td data-label='price'><?php //echo $row['price']; ?></td>
+                      <td data-label='size'><?php //echo $row['size']; ?></td>
+                      <td data-label='partNo'><?php //echo $row['partNo'] ;?></td>
+                      <td data-label='amount'><?php //echo $row['amount']; ?></td>
 
                       <td class="text-center" data-label='status'>
                         <?php
-                          if($row['status']=='1'){
-                            echo " Active";
-                          }else{
-                            echo " Deactivate";
-                          }
+                          //if(//$row['status']=='1'){
+                            //echo " Active";
+                          //}else{
+                           //// echo " Deactivate";
+                          //}
                         ?>
                       </td>
                       <td class="text-center">
                         <?php
-                        if($row['status']=='1'){
-                          echo "<a href='update-item.php?opr=deactive&id=".$row['id']."'class='btn-rj'> Deactive </a>";
-                        }else{
-                          echo "<a href='update-item.php?opr=active&id=".$row['id']."'class='btn-ac'> Active </a>";
-                        }
+                        //if($row['status']=='1'){
+                          //echo "<a href='update-item.php?opr=deactive&id=".$row['id']."'class='btn-rj'> Deactive </a>";
+                        //}else{
+                         // echo "<a href='update-item.php?opr=active&id=".$row['id']."'class='btn-ac'> Active </a>";
+                       //}
 
                         ?>
-                        <a href="edit-item.php?id=<?php echo $row['id']?>"class='btn-res'>Edit</a>
-                        <a href="delete-item.php?id=<?php echo $row['id']?>"class='btn-del'>Delete</a>
+                        <a href="edit-item.php?id=<?php //echo $row['id']?>"class='btn-res'>Edit</a>
+                        <a href="delete-item.php?id=<?php //echo $row['id']?>"class='btn-del'>Delete</a>
                       </td>
                       </tr>
                       <?php  
-                    }
-                    ?>
+                    //}
+                    ?> 
             </thead>
           </table>
         </div>
       </div>
     </div> 
   </section> 
+  <script>
+var httprequest  = new XMLHttpRequest();
+
+httprequest.open("POST", "Productlist/Displayitem" , true);
+const rows = document.getElementById("data");
+httprequest.send();
+httprequest.onreadystatechange = function()
+{
+  if( httprequest.readyState == 4 && httprequest.status == 200)
+  {
+        var obj = JSON.parse(httprequest.responseText);
+        var html = "";
+        for(var i = 0 ; i< obj.length ; i++)
+        {
+          rows.innerHTML +=
+                    '<tbody> ' +
+                    '<tr> ' +
+                    '<td> ' +  obj[i].brand  +  '</td>' +  
+                    '<td> ' + obj[i].type + ' </td>' +
+                    '<td> ' + obj[i].partNo + ' </td>' +
+                    '<td> ' + obj[i].partNo_Manufacturer + ' </td>' +
+                    '<td> ' + obj[i].price + ' </td>' +
+                    '<td> ' + obj[i].amount + ' </td>' +
+                   
+                       
+                       '</tr>' + 
+                    '</tbody>'
+        }
+  }
+
+}
+
+  </script> 
   <script type="text/javascript" src="views/js/owner/owner-reports.js"></script>
   <script type="text/javascript" src="views/js/owner/form.js"></script>
 </body>

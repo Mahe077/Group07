@@ -5,9 +5,6 @@ if (!isset($_SESSION['userid'])) {
   exit();
 }
 require 'config/PathConf.php';
-      //  require_once('../config/dbconfig.php');
-      //  $db= new Functions_orderlist();
-      //  $result=$db->view_record();
 ?>
 <!DOCTYPE html>
 
@@ -18,6 +15,7 @@ require 'config/PathConf.php';
     <link rel="stylesheet" type="text/css" href="<?php echo $localhost; ?>views/css/owner/owner_updated.css">
     <link rel="stylesheet" type="text/css" href="<?php echo $localhost; ?>views/css/owner/owner-test.css">
     <script src="https://kit.fontawesome.com/9c5a05f882.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
    </head>
 <body>
@@ -27,7 +25,7 @@ require 'config/PathConf.php';
   <section class="home-section">
     <?php include_once 'navigation.php';?>
     <div class="home-content">
-    <div class="overview-boxes">
+      <div class="overview-boxes">
         <div class="view_table_order">
           <div class="view_table_btn">
             <a href="New_orders" id="insert-btn-new" class="insert-btn"><button class="btn-order" >New Orders
@@ -52,52 +50,63 @@ require 'config/PathConf.php';
           </div>
         </div>
       </div>
-        <div class="view_table_cancel" id="view_table_cancel">
-          <?php $db->display_msg();?>
-              <div class="topic-row">
-                <div class="topic-txt">
-                  Manage Cancelled Orders
-                </div>
-              </div>
-            <div class="table_body">
-              <table class="tbl" collspacing="0">
-                <thead>
-                  <tr>
-                    <th>Order Id</th>
-                    <th>Item Name</th>
-                    <th>Order date	</th>
-                    <th>Payment</th>
-                    <th>Reason</th>
-                    <th>Status</th>
-                    <th  colspan="2" class="text-center">Operations</th>
-                  </tr>
-                  <tr class="bordered"></tr>
-                  <tr>
-                    <?php
-                        while($row = mysqli_fetch_assoc($result)){
-                          ?>
-                          <td data-label='order_id'><?php echo $row['order_id']; ?></td>
-                          <td data-label='item'><?php echo $row['item']; ?></td>
-                          <td data-label='order_date'><?php echo $row['order_date'] ?></td>
-                          <td data-label='payment'><?php echo $row['payment']; ?></td>
-                          <td data-label='reason'><?php echo $row['reason']; ?></td>
-                          <td data-label='Status'><?php echo $row['state']; ?></td>
-                          <td class="text-center">
-                            <?php
-                              echo "<a href='cancel-st-update.php?opr=accept&id=".$row['order_id']."'class='btn-ac'> Accept </a>";
-                              echo "<a href='cancel-st-update.php?opr=reject&id=".$row['order_id']."'class='btn-rj'> Reject </a>";
-                            ?>
-                          </td>
-                          </tr>
-                          <?php  
-                        }
-                        ?>
-                </thead>
-              </table>
+        <div class="view_table_new" id="view_table_new">
+          <div class="topic-row">
+            <div class="topic-txt">
+                Manage Cancelled Orders
             </div>
-          </div>       
-    </div>  
+          </div>
+          <div class="table_body_new">
+            <table class="tbl" collspacing="0">
+              <thead>
+                <tr>
+                  <th>Order Id</th>
+                  <th>Order date</th>
+                  <th>Total Payment</th>
+                  <th>Payment</th>
+                  <th>Approximated_date</th>
+                </tr>
+                <tr class="bordered"></tr>
+                <tbody id="data">
+
+                </tbody>     
+              </thead>
+            </table>
+          </div> 
+        </div> 
   </section> 
+  <script>
+var httprequest  = new XMLHttpRequest();
+
+httprequest.open("POST", "Cancel_orders/Displayorder" , true);
+const rows = document.getElementById("data");
+httprequest.send();
+httprequest.onreadystatechange = function()
+{
+  if( httprequest.readyState == 4 && httprequest.status == 200)
+  {
+        var obj = JSON.parse(httprequest.responseText);
+        var html = "";
+        for(var i = 0 ; i< obj.length ; i++)
+        {
+          rows.innerHTML +=
+                    '<tbody> ' +
+                    '<tr> ' +
+                    '<td> ' +  obj[i].order_id  +  '</td>' +  
+                    '<td> ' + obj[i].item_id + ' </td>' +
+                    '<td> ' + obj[i].order_date + ' </td>' +
+                    '<td> ' + obj[i].payment + ' </td>' +
+                    '<td> ' + obj[i].total_payment + ' </td>' +
+                   
+                       
+                       '</tr>' + 
+                    '</tbody>'
+        }
+  }
+
+}
+
+  </script> 
   <script type="text/javascript" src="views/js/owner/owner-reports.js"></script>
 </body>
 </html>
