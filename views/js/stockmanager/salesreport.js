@@ -55,7 +55,7 @@ httprequest2.send();
 
 // load profit
 const httprequest4  = new XMLHttpRequest();
-// const profit = document.getElementById("card-profit");
+const profit = document.getElementById("card-profit");
 httprequest4.open("POST", "Stockmanagersalesreport/profit/" + value_select , true);
 httprequest4.onreadystatechange = function()
 {
@@ -63,14 +63,12 @@ httprequest4.onreadystatechange = function()
   if( httprequest4.readyState === 4 && httprequest4.status === 200)
   {
     console.log(httprequest4.responseText);
-    // const obj4 = JSON.parse(httprequest1.responseText);
-    //     console.log(obj4);
-        // for(var i = 0 ; i< obj4.length ; i++)
-        // {
-        // //   count.innerHTML +=
-        // //             '<p>' + 'sum of the total orders are ' + '</p>'
-        //               obj4[i].cancelsum
-        // }
+    
+        
+          profit.innerHTML +=
+                    '<p>' + 'profit of the total orders are ' + '</p>' +
+          httprequest4.responseText
+        
   }
 };
 httprequest4.send();

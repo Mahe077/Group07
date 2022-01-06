@@ -64,53 +64,17 @@
     <div class="container">
     <div class="title">Inert Item</div>
     <div class="content">
-    <form action="#" method="POST" enctype="multipart/form-data">
+    <form action="Stockmanagersettings/insert" method="POST" enctype="multipart/form-data">
         <div class="user-details">
           <div class="input-box">
           
-          <input type="text" placeholder="Enter Item Name" name="item_Name" required>
+          <input type="text" placeholder="Enter Item Id" name="item_id" required>
           </div>
           <div class="input-box">
         
-          <input type="text" placeholder="Enter Chassy Number" name="chassy_No" required>
+          <input type="number" placeholder="Enter Amount" name="amount" required>
           </div>
-          <div class="input-box">
-            
-            <input type="text" placeholder="Enter Brand" name="brand" required>
-          </div>
-          <div class="input-box">
-            
-            <input type="text" placeholder="Enter Price" name="price" required>
-          </div>
-          <div class="input-box">
-            
-            <input type="text" placeholder="Enter Genuine/compatible" name="genuinecompatibel" required>
-          </div>
-          <div class="input-box">
-           
-            <input type="text" placeholder="Enter Discription" name="description" required>
-          </div>
-		      <div class="input-box">
-		  
-		      <input type="text" placeholder="Enter Type" name="type" required>
-		      </div>
-		      <div class="input-box">
-          
-		      <input type="text" placeholder="Enter Amount" name="amount" required>
-		      </div>
-		      <div class="input-box">
-		 
-		     <input type="text" placeholder="Enter Color" name="color" required>
-		    </div>
-		    <div class="input-box">
-		  
-		    <input type="text" placeholder="Enter Size" name="size" required>
-		    </div>
-		
-		    <div class="input-box">
-		 
-		    <input type="file" placeholder="Enter Image" name="file" required>
-		    </div>
+         
           <div class="button">
           <input type="submit" name="submit" value="Insert">
 		</div>

@@ -188,16 +188,18 @@ class Stockmanagersalesreport extends Controller{
                 { 
                     $total = htmlentities($row3['tot']);
                 }
-
+                
 
                 $return = $this->model->retrunyear($duration,$wh,$statereturn);
+                
                 foreach($return as $row1)
             { 
                 $returnsum = htmlentities($row1['returnsum']);
                 
             }
-
+           
                 $cancel = $this->model->cancelyear($duration,$wh,$statecancel); 
+             
                 foreach($cancel as $row2)
             { 
                 $cancelsum = htmlentities($row2['cancelsum']);
@@ -205,8 +207,8 @@ class Stockmanagersalesreport extends Controller{
             }
 
             $profit = $total - ($returnsum + $cancelsum);
-            echo $profit;
-            // echo json_encode(count($profit) == 0 ? null : $profit);
+            // echo $profit;
+            echo json_encode($profit == 0 ? null : $profit);
     
             }
             elseif($duration == "1" || $duration == "2" || $duration == "3" || $duration == "4" || $duration == "5" || $duration == "6" || $duration == "7" || $duration == "8" || $duration == "9" || $duration == "10" || $duration == "11" || $duration == "12")
