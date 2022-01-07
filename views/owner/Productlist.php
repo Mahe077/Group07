@@ -5,10 +5,6 @@ if (!isset($_SESSION['userid'])) {
   exit();
 }
 require 'config/PathConf.php';
-  // require_once('../config/dbconfig.php');
-  // $db = new operations();
-  // $result=$db->view_record_update();
-  // $cat=$db->view_cat();
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -26,8 +22,38 @@ require 'config/PathConf.php';
   <?php include_once 'common.php';?>
   </div>
   <section class="home-section">
-  <?php include_once 'navigation.php';?>
-
+  <nav>
+      <div class="sidebar-button">
+        <i class="fa fa-bars sidebarBtn" aria-hidden="true"></i>
+        <span class="dashboard">Dashboard</span>
+      </div>
+      <div class="nortification-box">
+          <div class="dropdown">
+          <a href="Productlist" class="notification"><i class="fas fa-bell" id="fa-bell"><span class="count"><?php print_r($this->data[0][0]);?></span></i></a>
+          <?php
+            $val  = $this->data[0][0];
+          ?>
+            <div class="dropdown-content">
+          <?php
+          
+            for ($x = 0; $x <$val; $x++) {
+              echo "<br>".$this->value[$x][6]." <br>";
+            }
+          ?>
+            </div>
+          </div>
+      </div>
+      <div class="profile-details">
+        <img src="\G7/Group07/assets/users/admin.jpg" alt="">
+        <span class="admin_name">KHW</span>
+        <div class="dropdown">
+          <button class="dropbtn"><i class="fa fa-chevron-down" aria-hidden="true"></i></button>
+          <div class="dropdown-content">
+            <a href="../controller/logout.inc.php">Log Out</a>
+          </div>
+        </div>
+      </div>
+    </nav>
     <div class="home-content">
       <div class="btn-section">
         <a href="Insert_item" id="insert-btn" class="insert-btn"><div class="btn-txt">Insert New Item</div></a>
@@ -49,95 +75,17 @@ require 'config/PathConf.php';
                 <th>Part No</th>
                 <th>Amount</th>
                 <th>Status</th>
-                <th colspan="3" class="text-center">Operations</th>
+                <th colspan="2" class="text-center">Operations</th>
                </tr>
                <tr class="bordered"></tr>
               <tbody id="data">
 
-              </tbody>
-               <tr>
-                 <?php
-                    //while($row = mysqli_fetch_assoc($result)){
-                      ?>
-                      <td data-label='id'><?php //echo $row['id']; ?></td>
-                      <td data-label='brand'><?php //echo $row['brand'] ;?></td>
-                      <td data-label='price'><?php //echo $row['price']; ?></td>
-                      <td data-label='size'><?php //echo $row['size']; ?></td>
-                      <td data-label='partNo'><?php //echo $row['partNo'] ;?></td>
-                      <td data-label='amount'><?php //echo $row['amount']; ?></td>
-
-                      <td class="text-center" data-label='status'>
-                        <?php
-                          //if(//$row['status']=='1'){
-                            //echo " Active";
-                          //}else{
-                           //// echo " Deactivate";
-                          //}
-                        ?>
-                      </td>
-                      <td class="text-center">
-                        <?php
-                        //if($row['status']=='1'){
-                          //echo "<a href='update-item.php?opr=deactive&id=".$row['id']."'class='btn-rj'> Deactive </a>";
-                        //}else{
-                         // echo "<a href='update-item.php?opr=active&id=".$row['id']."'class='btn-ac'> Active </a>";
-                       //}
-
-                        ?>
-                        <a href="edit-item.php?id=<?php //echo $row['id']?>"class='btn-res'>Edit</a>
-                        <a href="delete-item.php?id=<?php //echo $row['id']?>"class='btn-del'>Delete</a>
-                      </td>
-                      </tr>
-                      <?php  
-                    //}
-                    ?> 
+              </tbody>         
             </thead>
           </table>
         </div>
       </div>
     </div> 
-    <div class="overview-boxes">
-        <div class="view_table_order">
-          <div class="view_table_btn">
-          <img src="assets/parts/brake/abs-ring.png" alt="" class="logo">
-          </div>
-          <div class="view_table_btn">
-              <p>Home / Brake</p>
-              <h1>Abs-ring</h1>
-              <h4>Rs. 1200.00</h4>
-          </div>
-        </div>
-        <div class="view_table_order">
-          <div class="view_table_btn">
-          <img src="assets/parts/brake/brake-disk.png" alt="" class="logo">
-          </div>
-          <div class="view_table_btn">
-              <p>Home / Brake</p>
-              <h1>Brake-disk</h1>
-              <h4>Rs. 1200.00</h4>
-          </div>
-        </div>
-        <div class="view_table_order">
-          <div class="view_table_btn">
-          <img src="assets/parts/brake/brake-drum.png" alt="" class="logo">
-          </div>
-          <div class="view_table_btn">
-              <p>Home / Brake</p>
-              <h1>Brake-drum</h1>
-              <h4>Rs. 1200.00</h4> 
-          </div>
-        </div>
-        <div class="view_table_order">
-          <div class="view_table_btn">
-          <img src="assets/parts/brake/vacuum-pump.png" alt="" class="logo">
-          </div>
-          <div class="view_table_btn">
-              <p>Home / Brake</p>
-              <h1>Vacuum-pump</h1>
-              <h4>Rs. 1200.00</h4>  
-          </div>
-        </div>
-      </div>
   </section> 
   <script>
 var httprequest  = new XMLHttpRequest();
@@ -154,18 +102,22 @@ httprequest.onreadystatechange = function()
         for(var i = 0 ; i< obj.length ; i++)
         {
           rows.innerHTML +=
-                    '<tbody> ' +
-                    '<tr> ' +
-                    '<td> ' +  obj[i].brand  +  '</td>' +  
-                    '<td> ' + obj[i].type + ' </td>' +
-                    '<td> ' + obj[i].partNo + ' </td>' +
-                    '<td> ' + obj[i].partNo_Manufacturer + ' </td>' +
-                    '<td> ' + obj[i].price + ' </td>' +
-                    '<td> ' + obj[i].amount + ' </td>' +
-                   
-                       
-                       '</tr>' + 
-                    '</tbody>'
+                    `<tbody>  
+                    <tr>  
+                    <td>   ${obj[i].id}    </td>
+                    <td>   ${obj[i].brand}    </td>   
+                    <td>   ${obj[i].type}   </td> 
+                    <td>   ${obj[i].partNo}   </td> 
+                    <td>   ${obj[i].partNo_Manufacturer}   </td> 
+                    <td>   ${obj[i].price}   </td> 
+                    <td>   ${obj[i].amount}   </td> 
+                    <td>   ${obj[i].status}   </td>
+                    <td class="text-center"> 
+                              <a href="Productlist/View_item/${obj[i].id}"class='btn-res'> Edit </a>
+                              <a href="Cancel_orders/Reject_order/${obj[i].order_id}"class='btn-del'> Delete </a>
+                   </td> 
+                    </tr>  
+                    </tbody>`
         }
   }
 

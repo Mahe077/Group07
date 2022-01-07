@@ -23,7 +23,38 @@ require 'config/PathConf.php';
   <?php include_once 'common.php';?>
   </div>
   <section class="home-section">
-    <?php include_once 'navigation.php';?>
+  <nav>
+      <div class="sidebar-button">
+        <i class="fa fa-bars sidebarBtn" aria-hidden="true"></i>
+        <span class="dashboard">Dashboard</span>
+      </div>
+      <div class="nortification-box">
+          <div class="dropdown">
+          <a href="Cancel_orders" class="notification"><i class="fas fa-bell" id="fa-bell"><span class="count"><?php print_r($this->data[0][0]);?></span></i></a>
+          <?php
+            $val  = $this->data[0][0];
+          ?>
+            <div class="dropdown-content">
+          <?php
+          
+            for ($x = 0; $x <$val; $x++) {
+              echo "<br>".$this->value[$x][6]." <br>";
+            }
+          ?>
+            </div>
+          </div>
+      </div>
+      <div class="profile-details">
+        <img src="\G7/Group07/assets/users/admin.jpg" alt="">
+        <span class="admin_name">KHW</span>
+        <div class="dropdown">
+          <button class="dropbtn"><i class="fa fa-chevron-down" aria-hidden="true"></i></button>
+          <div class="dropdown-content">
+            <a href="../controller/logout.inc.php">Log Out</a>
+          </div>
+        </div>
+      </div>
+    </nav>
     <div class="home-content">
       <div class="overview-boxes">
         <div class="view_table_order">
@@ -63,10 +94,10 @@ require 'config/PathConf.php';
                 <th>Order id</th>
                 <th>Item id</th>
                 <th>Order date</th>
-                <th>Approximated date</th>
                 <th>Delivery request</th>
                 <th>Total payment</th>
                 <th>Payment</th>
+                <th>Reason</th>
                 <th  colspan="2" class="text-center">Operations</th>
                 </tr>
                 <tr class="bordered"></tr>
@@ -98,13 +129,13 @@ httprequest.onreadystatechange = function()
                     <td>   ${obj[i].order_id}   </td>  
                     <td>   ${obj[i].item_id}   </td>
                     <td>  ${obj[i].order_date}   </td>
-                    <td>  ${obj[i].approximated_date}  </td>
                     <td>  ${obj[i].delivery_request}  </td>
                     <td>  ${obj[i].total_payment}  </td>
                     <td>  ${obj[i].payment}  </td>
+                    <td>  ${obj[i].reason}  </td>
                     <td class="text-center"> 
-                              <a href="cancel-st-update.php?opr=accept&id=.$row['order_id']."class='btn-ac'> Accept </a>
-                              <a href="cancel-st-update.php?opr=reject&id=.$row['order_id']."class='btn-rj'> Reject </a>
+                              <a href="Cancel_orders/Accept_order/${obj[i].order_id}"class='btn-ac'> Accept </a>
+                              <a href="Cancel_orders/Reject_order/${obj[i].order_id}"class='btn-rj'> Reject </a>
                    </td> 
                        </tr> 
                     </tbody>`

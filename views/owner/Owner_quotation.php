@@ -30,25 +30,9 @@ if (!isset($_SESSION['userid'])) {
                     <table class="tbl" collspacing="0">
                         <thead>
                             <tr class="bordered"></tr>
-                            <tbody id="data">
-
-                            </tbody>
-                            <tr>
-                            <?php
-                               // while($row = mysqli_fetch_assoc($value)){
-                                    ?>
-                                    <?php ///$image=$row['old_image']; 
-                                    //$id=$row['id'];?>
-                                    <td data-label='order_id'>
-                                        <div id="notifi">
-                                            
-                                        </div>
-                                        </div>
-                                    </td>
-                                    </tr>
-                                    <?php  
-                                //}
-                                ?>
+                            <div id="notifi"> 
+                                          <!-- quotations will load here    -->
+                            </div>             
                         </thead>
                     </table>   
                 </div>
@@ -73,38 +57,30 @@ httprequest.onreadystatechange = function()
         var html = "";
         for(var i = 0 ; i< obj.length ; i++)
         {
-            console.log(obj[i].name);
           rows.innerHTML +=
         `<div class="notifi-details">
-        <div class="name"> +${obj[i].name} +</div>
-        <div class="amount"> ${obj[i].amount}</div>
-        <div class="part"> ${obj[i].part_number}</div>
-        <div class="brand"> ${obj[i].brand} </div>
-        <div class="date"> ${obj[i].recieved_date} </div>
-        </div>
-        <div class="respond">
-                                            
-            <a href="respond-quot.php?opr=accept&id=<?php //echo $row['id']?>"class='btn-ac'>Accept</a>
-            <a href="respond-quot.php?opr=reject&id=<?php //echo $row['id']?>"class='btn-rj'>Reject</a>
+          <div class='view_item_s'>
+            <img src=http://localhost/G7/Group07/${obj[i].old_image} alt='' class='img_item_s'>
+          </div>
+            <div class= "special">
+            <div class="name"> ${obj[i].name} </div>
+              <div class="name"> ${obj[i].name} </div>
+              <div class="amount"> ${obj[i].amount}</div>
+              <div class="part"> ${obj[i].part_number}</div>
+              <div class="brand"> ${obj[i].brand} </div>
+            </div>
+            <div class="respond">                                
+              <a href="Respond_quotation/view_respond" class='btn-ac'>Accept</a>
+              <a href="Respond_quotation/Reject_quotation/${obj[i].id}" class='btn-rj'>Reject</a>
+            </div>
         </div>`;
-                    // '<tbody> ' +
-                    // '<tr> ' +
-                    // '<td> ' +  obj[i].order_id  +  '</td>' +  
-                    // '<td> ' + obj[i].item_id + ' </td>' +
-                    // '<td> ' + obj[i].order_date + ' </td>' +
-                    // '<td> ' + obj[i].payment + ' </td>' +
-                    // '<td> ' + obj[i].total_payment + ' </td>' +
-                   
-                       
-                    //    '</tr>' + 
-                    // '</tbody>'
         }
   }
 
 }
 
   </script> 
-    <!-- <script type="text/javascript" src="views/js/owner/owner-reports.js"></script>
-    <script type="text/javascript" src="views/js/owner/nortification-display.js"></script> -->
+    <script type="text/javascript" src="views/js/owner/owner-reports.js"></script>
+    <script type="text/javascript" src="views/js/owner/nortification-display.js"></script>
       </body>
       </html>
