@@ -27,6 +27,8 @@ class Stockmanagersettings extends Controller{
         if (isset($_POST['submit'])) {
             $item_id = $_POST['item_id'];
             $amount = $_POST['amount'];
+
+            
             
             $insert = $this->model->insert1($wh, $item_id , $amount);
 

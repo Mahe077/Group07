@@ -17,10 +17,12 @@ class Stockmanagersettings_Model extends Model
         return $this->db->select2("SELECT id FROM warehouse_details WHERE stockmanager_id = :stockmanager_id", ['stockmanager_id' => $idn]);
     }
 
-    function insert1($wh, $item_id , $amount)
+    function insert1( $item_id, $wh , $amount)
     {
-        $query = $this->db->insert("INSERT INTO warehouse_items ('itemId' , 'warehouse_id' , 'amount') VALUES (:itemId,:warehouse_id, :amount)" , ['itemId' => $item_id , 'warehouse_id' => $wh , 'amount' => $amount]);
-
+        $query =  $this->db->alter("INSERT INTO `warehouse_items` (`itemId` , `warehouse_id` , `amount`) 
+        VALUES (:itemId,:warehouse_id, :amount)" ,
+         ['itemId' => $item_id , 'warehouse_id' => $wh , 'amount' => $amount]);
+        echo "pavi";
         if($query)
         {
             echo "success";
