@@ -34,7 +34,7 @@ class Stockmanagerorderlist extends Controller{
 
                
             }
-            $type = "new";
+            $type = "4";
             $new = $this->model->Neworders($type , $wh);
             echo json_encode(count($new) == 0 ? null : $new);
     }

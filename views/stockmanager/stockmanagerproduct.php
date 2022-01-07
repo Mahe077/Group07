@@ -85,14 +85,14 @@
       
       <div class="menu">
         
-        <div class="box-container" id="box-container">  
-          <!-- products load here -->
-  </div>
+        <!-- <div class="box-container" id="box-container">  
+         products load here 
+  </div> -->
       </div>
      
     </div>
   <script type="text/javascript" src="views/js/stockmanager/product.js"></script>
-  <!-- <script type="text/javascript" src="views/js/alert.js"></script> -->
+
     
 </body>
 </html>
