@@ -43,19 +43,15 @@ httprequest1.onreadystatechange = function()
          
           '<div class="box">' +
           '<p id="id"> ID:' +  obj[0].id+  '</P>' + 
-          '<div class="image1">' + 
-          '<img  src="' + obj[0].image_path  + '" alt="">' +
-           '</div>' +
-          // '<p id="image">' + obj[i].image_path + '</p>' +
-          // '<img id="imagebox" id="imagebox" src="' + obj[i].image_path  + '" alt="">' +
-          '<p id="brand"> First Name:' + obj[0].fname + ' </P>' +
-          '<p id="price"> Last Name:' + obj[0].lname + ' </P>' +
-          '<p id="genuine"> Location:' + obj[0].location + '</P>' +
-          '<p id="amount"> Date Of Appointed:'  + obj[0].date_of_appointed + '</P>' +
+          '<img id="imagebox" id="imagebox" src="' + obj[0].image_path  + '" alt="">' +
+          '<p id="fname"> First Name :' + obj[0].fname + ' </P>' +
+          '<p id="lname"> Last Name :' + obj[0].lname + ' </P>' +
+          '<p id="location"> Location :' + obj[0].location + '</P>' +
+          '<p id="date"> Date Of Appointed :'  + obj[0].date_of_appointed + '</P>' +
              
               
           '</div>'
-  // }
+ 
 
 
 
@@ -67,15 +63,11 @@ httprequest1.onreadystatechange = function()
          
   '<div class="box">' +
   '<p id="id"> ID:' +  obj[1].id+  '</P>' + 
-  '<div class="image1">' + 
-          '<img  src="' + obj[1].image_path  + '" alt="">' +
-           '</div>' +
-  // '<p id="image">' + obj[i].image_path + '</p>' +
-  // '<img id="imagebox" id="imagebox" src="' + obj[i].image_path  + '" alt="">' +
-  '<p id="brand"> First Name:' + obj[1].fname + ' </P>' +
-  '<p id="price"> Last Name:' + obj[1].lname + ' </P>' +
-  '<p id="genuine"> Location:' + obj[1].location + '</P>' +
-  '<p id="amount"> Date Of Appointed:'  + obj[1].date_of_appointed + '</P>' +
+  '<img id="imagebox" id="imagebox" src="' + obj[1].image_path  + '" alt="">' +
+  '<p id="fname"> First Name :' + obj[1].fname + ' </P>' +
+  '<p id="lname"> Last Name :' + obj[1].lname + ' </P>' +
+  '<p id="location"> Location :' + obj[1].location + '</P>' +
+  '<p id="date"> Date Of Appointed :'  + obj[1].date_of_appointed + '</P>' +
      
       
   '</div>'
@@ -88,15 +80,11 @@ httprequest1.onreadystatechange = function()
          
   '<div class="box">' +
   '<p id="id"> ID:' +  obj[2].id+  '</P>' + 
-  '<div class="image1">' + 
-          '<img  src="' + obj[2].image_path  + '" alt="">' +
-           '</div>' +
-  // '<p id="image">' + obj[i].image_path + '</p>' +
-  // '<img id="imagebox" id="imagebox" src="' + obj[i].image_path  + '" alt="">' +
-  '<p id="brand"> First Name:' + obj[2].fname + ' </P>' +
-  '<p id="price"> Last Name:' + obj[2].lname + ' </P>' +
-  '<p id="genuine"> Location:' + obj[2].location + '</P>' +
-  '<p id="amount"> Date Of Appointed:'  + obj[2].date_of_appointed + '</P>' +
+  '<img id="imagebox" id="imagebox" src="' + obj[2].image_path  + '" alt="">' +
+  '<p id="fname"> First Name :' + obj[2].fname + ' </P>' +
+  '<p id="lname"> Last Name :' + obj[2].lname + ' </P>' +
+  '<p id="location"> Location :' + obj[2].location + '</P>' +
+  '<p id="date"> Date Of Appointed :'  + obj[2].date_of_appointed + '</P>' +
      
       
   '</div>'
@@ -107,15 +95,11 @@ httprequest1.onreadystatechange = function()
          
   '<div class="box">' +
   '<p id="id"> ID:' +  obj[3].id+  '</P>' + 
-  '<div class="image1">' + 
-          '<img  src="' + obj[3].image_path  + '" alt="">' +
-           '</div>' +
-  // '<p id="image">' + obj[i].image_path + '</p>' +
-  // '<img id="imagebox" id="imagebox" src="' + obj[i].image_path  + '" alt="">' +
-  '<p id="brand"> First Name:' + obj[3].fname + ' </P>' +
-  '<p id="price"> Last Name:' + obj[3].lname + ' </P>' +
-  '<p id="genuine"> Location:' + obj[3].location + '</P>' +
-  '<p id="amount"> Date Of Appointed:'  + obj[3].date_of_appointed + '</P>' +
+  '<img id="imagebox" id="imagebox" src="' + obj[3].image_path  + '" alt="">' +
+  '<p id="fname"> First Name      :' + obj[3].fname + ' </P>' +
+  '<p id="lname"> Last Name       :' + obj[3].lname + ' </P>' +
+  '<p id="location"> Location     :' + obj[3].location + '</P>' +
+  '<p id="date"> Date Of Appointed:'  + obj[3].date_of_appointed + '</P>' +
      
       
   '</div>'
