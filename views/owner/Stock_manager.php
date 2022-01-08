@@ -29,19 +29,23 @@ require 'config/PathConf.php';
       </div>
       <div class="nortification-box">
           <div class="dropdown">
-          <a href="Stock_manager" class="notification"><i class="fas fa-bell" id="fa-bell"><span class="count"><?php print_r($this->data[0][0]);?></span></i></a>
-          <?php
-            $val  = $this->data[0][0];
-          ?>
-            <div class="dropdown-content">
-          <?php
-          
-            for ($x = 0; $x <$val; $x++) {
-              echo "<br>".$this->value[$x][6]." <br>";
-            }
-          ?>
+              <a href="Owner_updated" class="notification"><i class="fas fa-bell" id="fa-bell"><span class="count"><?php print_r($this->data[0][0]);?></span></i></a>
+              <?php
+                $val  = $this->data[0][0];
+              ?>
+                <div class="dropdown-content">
+              <?php
+              
+                for ($x = 0; $x <$val; $x++) {
+                  echo "<div class='msg_outside'><div class='msg-date'><br>".$this->value[$x][4]."</div>
+                  <div class='msg'><br>".$this->value[$x][6]."<br></div></div>";
+                }
+              ?>
+            <div class="respond">
+                <a href="Display_notifications" class='btn-del'>Respond</a>
             </div>
           </div>
+      </div>
       </div>
       <div class="profile-details">
         <img src="\G7/Group07/assets/users/admin.jpg" alt="">

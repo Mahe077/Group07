@@ -24,33 +24,46 @@ require 'config/PathConf.php';
   <?php include_once 'common_inside.php';?>
   </div>
   <section class="home-section">
-    <?php include_once 'navigation_inside.php';?>
+  <nav>
+      <div class="sidebar-button">
+        <i class="fa fa-bars sidebarBtn" aria-hidden="true"></i>
+        <span class="dashboard">Dashboard</span>
+      </div>
+      <div class="nortification-box">
+          <div class="dropdown">
+              <a href="Display_notifications" class="notification"><i class="fas fa-bell" id="fa-bell"><span class="count"><?php print_r($this->data[0][0]);?></span></i></a>
+      </div>
+      </div>
+      <div class="profile-details">
+        <img src="\G7/Group07/assets/users/admin.jpg" alt="">
+        <span class="admin_name">KHW</span>
+        <div class="dropdown">
+          <button class="dropbtn"><i class="fa fa-chevron-down" aria-hidden="true"></i></button>
+          <div class="dropdown-content">
+            <a href="../controller/logout.inc.php">Log Out</a>
+          </div>
+        </div>
+      </div>
+    </nav>
     <div class="home-content">
           <div  class="table_body_new">
             <table class="tbl" collspacing="0">
-              <tr>
-                <th>Order id</th>
-                <th>Item id</th>
-                <th>Order date</th>
-                <th>Approximated date</th>
-                <th>Delivery request</th>
-                <th>Total payment</th>
-                <th>Payment</th>
-                <th colspan="3" class="text-center">Operations</th>
-              </tr> 
-              <tr class="bordered"></tr>
-              <tbody id="data">
-              <!-- new orders will be displayed here -->
-              </tbody>
+            <?php //$uid=$_SESSION['userid'];
+            //print_r($uid);?>
+            <thead>
+              <div id="notific"> 
+                <!-- messages will load here    -->
+              </div>             
+            </thead>
             </table> 
           </div> 
         </div> 
   </section> 
-<script>
+ <script>
 var httprequest  = new XMLHttpRequest();
 
-httprequest.open("POST", "" , true);
-const rows = document.getElementById("data");
+httprequest.open("POST", "Display_notifications/Display" , true);
+const rows = document.getElementById("notific");
 httprequest.send();
 httprequest.onreadystatechange = function()
 {
@@ -61,22 +74,35 @@ httprequest.onreadystatechange = function()
         for(var i = 0 ; i< obj.length ; i++)
         {
           rows.innerHTML +=
-          `<tbody> 
-                    <tr> 
-                    <td>   ${obj[i].order_id}   </td>
-                    <td>   ${obj[i].item_id}   </td>  
-                    <td>  ${obj[i].order_date}   </td>
-                    <td>  ${obj[i].approximated_date}  </td>
-                    <td>  ${obj[i].delivery_request}  </td>
-                    <td>  ${obj[i].total_payment}  </td>
-                    <td>  ${obj[i].payment}  </td>
-                    <td class="text-center"> 
-                              <a href="New_orders/Accept_order/${obj[i].order_id}/${obj[i].item_id}/${obj[i].user_id}"class='btn-ac'> Accept </a>
-                              <a href="New_orders/Reject_order/${obj[i].order_id}"class='btn-rj'> Reject </a>
-                              <a href="Checkout_item/Check_availability/${obj[i].item_id}"class='btn-res'> Checkout </a>
-                   </td> 
-                       </tr> 
-                    </tbody>`
+        `<div class="notific-details">
+            <div class= "special">
+            <div class="topic"><h6>Customer ID :</h6> <h10>${obj[i].customer_id}</h10> </div>
+              <div class="topic"><h6>Customer email :</h6><h10>${obj[i].email}</h10> </div>
+              <div class="topic"><h6>Customer contact:</h6><h10>${obj[i].tp_no}</h10></div>
+              <div class="topic"><h6>Message received date:</h6><h10>${obj[i].received_date}</h10></div>
+              <div class="topic"><h6>Message :</h6><h10>${obj[i].msg}</h10> </div>
+            </div>
+        <div class="container">
+          <form method="POST" action="Display_notifications/Reply_notifi" enctype="multipart/form-data">
+          <div class="row">
+            <div class="input-txt">
+            <span class="label success">Enter the customer id</span>
+            </div>
+            <div class="input-txt">
+              <input type="text" id="input-id" name="id" required>
+            </div>
+          </div>  
+          <div class="row">
+            <div class="input-txt">
+              <textarea id="subject" name="subject" placeholder="Write something.." required></textarea>
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <input type="submit" name="submit" value="Submit">
+          </div>
+          </form>
+      </div> </div>`;
         }
   }
 

@@ -7,6 +7,10 @@
 
         }
         public function view_respond(){
+            $data = $this->model->Displaynoti();
+            $this->view->data=$data;
+            $value= $this->model->Display();
+             $this->view->value=$value;
             $this->view->render('owner/Respond_quotation');
         }
         public function Respond_quo(){
