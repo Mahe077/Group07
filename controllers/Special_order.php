@@ -12,7 +12,8 @@ class Special_order extends Controller
     public function loadAllSpecial()
     {
         $id = $_POST['search'];
-        $items = $this->model->loadAllSpecial($id);
+        $type = $_POST['orderType'];
+        $items = $this->model->loadAllSpecial($id,$type);
         echo json_encode(count($items) == 0 ? null : $items);
     }
     public function Remove()

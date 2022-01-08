@@ -1,7 +1,27 @@
 var localhost = "http://localhost/G7/Group07/";
-function special_orderload(id) {
+function display_orders(id,orderType) {
+  buttons = document.querySelectorAll(".order_typr_links")
+  for (let btn = 0; btn < buttons.length; btn++) {
+    buttons[btn].style.background = "#228693";
+  }
+  if(orderType == 0){
+    button = document.querySelector("#pending");
+  }else if (orderType == 1) {
+    button = document.querySelector("#to_deliver");
+  }else if (orderType == 2) {
+    button = document.querySelector("#cancel");
+  }else if (orderType == 6) {
+    button = document.querySelector("#preorder_req");
+  }else if (orderType == 7) {
+    button = document.querySelector("#preorder_acc");
+  }else if (orderType == 8) {
+    button = document.querySelector("#to_review");
+  }
+  console.log(button);
+  button.style.background = "red";
   var data = new FormData();
   data.append("search", id);
+  data.append("orderType",orderType);
   // console.log(id,data);
 
   var xhr = new XMLHttpRequest();
@@ -64,19 +84,6 @@ function special_orderload(id) {
                   s.approximated_price
                 ).toFixed(2)}</span>
                     </div>
-                    <div class="col col-6">${
-                      s.status == 1
-                        ? "Accepted"
-                        : s.status == 3
-                        ? "Pickup"
-                        : s.status == 4
-                        ? "Done"
-                        : s.status == 7
-                        ? "PreOrder Acc"
-                        : s.status == 2
-                        ? "Cancel"
-                        : "Return"
-                    }</div>
                     <div class="col col-5">
                         ${s.status == 2 ?"<i class='fas fa-check-circle' style='color:red'>":"<i class='fas fa-check-circle'>"}</i>
                     </div>
@@ -87,11 +94,10 @@ function special_orderload(id) {
       }
     }
     let total = document.querySelector("#stotal");
-    total.innerHTML += `${parseFloat(Total).toFixed(2)}`;
+    total.innerHTML = `${parseFloat(Total).toFixed(2)}`;
   };
   xhr.send(data);
 
-  return false;
 }
 
 function item_remover(id) {

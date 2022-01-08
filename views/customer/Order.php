@@ -25,7 +25,7 @@ require 'config/PathConf.php';
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 </head>
 
-<body onload="orderload(<?php echo $_SESSION['userid'] ?>),removeItem()">
+<body onload="display_orders(<?php echo $_SESSION['userid'] ?>,0),removeItem()">
     <!-- header section starts  -->
 
     <?php
@@ -41,16 +41,38 @@ require 'config/PathConf.php';
         ?>
 
         <h2 class="heading">Order <span>Management</span></h2>
+        <section class="links">
+            <ul id="Order-display-actions">
+                <li>
+                    <a href="#" class="btn order_typr_links" id="pending" name="pending" onclick="display_orders(<?php echo $_SESSION['userid'] ?>,0)">Pending</a>
+                </li>
+                <li>
+                    <a href="#" class="btn order_typr_links" id="preorder_req" name="preorder_req" onclick="display_orders(<?php echo $_SESSION['userid'] ?>,6)">PO Pending</a>
+                </li>
+                <li>
+                    <a href="#" class="btn order_typr_links" id="preorder_acc" name="preorder_acc" onclick="display_orders(<?php echo $_SESSION['userid'] ?>,7)">PO Accepted</a>
+                </li>
+                <li>
+                    <a href="#" class="btn order_typr_links" id="to_deliver" name="to_deliver" onclick="display_orders(<?php echo $_SESSION['userid'] ?>,1)">To deliver</a>
+                </li>
+                <li>
+                    <a href="#" class="btn order_typr_links" id="to_review" name="to_review" onclick="display_orders(<?php echo $_SESSION['userid'] ?>,8)">To review</a>
+                </li>
+                <li>
+                    <a href="#" class="btn order_typr_links" id="cancel" name="cancel" onclick="display_orders(<?php echo $_SESSION['userid'] ?>,2)">Cacellation</a>
+                </li>
+            </ul>
+        </section>
         <section class="cart-table table">
             <!-- <form action="test.html" method="post"> -->
-                <div class="row row-header">
-                    <div class="col col-1">item</div>
-                    <div class="col col-2">Qty</div>
-                    <div class="col col-3">Price</div>
-                </div>
-                <div class="table-body">
-                 
-                </div>
+            <div class="row row-header">
+                <div class="col col-1">item</div>
+                <div class="col col-2">Qty</div>
+                <div class="col col-3">Price</div>
+            </div>
+            <div class="table-body">
+
+            </div>
             <!-- </form> -->
         </section>
         <section class="total">

@@ -12,7 +12,8 @@ class Order extends Controller
     public function loadAll()
     {
         $id = $_POST['search'];
-        $items = $this->model->loadAll($id);
+        $type = $_POST['orderType'];
+        $items = $this->model->loadAll($id,$type);
         echo json_encode(count($items) == 0 ? null : $items);
     }
     public function Remove()
