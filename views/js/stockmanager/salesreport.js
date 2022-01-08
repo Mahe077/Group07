@@ -217,8 +217,8 @@ function select_month()
     console.log("sanda");
     value_select1 = document.getElementById("ddlViewBy1").value;
     console.log(value_select1);
-// hhtp request
-// load count
+// // hhtp request
+
 const httprequest5  = new XMLHttpRequest();
 const countmonth = document.getElementById("card-count");
 httprequest5.open("POST", "Stockmanagersalesreport/count/" + value_select1 , true);

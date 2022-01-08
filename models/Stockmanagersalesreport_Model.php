@@ -39,6 +39,7 @@ class Stockmanagersalesreport_Model extends Model
     function countmonth($duration = null ,$year = null, $wh = null)
     {
         return   $this->db->select2("SELECT COUNT(order_id) AS cou FROM orders WHERE MONTH(order_date)= :month AND YEAR(order_date)= :year AND warehouse_id = :warehouse_id" , ['month'=>$duration , 'year'=>$year, 'warehouse_id' => $wh]);
+        echo "pavi";
     }
 // sum month
     function summonth($duration = null ,$year = null , $wh = null)
