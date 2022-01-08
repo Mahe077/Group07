@@ -11,6 +11,7 @@ class Stockmanagersettings_Model extends Model
     {
         return $this->db->select2("SELECT id FROM person WHERE username = :username", ['username' => $username]);
     }
+    
 // warehouse
     function getwarehouse($idn = null)
     {
