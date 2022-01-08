@@ -15,8 +15,7 @@ class Forget_password extends Controller{
         require 'config/PathConf.php';
         if (isset($_POST['submit'])) {
             $username = $_POST['username'];
-            // echo $username;
-            // $GLOBALS["username"] = $username;
+           
             $_SESSION['username'] = $username;
            echo $_SESSION['username'];
             // get email
@@ -27,15 +26,12 @@ class Forget_password extends Controller{
 
             foreach($email as $row)
             {
-                // echo "pavi";
+               
                 $mail = htmlentities($row['email']);
-                // $number = htmlentities($row['number']);
-
-                echo $mail .  "<br>";
+                // echo $mail .  "<br>";
             }
 
 
-            // $mail = $user;
             $verification_code = sha1($mail . time());
             echo $verification_code;
             $verification_url = $localhost.'Verify/index';
@@ -47,8 +43,8 @@ class Forget_password extends Controller{
              $sender          = 'pavithrasandamini283@gmail.com';
              $email_subject   = 'Verify email address';
              $email_body      = '<p> Dear ' . $username . ',' . '</p>';
-             $email_body     .= '<p> Here the link for verify your Email Address </p>';
-             $email_body     .= '<p>' . $verification_url . ' </p>';
+             $email_body     .= '<p> Here the verification code for verify your Email Address </p>';
+            //  $email_body     .= '<p>' . $verification_url . ' </p>';
              $email_body     .= '<p>' . $verification_code . '</p>';
              $email_body     .= '<p> thank you, <br> SL MINI Spares </p>';
             

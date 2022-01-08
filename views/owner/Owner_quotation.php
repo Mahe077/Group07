@@ -5,9 +5,6 @@ if (!isset($_SESSION['userid'])) {
     exit();
   }
   require 'config/PathConf.php';
-//    require_once('../config/dbconfig.php');
-//    $db= new Ownerquotation();
-//    $value=$db->view_quotation();
 ?>
 
 <!DOCTYPE html>
@@ -26,45 +23,50 @@ if (!isset($_SESSION['userid'])) {
   <?php include_once 'common.php';?>
   </div>
   <section class="home-section">
-  <?php include_once 'navigation.php';?>
+  <nav>
+      <div class="sidebar-button">
+        <i class="fa fa-bars sidebarBtn" aria-hidden="true"></i>
+        <span class="dashboard">Dashboard</span>
+      </div>
+      <div class="nortification-box">
+          <div class="dropdown">
+              <a href="Owner_updated" class="notification"><i class="fas fa-bell" id="fa-bell"><span class="count"><?php print_r($this->data[0][0]);?></span></i></a>
+              <?php
+                $val  = $this->data[0][0];
+              ?>
+                <div class="dropdown-content">
+              <?php
+              
+                for ($x = 0; $x <$val; $x++) {
+                  echo "<div class='msg_outside'><div class='msg-date'><br>".$this->value[$x][4]."</div>
+                  <div class='msg'><br>".$this->value[$x][6]."<br></div></div>";
+                }
+              ?>
+            <div class="respond">
+                <a href="Display_notifications" class='btn-del'>Respond</a>
+            </div>
+          </div>
+      </div>
+      </div>
+      <div class="profile-details">
+        <img src="\G7/Group07/assets/users/admin.jpg" alt="">
+        <span class="admin_name">KHW</span>
+        <div class="dropdown">
+          <button class="dropbtn"><i class="fa fa-chevron-down" aria-hidden="true"></i></button>
+          <div class="dropdown-content">
+            <a href="../controller/logout.inc.php">Log Out</a>
+          </div>
+        </div>
+      </div>
+    </nav>
     <div class="home-content">
         <div class="norti-container-n">
             <div class="norti-content-n">
-                <?php $db->display_msg();?>
                     <table class="tbl" collspacing="0">
                         <thead>
-                            <tr class="bordered"></tr>
-                            <tr>
-                            <?php
-                                while($row = mysqli_fetch_assoc($value)){
-                                    ?>
-                                    <?php $image=$row['old_image']; 
-                                    $id=$row['id'];?>
-                                    <td data-label='order_id'>
-                                        <div class="notifi">
-                                            <div class="notifi-img">
-                                                <img src="img/<?php echo $image; ?>" height="80px" width="80px">
-                                            </div>
-                                            <div class="notifi-details">
-                                                <div class="name"><b>Name : </b><?php echo $row['name']; ?><br></div>
-                                                <div class="amount"><b>Amount : </b><?php echo $row['amount']; ?><br></div><br>
-                                                <div class="part"><b>Part No : </b><?php echo $row['part_number']; ?><br></div><br>
-                                                <div class="brand"><b>Brand : </b><?php echo $row['brand']; ?><br></div><br>
-                                                <div class="date"><b>Recieved date : </b><?php echo $row['received_date']; ?></div><br>
-                                            </div>
-                                            <div class="respond">
-                                            <?php
-                                                // $db->update_notification($id);
-                                            ?>
-                                            <a href="respond-quot.php?opr=accept&id=<?php echo $row['id']?>"class='btn-ac'>Accept</a>
-                                            <a href="respond-quot.php?opr=reject&id=<?php echo $row['id']?>"class='btn-rj'>Reject</a>
-                                        </div>
-                                        </div>
-                                    </td>
-                                    </tr>
-                                    <?php  
-                                }
-                                ?>
+                            <div id="notifi"> 
+                                          <!-- quotations will load here    -->
+                            </div>             
                         </thead>
                     </table>   
                 </div>
@@ -74,6 +76,44 @@ if (!isset($_SESSION['userid'])) {
  
     
     </section> 
+
+    <script>
+var httprequest  = new XMLHttpRequest();
+
+httprequest.open("POST", "Owner_quotation/Displayquotation" , true);
+const rows = document.getElementById("notifi");
+httprequest.send();
+httprequest.onreadystatechange = function()
+{
+  if( httprequest.readyState == 4 && httprequest.status == 200)
+  {
+        var obj = JSON.parse(httprequest.responseText);
+        var html = "";
+        for(var i = 0 ; i< obj.length ; i++)
+        {
+          rows.innerHTML +=
+        `<div class="notifi-details">
+          <div class='view_item_s'>
+            <img src=http://localhost/G7/Group07/${obj[i].old_image} alt='' class='img_item_s'>
+          </div>
+            <div class= "special">
+            <div class="name"> ${obj[i].name} </div>
+              <div class="name"> ${obj[i].name} </div>
+              <div class="amount"> ${obj[i].amount}</div>
+              <div class="part"> ${obj[i].part_number}</div>
+              <div class="brand"> ${obj[i].brand} </div>
+            </div>
+            <div class="respond">                                
+              <a href="Respond_quotation/view_respond" class='btn-ac'>Accept</a>
+              <a href="Respond_quotation/Reject_quotation/${obj[i].id}" class='btn-rj'>Reject</a>
+            </div>
+        </div>`;
+        }
+  }
+
+}
+
+  </script> 
     <script type="text/javascript" src="views/js/owner/owner-reports.js"></script>
     <script type="text/javascript" src="views/js/owner/nortification-display.js"></script>
       </body>

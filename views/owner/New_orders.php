@@ -6,10 +6,6 @@ if (!isset($_SESSION['userid'])) {
   exit();
 }
 require 'config/PathConf.php';
-
-        //  require_once('../config/dbconfig.php');
-        //  $db= new Functions_orderlist();
-        //  $value=$db->view_new_order();
 ?>
 <!DOCTYPE html>
 
@@ -28,7 +24,43 @@ require 'config/PathConf.php';
   <?php include_once 'common.php';?>
   </div>
   <section class="home-section">
-    <?php include_once 'navigation.php';?>
+    
+  <nav>
+      <div class="sidebar-button">
+        <i class="fa fa-bars sidebarBtn" aria-hidden="true"></i>
+        <span class="dashboard">Dashboard</span>
+      </div>
+      <div class="nortification-box">
+          <div class="dropdown">
+              <a href="Owner_updated" class="notification"><i class="fas fa-bell" id="fa-bell"><span class="count"><?php print_r($this->data[0][0]);?></span></i></a>
+              <?php
+                $val  = $this->data[0][0];
+              ?>
+                <div class="dropdown-content">
+              <?php
+              
+                for ($x = 0; $x <$val; $x++) {
+                  echo "<div class='msg_outside'><div class='msg-date'><br>".$this->value[$x][4]."</div>
+                  <div class='msg'><br>".$this->value[$x][6]."<br></div></div>";
+                }
+              ?>
+            <div class="respond">
+                <a href="Display_notifications" class='btn-del'>Respond</a>
+            </div>
+          </div>
+      </div>
+      </div>
+      <div class="profile-details">
+        <img src="\G7/Group07/assets/users/admin.jpg" alt="">
+        <span class="admin_name">KHW</span>
+        <div class="dropdown">
+          <button class="dropbtn"><i class="fa fa-chevron-down" aria-hidden="true"></i></button>
+          <div class="dropdown-content">
+            <a href="../controller/logout.inc.php">Log Out</a>
+          </div>
+        </div>
+      </div>
+    </nav>
     <div class="home-content">
       <div class="overview-boxes">
         <div class="view_table_order">
@@ -61,36 +93,63 @@ require 'config/PathConf.php';
                 Manage New Orders
             </div>
           </div>
-          <div class="table_body_new">
+          <div  class="table_body_new">
             <table class="tbl" collspacing="0">
-              <thead>
-                <tr>
-                  <th>Order Id</th>
-                  <th>Order date</th>
-                  <th>Total Payment</th>
-                  <th>Payment</th>
-                  <th>Approximated_date</th>
-                </tr>
-                <tr class="bordered"></tr>
-                <tr>
-                  <?php
-                      while($row = mysqli_fetch_assoc($value)){
-                        ?>
-                        <td data-label='order_id'><?php echo $row['order_id']; ?></td>
-                        <td data-label='order_date'><?php echo $row['order_date'] ?></td>
-                        <td data-label='total_payment'><?php echo $row['total_payment']; ?></td>
-                        <td data-label='payment'><?php echo $row['payment']; ?></td>
-                        <td data-label='approximated_date'><?php echo $row['approximate_d_date'] ?></td>
-                        </tr>
-                        <?php  
-                      }
-                      ?>
-              </thead>
-            </table>
+              <tr>
+                <th>Order id</th>
+                <th>Item id</th>
+                <th>Order date</th>
+                <th>Approximated date</th>
+                <th>Delivery request</th>
+                <th>Total payment</th>
+                <th>Payment</th>
+                <th colspan="3" class="text-center">Operations</th>
+              </tr> 
+              <tr class="bordered"></tr>
+              <tbody id="data">
+              <!-- new orders will be displayed here -->
+              </tbody>
+            </table> 
           </div> 
         </div> 
   </section> 
-  
+<script>
+var httprequest  = new XMLHttpRequest();
+
+httprequest.open("POST", "New_orders/Displayorder" , true);
+const rows = document.getElementById("data");
+httprequest.send();
+httprequest.onreadystatechange = function()
+{
+  if( httprequest.readyState == 4 && httprequest.status == 200)
+  {
+        var obj = JSON.parse(httprequest.responseText);
+        var html = "";
+        for(var i = 0 ; i< obj.length ; i++)
+        {
+          rows.innerHTML +=
+          `<tbody> 
+                    <tr> 
+                    <td>   ${obj[i].order_id}   </td>
+                    <td>   ${obj[i].item_id}   </td>  
+                    <td>  ${obj[i].order_date}   </td>
+                    <td>  ${obj[i].approximated_date}  </td>
+                    <td>  ${obj[i].delivery_request}  </td>
+                    <td>  ${obj[i].total_payment}  </td>
+                    <td>  ${obj[i].payment}  </td>
+                    <td class="text-center"> 
+                              <a href="New_orders/Accept_order/${obj[i].order_id}/${obj[i].item_id}/${obj[i].user_id}"class='btn-ac'> Accept </a>
+                              <a href="New_orders/Reject_order/${obj[i].order_id}"class='btn-rj'> Reject </a>
+                              <a href="Checkout_item/Check_availability/${obj[i].item_id}"class='btn-res'> Checkout </a>
+                   </td> 
+                       </tr> 
+                    </tbody>`
+        }
+  }
+
+}
+
+  </script> 
   <script type="text/javascript" src="views/js/owner/owner-reports.js"></script>
 </body>
 </html>

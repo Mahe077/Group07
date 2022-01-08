@@ -73,7 +73,7 @@
 
 <div class="detail-container1" id="detail-container1">
   
-  Warehouse 01
+
    <h1>Stockmanager Infromation</h1>
     <div class="sub-container">
         <div class="image-container">
@@ -84,34 +84,13 @@
             
         </div>
         <div class="detail-container1" id="dic">
-        <!-- <div class="image1">
-                image
-            </div> -->
-        <!-- <form action="#">
-        <label for="stockmanagerid">Stockmanager Id</label>
-        <input type="text" id="id" name="firstname" value="" readonly>
-        <br>
-        <label for="stockmanagername">Stockmanager Name</label>
-        <input type="text" id="name" name="lastname"  readonly>
-        <br>
-        <label for="warehouseloation">Warehouse Location</label>
-        <input type="text" id="sname" name="lastname"  readonly>
-        <br>
-        <label for="starteddate">Started Date</label>
-        <input type="text" id="started_date" name="lastname" value="" readonly>
-        <br>
-        <label for="dateofappointed">Date of appointed</label>
-        <input type="text" id="date" name="lastname" value="" readonly>
-        <br>
-        <button type="submit" ><a href="Stockmanagerteam">Back</a></button>
         
-        </form> -->
         </div>
     </div>
 </div>
 <div class="detail-container2" id="detail-container2">
   
-  Warehouse 02
+
   <h1>Stockmanager Infromation</h1>
     <div class="sub-container">
         <div class="image-container">
@@ -119,36 +98,16 @@
             <div class="name">
                  <h1> Warehouse 02 </h1>
             </div>
-            <!-- <div class="image1">
-                image
-            </div> -->
+            
         </div>
         <div class="details-container2">
-        <!-- <form action="#">
-        <label for="stockmanagerid">Stockmanager Id</label>
-        <input type="text" id="id" name="firstname" value="" readonly>
-        <br>
-        <label for="stockmanagername">Stockmanager Name</label>
-        <input type="text" id="name" name="lastname"  readonly>
-        <br>
-        <label for="warehouseloation">Warehouse Location</label>
-        <input type="text" id="sname" name="lastname"  readonly>
-        <br>
-        <label for="starteddate">Started Date</label>
-        <input type="text" id="started_date" name="lastname" value="" readonly>
-        <br>
-        <label for="dateofappointed">Date of appointed</label>
-        <input type="text" id="date" name="lastname" value="" readonly>
-        <br>
-        <button type="submit" ><a href="Stockmanagerteam">Back</a></button>
         
-        </form> -->
         </div>
     </div>
 </div>
 <div class="detail-container3" id="detail-container3">
   
-  Warehouse 03
+
   <h1>Stockmanager Infromation</h1>
     <div class="sub-container">
         <div class="image-container">
@@ -156,30 +115,10 @@
             <div class="name">
                  <h1> Warehouse 03 </h1>
             </div>
-            <!-- <div class="image1">
-                image
-            </div> -->
+            
         </div>
         <div class="details-container3">
-        <!-- <form action="#">
-        <label for="stockmanagerid">Stockmanager Id</label>
-        <input type="text" id="id" name="firstname" value="" readonly>
-        <br>
-        <label for="stockmanagername">Stockmanager Name</label>
-        <input type="text" id="name" name="lastname"  readonly>
-        <br>
-        <label for="warehouseloation">Warehouse Location</label>
-        <input type="text" id="sname" name="lastname"  readonly>
-        <br>
-        <label for="starteddate">Started Date</label>
-        <input type="text" id="started_date" name="lastname" value="" readonly>
-        <br>
-        <label for="dateofappointed">Date of appointed</label>
-        <input type="text" id="date" name="lastname" value="" readonly>
-        <br>
-        <button type="submit" ><a href="Stockmanagerteam">Back</a></button>
         
-        </form> -->
         </div>
     </div>
 
@@ -187,7 +126,7 @@
 </div>
 <div class="detail-container4" id="detail-container4">
   
-  Warehouse 04
+ 
   <h1>Stockmanager Infromation</h1>
     <div class="sub-container">
         <div class="image-container">
@@ -195,30 +134,10 @@
             <div class="name">
                  <h1> Warehouse 04 </h1>
             </div>
-            <!-- <div class="image1">
-                image
-            </div> -->
+           
         </div>
         <div class="details-container4">
-        <!-- <form action="#">
-        <label for="stockmanagerid">Stockmanager Id</label>
-        <input type="text" id="id" name="firstname" value="" readonly>
-        <br>
-        <label for="stockmanagername">Stockmanager Name</label>
-        <input type="text" id="name" name="lastname"  readonly>
-        <br>
-        <label for="warehouseloation">Warehouse Location</label>
-        <input type="text" id="sname" name="lastname"  readonly>
-        <br>
-        <label for="starteddate">Started Date</label>
-        <input type="text" id="started_date" name="lastname" value="" readonly>
-        <br>
-        <label for="dateofappointed">Date of appointed</label>
-        <input type="text" id="date" name="lastname" value="" readonly>
-        <br>
-        <button type="submit" ><a href="Stockmanagerteam">Back</a></button>
-        
-        </form> -->
+      
         </div>
     </div>
 

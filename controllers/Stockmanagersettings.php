@@ -13,18 +13,24 @@ class Stockmanagersettings extends Controller{
     function insert(){
 
         require 'config/PathConf.php';
+        $username =  $_SESSION['username'];
+        $id = $this->model->getinfo($username);
+            foreach($id as $row)
+            { 
+                $idn = htmlentities($row['id']);   
+            }
+            $warehouse = $this->model->getwarehouse($idn);
+            foreach($warehouse as $rows)
+            { 
+                $wh = htmlentities($rows['id']); 
+            }
         if (isset($_POST['submit'])) {
-            $item_Name = $_POST['item_Name'];
-            $chassy_No = $_POST['chassy_No'];
-            $brand = $_POST['brand'];
-            $price = $_POST['price'];
-            $genuinecompatibel = $_POST['genuinecompatibel'];
-            $description = $_POST['description'];
-            $type = $_POST['type'];
+            $item_id = $_POST['item_id'];
             $amount = $_POST['amount'];
-            $color = $_POST['color'];
-            $size = $_POST['size'];
-            $file = $_POST['file'];
+
+            
+            
+            $insert = $this->model->insert1($wh, $item_id , $amount);
 
             
 

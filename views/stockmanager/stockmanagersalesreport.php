@@ -23,7 +23,7 @@
 ?>
 <div class="main-container">
   <div class="print-container">
-    <button class="print">Print</button>
+    <button class="print" onClick="window.print()">Print</button>
   </div>
 <div class="duration-container">
 <select id="ddlViewBy" onChange="select_year()">

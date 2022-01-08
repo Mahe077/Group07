@@ -28,7 +28,7 @@
         <div class="box1">
           <div class="right-side">
             
-            <div class="box-topic"><button class="btn1" onclick="display1()">New Orders</button></div>
+            <div class="box-topic"><button class="btn1" onclick="display1()">Done Orders</button></div>
             
           </div>
           <!-- <i class="fa fa-cart-plus" aria-hidden="true"></i> -->
@@ -107,7 +107,7 @@
 <th>Order_Date</th>
 <th>Approximate_deliver_date</th>
 <th>Total_payment</th>
-<th>Reason</th>
+<!-- <th>Reason</th> -->
 </tr>
 </thead>
 
@@ -128,7 +128,7 @@
 <th>Payment(Rs)</th>
 <th>Total_payment</th>
 <th>Delivered_date</th>
-<th>reason</th>
+<!-- <th>reason</th> -->
 </tr>
 </thead>
 

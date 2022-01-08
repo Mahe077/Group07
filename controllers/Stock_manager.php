@@ -7,7 +7,17 @@
         }
         public function index()
         {
+            $data = $this->model->Displaynoti();
+            $this->view->data=$data;
+            $value= $this->model->Display();
+             $this->view->value=$value;
             $this->view->render('owner/Stock_manager');
+        }
+        public function Displaystock()
+        {
+            $data = $this->model->Displaystock();
+            echo json_encode($data);
+            return $data;
         }
     }
 ?>

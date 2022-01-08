@@ -26,14 +26,49 @@ require 'config/PathConf.php';
   <?php include_once 'common.php';?>
   </div>
   <section class="home-section">
-    <?php include_once 'navigation.php';?>
+  <nav>
+      <div class="sidebar-button">
+        <i class="fa fa-bars sidebarBtn" aria-hidden="true"></i>
+        <span class="dashboard">Dashboard</span>
+      </div>
+      <div class="nortification-box">
+          <div class="dropdown">
+              <a href="Owner_updated" class="notification"><i class="fas fa-bell" id="fa-bell"><span class="count"><?php print_r($this->data[0][0]);?></span></i></a>
+              <?php
+                $val  = $this->data[0][0];
+              ?>
+                <div class="dropdown-content">
+              <?php
+              
+                for ($x = 0; $x <$val; $x++) {
+                  echo "<div class='msg_outside'><div class='msg-date'><br>".$this->value[$x][4]."</div>
+                  <div class='msg'><br>".$this->value[$x][6]."<br></div></div>";
+                }
+              ?>
+            <div class="respond">
+                <a href="Display_notifications" class='btn-del'>Respond</a>
+            </div>
+          </div>
+      </div>
+      </div>
+      <div class="profile-details">
+        <img src="\G7/Group07/assets/users/admin.jpg" alt="">
+        <span class="admin_name">KHW</span>
+        <div class="dropdown">
+          <button class="dropbtn"><i class="fa fa-chevron-down" aria-hidden="true"></i></button>
+          <div class="dropdown-content">
+            <a href="../controller/logout.inc.php">Log Out</a>
+          </div>
+        </div>
+      </div>
+    </nav>
     <div class="home-content-cat">
       <div class="btn-section-cat">
-        <a href="insert-category.php" id="insert-btn" class="insert-btn"><div class="btn-txt-cat">Insert New Category</div></a>
+        <a href="Insert_category" id="insert-btn" class="insert-btn"><div class="btn-txt-cat">Insert New Category</div></a>
       </div>
       <div class="cat-table">
         <?php 
-          $db->display_msg();
+          //$db->display_msg();
           
         ?>
         <div class="topic-row">
@@ -50,25 +85,56 @@ require 'config/PathConf.php';
                     <th colspan="2" class="text-center">Operations</th>
                 </tr>
                 <tr class="bordered"></tr>
+                <tbody id="data">
+
+               </tbody>
                 <tr>
                     <?php
-                        while($row = mysqli_fetch_assoc($value)){
+                        //while($row = mysqli_fetch_assoc($value)){
                         ?>
-                        <td data-label='id'><?php echo $row['id']; ?></td>
-                        <td data-label='category'><?php echo $row['category_name']; ?></td>
+                        <td data-label='id'><?php //echo $row['id']; ?></td>
+                        <td data-label='category'><?php //echo $row['category_name']; ?></td>
 
                         <td class="text-center">
-                            <a href="delete-cat.php?id=<?php echo $row['id']?>"class='btn-del'>Delete</a>
+                            <a href="delete-cat.php?id=<?php //echo $row['id']?>"class='btn-del'>Delete</a>
                         </td>
                         </tr>
                         <?php  
-                        }
+                        //}
                         ?>
             </thead>
           </table>
       </div>     
     </div>         
-  </section> 
+  </section>
+  <script>
+var httprequest  = new XMLHttpRequest();
+
+httprequest.open("POST", "Categorylist/Displaycat" , true);
+const rows = document.getElementById("data");
+httprequest.send();
+httprequest.onreadystatechange = function()
+{
+  if( httprequest.readyState == 4 && httprequest.status == 200)
+  {
+        var obj = JSON.parse(httprequest.responseText);
+        var html = "";
+        for(var i = 0 ; i< obj.length ; i++)
+        {
+          rows.innerHTML +=
+                    '<tbody> ' +
+                    '<tr> ' +
+                    '<td> ' +  obj[i].category_name  +  '</td>' +  
+                    '<td> ' + obj[i].status + ' </td>' +
+                    
+                       '</tr>' + 
+                    '</tbody>'
+        }
+  }
+
+}
+
+  </script>  
   <script type="text/javascript" src="views/js/owner/owner-reports.js"></script>
   <script type="text/javascript" src="views/js/owner/form-cat.js"></script>
 </body>

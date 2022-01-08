@@ -7,6 +7,10 @@
         }
         public function index()
         {
+            $data = $this->model->Displaynoti();
+            $this->view->data=$data;
+            $value= $this->model->Display();
+             $this->view->value=$value;
             $this->view->render('owner/Settings');
         }
     }

@@ -6,7 +6,11 @@
             parent::__construct();
         }
         public function index()
-        {
+        { 
+            $data = $this->model->Displaynoti();
+            $this->view->data=$data;
+            $value= $this->model->Display();
+             $this->view->value=$value;
             $this->view->render('owner/Insert_item');
         }
 
@@ -16,8 +20,9 @@
         require 'config/PathConf.php';
         if(isset($_POST['submit'])){
             //$cat_id=$_POST['cat_id']);
+            $productId=$_POST['productId'];
             $brand=$_POST['brand'];
-            //$type=$_POST['type'];
+            $type=$_POST['type'];
             $price=$_POST['price'];
             $size=$_POST['size'];
             // $part=$_POST['part'];
@@ -39,9 +44,9 @@
 
             // if(in_array($img_correct_ext , $allow)){
             //         if($imgSize <=100000){
-                        $this->model->createItem($brand,$price,$size,$partNo,$partNo_Manufacturer,$amount);
+                        $this->model->createItem($productId,$brand,$type,$price,$size,$partNo,$partNo_Manufacturer,$amount);
                         $_SESSION['error'] = "Successfully entered";
-                        header("location:".$localhost."Log_in");
+                        header("location:".$localhost."Productlist");
                         exit();
             //         }else{
             //             $_SESSION['error'] = "Image is too big";

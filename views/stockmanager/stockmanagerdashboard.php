@@ -92,7 +92,7 @@
          <div class="notification-box">
             <a href="stockmanagernotification.php" class="notifications"> <i class='bx bxs-bell'></i> </a>
             </div>
-            <img src="assets/users/chairman.png" alt="">
+            <img src="<?php echo $_SESSION['image_path'] ?>" alt="">
             <div class="navbar">
             <div class="dropdown">
   <button class="dropbtn"><?php echo $_SESSION['username'] ?></button>

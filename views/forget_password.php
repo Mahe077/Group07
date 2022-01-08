@@ -35,7 +35,7 @@
                 <input type="username" name="username" id="username" class="username" placeholder="User Name" required>
             </div>    
             </p>
-            <button type="submit" class="submitbutton" name="submit">Verify</button>
+            <button type="submit" class="submitbutton" name="submit">Confirm</button>
         </form>
         </div>
 

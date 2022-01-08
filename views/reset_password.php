@@ -23,6 +23,7 @@
 
 
             <p>
+                <h2>Reset Your Password</h2>
             <div class="input-section">
                 <label for="username"><i class='bx bx-key' ></i></label>
                 <input type="text" name="username" id="username" placeholder="Enter Username" required>
