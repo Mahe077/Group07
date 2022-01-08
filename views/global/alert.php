@@ -254,6 +254,14 @@ if (isset($_SESSION['error'])) {
                     <strong>Warning!</strong> Invalid string format ,may include only 'a-z A-Z 0-9 - \ / , : . s'
                </div>
           </div>";
+     } else if ($_SESSION['error'] == 'ReviewSuccess') {
+          echo "
+          <div class='floating-container'>
+          <div class='alert alert-success alert-dismissible popup'>
+                    <a href='#'  class='remove-alert' data-dismiss='alert' aria-label='close'>&times;</a>
+                    <strong>Warning!</strong> You have successfully reviewed the item ,Thank you.
+              </div>
+          </div>";
      }
 }
 

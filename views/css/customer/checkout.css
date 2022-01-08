@@ -65,8 +65,8 @@ input[type="number"] {
 .row-data .col-3{
 	width: 100%;
 	display:grid ;
-	grid-template-columns: 0.8fr .7fr .5fr;
-	grid-template-areas: "col-4 col-6 col-5";
+	grid-template-columns: .9fr .4fr;
+	grid-template-areas: "col-4  col-5";
 	padding: 0;
 }
 
@@ -82,13 +82,17 @@ input[type="number"] {
 	border-right: 1px solid black;
 }
 
-.col-6{
+.fa-comment{
+  font-size: 1.7rem;
+  color: red;
+}
+/* .col-6{
 	grid-area: col-6;
 	margin-left: .2rem;
 	border-right: 1px solid black;
   display: flex;
   justify-content: center;
-}
+} */
 
 .col-5 {
   grid-area: col-5;

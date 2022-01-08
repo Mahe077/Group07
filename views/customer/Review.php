@@ -33,14 +33,14 @@ require 'config/PathConf.php';
                 <div class="image">
                 <img src="assets/car/animated/4.jpg" alt="">
                 </div>
-                <form class="form" method="post" action="#">
+                <form class="form" method="post" action="<?php echo $localhost; ?>/Review/insert">
                     <div class="inputBox">
                         <input type="text" name="first_name" value="<?php echo $_SESSION['fname']; ?>">
                         <input type="text" name="last_name" value="<?php echo $_SESSION['lname']; ?>">
+                        <input type="hidden" name="orderId" value="<?php echo $this->orderid; ?>">
                     </div>
                     <div class="inputBox">
-                        <textarea>
-					   </textarea>
+                    <textarea placeholder="Comment" name="comment" id="" cols="30" rows="10"></textarea>
                     </div>
                     <div class="rate">
                         <input type="radio" id="star5" name="rate" value="5" />
@@ -56,7 +56,7 @@ require 'config/PathConf.php';
                     </div>
                     <br><br><br>
 
-                    <input type="submit" class="btn" value="Submit">
+                    <input type="submit" class="btn" name="submit" value="Submit">
 
             </div>
             </form>
