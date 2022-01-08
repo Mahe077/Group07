@@ -13,4 +13,11 @@ class Respond_quotation_Model extends Model
     {
         return $this->db->update2("UPDATE special_item SET status = '1' WHERE id = '$id';");
     }
+    public function Displaynoti(){
+        return  $this->db->select("SELECT count(*)FROM `notification` WHERE status = '0'");
+    }
+    public function Display(){
+         return  $this->db->select("SELECT *FROM `notification` WHERE status = '0'");
+    }
+    
 }

@@ -95,6 +95,17 @@ form .input-boxes{
   padding: 15px 15px;
   font-size: 12px;
 }
+.input-txt input{
+  background: none;
+  outline: none;
+  border: none;
+  line-height: 1;
+  font-weight: 500;
+  color: #075061;
+  width: 330px;
+  padding: 15px 15px;
+  font-size: 12px;
+}
 .slt select{
   width: 330px;
   font-size: 0.8rem;
