@@ -35,62 +35,42 @@
     padding-left: 20px;
     padding-right: 20px;
   }
-  
-  .notifi-img img{
-    border-radius: 50%;
-
-  }
-  .notifi-img{
-    width: 25%;
-      padding-left: 10px;
-
-  }
-  .notifi{
+  #notifi{
     justify-content: center;
     align-items: center;
     height: 150px;
-    display: flex;
+    width: 100%;
     background-color: rgb(252, 253, 253);
     border-radius: 5px;
+  }
+  .notifi-details{
+    margin-top: 20px;  
+    padding-left: 10px;
+    height: 150px;
+    display: flex;
+    width: 100%;
+    padding: 30px;
     border-left: 7px solid #ca5e5a;
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
   }
-  .notifi-details{
-    margin-top: 25px;  
-    padding-left: 10px;
-    height: 150px;
-    display: inline;
-    width: 50%;
-  }
- 
-  .name{
+
+  .name,.date,.brand, .part,.amount{
     color: #08343e;
     font-size: 13px;
     text-align: left;
   }
   
-  .date{
-    color: #08343e;
-    font-size: 13px;
-    text-align: left;
-  }
-  .brand{
-    color: #08343e;
-    font-size: 13px;
-    text-align: left;
-  }
-  .part{
-    color: #08343e;
-    font-size: 13px;
-    text-align: left;
-  }
-  .amount{
-    color: #08343e;
-    font-size: 13px;
-    text-align: left;
-  }
 .respond{
-    width: 25%;
+    width: 30%;
+    align-items: center;
+    padding: 30px;
+    display: flex;
+    border-left: 100px;
+}
+.respond a{
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 600;
 }
   .msg-container{
     padding-bottom: 10px;
@@ -108,4 +88,26 @@
     padding-top: 10px;
     border-radius: 3px;
     border-color:#d6e9c6;
+  }
+  .img_item_s{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+  }
+
+  .view_item_s{
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    margin-left: 20px;
+    border-radius: 50%;
+  }
+
+  .special{
+    border-left: 100px;
+    padding-left: 50px;
+    width: 50%;
   }

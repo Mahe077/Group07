@@ -44,6 +44,13 @@ class Database extends PDO
             return false;
         }
     }
+    public function update2($query)
+    {
+        $stmt = $this->prepare($query);
+
+        $stmt->execute();
+
+    }
     public function insert($query, $data)
     {
         $stmt = $this->prepare($query);
