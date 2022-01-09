@@ -47,7 +47,7 @@ main {
 
 .notification-area .date {
   position: relative;
-  left: calc(100% - 7rem);
+  left: calc(100% - 5.5rem);
   top: -2rem;
   font-size: 1.3rem;
   padding-bottom: 1rem;
@@ -81,7 +81,7 @@ main {
 
 .notification-area-reply .date {
   position: relative;
-  left: calc(100% - 7rem);
+  left: calc(100% - 5.5rem);
   top: -2rem;
   font-size: 1.3rem;
   padding-bottom: 1rem;
