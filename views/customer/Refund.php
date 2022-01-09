@@ -28,6 +28,9 @@ require 'config/PathConf.php';
     include_once 'views/global/header-ws.php';
     ?>
     <main>
+        <?php
+        include_once 'views/global/alert.php';
+        ?>
         <section class="form-content">
             <h2 class="heading">Refund <span>NOW</span></h2>
             <div class="row">
@@ -69,9 +72,9 @@ require 'config/PathConf.php';
                     <textarea placeholder="Reason" name="reason" id="" cols="30" rows="10" style="font-size: 1.5rem;"></textarea>
 
                     <input type="submit" name="submit" class="btn" value="Refund Now">
-                    </form>
+                </form>
             </div>
-          
+
         </section>
     </main>
     <script type="text/javascript" src="<?php echo $localhost; ?>views/js/customer/main-ws.js"></script>

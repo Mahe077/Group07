@@ -3,6 +3,11 @@ if (!isset($_SESSION['userid'])) {
     $_SESSION['error'] = 'invalidAccess';
     header("location: Log_in");
     exit();
+}elseif($_SESSION['position'] == 'OW'){
+    header("location:" . $localhost . "owner_updated");
+}
+elseif($_SESSION['position'] == 'SM'){
+    header("location:" . $localhost . "stockmanagerdashboardhome");
 }
 require 'config/PathConf.php';
 ?>

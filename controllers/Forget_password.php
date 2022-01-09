@@ -10,7 +10,10 @@ class Forget_password extends Controller{
         $this->view->render('forget_password');
     }
     
-    
+    public function reset()
+    {
+        $this->view->render('reset_password');
+    }
     public function forget(){
         require 'config/PathConf.php';
         if (isset($_POST['submit'])) {

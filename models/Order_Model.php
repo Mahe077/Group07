@@ -6,11 +6,11 @@ class Order_Model extends Model
         parent::__construct();
     }
 
-    public function loadAll($id)
+    public function loadAll($id,$type)
     {
         return $this->db->select2(
-            "SELECT qty,total_payment,status,amount,name,order_id,item_id FROM (SELECT * FROM `orders` ,item WHERE orders.item_id = item.id) tmp ,product WHERE product.id = tmp.productId AND user_id = :id ",
-            ['id' => $id]
+            "SELECT qty,total_payment,status,amount,name,order_id,item_id FROM (SELECT * FROM `orders` ,item WHERE orders.item_id = item.id) tmp ,product WHERE (product.id = tmp.productId AND user_id = :id) AND tmp.status = :type",
+            ['id' => $id,'type' =>$type]
         );
     }
     public function Remove($order_id)
