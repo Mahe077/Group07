@@ -57,7 +57,7 @@ class Stockmanagersalesreport_Model extends Model
         return $this->db->select2("SELECT SUM(total_payment) AS cancelsum FROM orders WHERE YEAR(order_date)= :year AND warehouse_id = :warehouse_id AND order_type = :order_type" , ['year' =>$duration , 'warehouse_id' =>$wh , 'order_type' =>$statecancel]);
     }
 // return month
-    function retrunmonth($duration = null ,$year = null, $wh = null, $statereturn = null)
+    function returnmonth($duration = null ,$year = null, $wh = null, $statereturn = null)
     {
         return $this->db->select2("SELECT SUM(total_payment) AS returnsum FROM orders WHERE YEAR(order_date)= :year AND MONTH(order_date) = :month AND warehouse_id = :warehouse_id AND order_type = :order_type" , ['month' =>$duration , 'warehouse_id' =>$wh , 'order_type' =>$statereturn , 'year' =>$year]);
     }

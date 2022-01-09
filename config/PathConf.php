@@ -1,2 +1,2 @@
 <?php
-$localhost = "http://localhost:/G7/Group07/";
+$localhost = "http://localhost:8080/G7/Group07/";

@@ -10,16 +10,7 @@
   padding: 0 20px;
   margin-bottom: 26px;
 }
-/* .overview-boxes .box{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: calc(100% / 4 - 15px);
-  background: #fff;
-  padding: 15px 14px;
-  border-radius: 12px;
-  box-shadow: 0 10px 15px rgba(0,0,0,0.1);
-} */
+
 
 
 .overview-boxes .box1{
@@ -27,10 +18,10 @@
   align-items: center;
   justify-content: center;
   width: calc(100% / 4 - 15px);
-  background: #63c44d;
+  background: #acf19c;
   padding: 15px 14px;
-  border-radius: 12px;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  /* border-radius: 12px; */
+  box-shadow: 0 5px 10px rgba(0,0,0,0.3);
   height: 150px;
 }
 .overview-boxes .box2{
@@ -38,10 +29,10 @@
   align-items: center;
   justify-content: center;
   width: calc(100% / 4 - 15px);
-  background: #28a6a8;
+  background: #9cebec;
   padding: 15px 14px;
-  border-radius: 12px;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  /* border-radius: 12px; */
+  box-shadow: 0 5px 10px rgba(0,0,0,0.3);
   height: 150px;
 }
 .overview-boxes .box3{
@@ -49,10 +40,10 @@
   align-items: center;
   justify-content: center;
   width: calc(100% / 4 - 15px);
-  background: #fec52d;
+  background: #f8dd94;
   padding: 15px 14px;
-  border-radius: 12px;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  /* border-radius: 12px; */
+  box-shadow: 0 5px 10px rgba(0,0,0,0.3);
   height: 150px;
 }
 .overview-boxes .box4{
@@ -60,10 +51,10 @@
   align-items: center;
   justify-content: center;
   width: calc(100% / 4 - 15px);
-  background: #ca5e5a;
+  background: #f7a09d;
   padding: 15px 14px;
-  border-radius: 12px;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  /* border-radius: 12px; */
+  box-shadow: 0 5px 10px rgba(0,0,0,0.3);
   height: 150px;
 }
 
@@ -83,21 +74,22 @@
 
 
 
-
+/* 
 #box1{
-  background-color: #63c44d;
+  background-color: #90e07d;
+
 }
 #box2{
-  background-color: #28a6a8;
+  background-color: #7fd1d3;
 }
 #box3{
-  background-color: #fec52d;
+  background-color: #eece76;
 }
 #box4{
-  background-color: #ca5e5a;
-}
+  background-color: #fa9996;
+} */
 .overview-boxes .box-topic{
-  font-size: 20px;
+  font-size: 30px;
   font-weight: 500;
 }
 .home-content .box1 .number{
