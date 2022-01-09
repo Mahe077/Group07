@@ -43,17 +43,20 @@ require 'config/PathConf.php';
         <h2 class="heading">Special Order <span>Management</span></h2>
         <section class="links">
             <ul id="Order-display-actions">
-            <li>
+                <li>
                     <a href="#" class="btn order_typr_links" id="pending" name="pending" onclick="display_orders(<?php echo $_SESSION['userid'] ?>,0)">Pending</a>
                 </li>
                 <li>
-                    <a href="#" class="btn order_typr_links" id="to_deliver" name="to_deliver" onclick="display_orders(<?php echo $_SESSION['userid'] ?>,1)">Accepted</a>
+                    <a href="#" class="btn order_typr_links" id="to_order" name="to_order" onclick="display_orders(<?php echo $_SESSION['userid'] ?>,1)">To order</a>
+                </li>
+                <li>
+                    <a href="#" class="btn order_typr_links" id="to_deliver" name="to_deliver" onclick="display_orders(<?php echo $_SESSION['userid'] ?>,3)">Accepted</a>
                 </li>
                 <li>
                     <a href="#" class="btn order_typr_links" id="to_review" name="to_review" onclick="display_orders(<?php echo $_SESSION['userid'] ?>,8)">To review</a>
                 </li>
                 <li>
-                    <a href="#" class="btn order_typr_links" id="cancel" name="cancel" onclick="display_orders(<?php echo $_SESSION['userid'] ?>,2)">Cacellation</a>
+                    <a href="#" class="btn order_typr_links" id="cancel" name="cancel" onclick="display_orders(<?php echo $_SESSION['userid'] ?>,4)">Cancellation</a>
                 </li>
             </ul>
         </section>

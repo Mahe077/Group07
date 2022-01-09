@@ -59,7 +59,7 @@ require 'config/PathConf.php';
                     <a href="#" class="btn order_typr_links" id="to_review" name="to_review" onclick="display_orders(<?php echo $_SESSION['userid'] ?>,8)">To review</a>
                 </li>
                 <li>
-                    <a href="#" class="btn order_typr_links" id="cancel" name="cancel" onclick="display_orders(<?php echo $_SESSION['userid'] ?>,2)">Cacellation</a>
+                    <a href="#" class="btn order_typr_links" id="cancel" name="cancel" onclick="display_orders(<?php echo $_SESSION['userid'] ?>,2)">Cancellation</a>
                 </li>
             </ul>
         </section>

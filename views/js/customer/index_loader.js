@@ -10,7 +10,7 @@
     xhr.onload = function () {
       let swiper_wrapper = document.querySelector("#review-slider_wrapper");
       var rate = JSON.parse(this.response);
-      console.log(rate);
+      // console.log(rate);
       swiper_wrapper.innerHTML = " ";
       if (rate !== null) {
         for (let s of rate) {
