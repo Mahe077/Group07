@@ -12,7 +12,20 @@ class Stockmanagerproduct extends Controller{
 
     public function Loadproducts()
     {
-        $items = $this->model->loadproducts();
+        $username = $_SESSION['username'];
+        $id = $this->model->getinfo($username);
+            foreach($id as $row)
+            { 
+                $idn = htmlentities($row['id']);
+            }
+           
+            $warehouse = $this->model->getwarehouse($idn);
+            foreach($warehouse as $rows)
+            {
+                
+                $wh = htmlentities($rows['id']);
+            }
+        $items = $this->model->loadproducts($wh);
         echo json_encode(count($items) == 0 ? null : $items);
     }
     
