@@ -41,8 +41,10 @@
   .btn1{
       width: auto;
       height: 50px;
-      background-color: #66b0ff;
-      padding: 10px 15px 10px 15px;
+      background-color: #042434;
+      padding: 8px 25px 8px 25px;
+      color: #fff;
+      font-size: 15px;
   }
 
   .btn1:hover{
@@ -51,8 +53,10 @@
   .btn2{
     width: auto;
     height: 50px;
-    background-color: #2BD47D;
-    padding: 10px 15px 10px 15px;
+    background-color: #042434;
+    padding: 8px 25px 8px 25px;
+    color: #fff;
+    font-size: 15px;
 }
 .btn2:hover{
     letter-spacing: .2rem;
@@ -60,8 +64,10 @@
 .btn3{
     width: auto;
     height: 50px;
-    background-color: #ffc233;
-    padding: 10px 15px 10px 15px;
+    background-color: #042434;
+    padding: 8px 25px 8px 25px;
+    color: #fff;
+    font-size: 15;
 }
 .btn3:hover{
     letter-spacing: .2rem;
@@ -69,8 +75,10 @@
 .btn4{
     width: auto;
     height: 50px;
-    background-color: #e05260;
-    padding: 10px 15px 10px 15px;
+    background-color: #042434;
+    padding: 8px 25px 8px 25px;
+    color: #fff;
+    font-size: 15px;
 }
 .btn4:hover{
     letter-spacing: .2rem;
@@ -177,26 +185,26 @@
     display: none;
    
 }
-
+#container5{
+  padding-top: 50px;
+  padding: 0 10%;
+  margin: 0 auto;
+}
 .one{
     font-size: 40px;
     font-weight: 600;
-    color: #66b0ff;
 }
 .two{
   font-size: 40px;
   font-weight: 600;
-    color: #2BD47D;
 }
 .three{
   font-size: 40px;
   font-weight: 600;
-    color: #ffc233;
 }
 .four{
   font-size: 40px;
   font-weight: 600;
-    color: #e05260;
 }
 table {
     width: 100%;
@@ -204,23 +212,6 @@ table {
     border-collapse: collapse;
   }
 
-.table-container1 thead {
-      background-color:#115794;
-      
-  }
-  .table-container2 thead {
-    background-color:#088f49;
-    
-}
-.table-container3 thead {
-  background-color:#da9c0b;
-  
-}
-.table-container4 thead {
-  background-color:#c52232;
-
-  
-}
 
   .table thead tr th{
     font-size: 14px;
@@ -232,17 +223,7 @@ table {
     vertical-align: top;
     border: 2px solid #dee2e685;
 }
-/* .table tbody tr td{
-  font-size: 14px;
-  letter-spacing: 0.35px;
-  font-weight: normal;
-  color: #f1f1f1;
-  background-color: #3c3f44; 
-  padding: 8px;
-  text-align: center;
-  border: 1px solid #dee2e685;
-}
-*/
+
 .table-container1 .table tbody tr td{
   font-size: 14px;
   letter-spacing: 0.35px;
@@ -318,7 +299,7 @@ table {
     left: 60px;
   }
   .sidebar.active ~ .menu{
-    /* width: calc(100% - 220px); */
+  
     overflow: hidden;
     left: 220px;
   }
@@ -393,3 +374,110 @@ table {
   }
 }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.view_table .table_body{
+  height: 100%;
+ }
+.tbl{
+  width: 100%;
+}
+.tbl td{
+  padding: 20px 20px;
+  text-align: center;
+  font-size: 12px;
+  border: none;
+}
+.txt{
+  font-size: 50px;
+  text-align: center;
+  font-weight: 500;
+
+}
+.tbl th{
+  padding: 20px 20px;
+  text-align: center;
+  font-size: 15px;
+  color: #042434;
+  border: none;
+}
+.bordered {
+  border-bottom: 2px solid #042434;
+  width:50%;
+}
+.tbl-nor{
+  width: 100%;
+}
+.tbl-nor td{
+  padding: 20px 20px;
+  text-align: center;
+  font-size: 12px;
+  border: none;
+}
+.tbl-nor th{
+  padding: 20px 20px;
+  text-align: center;
+  font-size: 15px;
+  color: #042434;
+  border: none;
+}
+#table .tbody{
+  height: 100%;
+ }
+ .tbl{
+   width: 100%;
+ }
+ .tbl td{
+   padding: 15px 15px;
+   text-align: center;
+   font-size: 12px;
+   border: none;
+ }
+ .txt{
+   font-size: 50px;
+   text-align: center;
+   font-weight: 500;
+ 
+ }
+ .tbl th{
+   padding: 15px 15px;
+   text-align: center;
+   font-size: 15px;
+   color: #042434;
+   border: none;
+ }
+ .bordered {
+   border-bottom: 2px solid #042434;
+   width:50%;
+ }
+ .tbl-nor{
+   width: 100%;
+ }
+ .tbl-nor td{
+   padding: 20px 20px;
+   text-align: center;
+   font-size: 12px;
+   border: none;
+ }
+ .tbl-nor th{
+   padding: 20px 20px;
+   text-align: center;
+   font-size: 15px;
+   color: #042434;
+   border: none;
+ }

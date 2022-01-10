@@ -3,24 +3,28 @@ function display1() {
   document.getElementById("container2").style.display = "none";
   document.getElementById("container3").style.display = "none";
   document.getElementById("container4").style.display = "none";
+  document.getElementById("container5").style.display = "none";
 }
 function display2() {
   document.getElementById("container1").style.display = "none";
   document.getElementById("container2").style.display = "block";
   document.getElementById("container3").style.display = "none";
   document.getElementById("container4").style.display = "none";
+  document.getElementById("container5").style.display = "none";
 }
 function display3() {
   document.getElementById("container1").style.display = "none";
   document.getElementById("container2").style.display = "none";
   document.getElementById("container3").style.display = "block";
   document.getElementById("container4").style.display = "none";
+  document.getElementById("container5").style.display = "none";
 }
 function display4() {
   document.getElementById("container1").style.display = "none";
   document.getElementById("container2").style.display = "none";
   document.getElementById("container3").style.display = "none";
   document.getElementById("container4").style.display = "block";
+  document.getElementById("container5").style.display = "none";
 }
 
 

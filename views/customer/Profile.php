@@ -70,13 +70,13 @@ require 'config/PathConf.php';
             </li>
             <li>
                 <div class="iocn-link">
-                    <a href="Reset_password">
+                    <a href="Loggedreset_password">
                         <i class='bx bx-shield-quarter'></i>
                         <span class="link_name" style="white-space: nowrap;">Password Reset</span>
                     </a>
                 </div>
                 <ul class="sub-menu">
-                    <li><a class="link_name" href="Reset_password">Password Reset</a></li>
+                    <li><a class="link_name" href="Loggedreset_password">Password Reset</a></li>
                 </ul>
             </li>
             <li>

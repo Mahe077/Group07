@@ -37,7 +37,7 @@ class Stockmanagerdelivery extends Controller{
             $orderid = $_POST['order_ID'];
             
             $_SESSION['order_ID'] = $orderid;
-        //    echo $_SESSION['orderid'];
+       
             $company = $_POST['company'];
             $status = 1;
             $this->model->Updatedelivery($orderid , $company , $status);
@@ -85,12 +85,73 @@ class Stockmanagerdelivery extends Controller{
                     $_SESSION['error2']= "Delivery assigned succesfully";
                     header("Location:".$localhost."Stockmanagerdelivery");
                     exit();
+                   
                 }
                 else
                 {
                     $_SESSION['error2']= "Delivery assign fialed";
                     header("Location:".$localhost."Stockmanagerdelivery");
                     exit();
+                  
+                }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        $username = $_SESSION['username'];
+        $id = $this->model->getinfo($username);
+            foreach($id as $row)
+            { 
+                $idn = htmlentities($row['id']);
+            }
+           
+            $warehouse = $this->model->getwarehouse($idn);
+            foreach($warehouse as $rows)
+            {
+                
+                $wh = htmlentities($rows['id']);
+            }
+            $url1 = $localhost.'Deliverycompany';
+            $mail1 = 'Chandrasekar@gmail.com';
+            $to1              = $mail1;
+            // $sender          = 'pavithrasandamini283@gmail.com';
+            $email_subject1   = 'Delivery Assign Notification';
+            // $email_body1      = '<p> Dear ' . ownername . ',' . '</p>'; 
+            // $email_body1     .= '<p> This email is to inform you about delivery is requested from' . $company . '</p>';
+            $email_body1     .= '<p>Address: ' . $add . ' </p>';
+            $email_body1     .= '<p>On or before:' . $da . '</p>';
+           
+            $email_body1     .= '<p> thank you, <br> SL MINI Spares , warehosue ' . $wh . '</p>';
+            
+            $header1 = "From: {$mail1}\r\nContent-Type: text/html;";
+          
+            $sentmailresult1 = mail($to1 , $email_subject1 , $email_body1 , $header1);
+           
+                if($sentmailresult1)
+                {
+                    // $_SESSION['error3']= " owner Delivery assigned succesfully";
+                    header("Location:".$localhost."Stockmanagerdelivery");
+                    exit();
+                  
+                }
+                else
+                {
+                    // $_SESSION['error3']= "owner Delivery assign fialed";
+                    header("Location:".$localhost."Stockmanagerdelivery");
+                    exit();
+                  
                 }
         }
     }

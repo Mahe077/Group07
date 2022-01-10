@@ -90,7 +90,8 @@
           <div class="right">
          <div class="profile-details">
          <div class="notification-box">
-            <a href="stockmanagernotification.php" class="notifications"> <i class='bx bxs-bell'></i> </a>
+           
+            <!-- <a href="stockmanagernotification.php" class="notifications"> <i class='bx bxs-bell'></i> </a> -->
             </div>
             <img src="<?php echo $_SESSION['image_path'] ?>" alt="">
             <div class="navbar">
@@ -101,7 +102,6 @@
     <a href="Log_out">Log Out</a>
   </div>
 </div>
-            
 </div> 
     </div>
   </div>

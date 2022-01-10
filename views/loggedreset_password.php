@@ -12,7 +12,7 @@
 </head>
 <body>
 <?php
-    // $this_page = "reset_password.php";
+    $this_page = "loggedreset_password.php";
 ?> 
 
 <header class="header">
@@ -22,13 +22,13 @@
     <form action="Reset_password/reset" method = "POST" enctype="multipart/form-data">
 
 
-            <p>
+            
                 <h2>Reset Your Password</h2>
-            <div class="input-section">
+            <!-- <div class="input-section">
                 <label for="username"><i class='bx bx-key' ></i></label>
                 <input type="text" name="username" id="username" placeholder="Enter Username" required>
-            </div>    
-            </p>
+            </div>     -->
+            
             <p>
             <div class="input-section">
                 <label for="passowrd"><i class='bx bx-key' ></i></label>

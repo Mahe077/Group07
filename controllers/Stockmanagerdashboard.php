@@ -7,6 +7,7 @@ class Stockmanangerdashboard extends Controller{
     }
 
     function index(){
+        
         $this->view->render('stockmanager/stockmanagerdashboard');
     }
     

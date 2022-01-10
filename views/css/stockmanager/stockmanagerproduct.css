@@ -202,22 +202,12 @@ form .button input:hover{
 }
 
  #imagebox{
-  /* height: 15rem;
-  overflow: hidden;
-  width: 50%; */
+ 
   border-radius: 10px;
     height: 300px;
     width: 300px;
 }
- /* .box img{
-  height: 70%;
-  object-fit: cover;
-  width: 70%;
-} */
 
- /* .box:hover #imagebox img{
-  transform: scale(1.2);
-} */
 
  .box h3{
     color:#fff;

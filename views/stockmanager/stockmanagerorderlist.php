@@ -56,31 +56,56 @@
         </div>
       </div>
 
+      <div class="table-container5" id="container5" >
 
+<div class="table_body_new">
+<table class="tbl" id="titletable" collapsing="0" >
+<thead>
+<tr >
+                <th>Order id</th>
+                <th>Order date</th>
+                <th>Approximated date</th>
+                <th>Delivery request</th>
+                <th>Total payment</th>
+                <th>Payment</th>
+</tr>
+
+<tr class="bordered"></tr>
+</thead>
+              <tbody id="data">
+              <!-- new orders will be displayed here -->
+              </tbody>
+</table>
+</div>
+</div>
 
 
     <div class="table-container1" id="container1" onload="loadneworders();">
 
-    <h3 class="one"> New Orders </h3>
-    <table class="table" id="table" >
-    <thead>
-    <tr >
-    <th>Order_ID</th>
+    <div class="table_body_new">
+<table class="tbl" id="table" collapsing="0" >
+<thead>
+<tr >
+<th>Order_ID</th>
     <th>Order_Date</th>
     <th>Payment(Rs)</th>
     <th>Total_payment</th>
     <th>Approximate_Deliver_date</th>
-    </tr>
-    </thead>
-    
+</tr>
+
+<tr class="bordered"></tr>
+</thead>
+            
 </table>
 </div>
+</div>
+
 
 
 <div class="table-container2" id="container2" onload="loadpendingorders();">
 
-<h3 class="two"> Pending Orders </h3>
-<table class="table" id="table1" >
+<div class="table_body_new">
+<table class="tbl" id="table1" collapsing="0" >
 <thead>
 <tr >
 <th>Order_ID</th>
@@ -89,38 +114,40 @@
 <th>Total_payment(Rs)</th>
 
 </tr>
+<tr class="bordered"></tr>
 </thead>
 
 </table>
 
 
-
+</div>
 </div>
 
 <div class="table-container3" id="container3" onload="loadcancelorders();">
 
-<h3 class="three"> Cancel Orders </h3>
-<table class="table" id="table2">
+<div class="table_body_new">
+<table class="tbl" id="table2" collapsing="0" >
 <thead>
 <tr >
 <th>Order_ID</th>
 <th>Order_Date</th>
 <th>Approximate_deliver_date</th>
 <th>Total_payment</th>
-<!-- <th>Reason</th> -->
+
 </tr>
+<tr class="bordered"></tr>
 </thead>
 
 </table>
 
 
-
+</div>
 </div>
 
 <div class="table-container4" id="container4" onload="loadreturnorders();">
 
-<h3 class="four"> Return Orders </h3>
-<table class="table" id="table3" >
+<div class="table_body_new">
+<table class="tbl" id="table3" collapsing="0" >
 <thead>
 <tr >
 <th>Order_ID</th>
@@ -128,13 +155,13 @@
 <th>Payment(Rs)</th>
 <th>Total_payment</th>
 <th>Delivered_date</th>
-<!-- <th>reason</th> -->
 </tr>
+<tr class="bordered"></tr>
 </thead>
 
 </table>
 
-
+</div>
 
 </div>
 
