@@ -54,4 +54,11 @@ class Stockmanagerdelivery_Model extends Model
         $this->db->update("UPDATE `delivery` SET `accept`=:accept WHERE `order_id`=:order_id", [ 'accept' => $state, 'order_id' => $orderid]);
     }
 
+    // public function Displaynoti(){
+    //     return  $this->db->select("SELECT count(*)FROM `notification` WHERE status = '0'");
+    // }
+    // public function Display(){
+    //      return  $this->db->select("SELECT *FROM `notification` WHERE status = '0'");
+    // }
+
 }

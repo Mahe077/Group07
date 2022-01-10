@@ -107,26 +107,70 @@ httprequest7.send();
 
 
 // load sum
-const httprequest8  = new XMLHttpRequest();
-const profit = document.getElementById("box3");
-httprequest8.open("POST", "Stockmanagersalesreport/profit/" + value_select1 , true);
-httprequest8.onreadystatechange = function()
+// const httprequest8  = new XMLHttpRequest();
+// const profit = document.getElementById("box3");
+// httprequest8.open("POST", "Stockmanagersalesreport/profit/" + value_select1 , true);
+// httprequest8.onreadystatechange = function()
+// {
+//   console.log("onreadystatechange");
+//   if( httprequest8.readyState === 4 && httprequest8.status === 200)
+//   {
+//     console.log(httprequest8.responseText);
+//     const obj8 = JSON.parse(httprequest8.responseText);
+//         console.log(obj8);
+//         for(var i = 0 ; i< obj7.length ; i++)
+//         {
+//           returnmonth.innerHTML +=
+//                     '<p class="box-topic">' + 'Profit ' + '</p>'
+//                       +  httprequest8.responseText
+//         }
+//   }
+// };
+// httprequest8.send();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// delivery company
+const httprequest9  = new XMLHttpRequest();
+const left = document.getElementById("table3");
+httprequest9.open("POST", "Stockmanagerdashboardhome/deilverycompany" , true);
+httprequest9.onreadystatechange = function()
 {
   console.log("onreadystatechange");
-  if( httprequest8.readyState === 4 && httprequest8.status === 200)
+  if( httprequest9.readyState === 4 && httprequest9.status === 200)
   {
-    console.log(httprequest8.responseText);
-    const obj8 = JSON.parse(httprequest8.responseText);
-        console.log(obj8);
-        for(var i = 0 ; i< obj7.length ; i++)
+    console.log(httprequest9.responseText);
+    const obj9 = JSON.parse(httprequest9.responseText);
+        console.log(obj9);
+        for(var i = 0 ; i< obj9.length ; i++)
         {
-          returnmonth.innerHTML +=
-                    '<p class="box-topic">' + 'Profit ' + '</p>'
-                      +  httprequest8.responseText
+          left.innerHTML +=
+          '<tbody> ' +
+          '<tr>' +
+          '<td>' +  obj9[i].name +  '</td>' + 
+          '<td>' + obj9[i].rating + ' </td>' + 
+          // '<td>' + '<button class="btn">' + ' <a href="Stockmanagerdashboardhome/showdelivery/" '+ obj9[i].rating  +'> ' + ' See More '+'</a>'  + '</button>' + '</td>' +
+             '</tr>' + 
+          '</tbody>'
         }
   }
 };
-httprequest8.send();
-
+httprequest9.send();
 
 

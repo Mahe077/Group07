@@ -334,3 +334,210 @@ display: none;
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* notification css part */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content{
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  width: 300px;
+  min-width: 200px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 5px;
+  font-size: 12px;
+}
+.dropdown-content a:hover {
+  background-color: #dbdbdb;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+} 
+.notification{
+  color: white;
+  text-decoration: none;
+  padding: 15px 26px;
+  position: relative;
+  display: inline-block;
+  border-radius: 2px;
+}
+.notification .count{
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  padding: 2px 5px;
+  border-radius: 50%;
+  background: red;
+  color: white;
+  font-size: 12px;
+} 
+.msg{
+  padding-left: 20px;
+}
+.msg-date{
+  float: right;
+  padding-right: 10px;
+}
+.msg_outside{
+  height: 60px;
+  align-items: center;
+  justify-content: center;
+}
+.respond{
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  margin: 10px;
+}
+input[type=submit] {
+  background-color: #042434;
+  color: white;
+  padding: 5px 5px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+  font-size: 12px;
+}
+input[type=submit]:hover {
+  background-color: #021824;
+}
+.container{
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 15px;
+}
+.container form{
+  width: 350px;
+  height: 300px;
+}
+.input-txt{
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+#input-id{
+  float: left;
+  width: 300px;
+  height: 50px;
+  margin: 0;
+  padding: 1rem;
+  font-size: 0.8rem;
+  text-transform: none;
+  border-radius: 0.2rem;
+  border: none;
+}
+.label{
+  color: #042434;
+  padding: 10px;
+  font-size: 15px;
+  font-weight: 600px;
+}
+.input-txt #subject{
+  float: left;
+  width: 300px;
+  margin: 0;
+  padding: 1rem;
+  font-size: 0.8rem;
+  text-transform: none;
+  border-radius: 0.2rem;
+  resize: none;
+  border: none;
+}
+.notific-details{
+  padding-left: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-left: 5px solid #ca5e5a;
+}
+
+#notific{
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  border-radius: 5px;
+  margin-left: 100px;
+  padding-bottom: 100px;
+  width: 100%;
+}
+.row{
+  width: 330px;
+  margin-bottom: 10px;
+}
+.row .input-txt input{
+  float: left;
+  width: 300px;
+  margin: 0;
+  padding: 1rem;
+  font-size: 0.8rem;
+  text-transform: none;
+  border-radius: 0.2rem;
+  resize: none;
+  border: none;
+}
+.special{
+  border-left: 50px;
+  padding-left: 50px;
+  width: 80%;
+}
+.special .topic h6{
+  font-size: 0.9rem;
+  color: #021824;
+  font-weight: 600;
+}
+.special .topic h10{
+  font-size: 0.9rem;
+  color: #022131;
+  font-weight: 600;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

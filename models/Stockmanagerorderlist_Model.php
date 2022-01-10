@@ -46,4 +46,11 @@ class Stockmanagerorderlist_Model extends Model
         return $this->db->select2("SELECT `id`  FROM `person` WHERE `username` = :username", ['username' => $username]);
     }
 
+    // public function Displaynoti(){
+    //     return  $this->db->select("SELECT count(*)FROM `notification` WHERE status = '0'");
+    // }
+    // public function Display(){
+    //      return  $this->db->select("SELECT *FROM `notification` WHERE status = '0'");
+    // }
+
 }

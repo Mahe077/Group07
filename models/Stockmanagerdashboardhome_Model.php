@@ -1,15 +1,9 @@
 <?php
-class Stockmanagerteam_Model extends Model
+class Stockmanagerdashboardhome_Model extends Model
 {
     function __construct()
     {
         parent::__construct();
-    }
-    
-    function display()
-    { 
-    
-    return $this->db->select("SELECT i.*, im.username , im.fname , im.lname , im.contact , im.image_path FROM `person` im,`warehouse_details` i WHERE i.stockmanager_id = im.id ");
     }
 
     // public function Displaynoti(){
@@ -18,4 +12,9 @@ class Stockmanagerteam_Model extends Model
     // public function Display(){
     //      return  $this->db->select("SELECT *FROM `notification` WHERE status = '0'");
     // }
+
+    function deliverycompany()
+    {
+        return  $this->db->select("SELECT *FROM `delivery_company` ORDER BY rating DESC");
+    }
 }

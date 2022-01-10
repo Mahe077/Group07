@@ -27,12 +27,19 @@ class Stockmanagerproduct_Model extends Model
         );
     }
 
-    public function updatestocks( $amount ,$itemid , $wh)
+    public function updatestocks($amount ,$itemid , $wh)
     {
         // $this->db->update("UPDATE `warehouse_items` SET   `amount` =: amount WHERE `item_id`=:item_id AND `warehouse_id`=:warehouse_id " , ['amount' => $amount , 'item_id' => $itemid , 'warehouse_id' => $wh]);
 
-        echo $amount;
-        $this->db->update("UPDATE `warehouse_items` SET   `amount` =: amount WHERE `item_id`=:item_id AND `warehouse_id`=:warehouse_id " , ['amount' => $amount , 'item_id' => $itemid , 'warehouse_id' => $wh]);
+        // echo $amount;
+        $this->db->update("UPDATE `warehouse_items` SET  `amount` =: amount WHERE `item_id`=:item_id AND `warehouse_id`=:warehouse_id " , ['amount' => $amount , 'item_id' => $itemid , 'warehouse_id' => $wh]);
     }
+
+    // public function Displaynoti(){
+    //     return  $this->db->select("SELECT count(*)FROM `notification` WHERE status = '0'");
+    // }
+    // public function Display(){
+    //      return  $this->db->select("SELECT *FROM `notification` WHERE status = '0'");
+    // }
 
 }
