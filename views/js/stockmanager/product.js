@@ -48,19 +48,6 @@ httprequest.onreadystatechange = function()
     for(var i=0;i < obj.length; i++)
      {
       rows.innerHTML +=
-          
-        //  '<div class="box-container">' +
-        //   '<div class="box">' +
-        //   '<p id="id"> ID:' +  obj[i].productId+  '</P>' + 
-        //   '<img id="imagebox" class="imagebox" src="' + obj[i].image_path  + '" alt="">' +
-        //   '<p id="brand"> Brand:' + obj[i].brand + ' </P>' +
-        //   '<p id="price"> Price:' + obj[i].price + ' </P>' +
-        //   '<p id="genuine"> Genuine:' + obj[i].genuine + '</P>' +
-        //   '<p id="amount"> Amount:'  + obj[i].amount + '</P>' +
-           
-          
-        //      '</div>' +
-        //   '</div>'
         '<tbody> ' +
                     '<tr>' +
                     '<td>' +  obj[i].item_id  +  '</td>' +  

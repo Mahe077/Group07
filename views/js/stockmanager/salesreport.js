@@ -67,7 +67,7 @@ httprequest4.onreadystatechange = function()
         
           profit.innerHTML +=
                     '<p>' + 'profit of the total orders are ' + '</p>' +
-          httprequest4.responseText
+          httprequest4.responseText + '.00'
         
   }
 };

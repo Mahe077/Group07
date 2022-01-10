@@ -46,7 +46,7 @@
             </li>
             <li>
 
-              <a href="Stockmanagerreportformat">
+              <a href="Stockmanagersalesreport">
               <i class='bx bx-line-chart'></i>
                 <span class="links_name">Reports</span>
               </a>
