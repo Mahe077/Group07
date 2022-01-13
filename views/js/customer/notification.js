@@ -28,5 +28,4 @@ function DisplayNotification() {
   xhr.send();
   return;
 }
-
 DisplayNotification();

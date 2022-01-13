@@ -91,12 +91,12 @@ require 'config/PathConf.php';
                 </ul>
             </li>
             <li>
-                <a href="message.php">
+                <a href="Notification">
                     <i class='bx bx-bell'></i>
                     <span class="link_name">Notifications</span>
                 </a>
                 <ul class="sub-menu blank">
-                    <li><a class="link_name" href="message.php">Notifications</a></li>
+                    <li><a class="link_name" href="Notification">Notifications</a></li>
                 </ul>
             </li>
             <li>
@@ -190,6 +190,11 @@ require 'config/PathConf.php';
     <script type="text/javascript" src="views/js/customer/sidebar.js"></script>
     <script type="text/javascript" src="views/js/alert.js"></script>
     <script type="text/javascript" src="views/js/customer/cart.js"></script>
+    <?php
+    if (isset($_SESSION['userid'])) {
+        echo "<script type='text/javascript' src='".$localhost."views/js/customer/Notification_header.js'></script>";
+    }
+    ?>
 </body>
 
 </html>

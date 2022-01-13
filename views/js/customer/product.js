@@ -36,7 +36,8 @@ function doSearch() {
                                       <h2 class="sm-title">Available: ${s.amount}</h2>
                                   </div>
                                   <a href = "Product/itemRender/${s.id}" class = "product-name">${s.name}</a>
-                                  <p class = "product-price">Rs.${s.price}</p>
+                                  <p class = "product-price">Rs.${s.price}</p></br>
+                                  <a class="btn" href = "Product/itemRender/${s.id}">VIEW</a>
                               </div>
                               <div class = "off-info">
                                   <h2 class = "sm-title">${s.genuine}</h2>
@@ -90,7 +91,8 @@ function productload() {
                                               <h2 class="sm-title">Available: ${s.amount}</h2>
                                           </div>
                                           <a href = "Product/itemRender/${s.id}" class = "product-name">${s.name}</a>
-                                          <p class = "product-price">Rs.${s.price}</p>
+                                          <p class = "product-price">Rs.${s.price}</p></br>
+                                          <a class="btn" href = "Product/itemRender/${s.id}">VIEW</a>
                                       </div>
                                       <div class = "off-info">
                                           <h2 class = "sm-title">${s.genuine}</h2>
@@ -165,7 +167,8 @@ function filterItems() {
                                               <h2 class="sm-title">Available: ${s.amount}</h2>
                                           </div>
                                           <a href = "Product/itemRender/${s.id}" class = "product-name">${s.name}</a>
-                                          <p class = "product-price">Rs.${s.price}</p>
+                                          <p class = "product-price">Rs.${s.price}</p></br>
+                                          <a class="btn" href = "Product/itemRender/${s.id}">VIEW</a>
                                       </div>
                                       <div class = "off-info">
                                           <h2 class = "sm-title">${s.genuine}</h2>

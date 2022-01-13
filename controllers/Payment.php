@@ -11,6 +11,7 @@ class Payment extends Controller
     }
     public function RenderBuy($itemId)
     {
+        // $this->view->item = $this->model->loadItem($itemId);
         $this->view->itemId = $itemId;
         $this->view->render('customer/Buy_now');
     }
@@ -18,6 +19,13 @@ class Payment extends Controller
     {
         $this->view->item = $this->model->loadSorder($itemid);
         $this->view->render('customer/Buy_S_Order');
+    }
+    public function RenderBuy3()
+    {
+        $itemid = htmlspecialchars($_POST['PID']);
+        $this->item = $this->model->loadItem($itemid);
+        echo json_encode(count($this->item)== 0 ? null : $this->item);
+        // $this->view->render('customer/Buy_now');
     }
     public function pay()
     {
@@ -34,10 +42,11 @@ class Payment extends Controller
             $district = $_POST['district'];
             $address = $_POST['address'];
             $user_id = $_SESSION['userid'];
-            $total = $_POST['amount_1'];
+            $unitPrice = $_POST['amount_1'];
             $Advanced = $_POST['amount'];
             $city = $_POST['city'];
             $qty = $_POST['quantity_1'];
+            $total = $unitPrice * $qty;
 
             // $this->view->amount =  $delivery ;
             // $this->view->render("Test");

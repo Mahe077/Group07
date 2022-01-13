@@ -118,6 +118,11 @@ require 'config/PathConf.php';
     <script type="text/javascript" src="views/js/customer/main-ws.js"></script>
     <script type="text/javascript" src="views/js/customer/cart.js"></script>
     <script type="text/javascript" src="views/js/alert.js"></script>
+    <?php
+    if (isset($_SESSION['userid'])) {
+        echo "<script type='text/javascript' src='".$localhost."views/js/customer/Notification_header.js'></script>";
+    }
+    ?>
 </body>
 
 </html>
