@@ -19,21 +19,19 @@ class Stockmanagersettings_Model extends Model
     }
 
 
-    function insert1( $item_id, $wh , $amount)
+    function insert1( $wh, $item_id , $amount)
     {
         $query =  $this->db->alter("INSERT INTO `warehouse_items` (`item_id` , `warehouse_id` , `amount`) 
         VALUES (:item_id,:warehouse_id, :amount)" ,
          ['item_id' => $item_id , 'warehouse_id' => $wh , 'amount' => $amount]);
-        echo "pavi";
-        // INSERT INTO `warehouse_items` (`item_id`, `warehouse_id`, `amount`) VALUES ('1', '2', '3');
-        if($query)
-        {
-            echo "success";
-        }
-        else
-        {
-            echo "fail";
-        }
+        
     }
+
+    // public function Displaynoti(){
+    //     return  $this->db->select("SELECT count(*)FROM `notification` WHERE status = '0'");
+    // }
+    // public function Display(){
+    //      return  $this->db->select("SELECT *FROM `notification` WHERE status = '0'");
+    // }
 
 }

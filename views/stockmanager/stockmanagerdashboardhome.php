@@ -77,17 +77,43 @@
 
 <!--  flext container -->
 <div class="flex-container">
-    <div class="flex-right">
+    <div class="flex-right" id="right">
 
-      <!-- <div id="piechart_3d" class="piechart_3d"></div> -->
+    <div class="table_body_new">
+<table class="tbl" id="table3" collapsing="0" >
+<thead>
+<tr >
+<th>Delivery Company</th>
+<th>Rating</th>
+<!-- <th>More</th> -->
+
+</tr>
+<tr class="bordered"></tr>
+</thead>
+
+</table>
+
+</div>
  
     </div>
-    <div class="flex-left">
-      <div class="topic">
-
-        <h2>Top Selling Items</h2>
-        </div>
+    <div class="flex-left" id="left">
       
+    <div class="table_body_new">
+<!-- <table class="tbl" id="table4" collapsing="0" >
+<thead>
+<tr >
+<th>Item_ID</th>
+<th>Amount</th>
+<th>More</th>
+
+</tr>
+<tr class="bordered"></tr>
+</thead>
+
+</table> -->
+
+</div>
+    
   
 </div>
   </section> 

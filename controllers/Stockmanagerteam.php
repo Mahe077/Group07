@@ -7,21 +7,19 @@ class Stockmanagerteam extends Controller{
     }
 
     function index(){
+        // $data = $this->model->Displaynoti();
+        // $this->view->data=$data;
+        // $value= $this->model->Display();
+        //  $this->view->value=$value;
         $this->view->render('stockmanager/stockmanagerteam');
     }
    
 
     function show()
     {
-        // $this->view->render('stockmanager/stockmanagerwarehouse');
-        // echo "pavi";
-        // echo $warehouse;
+        
         $warehouse="1";
         $detail = $this->model->display();
-        // print_r($detail);
-
-        // echo "</br>";
-        // print_r (explode(" ",$detail));
         echo json_encode(count($detail) == 0 ? null : $detail);
     }
 }

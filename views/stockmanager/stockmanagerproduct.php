@@ -80,17 +80,25 @@
 
 </div>
 
+<div class="table-container" >
+    <div class="table_body_new">
+<table class="tbl" id="table3" collapsing="0" >
+<thead>
+<tr >
+<th>Item_ID</th>
+<th>Amount</th>
+<th>Update</th>
 
-    <div class="items" id="items"  >
-      
-      <div class="menu">
-        
-        <!-- <div class="box-container" id="box-container">  
-         products load here 
-  </div> -->
-      </div>
-     
-    </div>
+</tr>
+<tr class="bordered"></tr>
+</thead>
+
+</table>
+
+</div>
+</div>
+
+
   <script type="text/javascript" src="views/js/stockmanager/product.js"></script>
 
     

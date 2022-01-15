@@ -46,7 +46,7 @@
             </li>
             <li>
 
-              <a href="Stockmanagerreportformat">
+              <a href="Stockmanagersalesreport">
               <i class='bx bx-line-chart'></i>
                 <span class="links_name">Reports</span>
               </a>
@@ -87,10 +87,60 @@
           </div>
           
 
+
+          <!-- <div class="nortification-box">
+          <div class="dropdown">
+              <a href="Owner_updated" class="notification"><i class="fas fa-bell" id="fa-bell"><span class="count"><?php print_r($this->data[0][0]);?></span></i></a>
+              <?php
+                // $val  = $this->data[0][0];
+              ?>
+                <div class="dropdown-content">
+              <?php
+              
+                for ($x = 0; $x <$val; $x++) {
+                  echo "<div class='msg_outside'><div class='msg-date'><br>".$this->value[$x][4]."</div>
+                  <div class='msg'><br>".$this->value[$x][6]."<br></div></div>";
+                }
+              ?>
+            <div class="respond">
+                <a href="Display_notifications" class='btn-del'>Respond</a>
+            </div>
+          </div>
+      </div>
+      </div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
           <div class="right">
          <div class="profile-details">
          <div class="notification-box">
-            <a href="stockmanagernotification.php" class="notifications"> <i class='bx bxs-bell'></i> </a>
+           
+            <!-- <a href="stockmanagernotification.php" class="notifications"> <i class='bx bxs-bell'></i> </a> -->
             </div>
             <img src="<?php echo $_SESSION['image_path'] ?>" alt="">
             <div class="navbar">
@@ -101,7 +151,6 @@
     <a href="Log_out">Log Out</a>
   </div>
 </div>
-            
 </div> 
     </div>
   </div>

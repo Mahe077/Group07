@@ -26,20 +26,19 @@
         </div>
         <div class="right-container">
             <div class="delivery">
-              <p class="right-container-topic">Recent Orders</p>
-              <br>
+            
               <?php
     if(isset($_SESSION['error2']))
     {
       ?>
 
-  <!-- Modal content -->
+   <!-- Modal content  -->
   <div class="alert">
   <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
   
     <p class="ale"><?php  echo $_SESSION['error2']; ?></p>
   </div>
-
+ 
       <?php
     }
     ?>
@@ -96,7 +95,8 @@
   <div class="next-container" onload="loaddata()">
                     
   <div class="request">
-  <table class="table" id = "table">
+  <div class="table_body_new">
+<table class="tbl" id="table" collapsing="0" >
   <thead>
   <tr>
     <th>Order ID</th>
@@ -105,6 +105,7 @@
     <th>Delivery Company</th>
     
   </tr>
+  <tr class="bordered"></tr>
 </thead>
 
 </div>

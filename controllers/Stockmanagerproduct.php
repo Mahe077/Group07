@@ -7,41 +7,68 @@ class Stockmanagerproduct extends Controller{
     }
 
     function index(){
+        // $data = $this->model->Displaynoti();
+        // $this->view->data=$data;
+        // $value= $this->model->Display();
+        //  $this->view->value=$value;
         $this->view->render('stockmanager/stockmanagerproduct');
     }
 
     public function Loadproducts()
     {
-        $items = $this->model->loadproducts();
+        $username = $_SESSION['username'];
+        $id = $this->model->getinfo($username);
+            foreach($id as $row)
+            { 
+                $idn = htmlentities($row['id']);
+            }
+           
+            $warehouse = $this->model->getwarehouse($idn);
+            foreach($warehouse as $rows)
+            {
+                
+                $wh = htmlentities($rows['id']);
+            }
+        $items = $this->model->loadproducts($wh);
         echo json_encode(count($items) == 0 ? null : $items);
     }
     
     public function Updatestocks(){
 
-        // echo "pavi";
         require 'config/PathConf.php';
         
         if (isset($_POST['submit'])) {
+            $username = $_SESSION['username'];
+            $id = $this->model->getinfo($username);
+                foreach($id as $row)
+                { 
+                    $idn = htmlentities($row['id']);
+                }
+                $warehouse = $this->model->getwarehouse($idn);
+                foreach($warehouse as $rows)
+                {
+                    
+                    $wh = htmlentities($rows['id']);
+                }
+                echo $wh;
             $itemid = $_POST['item_ID'];
             $amount = $_POST['amount'];
     
             echo $itemid;
             echo $amount;
-            $result = $this->model->updatestocks($amount,$itemid);
+            $result = $this->model->updatestocks($amount,$itemid ,$wh);
 
             if($result)
             {
                 $_SESSION['error1']= "Stock updated succesfully";
                 header("Location:".$localhost."Stockmanagerproduct");
-                exit();
-                
+                exit(); 
             }
             else
             {
                 $_SESSION['error1']= "Stock updated failed";
                 header("Location:".$localhost."Stockmanagerproduct");
                 exit();
-                
             }
 
         }   
