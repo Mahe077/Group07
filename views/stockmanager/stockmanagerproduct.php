@@ -80,14 +80,6 @@
 
 </div>
 
-
-    <!-- <div class="items" id="items"  >
-      
-      <div class="menu">
-     
-      </div>
-     
-    </div> -->
 <div class="table-container" >
     <div class="table_body_new">
 <table class="tbl" id="table3" collapsing="0" >

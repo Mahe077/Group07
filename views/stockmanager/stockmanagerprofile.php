@@ -24,10 +24,9 @@
     include_once 'stockmanagerdashboard.php';
 ?> 
 
-<section class="information">
+<!-- <section class="information"> -->
 
-<div class="container">
-    <div class="profile-container">
+    <!-- <div class="profile-container">
         <div class="row">
         <form name="form" class="form" action="Profile/updateUser" method="POST" enctype="multipart/form-data">
                 <div class="prof-img">
@@ -56,15 +55,94 @@
                    
                     <input class="input-field" type="tel" pattern="[0-9]{10}" name="contact" value="<?php echo $_SESSION['contact']; ?>" placeholder="Enter Contact Number" required>
                 </div>
-                <div class="inputBox">
+                
                    
                 <input class="btn" type="submit" name="submit" value="RESET">
-               </div>
+               
                 
                 
-            </form>
-            </div>
-        </section>
+            </form> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <!-- </div> -->
+        <!-- </section> -->
+
+
+
+        <div class="home-content">
+
+        <div class="content">
+      <form action="Stockmanagerdelivery/updatedelivery" method="POST" enctype="multipart/form-data">
+        <div class="user-details">
+        <div class="prof-img">
+                    <img src="<?php echo $_SESSION['image_path']; ?>">
+                    <div class="edit-button">
+                        <label for="reset" class="pencil">
+                            <i class="fas fa-user-edit"></i>
+                            <input style="display:none;" id="reset" type="file" name="image" accept="Image/">
+                        </label>
+                    </div>
+                </div>
+          <div class="input-box">
+          
+          <input class="input-field" type="text" name="fname" value="<?php echo $_SESSION['fname']; ?>" placeholder="Enter First Name">
+          </div>
+          <div class="input-box">
+          
+          <input class="input-field" type="text" name="sname" value="<?php echo $_SESSION['lname']; ?>" placeholder="Enter Second Name" required>
+          </div>
+          <div class="input-box">
+          
+          <input class="input-field" type="email" name="email" value="<?php echo $_SESSION['email']; ?>" placeholder="Enter E-mail Address" required>
+          </div>
+          <div class="input-box">
+          
+          <input class="input-field" type="text" name="address" value="<?php echo $_SESSION['address']; ?>" placeholder="Enter Address" required>
+          </div>
+          <div class="input-box">
+          
+          <input class="input-field" type="tel" pattern="[0-9]{10}" name="contact" value="<?php echo $_SESSION['contact']; ?>" placeholder="Enter Contact Number" required>
+          </div>
+          <div class="button">
+          <a href="Loggedreset_password"> Reset Password </a>
+		</div>
+          <div class="button">
+          <input type="submit" name="submit" value="Reset">
+		</div>
+          </div>
+      </form>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

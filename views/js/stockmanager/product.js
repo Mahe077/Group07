@@ -48,14 +48,22 @@ httprequest.onreadystatechange = function()
     for(var i=0;i < obj.length; i++)
      {
       rows.innerHTML +=
-        '<tbody> ' +
-                    '<tr>' +
-                    '<td>' +  obj[i].item_id  +  '</td>' +  
-                    '<td>' + obj[i].amount + ' </td>' +
-                  
+        // '<tbody> ' +
+        //             '<tr>' +
+        //             '<td>' +  obj[i].item_id  +  '</td>' +  
+        //             '<td>' + obj[i].amount + ' </td>' +
+        //             '<td>' + '<button id="myBtn">' + 'Update Stocks ' + '</button>' +
                        
-                       '</tr>' + 
-                    '</tbody>'
+        //                '</tr>' + 
+        //             '</tbody>'
+       `<tbody>
+       <tr>
+       <td> ${obj[i].item_id} </td>
+       <td> ${obj[i].amount} </td>
+       <td> <button id = "myBtn"> Update Stocks </button> </td>
+       <div id="myModal" class="modal">
+       </tr>
+       </tbody>`
   }
   }
 };

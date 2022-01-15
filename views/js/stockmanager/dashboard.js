@@ -161,13 +161,22 @@ httprequest9.onreadystatechange = function()
         for(var i = 0 ; i< obj9.length ; i++)
         {
           left.innerHTML +=
-          '<tbody> ' +
-          '<tr>' +
-          '<td>' +  obj9[i].name +  '</td>' + 
-          '<td>' + obj9[i].rating + ' </td>' + 
-          // '<td>' + '<button class="btn">' + ' <a href="Stockmanagerdashboardhome/showdelivery/" '+ obj9[i].rating  +'> ' + ' See More '+'</a>'  + '</button>' + '</td>' +
-             '</tr>' + 
-          '</tbody>'
+          // '<tbody> ' +
+          // '<tr>' +
+          // '<td>' +  obj9[i].name +  '</td>' + 
+          // '<td>' + obj9[i].rating + ' </td>' + 
+          // // '<td>' + '<button class="btn">' + ' <a href="Stockmanagerdashboardhome/showdelivery/" '+ obj9[i].rating  +'> ' + ' See More '+'</a>'  + '</button>' + '</td>' +
+          //    '</tr>' + 
+          // '</tbody>'
+
+          `<tbody> 
+                    <tr> 
+                    <td>   ${obj9[i].name}   </td>
+                    <td>   ${obj9[i].rating}   </td>  
+                    <td><button class="btn"> <a href="Stockmanagerdashboardhome/showdelivery/${obj9[i].company_id}">  See More </a> </button>  </td>
+                 
+                       </tr> 
+                    </tbody>`
         }
   }
 };

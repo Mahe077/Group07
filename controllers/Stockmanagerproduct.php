@@ -44,7 +44,6 @@ class Stockmanagerproduct extends Controller{
                 { 
                     $idn = htmlentities($row['id']);
                 }
-               
                 $warehouse = $this->model->getwarehouse($idn);
                 foreach($warehouse as $rows)
                 {
@@ -61,19 +60,15 @@ class Stockmanagerproduct extends Controller{
 
             if($result)
             {
-                // $_SESSION['error1']= "Stock updated succesfully";
-                // // header("Location:".$localhost."Stockmanagerproduct");
-                // exit();
-                echo "pass";
-                
+                $_SESSION['error1']= "Stock updated succesfully";
+                header("Location:".$localhost."Stockmanagerproduct");
+                exit(); 
             }
             else
             {
-                // $_SESSION['error1']= "Stock updated failed";
-                // // header("Location:".$localhost."Stockmanagerproduct");
-                // exit();
-                
-                echo "fail";
+                $_SESSION['error1']= "Stock updated failed";
+                header("Location:".$localhost."Stockmanagerproduct");
+                exit();
             }
 
         }   
