@@ -81,13 +81,13 @@ require 'config/PathConf.php';
             </li>
             <li>
                 <div class="iocn-link">
-                    <a href="Refund">
+                    <a href="Order/Return">
                         <i class="fas fa-money-bill-wave"></i>
-                        <span class="link_name" style="white-space: nowrap;">Refund</span>
+                        <span class="link_name" style="white-space: nowrap;">Return</span>
                     </a>
                 </div>
                 <ul class="sub-menu">
-                    <li><a class="link_name" href="Refund">Refund</a></li>
+                    <li><a class="link_name" href="Order/Return">Return</a></li>
                 </ul>
             </li>
             <li>

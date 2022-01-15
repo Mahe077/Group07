@@ -20,7 +20,7 @@ class Log_in extends Controller
             $username = $_POST['username'];
             $password = $_POST['password'];
 
-            echo  $username . " " . $password;
+            // echo  $username . " " . $password;
 
             $hashedPwd = password_hash($password, PASSWORD_DEFAULT);
 

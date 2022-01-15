@@ -72,6 +72,7 @@ require 'config/PathConf.php';
         <section class="notify">
             <h2 class="heading"> Notifi<span>cation</span></h2>
             <section class="notification-body">
+                
                 <!-- <section class="notification-area">
                     <h2>Hi,</h2>
                     <h3 class="date">21-09-2021</h3>

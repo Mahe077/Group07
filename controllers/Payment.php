@@ -29,8 +29,8 @@ class Payment extends Controller
     }
     public function pay()
     {
-        require 'config/FunctionConf.php';
-        require 'config/PathConf.php';
+        require_once 'config/FunctionConf.php';
+        require_once 'config/PathConf.php';
 
         if (isset($_POST['submit'])) {
             $item_id = $_POST['items'];
@@ -99,8 +99,8 @@ class Payment extends Controller
     }
     public function pay2()
     {
-        require 'config/FunctionConf.php';
-        require 'config/PathConf.php';
+        require_once 'config/FunctionConf.php';
+        require_once 'config/PathConf.php';
 
         if (isset($_POST['submit'])) {
             $item_id = $_POST['order_id'];
