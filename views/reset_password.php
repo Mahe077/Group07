@@ -12,7 +12,7 @@
 </head>
 <body>
 <?php
-    // $this_page = "reset_password.php";
+    $this_page = "reset_password.php";
 ?> 
 
 <header class="header">
@@ -20,7 +20,6 @@
   </header>
 <div class="container">
     <form action="Reset_password/reset" method = "POST" enctype="multipart/form-data">
-
 
             <p>
                 <h2>Reset Your Password</h2>

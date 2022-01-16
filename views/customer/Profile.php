@@ -81,22 +81,22 @@ require 'config/PathConf.php';
             </li>
             <li>
                 <div class="iocn-link">
-                    <a href="Refund">
+                    <a href="Order/Return">
                         <i class="fas fa-money-bill-wave"></i>
-                        <span class="link_name" style="white-space: nowrap;">Refund</span>
+                        <span class="link_name" style="white-space: nowrap;">Return</span>
                     </a>
                 </div>
                 <ul class="sub-menu">
-                    <li><a class="link_name" href="Refund">Refund</a></li>
+                    <li><a class="link_name" href="Order/Return">Return</a></li>
                 </ul>
             </li>
             <li>
-                <a href="message.php">
+                <a href="Notification">
                     <i class='bx bx-bell'></i>
                     <span class="link_name">Notifications</span>
                 </a>
                 <ul class="sub-menu blank">
-                    <li><a class="link_name" href="message.php">Notifications</a></li>
+                    <li><a class="link_name" href="Notification">Notifications</a></li>
                 </ul>
             </li>
             <li>
@@ -190,6 +190,11 @@ require 'config/PathConf.php';
     <script type="text/javascript" src="views/js/customer/sidebar.js"></script>
     <script type="text/javascript" src="views/js/alert.js"></script>
     <script type="text/javascript" src="views/js/customer/cart.js"></script>
+    <?php
+    if (isset($_SESSION['userid'])) {
+        echo "<script type='text/javascript' src='".$localhost."views/js/customer/Notification_header.js'></script>";
+    }
+    ?>
 </body>
 
 </html>

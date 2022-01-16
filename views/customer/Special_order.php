@@ -78,7 +78,12 @@ require 'config/PathConf.php';
     <script type="text/javascript" src="<?php echo $localhost; ?>views/js/customer/cart.js"></script>
     <script type="text/javascript" src="<?php echo $localhost; ?>views/js/alert.js"></script>
     <script type="text/javascript" src="<?php echo $localhost; ?>views/js/customer/special_order_load.js"></script>
-    <!-- <script type="text/javascript" src="<?php echo $localhost; ?>views/js/customer/order.js"></script> -->
+    <!-- <script type="text/javascript" src=" ?php echo $localhost; ?>views/js/customer/order.js"></script> -->
+    <?php
+    if (isset($_SESSION['userid'])) {
+        echo "<script type='text/javascript' src='" . $localhost . "views/js/customer/Notification_header.js'></script>";
+    }
+    ?>
 
 </body>
 

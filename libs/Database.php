@@ -101,8 +101,8 @@ class Database extends PDO
 
             $id= $this->lastInsertId();
 
-            $stmt = $this->prepare("INSERT INTO `delivery`(`user_id`, `order_id`, `district`, `city`, `address`) VALUES (:user_id, :id, :district, :city ,:address)");
-            $stmt->execute(['user_id' => $user_id, 'city' => $city, 'address' => $address, 'district' => $district, 'id' => $id]);
+            $stmt = $this->prepare("INSERT INTO `delivery`(`order_id`, `address`, `status`, `accept`) VALUES (:id,:address,:status,:accept)");
+            $stmt->execute(['address' => $address, 'id' => $id,'status' => 0, 'accept' => 0]);
             $stmt->closeCursor();
 
             $this->commit();

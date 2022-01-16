@@ -1,10 +1,10 @@
 <?php
+require 'config/PathConf.php';
 if (!isset($_SESSION['userid'])) {
     $_SESSION['error'] = 'invalidAccess';
-    header("location: Log_in");
+    header("location: ".$localhost."Log_in");
     exit();
 }
-require 'config/PathConf.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -41,6 +41,7 @@ require 'config/PathConf.php';
                 <div class="image">
                 <img src="<?php echo $localhost; ?>assets/car/animated/4.jpg" alt="">
                 </div>
+
                 <!-- <form class="form" method="post" action="https://sandbox.payhere.lk/pay/checkout"> -->
                     <form class="form" method="post" action="<?php echo $localhost; ?>Payment/pay">
                         <input type="hidden" name="merchant_id" value="1218705"> <!-- Replace your Merchant ID -->
@@ -56,12 +57,12 @@ require 'config/PathConf.php';
                         </div>
                         <div class="inputBox">
                             <input type="number" class="quantity" name="quantity_1" value="1" min="1" max="5" placeholder=" Enter qty" onchange="changeprice()">
-                            <input class="amount_1" type="text" name="amount_1" value="0">
+                            <input class="amount_1" type="text" name="amount_1" placeholder="Enter the amount" value="1">
                         </div>
                         <h3>Total price</h3>
                         <div class="inputBox">
                             <input type="text" name="currency" value="LKR">
-                            <input class="amount" type="text" name="amount" value="0">
+                            <input class="amount" type="text" name="amount" placeholder="Total price" value="1">
                         </div>
                         <input type="button" class="btn" value="Pay advance" onclick="return paymethod()">
                         <br>
@@ -96,6 +97,11 @@ require 'config/PathConf.php';
     <script type="text/javascript" src="<?php echo $localhost; ?>views/js/customer/buy_now.js"></script>
     <script type="text/javascript" src="<?php echo $localhost; ?>views/js/customer/cart.js"></script>
     <script type="text/javascript" src="<?php echo $localhost; ?>views/js/alert.js"></script>
+    <?php
+    if (isset($_SESSION['userid'])) {
+        echo "<script type='text/javascript' src='".$localhost."views/js/customer/Notification_header.js'></script>";
+    }
+    ?>
 </body>
 
 </html>

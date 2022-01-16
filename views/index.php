@@ -190,6 +190,11 @@
     <script type="text/javascript" src="views/js/alert.js"></script>
     <script type="text/javascript" src="views/js/customer/cart.js"></script>
     <script type="text/javascript" src="views/js/customer/index_loader.js"></script>
+    <?php
+    if (isset($_SESSION['userid'])) {
+        echo "<script type='text/javascript' src='views/js/customer/Notification_header.js'></script>";
+    }
+    ?>
 
 </body>
 

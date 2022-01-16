@@ -25,4 +25,19 @@ class Order_Model extends Model
             ['id' => $id]
         );
     }
+    public function IsAOrder($order_id)
+    {
+        return $this->db->select2(
+            "SELECT `order_id`FROM `orders` WHERE `user_id`=:user_id AND order_id = :order_id;",
+            ['order_id' => $order_id,'user_id' => $_SESSION['userid']]
+        );
+    }
+    public function addReturn($order_id, $reason)
+    {
+       return $this->db->transaction(array(
+           array("UPDATE `orders` SET `status`=:status WHERE order_id =:order_id", 
+           ['order_id' => $order_id, 'status' => 5]),
+           array("INSERT INTO `return_orders`(`o_id`, `reason`) VALUES (:order_id,:reason)",['order_id' => $order_id ,'reason' => $reason])
+       ));
+    }
 }

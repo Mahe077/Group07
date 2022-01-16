@@ -8,12 +8,12 @@ class Log_in_Model extends Model
 
     private function usernameExists($username = null)
     {
-        return $this->db->select2("SELECT * FROM person WHERE username = :username", ['username' => $username]);
+        return $this->db->select2("SELECT `id`, `position`, `fname`, `lname`, `username`, `password`, `email`, `contact`, `address`, `image_path` FROM `person` WHERE username = :username", ['username' => $username]);
     }
 
     private function cuInfo($userid)
     {
-        return $this->db->select2("SELECT * FROM customer WHERE id = :id", ['id' => $userid]);
+        return $this->db->select2("SELECT `id`, `district`, `city`, `postal_code` FROM customer WHERE id = :id", ['id' => $userid]);
     }
 
     public function login($username = null)

@@ -72,6 +72,7 @@ require 'config/PathConf.php';
         <section class="notify">
             <h2 class="heading"> Notifi<span>cation</span></h2>
             <section class="notification-body">
+                
                 <!-- <section class="notification-area">
                     <h2>Hi,</h2>
                     <h3 class="date">21-09-2021</h3>
@@ -115,7 +116,12 @@ require 'config/PathConf.php';
     <script type="text/javascript" src="<?php echo $localhost; ?>views/js/customer/main-ws.js"></script>
     <script type="text/javascript" src="<?php echo $localhost; ?>views/js/customer/order.js"></script>
     <script type="text/javascript" src="<?php echo $localhost; ?>views/js/customer/cart.js"></script>
-    <script type="text/javascript" src="<?php echo $localhost; ?>views/js/customer/notification.js"></script>
+    <?php
+    if (isset($_SESSION['userid'])) {
+        echo "<script type='text/javascript' src='".$localhost."views/js/customer/Notification_header.js'></script>";
+        echo "<script type='text/javascript' src='".$localhost."views/js/customer/notification.js'></script>";
+    }
+    ?>
     <script type="text/javascript" src="<?php echo $localhost; ?>views/js/alert.js"></script>
     <!-- <script type="text/javascript" src="views/js/alert.js"></script> -->
     <script>
