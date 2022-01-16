@@ -87,7 +87,7 @@
 <tr >
 <th>Item_ID</th>
 <th>Amount</th>
-<th>Update</th>
+<!-- <th>Update</th> -->
 
 </tr>
 <tr class="bordered"></tr>

@@ -91,6 +91,18 @@
 
 
 
+<div class="card-container" id="card-container">
+<div class="card-count" id="card-count">
+Last Added Item
+</div>
+<div class="card-sum" id="card-sum">
+Last Sold Item
+</div>
+<div class="card-profit" id="card-profit">
+Most Stocked Item
+</div>
+</div>
+
 
 
 
