@@ -66,6 +66,7 @@ require 'config/PathConf.php';
         <section class="cart-table table">
             <!-- <form action="test.html" method="post"> -->
             <div class="row row-header">
+                <div class="col col-0">OrderId</div>
                 <div class="col col-1">item</div>
                 <div class="col col-2">Qty</div>
                 <div class="col col-3">Price</div>

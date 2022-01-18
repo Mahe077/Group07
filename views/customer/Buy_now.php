@@ -2,7 +2,7 @@
 require 'config/PathConf.php';
 if (!isset($_SESSION['userid'])) {
     $_SESSION['error'] = 'invalidAccess';
-    header("location: ".$localhost."Log_in");
+    header("location: " . $localhost . "Log_in");
     exit();
 }
 ?>
@@ -25,7 +25,7 @@ if (!isset($_SESSION['userid'])) {
 
 </head>
 
-<body onload="renderPage(<?php echo $this->itemId;?>)">
+<body onload="renderPage(<?php echo $this->itemId; ?>)">
     <?php
     $this_page = "buy_ow.php";
     include_once 'views/global/header-ws.php';
@@ -39,55 +39,56 @@ if (!isset($_SESSION['userid'])) {
             <h2 class="heading">BUY <span>NOW</span></h2>
             <div class="row">
                 <div class="image">
-                <img src="<?php echo $localhost; ?>assets/car/animated/4.jpg" alt="">
+                    <img src="<?php echo $localhost; ?>assets/car/animated/4.jpg" alt="">
                 </div>
 
                 <!-- <form class="form" method="post" action="https://sandbox.payhere.lk/pay/checkout"> -->
-                    <form class="form" method="post" action="<?php echo $localhost; ?>Payment/pay">
-                        <input type="hidden" name="merchant_id" value="1218705"> <!-- Replace your Merchant ID -->
-                        <input type="hidden" name="return_url" value="<?php echo $localhost; ?>Product">
-                        <input type="hidden" name="cancel_url" value="<?php echo $localhost; ?>Profile">
-                        <input type="hidden" name="notify_url" value="<?php echo $localhost; ?>Payment">
+                <form class="form" method="post" action="<?php echo $localhost; ?>Payment/pay">
+                    <input type="hidden" name="merchant_id" value="1218705"> <!-- Replace your Merchant ID -->
+                    <input type="hidden" name="return_url" value="<?php echo $localhost; ?>Product">
+                    <input type="hidden" name="cancel_url" value="<?php echo $localhost; ?>Profile">
+                    <input type="hidden" name="notify_url" value="<?php echo $localhost; ?>Payment">
 
-                        <h3>Payment Details</h3>
-                        <div class="inputBox">
-                            <input type="hidden" name="order_id" value="0">
-                            <input type="text" id="items" name="items" value="<?php echo $this->itemId;?>" placeholder="Select items">
-                            <input type="text" id="item_name_1" name="item_name_1" value="sdfsdf">
-                        </div>
-                        <div class="inputBox">
-                            <input type="number" class="quantity" name="quantity_1" value="1" min="1" max="5" placeholder=" Enter qty" onchange="changeprice()">
-                            <input class="amount_1" type="text" name="amount_1" placeholder="Enter the amount" value="1">
-                        </div>
-                        <h3>Total price</h3>
-                        <div class="inputBox">
-                            <input type="text" name="currency" value="LKR">
-                            <input class="amount" type="text" name="amount" placeholder="Total price" value="1">
-                        </div>
-                        <input type="button" class="btn" value="Pay advance" onclick="return paymethod()">
-                        <br>
-                        <br>
-                        <h3>Customer Details</h3>
-                        <div class="inputBox">
-                            <input type="text" name="first_name" value="<?php echo $_SESSION['fname']; ?>">
-                            <input type="text" name="last_name" value="<?php echo $_SESSION['lname']; ?>">
-                        </div>
-                        <div class="inputBox">
-                            <input type="text" name="email" value="<?php echo $_SESSION['email']; ?>">
-                            <input type="text" name="phone" value="<?php echo $_SESSION['contact']; ?>">
-                        </div>
-                        <div class="inputBox">
-                            <input type="text" name="address" value="<?php echo $_SESSION['address']; ?>">
-                            <input type="text" name="country" value="Sri Lanka">
-                            <input type="text" name="city" value="<?php echo $_SESSION['city']; ?>">
-                            <input type="text" name="district" value="<?php echo $_SESSION['district']; ?>">
-                        </div>
-                        <div class="box"><input type="checkbox" name="delivery" id="delivery" value="Yes">
-                            <label for="delivery" style="font-size: 15px; font-weight: 600; color: black;">Do you need delivery services</label>
-                        </div>
-                        <div>
-                            <input type="submit" name="submit" class="btn" value="Buy Now">
-                        </div>
+                    <h3>Payment Details</h3>
+                    <div class="inputBox">
+                        <input type="hidden" name="order_id" value="0">
+                        <input type="hidden" id="items" name="items" value="Singel order" placeholder="Select items">
+                        <input type="text" id="item_name_1" name="item_name_1" value="sdfsdf">
+                    </div>
+                    <div class="inputBox">
+                        <input type="hidden" id="item_id_1" name="item_id_1" value="<?php echo $this->itemId; ?>">
+                        <input type="number" class="quantity" name="quantity_1" value="1" min="1" max="5" placeholder=" Enter qty" onchange="changeprice()">
+                        <input class="amount_1" type="text" name="amount_1" placeholder="Enter the amount" value="1">
+                    </div>
+                    <h3>Total price</h3>
+                    <div class="inputBox">
+                        <input type="text" name="currency" value="LKR">
+                        <input class="amount" type="text" name="amount" placeholder="Total price" value="1">
+                    </div>
+                    <input type="button" class="btn" value="Pay advance" onclick="return paymethod()">
+                    <br>
+                    <br>
+                    <h3>Customer Details</h3>
+                    <div class="inputBox">
+                        <input type="text" name="first_name" value="<?php echo $_SESSION['fname']; ?>">
+                        <input type="text" name="last_name" value="<?php echo $_SESSION['lname']; ?>">
+                    </div>
+                    <div class="inputBox">
+                        <input type="text" name="email" value="<?php echo $_SESSION['email']; ?>">
+                        <input type="text" name="phone" value="<?php echo $_SESSION['contact']; ?>">
+                    </div>
+                    <div class="inputBox">
+                        <input type="text" name="address" value="<?php echo $_SESSION['address']; ?>">
+                        <input type="text" name="country" value="Sri Lanka">
+                        <input type="text" name="city" value="<?php echo $_SESSION['city']; ?>">
+                        <input type="text" name="district" value="<?php echo $_SESSION['district']; ?>">
+                    </div>
+                    <div class="box"><input type="checkbox" name="delivery" id="delivery" value="Yes">
+                        <label for="delivery" style="font-size: 15px; font-weight: 600; color: black;">Do you need delivery services</label>
+                    </div>
+                    <div>
+                        <input type="submit" name="submit" class="btn" value="Buy Now">
+                    </div>
                     <!-- </form> -->
                 </form>
             </div>
@@ -99,7 +100,7 @@ if (!isset($_SESSION['userid'])) {
     <script type="text/javascript" src="<?php echo $localhost; ?>views/js/alert.js"></script>
     <?php
     if (isset($_SESSION['userid'])) {
-        echo "<script type='text/javascript' src='".$localhost."views/js/customer/Notification_header.js'></script>";
+        echo "<script type='text/javascript' src='" . $localhost . "views/js/customer/Notification_header.js'></script>";
     }
     ?>
 </body>

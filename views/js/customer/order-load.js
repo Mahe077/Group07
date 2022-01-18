@@ -33,8 +33,9 @@ function display_orders(id, orderType) {
     let noOfItems = localStorage.getItem("cartNumbers");
     let cartCost = localStorage.getItem("totalCost");
 
+    // console.log(this.response);
     var search = JSON.parse(this.response);
-    // console.log(search);
+    console.log(search);
     products.innerHTML = "";
     if (search !== null) {
       let count = 0;
@@ -77,11 +78,14 @@ function display_orders(id, orderType) {
                     <input type="hidden" id="cart_item_id" value="${s.order_id
             }">
                 </div>
+                <div class="col col-0">
+                ${s.order_id}
+                </div>
                 <div class="col col-1">
                     ${s.name}
                 </div>
                 <div class="col col-2">
-                ${s.qty
+                ${s.Qty
             }
                 </div>
                 <div class="col col-3">
@@ -105,11 +109,14 @@ function display_orders(id, orderType) {
                     <input type="hidden" id="cart_item_id" value="${s.order_id
             }">
                 </div>
+                <div class="col col-0">
+                ${s.order_id}
+                </div>
                 <div class="col col-1">
                     ${s.name}
                 </div>
                 <div class="col col-2">
-                   ${s.qty
+                   ${s.Qty
             }
                 </div>
                 <div class="col col-3">

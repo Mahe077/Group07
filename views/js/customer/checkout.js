@@ -37,6 +37,11 @@ function displayCheckout() {
     let total = document.querySelector("#stotal");
     let totalCost = localStorage.getItem("totalCost");
     total.innerHTML = `Rs ${parseFloat(totalCost).toFixed(2)}`;
+
+    buy_all = document.querySelector("#buy_all");
+    buy_all.innerHTML =
+      "<a href='Payment/RenderBuyAll/' class='btn'>Buy All</a>";
+    console.log(cartItems);
   }
 }
 function changeInCart() {
