@@ -63,14 +63,19 @@ h2{
   text-align: center;
 }
 
-.container{
-  max-width: 700px;
-  width: 100%;
-  background-color: #bfddde;
-  padding: 25px 30px;
-  margin: 0 auto;
+.card-container{
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+.card-count , .card-sum , .card-profit{
+  background-color: #042434;
+  width: 300px;
+  height: auto;
+  color: #fff;
+  padding: 10px;
   border-radius: 5px;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
 .container .title{
   font-size: 25px;
@@ -174,7 +179,12 @@ form .button input:hover{
 
 
 
-
+ #imagebox{
+  border-radius: 10px;
+  height: 300px;
+  width: 250px;
+  /* background-color: chocolate; */
+}
 
 
 .flex-container{
@@ -304,6 +314,7 @@ form .button input:hover{
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 20px;
 }
 
 #myBtn{

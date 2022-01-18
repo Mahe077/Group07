@@ -60,10 +60,12 @@ httprequest.onreadystatechange = function()
        <tr>
        <td> ${obj[i].item_id} </td>
        <td> ${obj[i].amount} </td>
-       <td> <button id = "myBtn"> Update Stocks </button> </td>
-       <div id="myModal" class="modal">
+       
        </tr>
        </tbody>`
+
+      //  <td> <button id = "myBtn"> Update Stocks </button> </td>
+      //  <div id="myModal" class="modal"></div>
   }
   }
 };

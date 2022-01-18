@@ -97,20 +97,20 @@
  
     </div>
     <div class="flex-left" id="left">
-      
+    <h2>Top Selling Itmes</h2>
     <div class="table_body_new">
-<!-- <table class="tbl" id="table4" collapsing="0" >
+     
+<table class="tbl" id="table4" collapsing="0" >
 <thead>
 <tr >
-<th>Item_ID</th>
-<th>Amount</th>
-<th>More</th>
+<th>Item ID</th>
+<th>Sales</th>
 
 </tr>
 <tr class="bordered"></tr>
 </thead>
 
-</table> -->
+</table>
 
 </div>
     

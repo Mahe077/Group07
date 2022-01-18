@@ -1,4 +1,39 @@
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 var month_names = ['January','February','March','April','May','June','July','August','September','October','November','December'];
 d = new Date();
 var n = month_names[d.getMonth()];
@@ -161,25 +196,57 @@ httprequest9.onreadystatechange = function()
         for(var i = 0 ; i< obj9.length ; i++)
         {
           left.innerHTML +=
-          // '<tbody> ' +
-          // '<tr>' +
-          // '<td>' +  obj9[i].name +  '</td>' + 
-          // '<td>' + obj9[i].rating + ' </td>' + 
-          // // '<td>' + '<button class="btn">' + ' <a href="Stockmanagerdashboardhome/showdelivery/" '+ obj9[i].rating  +'> ' + ' See More '+'</a>'  + '</button>' + '</td>' +
-          //    '</tr>' + 
-          // '</tbody>'
-
           `<tbody> 
                     <tr> 
                     <td>   ${obj9[i].name}   </td>
                     <td>   ${obj9[i].rating}   </td>  
-                    <td><button class="btn"> <a href="Stockmanagerdashboardhome/showdelivery/${obj9[i].company_id}">  See More </a> </button>  </td>
+                   
                  
                        </tr> 
                     </tbody>`
+
+                    // <td><button class="btn" id = "myBtn" > <a href="Stockmanagerdashboardhomedelivery/showdelivery/${obj9[i].company_id}">  See More </a> </button>  </td>
         }
   }
 };
 httprequest9.send();
+
+
+// delivery company
+const httprequest10  = new XMLHttpRequest();
+const right = document.getElementById("table4");
+httprequest10.open("POST", "Stockmanagerdashboardhome/showitems" , true);
+httprequest10.onreadystatechange = function()
+{
+  console.log("onreadystatechange");
+  if( httprequest10.readyState === 4 && httprequest10.status === 200)
+  {
+    console.log(httprequest10.responseText);
+    // const obj10 = JSON.parse(httprequest10.responseText);
+    //     console.log(obj10);
+    //     console.log("pavi");
+        // for(var i = 0 ; i< obj9.length ; i++)
+        // {
+        //   left.innerHTML +=
+        //   // '<tbody> ' +
+        //   // '<tr>' +
+        //   // '<td>' +  obj9[i].name +  '</td>' + 
+        //   // '<td>' + obj9[i].rating + ' </td>' + 
+        //   // // '<td>' + '<button class="btn">' + ' <a href="Stockmanagerdashboardhome/showdelivery/" '+ obj9[i].rating  +'> ' + ' See More '+'</a>'  + '</button>' + '</td>' +
+        //   //    '</tr>' + 
+        //   // '</tbody>'
+
+        //   `<tbody> 
+        //             <tr> 
+        //             <td>   ${obj9[i].name}   </td>
+        //             <td>   ${obj9[i].rating}   </td>  
+        //             <td><button class="btn"> <a href="Stockmanagerdashboardhome/showdelivery/${obj9[i].company_id}">  See More </a> </button>  </td>
+                 
+        //                </tr> 
+        //             </tbody>`
+        // }
+  }
+};
+httprequest10.send();
 
 
