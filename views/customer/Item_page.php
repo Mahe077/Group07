@@ -111,10 +111,7 @@ require 'config/PathConf.php';
 
 
     <script type="text/javascript" src="<?php echo $localhost; ?>views/js/customer/item.js"></script>
-    <!-- <script type="text/javascript" src="<?php echo $localhost; ?>views/js/swiper.js"></script> -->
-
     <script type="text/javascript" src="<?php echo $localhost; ?>views/js/customer/main-ws.js"></script>
-
     <script type="text/javascript" src="<?php echo $localhost; ?>views/js/customer/cart.js"></script>
     <?php
     if (isset($_SESSION['userid'])) {

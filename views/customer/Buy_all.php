@@ -59,7 +59,7 @@ if (!isset($_SESSION['userid'])) {
                         <h3>Total price</h3>
                         <div class="inputBox">
                             <input type="text" name="currency" value="LKR">
-                            <input class="amount" type="text" name="amount" placeholder="Total price" value="1">
+                            <input class="amount" type="text" name="amount" placeholder="Total price" value="1" readonly="readonly">
                         </div>
                         <input type="button" class="btn" value="Pay advance" onclick="return paymethod()">
                         <br>

@@ -164,6 +164,7 @@ class Payment extends Controller
                 exit();
             } elseif ($delivery == 'Yes') {
                 if ($this->model->insertDeliveryAll($user_id, $itemIds, $total, $Advanced, $address, $qtys, $Cost, $cout)) {
+                        $_SESSION["pay_all"] = true;
                         header("location:" . $localhost . "Order");
                         exit();
                     } else {
@@ -172,6 +173,7 @@ class Payment extends Controller
                 }
             } elseif ($delivery == 'No') {
                 if ($this->model->insertOrderAll($user_id, $itemIds, $total, $Advanced, $qtys, $Cost, $cout)) {
+                    $_SESSION["pay_all"] = true;
                     header("location:" . $localhost . "Order");
                     exit();
                 } else {

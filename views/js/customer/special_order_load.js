@@ -15,7 +15,6 @@ function display_orders(id, orderType) {
   } else if (orderType == 8) {
     button = document.querySelector("#to_review");
   }
-  console.log(button);
   button.style.background = "red";
   var data = new FormData();
   data.append("search", id);
@@ -161,7 +160,7 @@ function sorderUpdate(sorderId, status, tableId) {
       Total = parseFloat(total.textContent);
       if (tablerow.childNodes[1].childNodes[1].value == tableId) {
         tablerow.style.display = "none";
-        console.log(tablerow.childNodes[1].childNodes[1].value,tableId)
+        // console.log(tablerow.childNodes[1].childNodes[1].value,tableId)
         Total =
           Total -
           parseFloat(

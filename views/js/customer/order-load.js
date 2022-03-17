@@ -35,7 +35,6 @@ function display_orders(id, orderType) {
 
     // console.log(this.response);
     var search = JSON.parse(this.response);
-    console.log(search);
     products.innerHTML = "";
     if (search !== null) {
       let count = 0;

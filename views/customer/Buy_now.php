@@ -42,8 +42,8 @@ if (!isset($_SESSION['userid'])) {
                     <img src="<?php echo $localhost; ?>assets/car/animated/4.jpg" alt="">
                 </div>
 
-                <!-- <form class="form" method="post" action="https://sandbox.payhere.lk/pay/checkout"> -->
-                <form class="form" method="post" action="<?php echo $localhost; ?>Payment/pay">
+                <form class="form" method="post" action="https://sandbox.payhere.lk/pay/checkout">
+                <!-- <form class="form" method="post" action="<?php echo $localhost; ?>Payment/pay"> -->
                     <input type="hidden" name="merchant_id" value="1218705"> <!-- Replace your Merchant ID -->
                     <input type="hidden" name="return_url" value="<?php echo $localhost; ?>Product">
                     <input type="hidden" name="cancel_url" value="<?php echo $localhost; ?>Profile">
@@ -57,13 +57,14 @@ if (!isset($_SESSION['userid'])) {
                     </div>
                     <div class="inputBox">
                         <input type="hidden" id="item_id_1" name="item_id_1" value="<?php echo $this->itemId; ?>">
-                        <input type="number" class="quantity" name="quantity_1" value="1" min="1" max="5" placeholder=" Enter qty" onchange="changeprice()">
-                        <input class="amount_1" type="text" name="amount_1" placeholder="Enter the amount" value="1">
+                        <input type="number" class="quantity_1" name="quantity_1" value="1" min="1" max="5" placeholder=" Enter qty" onchange="changeprice(1)">
+                        <input class="amount_1" type="text" name="amount_1" placeholder="Enter the amount" value="1" readonly="readonly"> 
+                        <input class="unit_price_1" type="hidden" name="unit_price_1" value="1">
                     </div>
                     <h3>Total price</h3>
                     <div class="inputBox">
                         <input type="text" name="currency" value="LKR">
-                        <input class="amount" type="text" name="amount" placeholder="Total price" value="1">
+                        <input class="amount" type="text" name="amount" placeholder="Total price" value="1"  readonly="readonly">
                     </div>
                     <input type="button" class="btn" value="Pay advance" onclick="return paymethod()">
                     <br>

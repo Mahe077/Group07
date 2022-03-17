@@ -20,7 +20,7 @@ function loadItemOptions(product_items) {
 // ******************************************************* onloadCartNumbers(products) ********************************************************************
 
 function onloadCartNumbers(products) {
-  console.log(products);
+  <!-- console.log(products); -->
   cart_numbers = 0;
   for (j in products) {
     cart_numbers += parseInt(products[j].InCart);
