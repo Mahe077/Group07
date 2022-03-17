@@ -225,7 +225,7 @@ function changeInCart(id, Unitprice) {
         qtyField[index].parentElement.parentElement.childNodes[7].childNodes[3];
       qtyField[
         index
-      ].parentElement.parentElement.childNodes[7].childNodes[3].innerHTML = `<button class = "btn" onclick="updateCart(${id},${newqty},1)" style="width:30px"><i class="fas fa-user-edit"></i></button>`;
+      ].parentElement.parentElement.childNodes[7].childNodes[3].innerHTML = `<button class = "btn" onclick="updateCart(${id},${newqty},1)" style="width:30px"><i class="fas fa-cloud-upload-alt"></i></button>`;
     }
   }
 }
