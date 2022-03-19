@@ -123,7 +123,6 @@ require 'config/PathConf.php';
     }
     ?>
     <script type="text/javascript" src="<?php echo $localhost; ?>views/js/alert.js"></script>
-    <!-- <script type="text/javascript" src="views/js/alert.js"></script> -->
     <script>
         let msg = document.querySelector(".message-icon-holder");
 

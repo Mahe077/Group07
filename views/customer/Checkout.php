@@ -61,6 +61,17 @@ require 'config/PathConf.php';
                 <li>
                     <input type="submit" name="delete" id="empty-cart" class="btn" value="Empty Cart" onclick="ClearAll()">
                 </li>
+                <li id="buy_all">
+                    
+                </li>
+                <!-- <li>
+                   <form action="#" method="post">
+                       <input type="hidden" name="item_1" id="item_1" value="item_id">
+                       <input type="hidden" name="item_1" id="item_1" value="item_id">
+                       <input type="hidden" name="item_1" id="item_1" value="item_id">
+                       <input type="submit" class="btn" value="Buy All">
+                   </form> 
+                </li> -->
                 <li>
                     <a href="Product" class="btn">Products</a>
                     <!-- <a href="#" class="btn">Continue Shopping</a> -->

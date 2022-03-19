@@ -135,7 +135,7 @@ function filterItems() {
     data.append("product-type", product_type);
     data.append("product-genuiness", product_condition);
 
-    console.log(product_type, product_condition);
+    // console.log(product_type, product_condition);
     var xhr = new XMLHttpRequest();
     xhr.open("POST", "Product/Filter");
     xhr.onload = function () {

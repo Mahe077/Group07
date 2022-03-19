@@ -60,7 +60,6 @@ function cartNumbers(product_item, i) {
 // ******************************************************* onloadCart() **********************************************************************************
 
 function onloadCart() {
-  // console.log("oloadsdsfsdf");
   // load cart from the database
   var xhr = new XMLHttpRequest();
   xhr.open("POST", localhost + "Checkout/Load");
@@ -278,6 +277,7 @@ function removeItem() {
 
   for (let i = 0; i < removebtns.length; i++) {
     removebtns[i].addEventListener("click", () => {
+      // console.log("remove button clicked")
       itemToRemove =
         removebtns[i].parentElement.childNodes[1].firstElementChild.value;
       itemToRemove = parseInt(itemToRemove);

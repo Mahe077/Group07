@@ -9,7 +9,7 @@ class Order_Model extends Model
     public function loadAll($id,$type)
     {
         return $this->db->select2(
-            "SELECT qty,total_payment,status,amount,name,order_id,item_id FROM (SELECT * FROM `orders` ,item WHERE orders.item_id = item.id) tmp ,product WHERE (product.id = tmp.productId AND user_id = :id) AND tmp.status = :type",
+            "SELECT qty,total_payment,status,amount,name,order_id,ItemId FROM (SELECT * FROM (SELECT * FROM orders,order_item WHERE order_item.OrderId = orders.order_id) tmp ,item WHERE tmp.ItemId = item.id) tmp ,product WHERE (product.id = tmp.productId AND user_id = :id) AND tmp.status =:type ORDER BY tmp.order_id;",
             ['id' => $id,'type' =>$type]
         );
     }
