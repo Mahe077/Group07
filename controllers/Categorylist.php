@@ -19,5 +19,9 @@
             echo json_encode($data);
             return $data;
         }
+        public function Delete_cat($id){
+            $this->model->Delete_cat($id);
+            header("location:".$localhost."\G7/Group07/Categorylist");
+        }
     }
 ?>

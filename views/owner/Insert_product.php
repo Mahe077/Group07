@@ -1,12 +1,11 @@
 <?php
-  if (!isset($_SESSION['userid'])) {
-    $_SESSION['error'] = 'invalidAccess';
-    header("location: Log_in");
-    exit();
-  }
-  require 'config/PathConf.php';
+if (!isset($_SESSION['userid'])) {
+  $_SESSION['error'] = 'invalidAccess';
+  header("location: Log_in");
+  exit();
+}
+require 'config/PathConf.php';
 ?>
-
 <!DOCTYPE html>
 
 <html lang="en" dir="ltr">
@@ -60,20 +59,41 @@
         </div>
       </div>
     </nav>
-    <div class="home-content-cat">    
-      <div class="form-container-cat">
-        <div class="item-content-cat">
-          <form  method="POST" action="Insert_category/Insert_cat" enctype="multipart/form-data">
-                <div class="item-form">
-                    <input class ="input" type="text" name="category" placeholder="Category" required>
-                </div>
-                <input type="submit" name="submit" class="item-btn" value="Insert Category">
-          </form>
+    <div class="form-container-product">
+        <div class="side-image">
+                <img src="\G7/Group07/assets/ui_images/product.jpg" alt="">
         </div>
-      </div> 
-    </div>         
+        <div class="item-content-product">
+          
+            <form  method="POST" action="Insert_product/insert_product" enctype="multipart/form-data">
+                  <div class="input-box-container">
+                    <div class="input-boxes">
+                      <div class="item-form">
+                          <input class="input" name="name" type="text" placeholder="name" required>
+                      </div>
+                    <div class="item-form">
+                      <div class="slt">
+                        <select name="type" id="select-opt" class="input" required>
+                        <option value="">Select Category</option>
+                          <option value="Genuin">Service Parts</option>
+                          <option value="Compatible">Brakes</option>
+                          <option value="Compatible">Engine</option>
+                          <option value="Compatible">Suspension And Steering</option>
+                          <option value="Compatible">Transmission</option>
+                          <option value="Compatible">Cooling & Heating</option>
+                          <option value="Compatible">Electrical & Lighting</option>
+                        </select>
+                      </div></div>
+                        <div class="item-form">
+                        <textarea id="dec" name="description" placeholder="Write something.." required></textarea>
+                        </div>
+                     </div><br>
+                     <input type="submit" name="submit" class="item-btn" value="Next     >>">
+                  </div>
+            </form>
+        </div> 
+    </div>   
   </section> 
   <script type="text/javascript" src="views/js/owner/owner-reports.js"></script>
-  <script type="text/javascript" src="views/js/owner/form-cat.js"></script> 
 </body>
 </html>

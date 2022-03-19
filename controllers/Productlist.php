@@ -25,5 +25,9 @@
             $this->view->data=$data;
             $this->view->render('owner/Edit_item');
         }
+        public function Delete_item($id){
+            $this->model->Delete_item($id);
+            header("location:".$localhost."\G7/Group07/Productlist");
+        }
     }
 ?>

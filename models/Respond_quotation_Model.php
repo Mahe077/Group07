@@ -7,7 +7,7 @@ class Respond_quotation_Model extends Model
     }
     public function Respond_quo($id,$estimate)
     {
-        return $this->db->update2("UPDATE special_item SET approximated_price = '$estimate' WHERE id = '$id';");
+        return $this->db->update2("UPDATE special_item SET approximated_price = '$estimate',status = '1' WHERE id = '$id';");
     }
     public function Reject_quotation($id)
     {

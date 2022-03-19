@@ -54,7 +54,7 @@
         <div class="dropdown">
           <button class="dropbtn"><i class="fa fa-chevron-down" aria-hidden="true"></i></button>
           <div class="dropdown-content">
-            <a href="../controller/logout.inc.php">Log Out</a>
+            <a href="Log_out">Log Out</a>
           </div>
         </div>
       </div>

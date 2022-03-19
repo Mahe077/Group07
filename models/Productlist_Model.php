@@ -19,4 +19,7 @@ class Productlist_Model extends Model
     public function Display(){
          return  $this->db->select("SELECT *FROM `notification` WHERE status = '0'");
     }
+    public function Delete_item($id){
+        return $this->db->delete("DELETE FROM item WHERE id = '$id'; ");
+    }
 }

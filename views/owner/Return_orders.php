@@ -57,7 +57,7 @@ require 'config/PathConf.php';
         <div class="dropdown">
           <button class="dropbtn"><i class="fa fa-chevron-down" aria-hidden="true"></i></button>
           <div class="dropdown-content">
-            <a href="../controller/logout.inc.php">Log Out</a>
+            <a href="Log_out">Log Out</a>
           </div>
         </div>
       </div>
@@ -104,7 +104,6 @@ require 'config/PathConf.php';
                 <th>Delivery request</th>
                 <th>Total payment</th>
                 <th>Payment</th>
-                <th>Reason</th>
                     <th  colspan="2" class="text-center">Operations</th>
                   </tr>
                   <tr class="bordered"></tr>
@@ -140,7 +139,6 @@ httprequest.onreadystatechange = function()
                     <td>  ${obj[i].delivery_request}  </td>
                     <td>  ${obj[i].total_payment}  </td>
                     <td>  ${obj[i].payment}  </td>
-                    <td>  ${obj[i].reason}  </td>
                     <td class="text-center"> 
                               <a href="Return_orders/Accept_order/${obj[i].order_id}"class='btn-ac'> Accept </a>
                               <a href="Return_orders/Reject_order/${obj[i].order_id}"class='btn-rj'> Reject </a>

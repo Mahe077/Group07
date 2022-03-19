@@ -12,7 +12,7 @@ class Return_orders_Model extends Model
     // }
 
     function Displayorder(){
-        return  $this->db->select("SELECT  `order_id` ,`item_id` ,`reason`, `delivery_request`, `order_date` , `payment` , `total_payment`  FROM `orders` WHERE order_type = '5'");
+        return  $this->db->select("SELECT  `order_id` ,`item_id` , `delivery_request`, `order_date` , `payment` , `total_payment`  FROM `orders` WHERE order_type = '5'");
     }
 
     public function Accept_order($id){

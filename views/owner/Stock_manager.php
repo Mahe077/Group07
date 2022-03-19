@@ -53,7 +53,7 @@ require 'config/PathConf.php';
         <div class="dropdown">
           <button class="dropbtn"><i class="fa fa-chevron-down" aria-hidden="true"></i></button>
           <div class="dropdown-content">
-            <a href="../controller/logout.inc.php">Log Out</a>
+            <a href="Log_out">Log Out</a>
           </div>
         </div>
       </div>
@@ -73,34 +73,15 @@ require 'config/PathConf.php';
                 <tr>
                     <th>Fullname</th>
                     <th>Lastname</th>
-                    <th>username</th>
                     <th>Email</th>
                     <th>Contact</th>
-                    <th>Image</th>
+                    <th>Address</th>
                     <th colspan="2" class="text-center">Operations</th>
                 </tr>
                 <tr class="bordered"></tr>
                 <tbody id="data">
 
                 </tbody>
-                <tr>
-                    <?php
-                        //while($row = mysqli_fetch_assoc($value)){
-                        ?>
-                        <?php ///$image=$row['image'];?>
-                        <td data-label='fname'><?php //echo $row['fname']; ?></td>
-                        <td data-label='lname'><?php //echo $row['lname']; ?></td>
-                        <td data-label='username'><?php //echo $row['username']; ?></td>
-                        <td data-label='email'><?php //echo $row['email']; ?></td>
-                        <td data-label='contact'><?php //echo $row['contact']; ?></td>
-                        <td data-label='image'><//img src="img/<?php //echo $image?>" height="150px" width="180px" ></td>
-                        <td class="text-center">
-                                <a href="delete-stock.php?id=<?php //e//cho $row['id']?>"class='btn-del'>Delete</a>
-                        </td>
-                        </tr>
-                        <?php  
-                        //}
-                        ?>
                 </thead>
             </table>
         </div>
@@ -122,17 +103,19 @@ httprequest.onreadystatechange = function()
         for(var i = 0 ; i< obj.length ; i++)
         {
           rows.innerHTML +=
-                    '<tbody> ' +
-                    '<tr> ' +
-                    '<td> ' +  obj[i].fname  +  '</td>' +  
-                    '<td> ' + obj[i].lname + ' </td>' +
-                    '<td> ' + obj[i].email + ' </td>' +
-                    '<td> ' + obj[i].contact + ' </td>' +
-                    '<td> ' + obj[i].address + ' </td>' +
-                    '<td> ' + obj[i].dob + ' </td>' +
-                       '</tr>' + 
+                   ` <tbody>  
+                    <tr>  
+                    <td>    ${obj[i].fname}    </td>   
+                    <td>   ${obj[i].lname} </td> 
+                    <td>   ${obj[i].email}</td> 
+                    <td>   ${obj[i].contact}  </td> 
+                    <td>  ${obj[i].address} </td> 
+                    <td class="text-center"> 
+                              <a href="Stock_manager/delete_stock/${obj[i].id}"class='btn-del'> Delete </a>
+                    </td> 
+                    </tr>  
 
-                    '</tbody>'
+                    </tbody>`
         }
   }
 

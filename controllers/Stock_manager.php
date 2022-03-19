@@ -19,5 +19,9 @@
             echo json_encode($data);
             return $data;
         }
+        public function delete_stock($id){
+            $this->model->delete_stock($id);
+            header("location:".$localhost."\G7/Group07/Stock_manager");
+        }
     }
 ?>

@@ -7,7 +7,7 @@ class Orderlist_Model extends Model
     }
     public function Displayorder()
     {
-        return $this->db->select("SELECT *FROM orders WHERE response='0'");
+        return $this->db->select("SELECT *FROM orders");
     }
     public function Displaynoti(){
         return  $this->db->select("SELECT count(*)FROM `notification` WHERE status = '0'");

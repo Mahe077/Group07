@@ -1141,6 +1141,33 @@ input[type=submit]:hover {
   color: #022131;
   font-weight: 600;
 }
+/*settings page*/
+.home-section .home-content-set{
+  display: flex;
+  height: 100%;
+  position: relative;
+  padding-top: 125px;
+  width: calc(100%-220px);
+  justify-content: center;
+  align-items: center;
+}
+.home-section .home-content-set .item-img img{
+  border-radius: 50%;
+}
+/*insert product page*/
+.item-form #dec{
+  width: 330px;
+  height: 65px;
+  padding: 12px 20px;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  resize: none;
+  border: none;
+}
+.item-form #dec::placeholder{
+  color: #022131;
+  font-size: 13px;
+}
 @media (max-width: 1240px) {
     .sidebar{
       width: 60px;
