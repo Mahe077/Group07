@@ -54,15 +54,16 @@
 </div>
 
 
+
 <div class="card-container" id="card-container">
 <div class="card-count" id="card-count">
-count
+<p class="card-topic">Count</p>
 </div>
 <div class="card-sum" id="card-sum">
-sum
+<p class="card-topic">Sum</p>
 </div>
 <div class="card-profit" id="card-profit">
-profit
+<p class="card-topic">Profit</p>
 </div>
 </div>
 <div class="table-container1" id="container1" onload="select_year()">

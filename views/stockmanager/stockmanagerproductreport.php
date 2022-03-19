@@ -13,8 +13,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='stylesheet' type='text/css' href="<?php echo $localhost; ?>views/css/stockmanager/stockmanagersalesreport.css">
+    <link rel='stylesheet' type='text/css' href="<?php echo $localhost; ?>views/css/stockmanager/stockmanagerproductreport.css">
     <title>Document</title>
 </head>
+<style>
+
+  </style>
 <body>
 <?php
     $this_page = "stockmanagerproductreport.php";
@@ -22,55 +26,84 @@
 ?>
 <div class="main-container">
 
-<div class="report-container">
-<div class="graphcontainer">
-<h3>Result</h3>
-</div>
-<div class="selectoptions">
-<h3>Report Type</h3>
-<div class="selections">
-               <div class="duration-select">
-               <label>Duration</label>
-                 <select class="common">
-                    
-                   <option value="1">Monthly</option>
-                   <option value="3">Weekly</option>
-                   <option value="2">Daily</option>
-                 </select>
-                 <span class="custom-arrow"></span>
-               </div>
-               <label for="submit">starting Date</label>
-               <input type="date" class="button" name="submit" value="starting Date">  
-               <br>
-               <label for="submit">Ending Date</label>
-               <input type="date" class="button" name="submit" value="Ending Date">  
-                <br>
-               <input type="submit" class="viewbutton" name="submit" value="View">
-</div>
 <div class="button-container">
 
-<input type="submit" class="printbutton" name="submit" value="Print">
-<input type="submit" class="printbutton" name="submit" value="Back">
+
+<!-- Trigger/Open The Modal -->
+<button id="myBtn01">Open Modal</button>
+
+<!-- The Modal -->
+<div id="myModal01" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close01">&times;</span>
+
+    <div class="container">
+    <div class="title">Update Amount</div>
+    <div class="content">
+      <form action="Stockmanagerproduct/Updatestocks" method="POST" enctype="multipart/form-data">
+        <div class="user-details">
+          <div class="input-box">
+          
+            <input type="text" placeholder="Enter Item ID" name="item_ID" required>
+          </div>
+          <div class="input-box">
+        
+          <input type="number" placeholder="Enter Amount" name="amount" required>
+          </div>
+          <div class="button">
+          <input type="submit" name="submit" value="Update" id="myBtn1">
+		</div>
+          </div>
+      </form>
+    </div>
+</div>
+  </div>
+  </div>
+
+</div>
+
+
+<!-- Trigger/Open The Modal -->
+<button id="myBtn02">Open Modal</button>
+
+<!-- The Modal -->
+<div id="myModal02" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close02">&times;</span>
+   
+    <div class="container">
+    <div class="title">Update Amount</div>
+    <div class="content">
+      <form action="Stockmanagerproduct/Updatestocks" method="POST" enctype="multipart/form-data">
+        <div class="user-details">
+          <div class="input-box">
+          
+            <input type="text" placeholder="Enter Item ID" name="item_ID" required>
+          </div>
+          <div class="input-box">
+        
+          <input type="number" placeholder="Enter Amount" name="amount" required>
+          </div>
+          <div class="button">
+          <input type="submit" name="submit" value="Update" id="myBtn1">
+		</div>
+          </div>
+      </form>
+    </div>
+</div>
+  </div>
+  </div>
+
 </div>
 </div>
+
 </div>
+
 </div>
-<div class="table-container">
-     <table class="table">
-  <thead>
-  <tr>
-    <th>Product ID</th>
-    <th>Product Name</th>
-    <th>Category</th>
-    <th>Amount</th>
-    <th>Color</th>
-  </tr>
-</thead>
-<tbody>
-  <tr>
-</tr>
-</tbody>
-</table>
-</div>
+<script type="text/javascript" src="views/js/stockmanager/productreport.js"></script>
 </body>
 </html>

@@ -52,6 +52,13 @@
               </a>
             </li>
             <li>
+
+              <a href="Stockmanagerproductreport">
+              <i class='bx bx-line-chart'></i>
+                <span class="links_name">Product_Reports</span>
+              </a>
+            </li>
+            <li>
               <a href="Stockmanagerteam">
               <i class='bx bx-group'></i>
                 <span class="links_name">Team</span>
