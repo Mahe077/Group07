@@ -46,7 +46,7 @@ require 'config/PathConf.php';
                 }
               ?>
             <div class="respond">
-                <a href="Display_notifications" class='btn-del'>Respond</a>
+                <a href="Display_notifications" class='respond_btn'>Respond</a>
             </div>
           </div>
       </div>
@@ -57,7 +57,7 @@ require 'config/PathConf.php';
         <div class="dropdown">
           <button class="dropbtn"><i class="fa fa-chevron-down" aria-hidden="true"></i></button>
           <div class="dropdown-content">
-            <a href="../controller/logout.inc.php">Log Out</a>
+            <a href="Log_out">Log Out</a>
           </div>
         </div>
       </div>
@@ -67,10 +67,6 @@ require 'config/PathConf.php';
         <a href="Insert_category" id="insert-btn" class="insert-btn"><div class="btn-txt-cat">Insert New Category</div></a>
       </div>
       <div class="cat-table">
-        <?php 
-          //$db->display_msg();
-          
-        ?>
         <div class="topic-row">
           <div class="topic-txt">
             Manage Category
@@ -82,26 +78,13 @@ require 'config/PathConf.php';
                 <tr>
                     <th >Category ID</th>
                     <th>Category</th>
+                    <th>Status</th>
                     <th colspan="2" class="text-center">Operations</th>
                 </tr>
                 <tr class="bordered"></tr>
                 <tbody id="data">
 
                </tbody>
-                <tr>
-                    <?php
-                        //while($row = mysqli_fetch_assoc($value)){
-                        ?>
-                        <td data-label='id'><?php //echo $row['id']; ?></td>
-                        <td data-label='category'><?php //echo $row['category_name']; ?></td>
-
-                        <td class="text-center">
-                            <a href="delete-cat.php?id=<?php //echo $row['id']?>"class='btn-del'>Delete</a>
-                        </td>
-                        </tr>
-                        <?php  
-                        //}
-                        ?>
             </thead>
           </table>
       </div>     
@@ -122,13 +105,16 @@ httprequest.onreadystatechange = function()
         for(var i = 0 ; i< obj.length ; i++)
         {
           rows.innerHTML +=
-                    '<tbody> ' +
-                    '<tr> ' +
-                    '<td> ' +  obj[i].category_name  +  '</td>' +  
-                    '<td> ' + obj[i].status + ' </td>' +
-                    
-                       '</tr>' + 
-                    '</tbody>'
+                    `<tbody>
+                    <tr>  
+                    <td>    ${obj[i].id}    </td>
+                    <td>    ${obj[i].category_name}    </td> 
+                    <td>    ${obj[i].status}    </td>
+                    <td class="text-center"> 
+                              <a href="Categorylist/Delete_cat/${obj[i].id}"class='btn-del'> Delete </a>
+                   </td>   
+                    </tr> 
+                    </tbody>`
         }
   }
 

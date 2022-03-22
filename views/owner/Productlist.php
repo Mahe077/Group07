@@ -42,7 +42,7 @@ require 'config/PathConf.php';
                 }
               ?>
             <div class="respond">
-                <a href="Display_notifications" class='btn-del'>Respond</a>
+                <a href="Display_notifications" class='respond_btn'>Respond</a>
             </div>
           </div>
       </div>
@@ -53,14 +53,14 @@ require 'config/PathConf.php';
         <div class="dropdown">
           <button class="dropbtn"><i class="fa fa-chevron-down" aria-hidden="true"></i></button>
           <div class="dropdown-content">
-            <a href="../controller/logout.inc.php">Log Out</a>
+            <a href="Log_out">Log Out</a>
           </div>
         </div>
       </div>
     </nav>
     <div class="home-content">
       <div class="btn-section">
-        <a href="Insert_item" id="insert-btn" class="insert-btn"><div class="btn-txt">Insert New Item</div></a>
+        <a href="Insert_product" id="insert-btn" class="insert-btn"><div class="btn-txt">Insert New Item</div></a>
       </div>
       <div class="view_table">
         <div class="topic-row">
@@ -74,16 +74,16 @@ require 'config/PathConf.php';
               <tr>
                 <th>Product Id</th>
                 <th>Brand</th>
+                <th>Type</th>
+                <th>partNo</th>
+                <th>partNo_Manufacturer</th>
                 <th>Price</th>
-                <th>Size</th>
-                <th>Part No</th>
                 <th>Amount</th>
-                <th>Status</th>
                 <th colspan="2" class="text-center">Operations</th>
                </tr>
                <tr class="bordered"></tr>
               <tbody id="data">
-
+                
               </tbody>         
             </thead>
           </table>
@@ -115,10 +115,9 @@ httprequest.onreadystatechange = function()
                     <td>   ${obj[i].partNo_Manufacturer}   </td> 
                     <td>   ${obj[i].price}   </td> 
                     <td>   ${obj[i].amount}   </td> 
-                    <td>   ${obj[i].status}   </td>
                     <td class="text-center"> 
-                              <a href="Productlist/View_item/${obj[i].id}"class='btn-res'> Edit </a>
-                              <a href="Cancel_orders/Reject_order/${obj[i].order_id}"class='btn-del'> Delete </a>
+                              <a href="Productlist//${obj[i].id}"class='btn-res'> Edit </a>
+                              <a href="Productlist/Delete_item/${obj[i].id}"class='btn-del'> Delete </a>
                    </td> 
                     </tr>  
                     </tbody>`

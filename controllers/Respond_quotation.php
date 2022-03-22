@@ -17,8 +17,8 @@
             require 'config/FunctionConf.php';
             require 'config/PathConf.php';
             if(isset($_POST['submit'])){
-            $estimate=$_POST['estimate'];
-            $id= $_POST['id'];
+            $estimate=$_POST['Estimate'];
+            $id= $_POST['Id'];
             $this->model->Respond_quo($id,$estimate);
             $_SESSION['error'] = "Successfully entered";
             header("location:".$localhost."Owner_quotation");

@@ -12,10 +12,10 @@ class Insert_category_Model extends Model
     {
         $this->db->alter(
             "INSERT INTO `category`
-            (`category_name`) 
+            (`category_name`, `status`) 
             VALUES 
-            (:category)",
-            ['category' => $category]
+            (:category,:status)",
+            ['category' => $category,'status'=>'1']
         );
     }
     public function Displaynoti(){

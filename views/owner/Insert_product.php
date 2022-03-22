@@ -7,12 +7,13 @@ if (!isset($_SESSION['userid'])) {
 require 'config/PathConf.php';
 ?>
 <!DOCTYPE html>
+
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8">
     <title> Owner Dashboard |SL MINI Spares  </title>
     <link rel="stylesheet" type="text/css" href="<?php echo $localhost; ?>views/css/owner/owner_updated.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo $localhost; ?>views/css/owner/owner-stock.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo $localhost; ?>views/css/owner/owner-test.css">
     <script src="https://kit.fontawesome.com/9c5a05f882.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -58,71 +59,41 @@ require 'config/PathConf.php';
         </div>
       </div>
     </nav>
-
-    <div class="home-content">
-        <div class="btn-section"><a href="Insert_stockmanager" id="insert-btn" class="insert-btn"><div class="btn-txt">Insert Stock Manager</div></a></div>
-        <div class="topic-row">
-          <div class="topic-txt">
-            Stock Manager
-          </div>
+    <div class="form-container-product">
+        <div class="side-image">
+                <img src="\G7/Group07/assets/ui_images/product.jpg" alt="">
         </div>
-        <div class="cat-table">
-        
-        <table class="tbl" >
-                <thead>
-                <tr>
-                    <th>Fullname</th>
-                    <th>Lastname</th>
-                    <th>Email</th>
-                    <th>Contact</th>
-                    <th>Address</th>
-                    <th colspan="2" class="text-center">Operations</th>
-                </tr>
-                <tr class="bordered"></tr>
-                <tbody id="data">
-
-                </tbody>
-                </thead>
-            </table>
-        </div>
-    </div>
-    
-</section> 
-<script>
-var httprequest  = new XMLHttpRequest();
-
-httprequest.open("POST", "Stock_manager/Displaystock" , true);
-const rows = document.getElementById("data");
-httprequest.send();
-httprequest.onreadystatechange = function()
-{
-  if( httprequest.readyState == 4 && httprequest.status == 200)
-  {
-        var obj = JSON.parse(httprequest.responseText);
-        var html = "";
-        for(var i = 0 ; i< obj.length ; i++)
-        {
-          rows.innerHTML +=
-                   ` <tbody>  
-                    <tr>  
-                    <td>    ${obj[i].fname}    </td>   
-                    <td>   ${obj[i].lname} </td> 
-                    <td>   ${obj[i].email}</td> 
-                    <td>   ${obj[i].contact}  </td> 
-                    <td>  ${obj[i].address} </td> 
-                    <td class="text-center"> 
-                              <a href="Stock_manager/delete_stock/${obj[i].id}"class='btn-del'> Delete </a>
-                    </td> 
-                    </tr>  
-
-                    </tbody>`
-        }
-  }
-
-}
-
-  </script> 
-<script type="text/javascript" src="views/js/owner/owner-reports.js"></script>
-<script type="text/javascript" src="views/js/owner/form.js"></script>
+        <div class="item-content-product">
+          
+            <form  method="POST" action="Insert_product/insert_product" enctype="multipart/form-data">
+                  <div class="input-box-container">
+                    <div class="input-boxes">
+                      <div class="item-form">
+                          <input class="input" name="name" type="text" placeholder="name" required>
+                      </div>
+                    <div class="item-form">
+                      <div class="slt">
+                        <select name="type" id="select-opt" class="input" required>
+                        <option value="">Select Category</option>
+                          <option value="Genuin">Service Parts</option>
+                          <option value="Compatible">Brakes</option>
+                          <option value="Compatible">Engine</option>
+                          <option value="Compatible">Suspension And Steering</option>
+                          <option value="Compatible">Transmission</option>
+                          <option value="Compatible">Cooling & Heating</option>
+                          <option value="Compatible">Electrical & Lighting</option>
+                        </select>
+                      </div></div>
+                        <div class="item-form">
+                        <textarea id="dec" name="description" placeholder="Write something.." required></textarea>
+                        </div>
+                     </div><br>
+                     <input type="submit" name="submit" class="item-btn" value="Next     >>">
+                  </div>
+            </form>
+        </div> 
+    </div>   
+  </section> 
+  <script type="text/javascript" src="views/js/owner/owner-reports.js"></script>
 </body>
 </html>

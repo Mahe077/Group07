@@ -22,7 +22,7 @@ class Database extends PDO
         $stmt = $this->prepare($query);
 
         $stmt->execute($data);
-
+        
         return $stmt->fetchAll();
     }
 

@@ -23,7 +23,6 @@
 .item-content{
     width: 750px;
     height: 500px;
-    padding-top: 125px;
     padding-left: 45px;
 }
 form{
@@ -298,4 +297,36 @@ padding-bottom: 18px;
   padding-top: 10px;
   border-radius: 3px;
   border-color:#d6e9c6;
+}
+
+/*insert product form*/
+.form-container-product{
+  position: absolute;
+  padding-top: 100px;
+  padding-left: 50px;
+  padding-right: 50px;
+  display: flex;
+  border-radius: 5px;
+}
+
+.form-container-product .item-content-product{
+  width: 450px;
+  height: 450px;
+  align-items: center;
+  justify-content: center;
+
+  
+}
+.side-image{
+  float: left;
+  align-items: center;
+  justify-content: center;
+  padding-top: 70px;
+}
+
+.side-image img{
+  padding: 20px;
+  height: 300px;
+  width: 400px;
+
 }

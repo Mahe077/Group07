@@ -23,7 +23,6 @@ require 'config/PathConf.php';
     <?php include_once 'common_inside.php';?>
     </div>
   <section class="home-section">
-  <?php include_once 'navigation_inside.php';?>
     <div class="home-content">
     <?php //print_r($this->data);
     echo "<div class='show_item'>

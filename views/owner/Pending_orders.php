@@ -43,7 +43,7 @@ require 'config/PathConf.php';
                 }
               ?>
             <div class="respond">
-                <a href="Display_notifications" class='btn-del'>Respond</a>
+                <a href="Display_notifications" class='respond_btn'>Respond</a>
             </div>
           </div>
       </div>
@@ -54,7 +54,7 @@ require 'config/PathConf.php';
         <div class="dropdown">
           <button class="dropbtn"><i class="fa fa-chevron-down" aria-hidden="true"></i></button>
           <div class="dropdown-content">
-            <a href="../controller/logout.inc.php">Log Out</a>
+            <a href="Log_out">Log Out</a>
           </div>
         </div>
       </div>
@@ -96,6 +96,7 @@ require 'config/PathConf.php';
               <thead>
                 <tr>
                 <th>Order id</th>
+                <th>User id</th>
                 <th>Item id</th>
                 <th>Order date</th>
                 <th>Approximated date</th>
@@ -131,6 +132,7 @@ httprequest.onreadystatechange = function()
           `<tbody> 
                     <tr> 
                     <td>   ${obj[i].order_id}   </td>
+                    <td>   ${obj[i].user_id}   </td>
                     <td>   ${obj[i].item_id}   </td>  
                     <td>  ${obj[i].order_date}   </td>
                     <td>  ${obj[i].approximated_date}  </td>
@@ -138,8 +140,8 @@ httprequest.onreadystatechange = function()
                     <td>  ${obj[i].total_payment}  </td>
                     <td>  ${obj[i].payment}  </td>
                     <td class="text-center"> 
-                              <a href="Pending_orders/Accept_order/${obj[i].order_id}"class='btn-ac'> Accept </a>
-                              <a href="Pending_orders/Reject_order/${obj[i].order_id}"class='btn-rj'> Reject </a>
+                              <a href="Pending_orders/Accept_order/${obj[i].order_id}/${obj[i].user_id}"class='btn-ac'> Accept </a>
+                              <a href="Pending_orders/Reject_order/${obj[i].order_id}/${obj[i].user_id}"class='btn-rj'> Reject </a>
                    </td> 
                        </tr> 
                     </tbody>`

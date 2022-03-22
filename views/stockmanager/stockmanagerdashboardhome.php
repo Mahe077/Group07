@@ -1,6 +1,3 @@
-
-
-
 <?php
     if (!isset($_SESSION['userid'])) {
         $_SESSION['error'] = 'invalidAccess';
@@ -96,9 +93,9 @@
 </div>
  
     </div>
-    <div class="flex-left" id="left">
-    <h2>Top Selling Itmes</h2>
-    <div class="table_body_new">
+    <!-- <div class="flex-left" id="left">
+    <h2>Top Selling Itmes</h2> -->
+    <!-- <div class="table_body_new">
      
 <table class="tbl" id="table4" collapsing="0" >
 <thead>
@@ -112,10 +109,10 @@
 
 </table>
 
-</div>
+</div> -->
     
   
-</div>
+<!-- </div> -->
   </section> 
       </section> 
       <script type="text/javascript" src="views/js/stockmanager/dashboard.js"></script>
