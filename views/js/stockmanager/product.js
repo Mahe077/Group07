@@ -1,38 +1,68 @@
 
 // Get the modal
-var modal = document.getElementById("myModal");
+var modal1 = document.getElementById("myModal01");
 
 // Get the button that opens the modal
-var btn = document.getElementById("myBtn");
+var btn1 = document.getElementById("myBtn01");
 
 // Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+var span1 = document.getElementsByClassName("close01")[0];
 
 // When the user clicks the button, open the modal 
-btn.onclick = function() {
-  modal.style.display = "block";
+btn1.onclick = function() {
+  modal1.style.display = "block";
 }
 
 // When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
+span1.onclick = function() {
+  modal1.style.display = "none";
 }
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
+  if (event.target == modal1) {
+    modal1.style.display = "none";
   }
 }
-  
- 
 
-  
 
-  
-  
-          
-  
+
+
+
+
+
+
+
+
+
+
+
+// Get the modal
+var modal2 = document.getElementById("myModal02");
+
+// Get the button that opens the modal
+var btn2 = document.getElementById("myBtn02");
+
+// Get the <span> element that closes the modal
+var span2 = document.getElementsByClassName("close02")[0];
+
+// When the user clicks the button, open the modal 
+btn2.onclick = function() {
+  modal2.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span2.onclick = function() {
+  modal2.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal2) {
+    modal2.style.display = "none";
+  }
+}
+
 // js item upload part
 
 let httprequest  = new XMLHttpRequest();
@@ -48,14 +78,6 @@ httprequest.onreadystatechange = function()
     for(var i=0;i < obj.length; i++)
      {
       rows.innerHTML +=
-        // '<tbody> ' +
-        //             '<tr>' +
-        //             '<td>' +  obj[i].item_id  +  '</td>' +  
-        //             '<td>' + obj[i].amount + ' </td>' +
-        //             '<td>' + '<button id="myBtn">' + 'Update Stocks ' + '</button>' +
-                       
-        //                '</tr>' + 
-        //             '</tbody>'
        `<tbody>
        <tr>
        <td> ${obj[i].item_id} </td>
@@ -64,8 +86,6 @@ httprequest.onreadystatechange = function()
        </tr>
        </tbody>`
 
-      //  <td> <button id = "myBtn"> Update Stocks </button> </td>
-      //  <div id="myModal" class="modal"></div>
   }
   }
 };
@@ -75,5 +95,71 @@ httprequest.onreadystatechange = function()
 httprequest.open("POST", "Stockmanagerproduct/Loadproducts" , true);
 
 httprequest.send();
+
+
+
+// let httprequest1  = new XMLHttpRequest();
+// httprequest1.onreadystatechange = function()
+// {
+//   console.log("onreadystatechange");
+//   if( httprequest1.readyState === 4 && httprequest1.status === 200)
+//   {
+//     console.log(httprequest1.responseText);
+//     const obj1 = JSON.parse(httprequest1.responseText);
+//     console.log(obj1);
+
+ 
+//     const data = {
+//       labels: obj1,
+//       datasets: [{
+//         label: 'My First Dataset',
+//         data: obj1,
+//         backgroundColor: [
+//           'rgba(255, 99, 132, 0.2)',
+//           'rgba(255, 159, 64, 0.2)',
+//           'rgba(255, 205, 86, 0.2)',
+//           'rgba(75, 192, 192, 0.2)',
+//           'rgba(54, 162, 235, 0.2)',
+//           'rgba(153, 102, 255, 0.2)',
+//           'rgba(201, 203, 207, 0.2)'
+//         ],
+//         borderColor: [
+//           'rgb(255, 99, 132)',
+//           'rgb(255, 159, 64)',
+//           'rgb(255, 205, 86)',
+//           'rgb(75, 192, 192)',
+//           'rgb(54, 162, 235)',
+//           'rgb(153, 102, 255)',
+//           'rgb(201, 203, 207)'
+//         ],
+//         borderWidth: 1
+//       }]
+//     };
+
+//     const config = {
+//       type: 'bar',
+//       data: data,
+//       options: {
+//         scales: {
+//           y: {
+//             beginAtZero: true
+//           }
+//         }
+//       },
+//     };
+  
+//     var myChart = new Chart(
+//       document.getElementById('chart'),
+//       config
+//     );
+//   }
+// };
+
+
+
+// httprequest1.open("POST", "Stockmanagerproduct/chart" , true);
+
+// httprequest1.send();
+
 
 
