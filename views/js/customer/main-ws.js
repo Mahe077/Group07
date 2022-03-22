@@ -1,32 +1,35 @@
-let navbar = document.querySelector('.navbar');
+let navbar = document.querySelector(".navbar");
 
-document.querySelector('#menu-btn').onclick = () =>{
-    navbar.classList.toggle('active');
-    cartItem.classList.remove('active');
-    profile.classList.remove('active');
-}
+document.querySelector("#menu-btn").onclick = () => {
+  navbar.classList.toggle("active");
+  cartItem.classList.remove("active");
+  profile.classList.remove("active");
+};
 
-let searchForm = document.querySelector('.search-form');
+let searchForm = document.querySelector(".search-form");
 
-let cartItem = document.querySelector('.cart-items-container');
+let cartItem = document.querySelector(".cart-items-container");
 
-document.querySelector('#cart-btn').onclick = () =>{
-    cartItem.classList.toggle('active');
-    navbar.classList.remove('active');
-    profile.classList.remove('active');
-}
+document.querySelector("#cart-btn").onclick = () => {
+  cartItem.classList.toggle("active");
+  navbar.classList.remove("active");
+  profile.classList.remove("active");
+};
 
-let profile = document.querySelector('.profile-container');
+let profile = document.querySelector(".profile-container");
 
-document.querySelector('#profile-btn').onclick = () =>{
-    profile.classList.toggle('active');
-    navbar.classList.remove('active');
-    cartItem.classList.remove('active');
-}
+document.querySelector("#profile-btn").onclick = () => {
+  profile.classList.toggle("active");
+  navbar.classList.remove("active");
+  cartItem.classList.remove("active");
+};
 
-window.onscroll = () =>{
-    navbar.classList.remove('active');
-    cartItem.classList.remove('active');
-    profile.classList.remove('active');
-}
+window.onscroll = () => {
+  navbar.classList.remove("active");
+  cartItem.classList.remove("active");
+  profile.classList.remove("active");
+};
+
+
+var localhost = "http://localhost/G7/Group07/";
 

@@ -22,7 +22,6 @@ h2{
 
 #myBtn{
     position: relative;
-    /* transform: translate(-50%, -50%); */
     background: #042434;
     color: #fff;
     padding: 10px 30px;
@@ -85,6 +84,7 @@ h2{
 .ale{
   color:green;
 }
+
 .closebtn {
   margin-left: 15px;
   color: white;
@@ -202,22 +202,12 @@ form .button input:hover{
 }
 
  #imagebox{
-  /* height: 15rem;
-  overflow: hidden;
-  width: 50%; */
+ 
   border-radius: 10px;
     height: 300px;
     width: 300px;
 }
- /* .box img{
-  height: 70%;
-  object-fit: cover;
-  width: 70%;
-} */
 
- /* .box:hover #imagebox img{
-  transform: scale(1.2);
-} */
 
  .box h3{
     color:#fff;
@@ -258,15 +248,6 @@ form .button input:hover{
 .btn:hover{
     letter-spacing: .2rem;
 }
-
-
-
-
-
-
-
-/* media queries
-*/
 
 
 @media (max-width: 1240px) {
@@ -344,6 +325,104 @@ form .button input:hover{
 
 
 
+
+.table-container{
+  padding-top: 100px;
+  padding: 0 10%;
+  margin: 0 auto;
+ 
+}
+
+.view_table .table_body{
+  height: 100%;
+ }
+.tbl{
+  width: 100%;
+}
+.tbl td{
+  padding: 20px 20px;
+  text-align: center;
+  font-size: 12px;
+  border: none;
+}
+.txt{
+  font-size: 50px;
+  text-align: center;
+  font-weight: 500;
+
+}
+.tbl th{
+  padding: 20px 20px;
+  text-align: center;
+  font-size: 15px;
+  color: #042434;
+  border: none;
+}
+.bordered {
+  border-bottom: 2px solid #042434;
+  width:50%;
+}
+.tbl-nor{
+  width: 100%;
+}
+.tbl-nor td{
+  padding: 20px 20px;
+  text-align: center;
+  font-size: 12px;
+  border: none;
+}
+.tbl-nor th{
+  padding: 20px 20px;
+  text-align: center;
+  font-size: 15px;
+  color: #042434;
+  border: none;
+}
+#table .tbody{
+  height: 100%;
+ }
+ .tbl{
+   width: 100%;
+ }
+ .tbl td{
+   padding: 15px 15px;
+   text-align: center;
+   font-size: 12px;
+   border: none;
+ }
+ .txt{
+   font-size: 50px;
+   text-align: center;
+   font-weight: 500;
+ 
+ }
+ .tbl th{
+   padding: 15px 15px;
+   text-align: center;
+   font-size: 15px;
+   color: #042434;
+   border: none;
+ }
+ .bordered {
+   border-bottom: 2px solid #042434;
+   width:50%;
+ }
+ .tbl-nor{
+   width: 100%;
+ }
+ .tbl-nor td{
+   padding: 20px 20px;
+   text-align: center;
+   font-size: 12px;
+   border: none;
+ }
+ .tbl-nor th{
+   padding: 20px 20px;
+   text-align: center;
+   font-size: 15px;
+   color: #042434;
+   border: none;
+ }
 
 
 

@@ -49,7 +49,6 @@ class Database extends PDO
         $stmt = $this->prepare($query);
 
         $stmt->execute();
-
     }
     public function insert($query, $data)
     {
@@ -90,21 +89,113 @@ class Database extends PDO
             return false;
         }
     }
-    
-    public function special_1($user_id, $item_id, $total,$Advanced, $city, $address, $district, $qty)
-    {                   
+
+    public function special_1($user_id, $item_id, $total, $Advanced, $address, $qty, $Cost)
+    {
         try {
             $this->beginTransaction();
-            $stmt = $this->prepare("INSERT INTO `orders`(`item_id`, `user_id`, `total_payment`, `payment`, `qty`) VALUES (:item_id, :user_id, :total_payment, :payment, :qty)");
-            $stmt->execute(['item_id' => $item_id, 'user_id' => $user_id, 'total_payment' => $total, 'payment' => $Advanced, 'qty' => $qty]);
+            $stmt = $this->prepare("INSERT INTO `orders`(`user_id`, `total_payment`, `payment`) VALUES ( :user_id, :total_payment, :payment)");
+            $stmt->execute(['user_id' => $user_id, 'total_payment' => $total, 'payment' => $Advanced]);
             $stmt->closeCursor();
 
-            $id= $this->lastInsertId();
+            $id = $this->lastInsertId();
 
-            $stmt = $this->prepare("INSERT INTO `delivery`(`user_id`, `order_id`, `district`, `city`, `address`) VALUES (:user_id, :id, :district, :city ,:address)");
-            $stmt->execute(['user_id' => $user_id, 'city' => $city, 'address' => $address, 'district' => $district, 'id' => $id]);
+            $stmt = $this->prepare("INSERT INTO `order_item`(`OrderId`, `ItemId`, `Qty`, `Cost`) VALUES (:id,:item_id, :qty, :Cost)");
+            $stmt->execute(['id' => $id, 'item_id' => $item_id, 'qty' => $qty, 'Cost' => $Cost]);
             $stmt->closeCursor();
 
+
+            $stmt = $this->prepare("INSERT INTO `delivery`(`order_id`, `address`, `status`, `accept`) VALUES (:id,:address,:status,:accept)");
+            $stmt->execute(['address' => $address, 'id' => $id, 'status' => 0, 'accept' => 0]);
+            $stmt->closeCursor();
+
+            $stmt = $this->prepare("DELETE FROM `cart_item` WHERE `cartId`=(SELECT id FROM cart WHERE cart.userId = :user_id) AND `itemId`= :item_id;");
+            $stmt->execute(['user_id' => $user_id, 'item_id' => $item_id]);
+            $stmt->closeCursor();
+
+            $this->commit();
+            return true;
+        } catch (\Throwable $e) {
+            $this->rollBack();
+            die($e->getMessage());
+            return false;
+        }
+    }
+    public function special_2($user_id, $item_id, $total, $Advanced, $qty, $Cost)
+    {
+        try {
+            $this->beginTransaction();
+            $stmt = $this->prepare("INSERT INTO `orders`(`user_id`, `total_payment`, `payment`) VALUES ( :user_id, :total_payment, :payment)");
+            $stmt->execute(['user_id' => $user_id, 'total_payment' => $total, 'payment' => $Advanced]);
+            $stmt->closeCursor();
+
+            $id = $this->lastInsertId();
+
+            $stmt = $this->prepare("INSERT INTO `order_item`(`OrderId`, `ItemId`, `Qty`, `Cost`) VALUES (:id,:item_id, :qty, :Cost)");
+            $stmt->execute(['id' => $id, 'item_id' => $item_id, 'qty' => $qty, 'Cost' => $Cost]);
+            $stmt->closeCursor();
+
+            $stmt = $this->prepare("DELETE FROM `cart_item` WHERE `cartId`=(SELECT id FROM cart WHERE cart.userId = :user_id) AND `itemId`= :item_id;");
+            $stmt->execute(['user_id' => $user_id, 'item_id' => $item_id]);
+            $stmt->closeCursor();
+
+            $this->commit();
+            return true;
+        } catch (\Throwable $e) {
+            $this->rollBack();
+            die($e->getMessage());
+            return false;
+        }
+    }
+    public function special_3($user_id, $itemIds, $total, $Advanced, $address, $qtys, $Cost, $cout)
+    {
+        try {
+            $this->beginTransaction();
+            $stmt = $this->prepare("INSERT INTO `orders`(`user_id`, `total_payment`, `payment`) VALUES ( :user_id, :total_payment, :payment)");
+            $stmt->execute(['user_id' => $user_id, 'total_payment' => $total, 'payment' => $Advanced]);
+            $stmt->closeCursor();
+
+            $id = $this->lastInsertId();
+            for ($i = 0; $i < $cout; $i++) {
+                $stmt = $this->prepare("INSERT INTO `order_item`(`OrderId`, `ItemId`, `Qty`, `Cost`) VALUES (:id,:item_id, :qty, :Cost)");
+                $stmt->execute(['id' => $id, 'item_id' => $itemIds[$i], 'qty' => $qtys[$i], 'Cost' => $Cost[$i]]);
+                $stmt->closeCursor();
+
+                $stmt = $this->prepare("DELETE FROM `cart_item` WHERE `cartId`=(SELECT id FROM cart WHERE cart.userId = :user_id) AND `itemId`= :item_id;");
+                $stmt->execute(['user_id' => $user_id, 'item_id' => $itemIds[$i]]);
+                $stmt->closeCursor();
+            }
+
+            $stmt = $this->prepare("INSERT INTO `delivery`(`order_id`, `address`, `status`, `accept`) VALUES (:id,:address,:status,:accept)");
+            $stmt->execute(['address' => $address, 'id' => $id, 'status' => 0, 'accept' => 0]);
+            $stmt->closeCursor();
+
+            $this->commit();
+            return true;
+        } catch (\Throwable $e) {
+            $this->rollBack();
+            die($e->getMessage());
+            return false;
+        }
+    }
+    public function special_4($user_id, $itemIds, $total, $Advanced, $qtys, $Cost, $cout)
+    {
+        try {
+            $this->beginTransaction();
+            $stmt = $this->prepare("INSERT INTO `orders`(`user_id`, `total_payment`, `payment`) VALUES ( :user_id, :total_payment, :payment)");
+            $stmt->execute(['user_id' => $user_id, 'total_payment' => $total, 'payment' => $Advanced]);
+            $stmt->closeCursor();
+
+            $id = $this->lastInsertId();
+            for ($i = 0; $i < $cout; $i++) {
+                $stmt = $this->prepare("INSERT INTO `order_item`(`OrderId`, `ItemId`, `Qty`, `Cost`) VALUES (:id,:item_id, :qty, :Cost)");
+                $stmt->execute(['id' => $id, 'item_id' => $itemIds[$i], 'qty' => $qtys[$i], 'Cost' => $Cost[$i]]);
+                $stmt->closeCursor();
+
+                $stmt = $this->prepare("DELETE FROM `cart_item` WHERE `cartId`=(SELECT id FROM cart WHERE cart.userId = :user_id) AND `itemId`= :item_id;");
+                $stmt->execute(['user_id' => $user_id, 'item_id' => $itemIds[$i]]);
+                $stmt->closeCursor();
+            }
             $this->commit();
             return true;
         } catch (\Throwable $e) {

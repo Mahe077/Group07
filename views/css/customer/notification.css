@@ -1,6 +1,6 @@
 main {
-    margin-top: 98px;
-    padding: 1rem;
+  margin-top: 98px;
+  padding: 1rem;
 }
 
 .notification-area {
@@ -10,6 +10,19 @@ main {
   border-radius: 10px;
   color: black;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+  left: -10rem;
+  position: relative;
+}
+
+.notification-area-reply {
+  width: calc(100% - 10rem);
+  margin: 1rem 5rem 1rem 5rem;
+  background: var(--bg);
+  border-radius: 10px;
+  color: black;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+  right: -10rem;
+  position: relative;
 }
 
 .notification-area h2 {
@@ -34,7 +47,7 @@ main {
 
 .notification-area .date {
   position: relative;
-  left: calc(100% - 7rem);
+  left: calc(100% - 5.5rem);
   top: -2rem;
   font-size: 1.3rem;
   padding-bottom: 1rem;
@@ -44,6 +57,45 @@ main {
   font-size: 1.3rem;
   text-align: justify;
   text-transform: none;
+}
+
+.notification-area-reply h2 {
+  font-size: 1.8rem;
+  /*padding-bottom: 1rem;*/
+  text-transform: none;
+  color: var(--icon);
+}
+
+.notification-area-reply h3 {
+  font-size: 1.4rem;
+  padding-bottom: 0.5rem;
+  text-transform: none;
+  color: var(--icon);
+}
+
+.notification-area-reply .time {
+  position: relative;
+  left: calc(100% - 3.5rem);
+  /* top:-2rem; */
+  font-size: 1.3rem;
+  color: var(--icon);
+  /* padding-bottom: 1rem; */
+}
+
+.notification-area-reply .date {
+  position: relative;
+  left: calc(100% - 5.5rem);
+  top: -2rem;
+  font-size: 1.3rem;
+  padding-bottom: 1rem;
+  color: var(--icon);
+}
+
+.notification-area-reply p {
+  font-size: 1.3rem;
+  text-align: justify;
+  text-transform: none;
+  color: var(--icon);
 }
 
 .message-icon {
@@ -56,7 +108,7 @@ main {
   color: white;
   right: 30px;
   z-index: 1000;
-  background: var(--hover);
+  background: var(--main-color);
   border-radius: 50%;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
   display: flex;
@@ -65,3 +117,21 @@ main {
   align-items: center;
   cursor: pointer;
 }
+
+@media (max-width: 380px) {
+  .notification-area-reply {
+    right: 0;
+  }
+  .message-icon {
+    left: 38rem;
+  }
+}
+
+/* @media (max-width: 500px) {
+  .notification-area-reply {
+    right: 0;
+  }
+  .message-icon {
+    left: 38rem;
+  }
+} */

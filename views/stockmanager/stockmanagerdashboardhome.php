@@ -32,10 +32,9 @@
 
 <div class="home-content">
       <div class="overview-boxes">
-        <div class="box1" id="box">
+        <div class="box1" id="box1">
           <div class="right-side">
-            <div class="box-topic">Total Order</div>
-            <div class="number">40,876</div>
+          
             <div class="indicator">
                 <i class="fa fa-arrow-up" aria-hidden="true"></i>
               <span class="text">Up from yesterday</span>
@@ -43,10 +42,9 @@
           </div>
           <i class="fa fa-cart-plus" aria-hidden="true"></i>
         </div>
-        <div class="box2" id="box">
+        <div class="box2" id="box2">
           <div class="right-side">
-            <div class="box-topic">Total Sales</div>
-            <div class="number">38,876</div>
+          
             <div class="indicator">
             <i class="fa fa-arrow-up" aria-hidden="true"></i>
               <span class="text">Up from yesterday</span>
@@ -54,10 +52,9 @@
           </div>
           <i class="fa fa-cart-plus" aria-hidden="true"></i>
         </div>
-        <div class="box3" id="box">
+        <div class="box3" id="box3">
           <div class="right-side" >
-            <div class="box-topic">Total Profit</div>
-            <div class="number">$12,876</div>
+           
             <div class="indicator">
             <i class="fa fa-arrow-up" aria-hidden="true"></i>
               <span class="text">Up from yesterday</span>
@@ -65,10 +62,9 @@
           </div>
           <i class="fa fa-cart-plus" aria-hidden="true"></i>
         </div>
-        <div class="box4" id="box">
+        <div class="box4" id="box4">
           <div class="right-side">
-            <div class="box-topic">Total Return</div>
-            <div class="number">11,086</div>
+           
             <div class="indicator">
                 <i class="fa fa-arrow-down" aria-hidden="true"></i>
               <span class="text">Down From Today</span>
@@ -81,76 +77,48 @@
 
 <!--  flext container -->
 <div class="flex-container">
-    <div class="flex-right">
-    <!-- <div class="chart-container"> -->
-      <div id="piechart_3d" class="piechart_3d"></div>
-      <!-- </div> -->
-    </div>
-    <div class="flex-left">
-      <div class="topic">
-      <!-- <i class='bx bxs-car'></i> -->
-        <h2>Top Selling Items</h2>
-        </div>
-        <div class="content">
-          <div class="table-container">
-        <table class="table">
-  <thead>
-  <tr>
-    <th>Item</th>
-    <th>Amount</th>
-    <th>Total</th>
-  </tr>
+    <div class="flex-right" id="right">
+
+    <div class="table_body_new">
+<table class="tbl" id="table3" collapsing="0" >
+<thead>
+<tr >
+<th>Delivery Company</th>
+<th>Rating</th>
+<!-- <th>More</th> -->
+
+</tr>
+<tr class="bordered"></tr>
 </thead>
-<tbody>
-  <tr>
-    <td>Fog Lamp</td>
-    <td>10</td>
-    <td>17000</td>
-  </tr>
-  <tr>
-    <td>Radiator</td>
-    <td>8</td>
-    <td>9200</td>
-  </tr>
-  <tr>
-    <td>Air Filter</td>
-    <td>4</td>
-    <td>8400</td>
-  </tr>
-  <tr>
-    <td>Dampers</td>
-    <td>4</td>
-    <td>12400</td>
-  </tr>
-  <tr>
-    <td>Bulbs</td>
-    <td>3</td>
-    <td>4500</td>
-  </tr>
-  <tr>
-    <td>Bonnet Catch</td>
-    <td>2</td>
-    <td>5900</td>
-  </tr>
-</tbody>
-    </table>
+
+</table>
+
+</div>
+ 
     </div>
+    <div class="flex-left" id="left">
+    <h2>Top Selling Itmes</h2>
+    <div class="table_body_new">
      
-        
-    </div>
+<table class="tbl" id="table4" collapsing="0" >
+<thead>
+<tr >
+<th>Item ID</th>
+<th>Sales</th>
+
+</tr>
+<tr class="bordered"></tr>
+</thead>
+
+</table>
+
+</div>
+    
+  
 </div>
   </section> 
       </section> 
-    <script>
-    let sidebar = document.querySelector(".sidebar");
-    let sidebarBtn = document.querySelector(".sidebarBtn");
-     sidebarBtn.onclick = function() {
-       sidebar.classList.toggle("active");
-       if(sidebar.classList.contains("active")){
-       sidebarBtn.classList.replace("bx-menu" ,"bx-menu-alt-right");
-     }else
-       sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
-     }
-      </script>
+      <script type="text/javascript" src="views/js/stockmanager/dashboard.js"></script>
+   
 </body>
 </html>

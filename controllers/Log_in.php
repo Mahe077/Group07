@@ -20,13 +20,13 @@ class Log_in extends Controller
             $username = $_POST['username'];
             $password = $_POST['password'];
 
-            echo  $username . " " . $password;
+            // echo  $username . " " . $password;
 
             $hashedPwd = password_hash($password, PASSWORD_DEFAULT);
 
             if (empty($username) || empty($password)) {
                 $_SESSION['error'] = "emptyinput";
-                header("location:".$localhost."Log_in");
+                header("location:" . $localhost . "Log_in");
                 exit();
             }
             $user = $this->model->login($username);
@@ -54,26 +54,26 @@ class Log_in extends Controller
                     }
                     $_SESSION['error'] = "loginSuccess";
                     if ($user[0]['position'] === 'OW') {
-                        header("location:".$localhost."owner_updated");
+                        header("location:" . $localhost . "owner_updated");
                     } elseif ($user[0]['position'] === 'SM') {
-                        header("location:".$localhost."stockmanagerdashboardhome");
+                        header("location:" . $localhost . "stockmanagerdashboardhome");
                     } elseif ($user[0]['position'] === 'CU') {
-                        header("location:".$localhost."index");
+                        header("location:" . $localhost . "index");
                     }
                     exit();
                 } else {
                     $_SESSION['error'] = "wronglogin";
-                    header("location:".$localhost."Log_in");
+                    header("location:" . $localhost . "Log_in");
                     exit();
                 }
             } else {
                 $_SESSION['error'] = "wronglogin";
-                header("location:".$localhost."Log_in");
+                header("location:" . $localhost . "Log_in");
                 exit();
             }
         } else {
             $_SESSION['error'] = "invalidAccess";
-            header("location:".$localhost."Log_in");
+            header("location:" . $localhost . "Log_in");
             exit();
         }
     }

@@ -254,7 +254,32 @@ if (isset($_SESSION['error'])) {
                     <strong>Warning!</strong> Invalid string format ,may include only 'a-z A-Z 0-9 - \ / , : . s'
                </div>
           </div>";
+     } else if ($_SESSION['error'] == 'ReviewSuccess') {
+          echo "
+          <div class='floating-container'>
+          <div class='alert alert-success alert-dismissible popup'>
+                    <a href='#'  class='remove-alert' data-dismiss='alert' aria-label='close'>&times;</a>
+                    <strong>Success!</strong> You have successfully reviewed the item ,Thank you.
+              </div>
+          </div>";
+     }else if ($_SESSION['error'] == 'Noitem') {
+          echo "
+          <div class='floating-container'>
+               <div class='alert alert-info alert-dismissible popup'>
+                    <a href='#'  class='remove-alert' data-dismiss='alert' aria-label='close'>&times;</a>
+                    <strong>Info!</strong> The order id you have enter is invalid,Please enter valid order id.
+               </div>
+          </div>";
+     }else if ($_SESSION['error'] == 'ReturnreqSuccess') {
+          echo "
+          <div class='floating-container'>
+          <div class='alert alert-success alert-dismissible popup'>
+                    <a href='#'  class='remove-alert' data-dismiss='alert' aria-label='close'>&times;</a>
+                    <strong>Success!</strong> You have successfully submit the return request,Sorry for the inconvenience.
+              </div>
+          </div>";
      }
+     
 }
 
 $_SESSION['error'] = "";

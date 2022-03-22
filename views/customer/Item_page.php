@@ -40,10 +40,11 @@ require 'config/PathConf.php';
                 <span>Iteam</span> page
             </h1>
             <div class="row">
+                <p><span class="compatibiliity "><?php echo ($_SESSION['item'][0][3]); ?></span></p>
                 <div class="image">
                     <img src="<?php echo $localhost . $_SESSION['item'][0]['image_path']; ?>" alt="">
                 </div>
-                <form class="form" name="form" action="buy-now.php">
+                <form class="form" name="form" action="<?php echo $localhost . "Payment/RenderBuy/" . $_SESSION['item'][0]['id']; ?>">
                     <h3><?php echo ($_SESSION['item'][0][11]); ?></h3>
 
                     <div class="inputBox">
@@ -60,19 +61,11 @@ require 'config/PathConf.php';
                             // print_r($_SESSION['item_color']);
                             foreach ($_SESSION['item_color'] as $key => $value) {
                                 // print_r($value);
-                                echo "<input type='radio' name='color-options' id='color' value=".$value[1].">
-                                <label class='color' style='background-color:".$value[1]."' for='color'></label>";
+                                echo "<input type='radio' name='color-options' id='color' value=" . $value[1] . ">
+                                <label class='color' style='background-color:" . $value[1] . "' for='color'></label>";
                             }
                             // echo "<input type='radio' name='color-options' id='color' value=" . $_SESSION['item'][0][10] . "><label class='color' style='background-color:" . $_SESSION['item'][0][10] . "' for='color'></label>";
                             ?>
-                            <!-- <input type="radio" name="color-options" id="color" value="yellow">
-                            <label class="color" style="background-color:yellow" for="color"></label>
-                            <input type="radio" name="color-options" id="color" value="white">
-                            <label class="color" style="background-color:white" for="color"></label>
-                            <input type="radio" name="color-options" id="color" value="orange">
-                            <label class="color" style="background-color:orange" for="color"></label>
-                            <input type="radio" name="color-options" id="color" value="red">
-                            <label class="color" style="background-color:red" for="color"></label> -->
                         </div>
                     </div>
 
@@ -102,11 +95,10 @@ require 'config/PathConf.php';
                         </ul>
                         </br>
                         <p>Refund only valid within 7 days from the receving date.</p>
-                        <!-- <p><span class="sub-head" style="color:red !important;"><?php echo ($_SESSION['item'][0][3]); ?></span></p> -->
+
                         </br>
                     </div>
                     <div class="actions">
-                        <input type="submit" name="submit" class="btn" value="Add to cart">
                         <input type="submit" name="submit" class="btn" value="buy now">
                     </div>
 
@@ -119,11 +111,13 @@ require 'config/PathConf.php';
 
 
     <script type="text/javascript" src="<?php echo $localhost; ?>views/js/customer/item.js"></script>
-    <!-- <script type="text/javascript" src="<?php echo $localhost; ?>views/js/swiper.js"></script> -->
-
     <script type="text/javascript" src="<?php echo $localhost; ?>views/js/customer/main-ws.js"></script>
-
     <script type="text/javascript" src="<?php echo $localhost; ?>views/js/customer/cart.js"></script>
+    <?php
+    if (isset($_SESSION['userid'])) {
+        echo "<script type='text/javascript' src='" . $localhost . "views/js/customer/Notification_header.js'></script>";
+    }
+    ?>
 </body>
 
 </html>

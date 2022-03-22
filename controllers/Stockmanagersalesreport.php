@@ -7,6 +7,10 @@ class Stockmanagersalesreport extends Controller{
     }
 
     function index(){
+        // $data = $this->model->Displaynoti();
+        // $this->view->data=$data;
+        // $value= $this->model->Display();
+        //  $this->view->value=$value;
         $this->view->render('stockmanager/stockmanagersalesreport');
     }
     
@@ -83,6 +87,7 @@ class Stockmanagersalesreport extends Controller{
         elseif($duration == "1" || $duration == "2" || $duration == "3" || $duration == "4" || $duration == "5" || $duration == "6" || $duration == "7" || $duration == "8" || $duration == "9" || $duration == "10" || $duration == "11" || $duration == "12")
         {
 
+           
             $year = "2021";
             $sum = $this->model->summonth($duration,$year,$wh);
             echo json_encode(count($sum) == 0 ? null : $sum);
@@ -98,8 +103,7 @@ class Stockmanagersalesreport extends Controller{
         require 'config/PathConf.php';
         
         $username =  $_SESSION['username'];
-        // echo     $username;
-        // echo "</br>";
+      
         $id = $this->model->getinfo($username);
             foreach($id as $row)
             { 
@@ -118,6 +122,7 @@ class Stockmanagersalesreport extends Controller{
         }
         elseif($duration == "1" || $duration == "2" || $duration == "3" || $duration == "4" || $duration == "5" || $duration == "6" || $duration == "7" || $duration == "8" || $duration == "9" || $duration == "10" || $duration == "11" || $duration == "12")
         {
+           
             $year = "2021";
             $count = $this->model->countmonth($duration,$year,$wh);
             echo json_encode(count($count) == 0 ? null : $count);
@@ -207,15 +212,42 @@ class Stockmanagersalesreport extends Controller{
             }
 
             $profit = $total - ($returnsum + $cancelsum);
-            // echo $profit;
+           
             echo json_encode($profit == 0 ? null : $profit);
     
             }
             elseif($duration == "1" || $duration == "2" || $duration == "3" || $duration == "4" || $duration == "5" || $duration == "6" || $duration == "7" || $duration == "8" || $duration == "9" || $duration == "10" || $duration == "11" || $duration == "12")
             {
-                // $year = "2021";
-                // $profit = $this->model->profitmonth($duration,$wh,$statedone,$statecancel,$statereturn);
-                // echo json_encode(count($profit) == 0 ? null : $profit);
+                $year = "2021";
+                $all = $this->model->summonth($duration,$year,$wh);
+                foreach($all as $row3)
+                { 
+                    $total = htmlentities($row3['tot']);
+                }
+                
+
+
+                $return = $this->model->returnmonth($duration,$year,$wh,$statereturn);
+               
+                
+                foreach($return as $row1)
+            { 
+                $returnsum = htmlentities($row1['returnsum']);
+                
+            }
+      
+                $cancel = $this->model->cancelmonth($duration,$year,$wh,$statecancel); 
+             
+                foreach($cancel as $row2)
+            { 
+                $cancelsum = htmlentities($row2['cancelsum']);
+               
+            }
+     
+            $profit = $total - ($returnsum + $cancelsum);
+       
+            echo json_encode($profit == 0 ? null : $profit);
+              
             }
             else
             {
@@ -249,13 +281,44 @@ function cancelsum($duration)
             elseif($duration == "1" || $duration == "2" || $duration == "3" || $duration == "4" || $duration == "5" || $duration == "6" || $duration == "7" || $duration == "8" || $duration == "9" || $duration == "10" || $duration == "11" || $duration == "12")
             {
                 $year = "2021";
-                $cancel = $this->model->cancelmonth($duration,$wh,$statecancel,$year);
-                // echo json_encode(count($cancel) == 0 ? null : $cancel);
+                $cancel = $this->model->cancelmonth($duration,$year,$wh,$statecancel);
+                
             }
             else
             {
                 echo "wrong duration";
             }
+}
+
+function returnsum($duration){
+    $username =  $_SESSION['username'];
+    $id = $this->model->getinfo($username);
+        foreach($id as $row)
+        { 
+            $idn = htmlentities($row['id']);
+        }
+        $warehouse = $this->model->getwarehouse($idn);
+        foreach($warehouse as $rows)
+        {
+            $wh = htmlentities($rows['id']);
+        }
+        $statecancel = "2";
+        
+        if($duration == "2021" || $duration == "2020" || $duration == "2019" || $duration == "2018" || $duration == "2017" || $duration == "2016")
+        {
+            $cancel = $this->model->cancelyear($duration,$wh,$statecancel);
+            echo json_encode(count($cancel) == 0 ? null : $cancel);
+        }
+        elseif($duration == "1" || $duration == "2" || $duration == "3" || $duration == "4" || $duration == "5" || $duration == "6" || $duration == "7" || $duration == "8" || $duration == "9" || $duration == "10" || $duration == "11" || $duration == "12")
+        {
+            $year = "2021";
+            $cancel = $this->model->returnmonth($duration,$year,$wh,$statecancel);
+            echo json_encode(count($cancel) == 0 ? null : $cancel);
+        }
+        else
+        {
+            echo "wrong duration";
+        }
 }
 
 }

@@ -39,6 +39,7 @@ class Stockmanagersalesreport_Model extends Model
     function countmonth($duration = null ,$year = null, $wh = null)
     {
         return   $this->db->select2("SELECT COUNT(order_id) AS cou FROM orders WHERE MONTH(order_date)= :month AND YEAR(order_date)= :year AND warehouse_id = :warehouse_id" , ['month'=>$duration , 'year'=>$year, 'warehouse_id' => $wh]);
+        echo "pavi";
     }
 // sum month
     function summonth($duration = null ,$year = null , $wh = null)
@@ -56,7 +57,7 @@ class Stockmanagersalesreport_Model extends Model
         return $this->db->select2("SELECT SUM(total_payment) AS cancelsum FROM orders WHERE YEAR(order_date)= :year AND warehouse_id = :warehouse_id AND order_type = :order_type" , ['year' =>$duration , 'warehouse_id' =>$wh , 'order_type' =>$statecancel]);
     }
 // return month
-    function retrunmonth($duration = null ,$year = null, $wh = null, $statereturn = null)
+    function returnmonth($duration = null ,$year = null, $wh = null, $statereturn = null)
     {
         return $this->db->select2("SELECT SUM(total_payment) AS returnsum FROM orders WHERE YEAR(order_date)= :year AND MONTH(order_date) = :month AND warehouse_id = :warehouse_id AND order_type = :order_type" , ['month' =>$duration , 'warehouse_id' =>$wh , 'order_type' =>$statereturn , 'year' =>$year]);
     }
@@ -66,5 +67,12 @@ class Stockmanagersalesreport_Model extends Model
         return $this->db->select2("SELECT SUM(total_payment) AS cancelsum FROM orders WHERE YEAR(order_date)= :year AND MONTH(order_date) = :month AND warehouse_id = :warehouse_id AND order_type = :order_type" , ['month' =>$duration , 'warehouse_id' =>$wh , 'order_type' =>$statecancel , 'year' =>$year]);
     }
 
+
+    // public function Displaynoti(){
+    //     return  $this->db->select("SELECT count(*)FROM `notification` WHERE status = '0'");
+    // }
+    // public function Display(){
+    //      return  $this->db->select("SELECT *FROM `notification` WHERE status = '0'");
+    // }
     
 }

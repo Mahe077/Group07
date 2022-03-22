@@ -95,10 +95,6 @@
                 <th>Total payment</th>
                 <th>Payment</th>
               </tr> 
-              <tr class="bordered"></tr>
-              <tbody id="data">
-              <!-- new orders will be displayed here -->
-              </tbody>
             </table> 
           </div> 
   </section>

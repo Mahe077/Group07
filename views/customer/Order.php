@@ -25,11 +25,11 @@ require 'config/PathConf.php';
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 </head>
 
-<body onload="orderload(<?php echo $_SESSION['userid'] ?>),removeItem()">
+<body onload="display_orders(<?php echo $_SESSION['userid'] ?>,0),removeItem()">
     <!-- header section starts  -->
 
     <?php
-    $this_page = "profile.php";
+    $this_page = "order.php";
     include_once 'views/global/header-ws.php';
     ?>
     <!-- home section starts  -->
@@ -41,36 +41,71 @@ require 'config/PathConf.php';
         ?>
 
         <h2 class="heading">Order <span>Management</span></h2>
+        <section class="links">
+            <ul id="Order-display-actions">
+                <li>
+                    <a href="#" class="btn order_typr_links" id="pending" name="pending" onclick="display_orders(<?php echo $_SESSION['userid'] ?>,0)">Pending</a>
+                </li>
+                <li>
+                    <a href="#" class="btn order_typr_links" id="preorder_req" name="preorder_req" onclick="display_orders(<?php echo $_SESSION['userid'] ?>,6)">PreOder <i class="fas fa-sync-alt"></i></a>
+
+                </li>
+                <li>
+                    <a href="#" class="btn order_typr_links" id="preorder_acc" name="preorder_acc" onclick="display_orders(<?php echo $_SESSION['userid'] ?>,7)">PreOder <i class="fas fa-check"></i></a>
+                </li>
+                <li>
+                    <a href="#" class="btn order_typr_links" id="to_deliver" name="to_deliver" onclick="display_orders(<?php echo $_SESSION['userid'] ?>,1)">To deliver</a>
+                </li>
+                <li>
+                    <a href="#" class="btn order_typr_links" id="to_review" name="to_review" onclick="display_orders(<?php echo $_SESSION['userid'] ?>,8)">To review</a>
+                </li>
+                <li>
+                    <a href="#" class="btn order_typr_links" id="cancel" name="cancel" onclick="display_orders(<?php echo $_SESSION['userid'] ?>,2)">Cancellation</a>
+                </li>
+            </ul>
+        </section>
         <section class="cart-table table">
-            <!-- <form action="test.html" method="post"> -->
-                <div class="row row-header">
-                    <div class="col col-1">item</div>
-                    <div class="col col-2">Qty</div>
-                    <div class="col col-3">Price</div>
-                </div>
-                <div class="table-body">
-                 
-                </div>
-            <!-- </form> -->
+            <div class="row row-header">
+                <div class="col col-0">OrderId</div>
+                <div class="col col-1">item</div>
+                <div class="col col-2">Qty</div>
+                <div class="col col-3">Price</div>
+            </div>
+            <div class="table-body">
+                <!-- table content will be rendered by the order.js -->
+            </div>
+            <div class="test">
+                <?php
+                    if(isset($_SESSION["pay_all"])){
+                        print_r($_SESSION["pay_all"]);
+                    }
+                ?>
+            </div>
         </section>
         <section class="total">
             <p id="sub-total">
                 <strong>Total</strong>: Rs<span id="stotal"></span><br>
             </p>
         </section>
-        <!-- <section class="links">
-            <ul id="shopping-cart-actions">
-                <li>
-                    <input type="submit" name="update" id="update-cart" class="btn" value="Update" />
-                </li>
-            </ul>
-        </section> -->
     </main>
     <script type="text/javascript" src="<?php echo $localhost; ?>views/js/customer/main-ws.js"></script>
     <script type="text/javascript" src="<?php echo $localhost; ?>views/js/customer/cart.js"></script>
     <script type="text/javascript" src="<?php echo $localhost; ?>views/js/alert.js"></script>
     <script type="text/javascript" src="<?php echo $localhost; ?>views/js/customer/order-load.js"></script>
     <script type="text/javascript" src="<?php echo $localhost; ?>views/js/customer/order.js"></script>
+    <?php
+    if (isset($_SESSION['userid'])) {
+        echo "<script type='text/javascript' src='" . $localhost . "views/js/customer/Notification_header.js'></script>";
+    }
+    if(isset($_SESSION["pay_all"])){
+        echo "  <script type='text/javascript'>
+                    localStorage.clear('productInCart');
+                    localStorage.clear('totalCost');
+                    localStorage.clear('cartumbers');
+                    document.querySelector('.fa-shopping-cart-span').textContent = 0;
+                </script>";
+    }
+    ?>
 
 </body>
 

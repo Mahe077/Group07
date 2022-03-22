@@ -21,7 +21,6 @@
 <div class="container">
     <form action="Reset_password/reset" method = "POST" enctype="multipart/form-data">
 
-
             <p>
                 <h2>Reset Your Password</h2>
             <div class="input-section">

@@ -67,7 +67,7 @@ httprequest4.onreadystatechange = function()
         
           profit.innerHTML +=
                     '<p>' + 'profit of the total orders are ' + '</p>' +
-          httprequest4.responseText
+          httprequest4.responseText + '.00'
         
   }
 };
@@ -217,8 +217,8 @@ function select_month()
     console.log("sanda");
     value_select1 = document.getElementById("ddlViewBy1").value;
     console.log(value_select1);
-// hhtp request
-// load count
+// // hhtp request
+
 const httprequest5  = new XMLHttpRequest();
 const countmonth = document.getElementById("card-count");
 httprequest5.open("POST", "Stockmanagersalesreport/count/" + value_select1 , true);
@@ -264,6 +264,25 @@ httprequest6.onreadystatechange = function()
 httprequest6.send();
 
 
+// load profit
+const httprequest8  = new XMLHttpRequest();
+const profitmonth = document.getElementById("card-profit");
+httprequest8.open("POST", "Stockmanagersalesreport/profit/" + value_select1 , true);
+httprequest8.onreadystatechange = function()
+{
+  console.log("onreadystatechange");
+  if( httprequest8.readyState === 4 && httprequest8.status === 200)
+  {
+    console.log(httprequest8.responseText);
+    
+        
+          profitmonth.innerHTML +=
+                    '<p>' + 'profit of the total orders are ' + '</p>' +
+          httprequest8.responseText
+        
+  }
+};
+httprequest8.send();
 
 
 const httprequest3  = new XMLHttpRequest();

@@ -8,7 +8,7 @@ class Index_Model extends Model
     public function rating_loader()
     {
         return $this->db->select(
-            "SELECT rating.*,person.fname,person.lname,person.image_path FROM `rating` LEFT JOIN person ON rating.user_id = person.id; "
+            "SELECT rating.*,person.fname,person.lname,person.image_path FROM `rating` LEFT JOIN person ON rating.user_id = person.id  ORDER BY rating.id DESC LIMIT 4; "
         );
     }
     public function ContactUs($name, $email, $contact, $msg, $subject)

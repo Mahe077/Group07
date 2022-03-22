@@ -77,7 +77,7 @@ button {
   padding: 0.9rem 3rem;
   font-size: 1.7rem;
   color: var(--icon) !important;
-  background: var(--main-color) !important;
+  background: var(--main-color);
   cursor: pointer;
   border-radius: unset !important;
 }

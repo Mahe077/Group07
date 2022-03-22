@@ -40,3 +40,4 @@ window.onscroll = () => {
   cartItem.classList.remove("active");
   profile.classList.remove("active");
 };
+

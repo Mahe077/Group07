@@ -47,7 +47,7 @@ const swiper2 = new Swiper('.swiper', {
   // },
 });
 
-const swiper3 = new Swiper(".review-slider", {
+var swiper3 = new Swiper(".review-slider", {
   observer: true,
   observeParents: true,
   spaceBetween: 30,

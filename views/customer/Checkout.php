@@ -61,6 +61,17 @@ require 'config/PathConf.php';
                 <li>
                     <input type="submit" name="delete" id="empty-cart" class="btn" value="Empty Cart" onclick="ClearAll()">
                 </li>
+                <li id="buy_all">
+                    
+                </li>
+                <!-- <li>
+                   <form action="#" method="post">
+                       <input type="hidden" name="item_1" id="item_1" value="item_id">
+                       <input type="hidden" name="item_1" id="item_1" value="item_id">
+                       <input type="hidden" name="item_1" id="item_1" value="item_id">
+                       <input type="submit" class="btn" value="Buy All">
+                   </form> 
+                </li> -->
                 <li>
                     <a href="Product" class="btn">Products</a>
                     <!-- <a href="#" class="btn">Continue Shopping</a> -->
@@ -75,7 +86,11 @@ require 'config/PathConf.php';
     <script type="text/javascript" src="<?php echo $localhost; ?>views/js/customer/cart.js"></script>
     <script type="text/javascript" src="<?php echo $localhost; ?>views/js/alert.js"></script>
     <script type="text/javascript" src="<?php echo $localhost; ?>views/js/customer/order.js"></script>
-   
+    <?php
+    if (isset($_SESSION['userid'])) {
+        echo "<script type='text/javascript' src='".$localhost."views/js/customer/Notification_header.js'></script>";
+    }
+    ?>
 </body>
 
 </html>

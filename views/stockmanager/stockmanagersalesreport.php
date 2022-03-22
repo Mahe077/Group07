@@ -23,7 +23,7 @@
 ?>
 <div class="main-container">
   <div class="print-container">
-    <button class="print">Print</button>
+    <button class="print" onClick="window.print()">Print</button>
   </div>
 <div class="duration-container">
 <select id="ddlViewBy" onChange="select_year()">
@@ -68,17 +68,22 @@ profit
 <div class="table-container1" id="container1" onload="select_year()">
 
     
-    <table class="table" id="table1" >
-    <thead>
-    <tr >
-    <th>Order_ID</th>
-    <th>Customer_ID</th>
-    <th>Order_Date</th>
-    <th>Total_payment</th>
-    </tr>
-    </thead>
+<div class="topic">
+  All Orders
+</div>
+    <div  class="table_body_new">
+            <table class="tbl" collspacing="0" id="table1">
+              <tr>
+              <th>Order_ID</th>
+              <th>Customer_ID</th>
+              <th>Order_Date</th>
+              <th>Total_payment</th>
+              </tr>
+              <tr class="bordered"></tr> 
+            </table> 
+          </div>
     
-</table>
+  
 </div>
 
 </div>

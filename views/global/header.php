@@ -34,7 +34,7 @@
 
     <div class="icons">
         <div class='fas fa-search' id='search-btn'></div>
-        <a href="message.php">
+        <a href="Notification">
             <div class='fas fa-bell' id='bell-btn'>
                 <div class="fa-bell-span">0</div>
             </div>
