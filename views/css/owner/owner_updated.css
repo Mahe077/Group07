@@ -1039,6 +1039,18 @@ td a{
   display: flex;
   margin: 10px;
 }
+.respond_btn{
+  width: 100px;
+  height: 40px;
+  border: none;
+  outline: none;
+  border-radius: 2px;
+  cursor: pointer;
+  background-color: #075061;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 800;
+}
 input[type=submit] {
   background-color: #042434;
   color: white;

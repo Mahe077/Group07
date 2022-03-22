@@ -44,7 +44,7 @@
                 }
               ?>
             <div class="respond">
-                <a href="Display_notifications" class='btn-del'>Respond</a>
+                <a href="Display_notifications" class='respond_btn'>Respond</a>
             </div>
           </div>
       </div>

@@ -1,5 +1,5 @@
 <?php
-
+ 
 if (!isset($_SESSION['userid'])) {
   $_SESSION['error'] = 'invalidAccess';
   header("location: Log_in");
@@ -45,7 +45,7 @@ require 'config/PathConf.php';
                 }
               ?>
             <div class="respond">
-                <a href="Display_notifications" class='btn-del'>Respond</a>
+                <a href="Display_notifications" class='respond_btn'>Respond</a>
             </div>
           </div>
       </div>
@@ -97,6 +97,7 @@ require 'config/PathConf.php';
             <table class="tbl" collspacing="0">
               <tr>
                 <th>Order id</th>
+                <th>User id</th>
                 <th>Item id</th>
                 <th>Order date</th>
                 <th>Approximated date</th>
@@ -131,6 +132,7 @@ httprequest.onreadystatechange = function()
           `<tbody> 
                     <tr> 
                     <td>   ${obj[i].order_id}   </td>
+                    <td>   ${obj[i].user_id}   </td>
                     <td>   ${obj[i].item_id}   </td>  
                     <td>  ${obj[i].order_date}   </td>
                     <td>  ${obj[i].approximated_date}  </td>
@@ -138,8 +140,8 @@ httprequest.onreadystatechange = function()
                     <td>  ${obj[i].total_payment}  </td>
                     <td>  ${obj[i].payment}  </td>
                     <td class="text-center"> 
-                              <a href="New_orders/Accept_order/${obj[i].order_id}/${obj[i].item_id}/${obj[i].delivery_request}/${obj[i].district}"class='btn-ac'> Accept </a>
-                              <a href="New_orders/Reject_order/${obj[i].order_id}"class='btn-rj'> Reject </a>
+                              <a href="New_orders/Accept_order/${obj[i].order_id}/${obj[i].user_id}/${obj[i].item_id}/${obj[i].delivery_request}/${obj[i].district}"class='btn-ac'> Accept </a>
+                              <a href="New_orders/Reject_order/${obj[i].order_id}/${obj[i].user_id}"class='btn-rj'> Reject </a>
                               <a href="Checkout_item/Check_availability/${obj[i].item_id}"class='btn-res'> Checkout </a>
                    </td> 
                        </tr> 

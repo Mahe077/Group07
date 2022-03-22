@@ -1,6 +1,3 @@
-
-
-
 <?php
     if (!isset($_SESSION['userid'])) {
         $_SESSION['error'] = 'invalidAccess';
