@@ -16,7 +16,7 @@
     <link rel='stylesheet' type='text/css' href="<?php echo $localhost; ?>views/css/stockmanager/stockmanagerprofile.css">
     <!-- <link rel='stylesheet' type='text/css' href="<?php echo $localhost; ?>views/css/form.css"> -->
     
-    <title>Document</title>
+    <title>SL MINI SPARES</title>
 </head>
 <body>
 <?php

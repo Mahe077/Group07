@@ -7,7 +7,7 @@
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <script src="https://kit.fontawesome.com/9c5a05f882.js" crossorigin="anonymous"></script>
 
-    <title>Document</title>
+    <title>SL MINI SPARES</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 * {

@@ -12,7 +12,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>SL MINI SPARES</title>
     <link rel="stylesheet" href="css/stockmanagernotification.css">
     <!-- Boxicons CDN Link -->
     <script src="https://kit.fontawesome.com/9c5a05f882.js" crossorigin="anonymous"></script>
