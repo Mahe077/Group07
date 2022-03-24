@@ -116,8 +116,7 @@ httprequest.onreadystatechange = function()
                     <td>   ${obj[i].price}   </td> 
                     <td>   ${obj[i].amount}   </td> 
                     <td class="text-center"> 
-                              <a href="Productlist//${obj[i].id}"class='btn-res'> Edit </a>
-                              <a href="Productlist/Delete_item/${obj[i].id}"class='btn-del'> Delete </a>
+                              <a href="Productlist/Delete_item/${obj[i].id}"class='btn-res'> Remove </a>
                    </td> 
                     </tr>  
                     </tbody>`
