@@ -1039,6 +1039,18 @@ td a{
   display: flex;
   margin: 10px;
 }
+.respond_btn{
+  width: 100px;
+  height: 40px;
+  border: none;
+  outline: none;
+  border-radius: 2px;
+  cursor: pointer;
+  background-color: #075061;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 800;
+}
 input[type=submit] {
   background-color: #042434;
   color: white;
@@ -1140,6 +1152,33 @@ input[type=submit]:hover {
   font-size: 0.9rem;
   color: #022131;
   font-weight: 600;
+}
+/*settings page*/
+.home-section .home-content-set{
+  display: flex;
+  height: 100%;
+  position: relative;
+  padding-top: 125px;
+  width: calc(100%-220px);
+  justify-content: center;
+  align-items: center;
+}
+.home-section .home-content-set .item-img img{
+  border-radius: 50%;
+}
+/*insert product page*/
+.item-form #dec{
+  width: 330px;
+  height: 65px;
+  padding: 12px 20px;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  resize: none;
+  border: none;
+}
+.item-form #dec::placeholder{
+  color: #022131;
+  font-size: 13px;
 }
 @media (max-width: 1240px) {
     .sidebar{

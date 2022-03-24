@@ -13,14 +13,6 @@ class Display_notifications_Model extends Model
     }
     public function Reply_notifi($id,$reply)
     {
-      return  $this->db->update2("UPDATE notification set reply='$reply' where customer_id='$id';");
+      return  $this->db->update2("UPDATE notification set reply='$reply' , status= '1' where customer_id='$id';");
     }
-    /* customer side */
-    // public function Display_cus(){
-    //   return  $this->db->select("SELECT `reply` FROM `notification` WHERE ");
-    // }
-    // public function Reply_notifi_cus($id,$reply)
-    // {
-    //   return  $this->db->update2("UPDATE notification set reply='$reply' where customer_id='$id';");
-    // }
 }

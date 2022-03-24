@@ -10,8 +10,39 @@
             $data = $this->model->Displaynoti();
             $this->view->data=$data;
             $value= $this->model->Display();
-             $this->view->value=$value;
+            $this->view->value=$value;
+            $details = $this->model->UpdateUser();
+            //print_r($details);
+            $this->view->details=$details;
             $this->view->render('owner/Settings');
         }
+
+        public function update_owner()
+        {
+        require 'config/Functionconfig.php';
+        require 'config/PathConf.php';
+        if(isset($_POST['submit'])){
+            $fname=$_POST['fname'];
+            $lname=$_POST['lname'];
+            $username=$_POST['username'];
+            $email=$_POST['email'];
+            $contact=$_POST['contact'];
+            $address=$_POST['address'];
+            
+            $image = Deteminesize($_FILES['image_path'], 'users');
+                    if($imgSize <=1000000){
+                        var_dump($fname);
+                        $this->model->update_owner($fname,$lname,$username,$image,$email,$contact,$address);
+                        $_SESSION['error'] = "Successfully entered";
+                        header("location:".$localhost."Settings");
+                        exit();
+                    }else{
+                        $_SESSION['error'] = "Image is too big";
+                    }
+
+           
+        }
+    }
+
     }
 ?>

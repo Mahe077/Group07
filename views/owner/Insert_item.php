@@ -43,7 +43,7 @@
                 }
               ?>
             <div class="respond">
-                <a href="Display_notifications" class='btn-del'>Respond</a>
+                <a href="Display_notifications" class='respond_btn'>Respond</a>
             </div>
           </div>
       </div>
@@ -54,35 +54,16 @@
         <div class="dropdown">
           <button class="dropbtn"><i class="fa fa-chevron-down" aria-hidden="true"></i></button>
           <div class="dropdown-content">
-            <a href="../controller/logout.inc.php">Log Out</a>
+            <a href="Log_out">Log Out</a>
           </div>
         </div>
       </div>
     </nav>
-      <div class="form-container">
+   <div class="form-container">
         <div class="item-content">
-          <div class="close">+</div>
             <form  method="POST" action="insert_item/insert_data" enctype="multipart/form-data">
                   <div class="input-box-container">
                     <div class="input-boxes">
-                      <!-- <div class="slt">
-                        <select name="cat_id" id="" class="select-opt" required>
-                        
-                          <option value="">Select Category</option>
-                          
-                          <?php
-                            //  while($row = mysqli_fetch_assoc($cat)){
-                              ?> 
-                              <option value="<?php //echo $row['id']?>"><?php //echo $row['category_name']?></option>
-
-                              <?php
-                             //}
-                          ?>
-                        </select> 
-                      </div> -->
-                      <div class="item-form">
-                          <input class="input" name="productId"type="text" placeholder="productId" required>
-                      </div>
                       <div class="item-form">
                         <input class="input" name="brand" type="text" placeholder="brand " required>
                       </div>
@@ -92,11 +73,11 @@
                       <div class="item-form">
                         <input class="input" name="partNo" type="text" placeholder="partNo" required>
                       </div>
-                      <!-- <div class="img-file">
+                      <div class="img-file">
                         <input class="input" name="img" id= "file" type="file" accept="image/*">
                         <i class="fa fa-picture-o" aria-hidden="true"></i>&nbsp
                         <label for="file">Choose an image</label>
-                      </div><br> -->
+                      </div><br>
                       <input type="submit" name="submit" class="item-btn" value="Insert New Item">
                     </div>
                     <div class="input-boxes">
@@ -115,6 +96,9 @@
                       </div>
                       <div class="item-form">
                         <input class="input" name="size" type="text" placeholder="Size" required>
+                      </div>
+                      <div class="item-form">
+                        <input class="input" name="color" type="text" placeholder="color" required>
                       </div>
                     </div>      
                   </div>

@@ -15,4 +15,7 @@ class Stock_manager_Model extends Model
     public function Display(){
          return  $this->db->select("SELECT *FROM `notification` WHERE status = '0'");
     }
+    public function delete_stock($id){
+        return $this->db->delete("DELETE FROM person WHERE id = '$id'; ");
+    }
 }

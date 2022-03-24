@@ -6,13 +6,8 @@ class New_orders_Model extends Model
         parent::__construct();
     }
     
-    // function Updatedelivery($orderid , $company , $status)
-    // {
-    //     $this->db->update("UPDATE `delivery` SET `delivery_company`=:delivery_company,`status`=:status WHERE `order_id`=:order_id", ['delivery_company' => $company, 'status' => $status, 'order_id' => $orderid]);
-    // }
-
      function Displayorder(){
-         return  $this->db->select("SELECT `user_id`,`order_id` ,`item_id` ,`approximated_date`, `delivery_request`, `order_date` , `payment` , `total_payment`  FROM `orders` WHERE order_type = '0'");
+         return  $this->db->select("SELECT `user_id`,`order_id` ,`item_id` ,`approximated_date`, `delivery_request`, `order_date` , `payment` , `total_payment`,`district`  FROM `orders` WHERE order_type = '0'");
      }
 
      public function Accept_order($id){
@@ -37,5 +32,8 @@ class New_orders_Model extends Model
     public function Display(){
          return  $this->db->select("SELECT *FROM `notification` WHERE status = '0'");
     }
+    public function Warehouse($order_id,$w){
+        return  $this->db->update2("UPDATE `delivery` SET warehouse_id=$w WHERE `order_id`=$order_id;");
+   }
 
 }

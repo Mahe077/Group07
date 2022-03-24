@@ -21,12 +21,12 @@
                 <span class="link_name">Product List</span>
             </a>
          </li> 
-         <li>
+          <li>
             <a href="Categorylist">
               <i class="fas fa-list-alt"></i>
                 <span class="link_name">Category List</span>
             </a>
-         </li> 
+         </li>
          <li>
              <a href="Owner_report">
                <i class="fa fa-sticky-note" aria-hidden="true"></i>
