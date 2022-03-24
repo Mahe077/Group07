@@ -31,7 +31,7 @@ require 'config/PathConf.php';
             <h2 class="heading">Add <span>review</span></h2>
             <div class="row">
                 <div class="image">
-                <img src="assets/car/animated/4.jpg" alt="">
+                <img src="<?php echo $localhost; ?>assets/car/animated/2.jpg" alt="">
                 </div>
                 <form class="form" method="post" action="<?php echo $localhost; ?>/Review/insert">
                     <div class="inputBox">
