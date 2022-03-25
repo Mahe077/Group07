@@ -31,13 +31,14 @@ function changeprice(cout) {
   let quantity = document.querySelector(".quantity_"+ cout);
   let amount_ = document.querySelector(".amount_" + cout);
   let unit_price = document.querySelector(".unit_price_" + cout);
-  
-  let previousAmount = parseFloat(amount_.value);
-  // console.log(amount_.value, quantity.value,unit_price.value,parseFloat(amount.value));
+  if(parseInt(quantity.value) > 0){
+    let previousAmount = parseFloat(amount_.value);
+    console.log(amount_.value, quantity.value,unit_price.value,parseFloat(amount.value));
 
-  let changedAmount = (unit_price.value * quantity.value).toFixed(2)
-  amount_.value = changedAmount;
-  amount.value = (parseFloat(amount.value) + parseFloat(changedAmount) - previousAmount).toFixed(2);
+    let changedAmount = (unit_price.value * quantity.value).toFixed(2)
+    amount_.value = changedAmount;
+    amount.value = (parseFloat(amount.value) + parseFloat(changedAmount) - previousAmount).toFixed(2);
+  }
 }
 
 function renderPage(itemId) {
@@ -59,6 +60,8 @@ function renderPage(itemId) {
       amount.value = (
         cartItems[itemId].InCart * cartItems[itemId].price
       ).toFixed(2);
+      inCart.max = parseInt(cartItems[itemId].amount);
+      console.log(inCart.max);
     } else {
       getdata(itemId);
     }
@@ -83,7 +86,7 @@ function renderPageALL() {
       item_info.innerHTML += `<div class="inputBox">
                                 <input type="hidden" id="item_id_${cout}" name="item_id_${cout}" value="${item.id}">
                                 <input type="text" id="item_name_${cout}" name="item_name_${cout}" value="${item.name} " readonly="readonly">
-                                <input type="number" class="quantity_${cout}" name="quantity_${cout}" value="${item.InCart}" min="1" max="5" placeholder=" Enter quntity" onchange="changeprice(${cout})">
+                                <input type="number" class="quantity_${cout}" name="quantity_${cout}" value="${item.InCart}" min="1" max="${item.amount}" placeholder=" Enter quntity" onchange="changeprice(${cout})">
                                 <input class="amount_${cout}" type="text" name="amount_${cout}" placeholder="Enter the amount" value="${item.price}" readonly="readonly" >
                                 <input class="unit_price_${cout}" type="hidden" name="unit_price_${cout}" value="${item.price}">
                               </div>`;
@@ -102,13 +105,19 @@ function getdata(itemId) {
   xhr.open("POST", "http://localhost/G7/Group07/Payment/RenderBuy3");
   xhr.onload = function () {
     var item = JSON.parse(this.response);
-    // console.log(item[0], parseInt(item[0]["amount"]));
+    console.log(item[0]);
+
     let itemName = document.querySelector("#item_name_1");
     itemName.value = item[0]["name"];
     let amount_1 = document.querySelector(".amount_1");
     amount_1.value = parseFloat(item[0]["price"]);
     let amount = document.querySelector(".amount");
     amount.value = parseFloat(item[0]["price"]);
+    let unit_price = document.querySelector(".unit_price_1");
+    unit_price.value = parseFloat(item[0]["price"]);
+    let inCart = document.querySelector(".quantity_1");
+    inCart.max = item[0]["amount"] ;
+    // console.log(typeof item[0]["amount"], parseInt(item[0]),inCart);
   };
   xhr.send(data);
   return;

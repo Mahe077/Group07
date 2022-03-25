@@ -127,7 +127,7 @@ require 'config/PathConf.php';
                 </div>
                 <div class="inputBox">
                     <!-- <i class="fas fa-user"></i> -->
-                    <input class="input-field" type="text" name="fname" value="<?php echo $_SESSION['fname']; ?>" placeholder="Enter First Name">
+                    <input class="input-field" type="text" name="fname" value="<?php echo $_SESSION['fname']; ?>" placeholder="Enter First Name" required>
                     <!-- <i class="fas fa-user"></i> -->
                     <input class="input-field" type="text" name="sname" value="<?php echo $_SESSION['lname']; ?>" placeholder="Enter Second Name" required>
                 </div>

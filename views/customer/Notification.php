@@ -65,7 +65,7 @@ require 'config/PathConf.php';
 
             <form action="Notification/InsertNotify" method="post">
                 <h2 class="heading">Send <span>Message</span></h2>
-                <textarea placeholder="Message" name="msg" id="" cols="66" rows="10"></textarea>
+                <textarea placeholder="Message" name="msg" id="" cols="66" rows="10" required></textarea>
                 <input type="submit" name="submit" class="btn" value="send">
             </form>
         </div>
