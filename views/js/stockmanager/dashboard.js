@@ -86,7 +86,7 @@ httprequest5.onreadystatechange = function()
         {
           countmonth.innerHTML +=
 
-                    '<p class="box-topic">' + 'Total Orders ' + '</p>'
+                    '<p class="box-topic">' + 'Total Orders   ' + '</p>'
                       + obj5[i].cou 
                  
         }
@@ -111,7 +111,7 @@ httprequest6.onreadystatechange = function()
         for(var i = 0 ; i< obj6.length ; i++)
         {
           summonth.innerHTML +=
-                    '<p class="box-topic">' + ' Total Payments ' + '</p>'
+                    '<p class="box-topic">' + ' Total Payments  ' + '</p>'
                       + obj6[i].tot
         }
   }
@@ -133,7 +133,7 @@ httprequest7.onreadystatechange = function()
         for(var i = 0 ; i< obj7.length ; i++)
         {
           returnmonth.innerHTML +=
-                    '<p class="box-topic">' + 'Total Returns ' + '</p>'
+                    '<p class="box-topic">' + 'Total Returns   ' + '</p>'
                       + obj7[i].returnsum
         }
   }

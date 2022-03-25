@@ -14,9 +14,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SL MINI SPARESt</title>
+    <title>SL MINI SPARES</title>
     <link rel='stylesheet' type='text/css' href="<?php echo $localhost; ?>views/css/stockmanager/stockmanagerproduct.css">
-    <!-- <link rel="stylesheet" type="text/css" href="<?php echo $localhost; ?>views/css/alert.css"> -->
+    <link rel="stylesheet" type="text/css" href="<?php echo $localhost; ?>views/css/alert.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <body>
 <?php
@@ -26,25 +26,14 @@
 
 
 <div class="form-content">
+
+
+
+
+<!--  error alerting will display here -->
 <?php
-    if(isset($_SESSION['error1']))
-    {
-      ?>
-
-  <!-- Modal content -->
-  <div class="alert">
-  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-  
-    <p class="ale"><?php  echo $_SESSION['error1']; ?></p>
-  </div>
-
-      <?php
-    }
-    ?>
-
-
-
-
+        include_once 'views/global/alert.php';
+        ?>
 
 
 <div class="button-container">
@@ -142,10 +131,6 @@
 <tr >
 <th>Item_ID</th>
 <th>Amount</th>
-<!-- <th>Status</th> -->
-<!-- <th>Update</th> -->
-
-
 </tr>
 <tr class="bordered"></tr>
 </thead>
@@ -155,12 +140,12 @@
 </div>
 </div>
 <div class="container-right" id="container-right">
-  <!-- <h2>Request For stocks</h2> -->
   <img class="animation" src="assets/pagecontains/stock.png" alt="">
  
 </div>
 
   <script type="text/javascript" src="views/js/stockmanager/product.js"></script>
+  <script type="text/javascript" src="<?php echo $localhost; ?>views/js/alert.js"></script>
 
     
 </body>

@@ -60,13 +60,13 @@ class Stockmanagerproduct extends Controller{
 
             if($result)
             {
-                $_SESSION['error1']= "Stock updated succesfully";
+                $_SESSION['error'] = "Stock_update_successfully";
                 header("Location:".$localhost."Stockmanagerproduct");
                 exit(); 
             }
             else
             {
-                $_SESSION['error1']= "Stock updated failed";
+                $_SESSION['error'] = "Stock_update_failed";
                 header("Location:".$localhost."Stockmanagerproduct");
                 exit();
             }
@@ -141,14 +141,14 @@ class Stockmanagerproduct extends Controller{
             
                 if($sentmailresult)
                 {
-                    // $_SESSION['error2']= "Ask stocks succesfully";
+                    $_SESSION['error'] =  "Ask_stocks_succesfully";
                     header("Location:".$localhost."Stockmanagerproduct");
                     exit();
                    
                 }
                 else
                 {
-                    // $_SESSION['error2']= "Ask stocks fialed";
+                    $_SESSION['error']= "Ask_stocks_fialed";
                     header("Location:".$localhost."Stockmanagerproduct");
                     exit();
                   

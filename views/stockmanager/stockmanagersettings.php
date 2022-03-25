@@ -15,13 +15,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SL MINI SPARES</title>
     <link rel='stylesheet' type='text/css' href="<?php echo $localhost; ?>views/css/stockmanager/stockmanagersettings.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo $localhost; ?>views/css/alert.css">
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <style>
-      .alert {
+      /* .alert {
   padding: 20px;
   background-color: #f44336;
   color: white;
-}
+} */
 
 .closebtn {
   margin-left: 15px;
@@ -45,8 +46,11 @@
     $this_page = "stockmanagersettings.php";
     include_once 'stockmanagerdashboard.php';
 ?> 
-
-
+<!--  error alerting will display here -->
+<?php
+        include_once 'views/global/alert.php';
+        ?>
+        
 
     <div class="form-content">
 
@@ -111,5 +115,6 @@ Most Stocked Item
 
 
 <script type="text/javascript" src="views/js/stockmanager/settings.js"></script>
+<script type="text/javascript" src="<?php echo $localhost; ?>views/js/alert.js"></script>
 </body>
 </html>

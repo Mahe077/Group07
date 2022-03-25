@@ -254,7 +254,7 @@ if (isset($_SESSION['error'])) {
                     <strong>Warning!</strong> Invalid string format ,may include only 'a-z A-Z 0-9 - \ / , : . s'
                </div>
           </div>";
-     } else if ($_SESSION['error'] == 'ReviewSuccess') {
+     } elseif ($_SESSION['error'] == 'ReviewSuccess') {
           echo "
           <div class='floating-container'>
           <div class='alert alert-success alert-dismissible popup'>
@@ -262,7 +262,7 @@ if (isset($_SESSION['error'])) {
                     <strong>Success!</strong> You have successfully reviewed the item ,Thank you.
               </div>
           </div>";
-     }else if ($_SESSION['error'] == 'Noitem') {
+     }elseif ($_SESSION['error'] == 'Noitem') {
           echo "
           <div class='floating-container'>
                <div class='alert alert-info alert-dismissible popup'>
@@ -279,8 +279,115 @@ if (isset($_SESSION['error'])) {
               </div>
           </div>";
      }
+     elseif ($_SESSION['error'] == 'Delivery_assigned_succesfully') {
+          echo "
+          <div class='floating-container'>
+          <div class='alert alert-success alert-dismissible popup'>
+                    <a href='#'  class='remove-alert' data-dismiss='alert' aria-label='close'>&times;</a>
+                    <strong>Success!</strong>Delivery assigned succesfully.
+              </div>
+          </div>";
+     }
+     elseif ($_SESSION['error'] == "Delivery_assign_failed") {
+               echo "
+               <div class='floating-container'>
+               <div class='alert alert-warning alert-dismissible popup'>
+                         <a href='#'  class='remove-alert' data-dismiss='alert' aria-label='close'>&times;</a>
+                         <strong>Warning!</strong>Delivery assigned unsuccessfully.
+                   </div>
+               </div>";
+          }
+     elseif ($_SESSION['error'] == "Stock_update_successfully") {
+               echo "
+               <div class='floating-container'>
+               <div class='alert alert-success alert-dismissible popup'>
+                    <a href='#'  class='remove-alert' data-dismiss='alert' aria-label='close'>&times;</a>
+                    <strong>Success!</strong>stock update succesfully.
+              </div>
+          </div>";
+          }
+     elseif ($_SESSION['error'] == "Stock_update_failed") {
+          echo "
+          <div class='floating-container'>
+               <div class='alert alert-warning alert-dismissible popup'>
+                    <a href='#'  class='remove-alert' data-dismiss='alert' aria-label='close'>&times;</a>
+                    <strong>Warning!</strong> stock update unsuccessfully .
+              </div>
+          </div>";
+          }
+          elseif ($_SESSION['error'] == "Ask_stocks_succesfully") {
+               echo "
+               <div class='floating-container'>
+                    <div class='alert alert-success alert-dismissible popup'>
+                         <a href='#'  class='remove-alert' data-dismiss='alert' aria-label='close'>&times;</a>
+                         <strong>Success!</strong> stock requested successfully .
+                   </div>
+               </div>";
+               }
+          elseif ($_SESSION['error'] == "Ask_stocks_fialed") {
+               echo "
+               <div class='floating-container'>
+                    <div class='alert alert-warning alert-dismissible popup'>
+                         <a href='#'  class='remove-alert' data-dismiss='alert' aria-label='close'>&times;</a>
+                         <strong>Warning!</strong> stock requested unsuccessfully .
+                    </div>
+               </div>";
+               }
+          elseif ($_SESSION['error'] == "item_inserted_succesfully") {
+               echo "
+               <div class='floating-container'>
+                    <div class='alert alert-success alert-dismissible popup'>
+                         <a href='#'  class='remove-alert' data-dismiss='alert' aria-label='close'>&times;</a>
+                         <strong>Success!</strong> item inserted successfully .
+                    </div>
+               </div>";
+               }
+          elseif ($_SESSION['error']== "item_inserted_failed") {
+               echo "
+               <div class='floating-container'>
+                    <div class='alert alert-warning alert-dismissible popup'>
+                         <a href='#'  class='remove-alert' data-dismiss='alert' aria-label='close'>&times;</a>
+                         <strong>Warning!</strong> item inserted unsuccessfully .
+                    </div>
+               </div>";
+               }
+               elseif ($_SESSION['error'] == "password_reset_succesfully") {
+                    echo "
+                    <div class='floating-container'>
+                         <div class='alert alert-success alert-dismissible popup'>
+                              <a href='#'  class='remove-alert' data-dismiss='alert' aria-label='close'>&times;</a>
+                              <strong>Success!</strong> password reset succesfully .
+                         </div>
+                    </div>";
+                    }
+               elseif ($_SESSION['error']== "password_reset_failed") {
+                    echo "
+                    <div class='floating-container'>
+                         <div class='alert alert-warning alert-dismissible popup'>
+                              <a href='#'  class='remove-alert' data-dismiss='alert' aria-label='close'>&times;</a>
+                              <strong>Warning!</strong> password reset failed .
+                         </div>
+                    </div>";
+                    }
+               elseif (  $_SESSION['error'] == "reset_passwordmissmatch") {
+                    echo "
+                    <div class='floating-container'>
+                         <div class='alert alert-warning alert-dismissible popup'>
+                              <a href='#'  class='remove-alert' data-dismiss='alert' aria-label='close'>&times;</a>
+                              <strong>Warning!</strong> reset password missmatch .
+                         </div>
+                    </div>";
+                    }
+               elseif ($_SESSION['error'] == "Password_updated_Success") {
+                    echo "
+                    <div class='floating-container'>
+                         <div class='alert alert-success alert-dismissible popup'>
+                              <a href='#'  class='remove-alert' data-dismiss='alert' aria-label='close'>&times;</a>
+                              <strong>Success!</strong> password updated succesfully .
+                         </div>
+                    </div>";
+                    }
      
 }
-
 $_SESSION['error'] = "";
 ?>

@@ -52,13 +52,6 @@
               </a>
             </li>
             <li>
-
-              <a href="Stockmanagerproductreport">
-              <i class='bx bx-line-chart'></i>
-                <span class="links_name">Product_Reports</span>
-              </a>
-            </li>
-            <li>
               <a href="Stockmanagerteam">
               <i class='bx bx-group'></i>
                 <span class="links_name">Team</span>
@@ -89,65 +82,15 @@
         <nav>
           <div class="sidebar-button">
             <i class="fa fa-bars sidebarBtn" aria-hidden="true"></i>
-            <!-- <i class='bx bx-list-minus'></i> -->
             <span class="dashboard">SL Mini Spares</span>
           </div>
-          
-          <!-- <div class="nortification-box">
-          <div class="dropdown">
-          <?php //print_r($this->dat[0][0]);?>
-              <a href="Stockmanagerdashboard" class="notification"><i class="fas fa-bell" id="fa-bell"><span class="count"><?php ?></span></i></a>
-              <?php
-               // $val  = $this->data[0][0];
-                //print($val);
-              ?>
-                <div class="dropdown-content">
-              <?php
-              
-                // for ($x = 0; $x <$val; $x++) {
-                //   echo "<div class='msg_outside'><div class='msg-date'><br>".$this->value[$x][4]."</div>
-                //   <div class='msg'><br>".$this->value[$x][6]."<br></div></div>";
-                // }
-              ?>
-            <div class="respond">
-                <a href="Display_notifications" class='btn-del'>Respond</a>
-            </div>
-          </div>
-          </div></div> -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+         
 
           <div class="right">
          <div class="profile-details">
-         <!-- <div class="notification-box"> -->
-           
-            <!-- <a href="stockmanagernotification.php" class="notifications"> <i class='bx bxs-bell'></i> </a> -->
+        
             </div>
-            <img src="<?php echo $_SESSION['image_path'] ?>" alt="">
+            <!-- <img src="<?php echo $_SESSION['image_path'] ?>" alt=""> -->
             <div class="navbar">
             <div class="dropdown">
   <button class="dropbtn"><?php echo $_SESSION['username'] ?></button>

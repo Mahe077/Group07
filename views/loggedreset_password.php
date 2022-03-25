@@ -8,6 +8,7 @@
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <script src="https://kit.fontawesome.com/9c5a05f882.js" crossorigin="anonymous"></script>
     <link rel='stylesheet' type='text/css' href="<?php echo $localhost; ?>views/css/reset_password.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo $localhost; ?>views/css/alert.css">
     <title>Document</title>
 </head>
 <body>
@@ -19,6 +20,10 @@
     <img class="logo" src="assets/logo.png">
   </header>
 <div class="container">
+     <!--  error alerting will display here -->
+<?php
+        include_once 'views/global/alert.php';
+        ?>
     <form action="Reset_password/reset" method = "POST" enctype="multipart/form-data">
 
 
@@ -43,6 +48,7 @@
             </p>
 
     <button type="submit" class="submitbutton" name="submit">Reset Password</button>
+    <script type="text/javascript" src="<?php echo $localhost; ?>views/js/alert.js"></script>
     </form>
 </div>
 </body>

@@ -36,11 +36,21 @@ class Stockmanagersettings extends Controller{
             
             $insert = $this->model->insert1($wh, $item_id , $amount);
 
-            // if($insert)
-            // {
-            //     echo "pavi";
-            //     header("Location:".$localhost."Stockmanagersettongs");
-            // }
+            if($insert)
+            {
+                $_SESSION['error'] =  "item_inserted_succesfully";
+                header("Location:".$localhost."Stockmanagersettings");
+                exit();
+               
+            }
+            else
+            {
+                $_SESSION['error']= "item_inserted_failed";
+                echo $insert;
+                // header("Location:".$localhost."Stockmanagersettings");
+                exit();
+              
+            }
             
 
 

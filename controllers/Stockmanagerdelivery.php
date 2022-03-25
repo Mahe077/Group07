@@ -64,11 +64,7 @@ class Stockmanagerdelivery extends Controller{
                 $da = htmlentities($row['delivery_date']);
                 echo $da .  "<br>";
             }
-
-
-
 // sent email
-
             $url = $localhost.'Deliverycompany';
             $to              = $mail;
             $sender          = 'pavithrasandamini283@gmail.com';
@@ -86,45 +82,27 @@ class Stockmanagerdelivery extends Controller{
            
                 if($sentmailresult)
                 {
-                    $_SESSION['error2']= "Delivery assigned succesfully";
+                    // $_SESSION['error2']= "Delivery assigned succesfully";
+                    $_SESSION['error'] = "Delivery_assigned_succesfully";
                     header("Location:".$localhost."Stockmanagerdelivery");
                     exit();
-                   
                 }
                 else
                 {
-                    $_SESSION['error2']= "Delivery assign fialed";
+                    // $_SESSION['error2']= "Delivery assign fialed";
+                    $_SESSION['error'] = "Delivery_assign_failed";
                     header("Location:".$localhost."Stockmanagerdelivery");
-                    exit();
-                  
+                    exit(); 
                 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         $username = $_SESSION['username'];
         $id = $this->model->getinfo($username);
             foreach($id as $row)
             { 
                 $idn = htmlentities($row['id']);
-            }
-           
+            }          
             $warehouse = $this->model->getwarehouse($idn);
             foreach($warehouse as $rows)
             {
-                
                 $wh = htmlentities($rows['id']);
             }
             $url1 = $localhost.'Deliverycompany';

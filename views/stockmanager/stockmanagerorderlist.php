@@ -26,36 +26,26 @@
 <div class="home-content">
       <div class="overview-boxes">
         <div class="box1">
-          <div class="right-side">
-            
-            <div class="box-topic"><button class="btn1" onclick="display1()">Done Orders</button></div>
-            
+          <div class="right-side"> 
+            <div class="box-topic"><button class="btn1" onclick="display1()">Done Orders</button></div> 
           </div>
-          <!-- <i class="fa fa-cart-plus" aria-hidden="true"></i> -->
         </div>
         <div class="box2">
           <div class="right-side">
-            <div class="box-topic"><button class="btn2" onclick="display2()">Pending Orders</button></div>
-            
+            <div class="box-topic"><button class="btn2" onclick="display2()">Pending Orders</button></div>  
           </div>
-          <!-- <i class="fa fa-cart-plus two" aria-hidden="true"></i> -->
         </div>
         <div class="box3">
           <div class="right-side">
-            <div class="box-topic"><button class="btn3" onclick="display3()">Cancel Orders</button></div>
-            
+            <div class="box-topic"><button class="btn3" onclick="display3()">Cancel Orders</button></div> 
           </div>
-          <!-- <i class="fa fa-cart-plus three" aria-hidden="true"></i> -->
         </div>
         <div class="box4">
           <div class="right-side">
-            <div class="box-topic"><button class="btn4" onclick="display4()">Return Orders</button></div>
-            
+            <div class="box-topic"><button class="btn4" onclick="display4()">Return Orders</button></div>  
           </div>
-          <!-- <i class="fa fa-cart-plus four" aria-hidden="true"></i> -->
         </div>
       </div>
-
       <div class="table-container5" id="container5" >
 
 <div class="table_body_new">
@@ -73,7 +63,7 @@
 <tr class="bordered"></tr>
 </thead>
               <tbody id="data">
-              <!-- new orders will be displayed here -->
+          
               </tbody>
 </table>
 </div>

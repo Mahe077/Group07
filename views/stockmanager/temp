@@ -32,6 +32,21 @@
         <div class="right-container">
             <div class="delivery">
             
+              <!-- <?php
+    if(isset($_SESSION['error2']))
+    {
+      ?> -->
+
+   <!-- Modal content  -->
+  <!-- <div class="alert">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+  
+    <p class="ale"><?php  echo $_SESSION['error2']; ?></p>
+  </div>
+ 
+      <?php
+    }
+    ?> -->
               <div class="viewbuttoncontainer">
 
 
@@ -51,24 +66,28 @@
       <form action="Stockmanagerdelivery/updatedelivery" method="POST" enctype="multipart/form-data">
         <div class="user-details">
           <div class="input-box">
+          
             <input type="text" placeholder="Enter Order ID" name="order_ID" required>
           </div>
           <div class="input-box">
-            <input list="select" name="company" placeholder="Assign Company" required>
-              <datalist id="select">
-                <option value="DOM pvt.ltd">
-                <option value="senarath services">
-                <option value="raman couriour service">
-                <option value="jooliya center">
-                <option value="fadna delivery">
-                <option value="gauri center"></option>
-                
-              </datalist>
+        
+
+          
+          <input list="select" name="company" placeholder="Assign Company" required>
+            <datalist id="select">
+              <option value="DOM pvt.ltd">
+              <option value="senarath services">
+              <option value="raman couriour service">
+              <option value="jooliya center">
+              <option value="fadna delivery">
+              <option value="gauri center"></option>
+              
+            </datalist>
           </div>
           <div class="button">
-            <input type="submit" name="submit" value="Assign">
-		      </div>
-        </div>
+          <input type="submit" name="submit" value="Assign">
+		</div>
+          </div>
       </form>
     </div>
 </div>
@@ -86,7 +105,7 @@
   <thead>
   <tr>
     <th>Order ID</th>
-    <th>Delivery Date</th>
+    <th> Delivery Date</th>
     <th>Address</th>
     <th>Delivery Company</th>
     

@@ -29,7 +29,7 @@ class Stockmanagerproduct_Model extends Model
 
     public function updatestocks($amount ,$itemid , $wh)
     {
-        $this->db->update("UPDATE `warehouse_items` SET  `amount` =:amount WHERE `item_id`=:item_id AND `warehouse_id`=:warehouse_id " , ['amount' => $amount , 'item_id' => $itemid , 'warehouse_id' => $wh]);
+        return $this->db->update("UPDATE `warehouse_items` SET  `amount` =:amount WHERE `item_id`=:item_id AND `warehouse_id`=:warehouse_id " , ['amount' => $amount , 'item_id' => $itemid , 'warehouse_id' => $wh]);
     }
 
     public function chart($wh = null)
