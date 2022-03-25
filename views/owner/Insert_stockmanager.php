@@ -98,7 +98,7 @@ require 'config/PathConf.php';
                     <input class="input" name="contact" type="text" placeholder="contact" required>
                     </div><br>
                     <div class="item-form">
-                    <input class="input" name="dob" type="date" placeholder="Birth date" required>
+                    <input class="input" name="district" type="text" placeholder="district" required>
                     </div><br>
                     <input type="submit" name="submit" class="item-btn" value="submit">
                 </div>

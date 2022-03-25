@@ -1180,6 +1180,43 @@ input[type=submit]:hover {
   color: #022131;
   font-size: 13px;
 }
+
+/*front page slider*/
+.slide-images{
+  width: 400px;
+  height: 300px;
+  overflow: hidden;
+  display: flex;
+}
+.slide-images .image-container{
+  width: 400px;
+  height: 300px;
+  position: relative;
+  margin: 0;
+  border-radius: 10px;
+  animation: 25s slider infinite;
+}
+.slide-images .image-container img{
+  width: 400px;
+  height: 300px;
+  float: left;
+  border-radius: 2px;
+}
+@keyframes slider{
+  0% {left:0px}
+  10% {left:0px}
+  20% {left: -100%}
+  30% {left: -100%}
+  40% {left: -200%}
+  50% {left: -200%}
+  60% {left: -300%}
+  70% {left: -300%}
+  80% {left: -400%}
+  90% {left: -400%}
+  80% {left: -400%}
+  90% {left: -400%}
+  100% {left: 0px}
+}
 @media (max-width: 1240px) {
     .sidebar{
       width: 60px;
