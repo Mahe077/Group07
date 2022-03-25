@@ -13,10 +13,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>SL MINI SPARES</title>
     <link rel="stylesheet" href="css/stockmanagerdashboardhome.css">
     <link rel='stylesheet' type='text/css' href="<?php echo $localhost; ?>views/css/stockmanager/stockmanagerdashboardhome.css">
-
+    <link rel="stylesheet" type='text/css' href="<?php echo $localhost; ?>views/css/alert.css">
 
 
 
@@ -28,13 +28,18 @@
 ?>
 
 <div class="home-content">
+      <!--  error alerting will display here -->
+      <?php
+        include_once 'views/global/alert.php';
+        ?>
+
       <div class="overview-boxes">
         <div class="box1" id="box1">
           <div class="right-side">
           
             <div class="indicator">
                 <i class="fa fa-arrow-up" aria-hidden="true"></i>
-              <span class="text">Up from yesterday</span>
+              
             </div>
           </div>
           <i class="fa fa-cart-plus" aria-hidden="true"></i>
@@ -44,7 +49,7 @@
           
             <div class="indicator">
             <i class="fa fa-arrow-up" aria-hidden="true"></i>
-              <span class="text">Up from yesterday</span>
+              
             </div>
           </div>
           <i class="fa fa-cart-plus" aria-hidden="true"></i>
@@ -54,7 +59,7 @@
            
             <div class="indicator">
             <i class="fa fa-arrow-up" aria-hidden="true"></i>
-              <span class="text">Up from yesterday</span>
+              
             </div>
           </div>
           <i class="fa fa-cart-plus" aria-hidden="true"></i>
@@ -64,7 +69,7 @@
            
             <div class="indicator">
                 <i class="fa fa-arrow-down" aria-hidden="true"></i>
-              <span class="text">Down From Today</span>
+         
             </div>
           </div>
           <i class="fa fa-cart-plus" aria-hidden="true"></i>
@@ -93,29 +98,11 @@
 </div>
  
     </div>
-    <!-- <div class="flex-left" id="left">
-    <h2>Top Selling Itmes</h2> -->
-    <!-- <div class="table_body_new">
-     
-<table class="tbl" id="table4" collapsing="0" >
-<thead>
-<tr >
-<th>Item ID</th>
-<th>Sales</th>
-
-</tr>
-<tr class="bordered"></tr>
-</thead>
-
-</table>
-
-</div> -->
-    
-  
-<!-- </div> -->
+   
   </section> 
       </section> 
       <script type="text/javascript" src="views/js/stockmanager/dashboard.js"></script>
+      <script type="text/javascript" src="<?php echo $localhost; ?>views/js/alert.js"></script>
    
 </body>
 </html>

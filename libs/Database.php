@@ -30,9 +30,11 @@ class Database extends PDO
     {
         $stmt = $this->prepare($query);
 
-        $stmt->execute($data);
-
-        return;
+        if ($stmt->execute($data)) {
+            return true;
+        } else {
+            return false;
+        }
     }
     public function update($query, $data)
     {

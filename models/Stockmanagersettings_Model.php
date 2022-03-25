@@ -24,6 +24,7 @@ class Stockmanagersettings_Model extends Model
         $query =  $this->db->alter("INSERT INTO `warehouse_items` (`item_id` , `warehouse_id` , `amount`) 
         VALUES (:item_id,:warehouse_id, :amount)" ,
          ['item_id' => $item_id , 'warehouse_id' => $wh , 'amount' => $amount]);
+         return $query;
         
     }
 

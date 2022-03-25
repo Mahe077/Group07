@@ -14,7 +14,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='stylesheet' type='text/css' href="<?php echo $localhost; ?>views/css/stockmanager/stockmanagersalesreport.css">
-    <title>Document</title>
+    <title>SL MINI SPARES</title>
 </head>
 <body>
 <?php
@@ -28,6 +28,7 @@
 <div class="duration-container">
 <select id="ddlViewBy" onChange="select_year()">
   <option value="0">year</option>
+  <option value="2021">2022</option>
   <option value="2021">2021</option>
   <option value="2020">2020</option>
   <option value="2019">2019</option>

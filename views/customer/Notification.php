@@ -65,46 +65,14 @@ require 'config/PathConf.php';
 
             <form action="Notification/InsertNotify" method="post">
                 <h2 class="heading">Send <span>Message</span></h2>
-                <textarea placeholder="Message" name="msg" id="" cols="66" rows="10"></textarea>
+                <textarea placeholder="Message" name="msg" id="" cols="66" rows="10" required></textarea>
                 <input type="submit" name="submit" class="btn" value="send">
             </form>
         </div>
         <section class="notify">
             <h2 class="heading"> Notifi<span>cation</span></h2>
             <section class="notification-body">
-                
-                <!-- <section class="notification-area">
-                    <h2>Hi,</h2>
-                    <h3 class="date">21-09-2021</h3>
-                    <h3>This is the quotation</h3><br>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci sit facilis non accusamus accusantium atque, ipsum magni assumenda obcaecati veniam fugiat quidem, est, totam consequuntur sint tenetur maxime corporis voluptates.</p>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum dolor unde dolorem, cupiditate provident expedita perferendis aperiam possimus error reprehenderit inventore molestias dignissimos tempora corrupti culpa veniam pariatur! Quidem sunt recusandae natus, rem, voluptatem a nisi cum corporis illo fugiat minima? Veniam, neque laborum a beatae magnam nobis iure vitae hic adipisci unde nulla in ullam facilis cupiditate velit sint.
-                    </p>
-                    <a class="btn" href="buy-now.php">Accepct</a>
-                    <a class="btn">Ignore</a>
-                    <h4 class="time">20:14</h4>
-                </section>
-                <section class="notification-area">
-                    <h2>Hi,</h2>
-                    <h3 class="date">21-09-2021</h3>
-                    <h3>About your car's transmission problem</h3><br>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci sit facilis non accusamus accusantium atque, ipsum magni assumenda obcaecati veniam fugiat quidem, est, totam consequuntur sint tenetur maxime corporis voluptates.</p>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum dolor unde dolorem, cupiditate provident expedita perferendis aperiam possimus error reprehenderit inventore molestias dignissimos tempora corrupti culpa veniam pariatur! Quidem sunt recusandae natus, rem, voluptatem a nisi cum corporis illo fugiat minima? Veniam, neque laborum a beatae magnam nobis iure vitae hic adipisci unde nulla in ullam facilis cupiditate velit sint.
-                    </p>
-                    <a class="btn" onclick="deliveryInfo()">Reply</a>
-                    <h4 class="time">20:14</h4>
-                </section>
-                <section class="notification-area-reply">
-                    <h2>Hi,</h2>
-                    <h3 class="date">21-09-2021</h3>
-                    <h3>This is the quotation</h3><br>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci sit facilis non accusamus accusantium atque, ipsum magni assumenda obcaecati veniam fugiat quidem, est, totam consequuntur sint tenetur maxime corporis voluptates.</p>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum dolor unde dolorem, cupiditate provident expedita perferendis aperiam possimus error reprehenderit inventore molestias dignissimos tempora corrupti culpa veniam pariatur! Quidem sunt recusandae natus, rem, voluptatem a nisi cum corporis illo fugiat minima? Veniam, neque laborum a beatae magnam nobis iure vitae hic adipisci unde nulla in ullam facilis cupiditate velit sint.
-                    </p>
-                    <a class="btn" href="buy-now.php">Accepct</a>
-                    <a class="btn">Ignore</a>
-                    <h4 class="time">20:14</h4>
-                </section> -->
+                <!-- notifications will be render through notification.js -->
             </section>
         </section>
 

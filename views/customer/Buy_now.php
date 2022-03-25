@@ -57,7 +57,7 @@ if (!isset($_SESSION['userid'])) {
                     </div>
                     <div class="inputBox">
                         <input type="hidden" id="item_id_1" name="item_id_1" value="<?php echo $this->itemId; ?>">
-                        <input type="number" class="quantity_1" name="quantity_1" value="1" min="1" max="5" placeholder=" Enter qty" onchange="changeprice(1)">
+                        <input type="number" class="quantity_1" name="quantity_1" value="1" min="1" max="5" placeholder=" Enter quantity" onchange="changeprice(1)">
                         <input class="amount_1" type="text" name="amount_1" placeholder="Enter the amount" value="1" readonly="readonly"> 
                         <input class="unit_price_1" type="hidden" name="unit_price_1" value="1">
                     </div>
@@ -71,18 +71,18 @@ if (!isset($_SESSION['userid'])) {
                     <br>
                     <h3>Customer Details</h3>
                     <div class="inputBox">
-                        <input type="text" name="first_name" value="<?php echo $_SESSION['fname']; ?>">
-                        <input type="text" name="last_name" value="<?php echo $_SESSION['lname']; ?>">
+                        <input type="text" name="first_name" value="<?php echo $_SESSION['fname']; ?>" required >
+                        <input type="text" name="last_name" value="<?php echo $_SESSION['lname']; ?>" required >
                     </div>
                     <div class="inputBox">
-                        <input type="text" name="email" value="<?php echo $_SESSION['email']; ?>">
-                        <input type="text" name="phone" value="<?php echo $_SESSION['contact']; ?>">
+                        <input type="text" name="email" value="<?php echo $_SESSION['email']; ?>" required>
+                        <input type="text" name="phone" value="<?php echo $_SESSION['contact']; ?>" required > 
                     </div>
                     <div class="inputBox">
-                        <input type="text" name="address" value="<?php echo $_SESSION['address']; ?>">
-                        <input type="text" name="country" value="Sri Lanka">
-                        <input type="text" name="city" value="<?php echo $_SESSION['city']; ?>">
-                        <input type="text" name="district" value="<?php echo $_SESSION['district']; ?>">
+                        <input type="text" name="address" value="<?php echo $_SESSION['address']; ?>" required>
+                        <input type="text" name="country" value="Sri Lanka" required>
+                        <input type="text" name="city" value="<?php echo $_SESSION['city']; ?>" required>
+                        <input type="text" name="district" value="<?php echo $_SESSION['district']; ?>" required>
                     </div>
                     <div class="box"><input type="checkbox" name="delivery" id="delivery" value="Yes">
                         <label for="delivery" style="font-size: 15px; font-weight: 600; color: black;">Do you need delivery services</label>

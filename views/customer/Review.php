@@ -31,13 +31,13 @@ require 'config/PathConf.php';
             <h2 class="heading">Add <span>review</span></h2>
             <div class="row">
                 <div class="image">
-                <img src="assets/car/animated/4.jpg" alt="">
+                <img src="<?php echo $localhost; ?>assets/car/animated/2.jpg" alt="">
                 </div>
                 <form class="form" method="post" action="<?php echo $localhost; ?>/Review/insert">
                     <div class="inputBox">
-                        <input type="text" name="first_name" value="<?php echo $_SESSION['fname']; ?>">
-                        <input type="text" name="last_name" value="<?php echo $_SESSION['lname']; ?>">
-                        <input type="hidden" name="orderId" value="<?php echo $this->orderid; ?>">
+                        <input type="text" name="first_name" value="<?php echo $_SESSION['fname']; ?>" required>
+                        <input type="text" name="last_name" value="<?php echo $_SESSION['lname']; ?>" required>
+                        <input type="hidden" name="orderId" value="<?php echo $this->orderid; ?>" required>
                     </div>
                     <div class="inputBox">
                     <textarea placeholder="Comment" name="comment" id="" cols="30" rows="10"></textarea>
