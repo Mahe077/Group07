@@ -11,16 +11,17 @@ class Owner_report_Model extends Model
       public function Display(){
           return  $this->db->select("SELECT *FROM `notification` WHERE status = '0'");
         }
-// username
-    function getinfo($username = null)
-    {
-        return $this->db->select2("SELECT id FROM person WHERE username = :username", ['username' => $username]);
-    }
-// warehouse
-    function getwarehouse($idn = null)
-    {
-        return $this->db->select2("SELECT id FROM warehouse_details WHERE stockmanager_id = :stockmanager_id", ['stockmanager_id' => $idn]);
-    }
+// // username
+//     function getinfo($username = null)
+//     {
+//         return $this->db->select2("SELECT id FROM person WHERE username = :username", ['username' => $username]);
+//     }
+// // warehouse
+//     function getwarehouse($idn = null)
+//     {
+//         return $this->db->select2("SELECT id FROM warehouse_details WHERE stockmanager_id = :stockmanager_id", ['stockmanager_id' => $idn]);
+//     }
+
 // year report
     function reportsyear($duration = null )
     {
@@ -37,14 +38,14 @@ class Owner_report_Model extends Model
         return   $this->db->select2("SELECT SUM(total_payment) AS tot FROM orders WHERE YEAR(order_date)= :year" , ['year'=>$duration]);
     }
 // month report
-    function reportsmonth($duration = null ,$year= null ,  $wh = null)
+    function reportsmonth($duration = null ,$year= null)
     {
-        return   $this->db->select2("SELECT * FROM orders WHERE MONTH(order_date)= :month AND YEAR(order_date)= :year" , ['month'=>$duration , 'year'=>$year ,  'warehouse_id' => $wh]);
+        return   $this->db->select2("SELECT * FROM orders WHERE MONTH(order_date)= :month AND YEAR(order_date)= :year" , ['month'=>$duration , 'year'=>$year ]);
     }
 // count month    
     function countmonth($duration = null ,$year = null)
     {
-        return   $this->db->select2("SELECT COUNT(order_id) AS cou FROM orders WHERE MONTH(order_date)= :month AND YEAR(order_date)= :year" , ['month'=>$duration , 'year'=>$yea]);
+        return   $this->db->select2("SELECT COUNT(order_id) AS cou FROM orders WHERE MONTH(order_date)= :month AND YEAR(order_date)= :year" , ['month'=>$duration , 'year'=>$year]);
         echo "pavi";
     }
 // sum month

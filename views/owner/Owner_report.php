@@ -113,6 +113,7 @@ require 'config/PathConf.php';
               <tr>
               <th>Order_ID</th>
               <th>Customer_ID</th>
+              <th>Warehouse_ID</th>
               <th>Order_Date</th>
               <th>Total_payment</th>
               </tr>
@@ -123,5 +124,6 @@ require 'config/PathConf.php';
   
 </div>
   </section> 
+  <script type="text/javascript" src="views/js/owner/owner_salesreport.js"></script>
 </body>
 </html>
