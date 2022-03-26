@@ -36,3 +36,55 @@ function Deteminesize($image, $folder)
     exit();
   }
 }
+
+function invalidName($tmp)
+{
+  if (!preg_match("/^[a-zA-Z]*$/", $tmp)) {
+    $result = true;
+  } elseif (empty($tmp)) {
+    $result = true;
+  } else {
+    $result = false;
+  }
+  return $result;
+}
+function invalidString($username)
+{
+  if (!preg_match("/^[a-zA-Z0-9@#\$%&-_\/ ]*$/", $username)) {
+    $result = true;
+  } else {
+    $result = false;
+  }
+  return $result;
+}
+function invalidAddress($address)
+{
+  if (!preg_match("/^[a-zA-Z0-9-\/,:.\s]*$/", $address)) {
+    $result = true;
+  } else {
+    $result = false;
+  }
+  return $result;
+} 
+function invalidStringWithNumber($tmp){
+  if (empty($tmp))
+    $result = true;
+  elseif (preg_match("/^[a-zA-Z0-9-#]*$/", $tmp)) {
+    $result = false;
+  }
+  else{
+    $result = true;
+  }
+  return $result;
+} 
+function invalidPositiveNumber($tmp)
+{
+if (empty($tmp))
+  $result = true;
+elseif (preg_match("/^[0-9].*$/", $tmp)) {
+  $result = false;
+} else {
+  $result = true;
+}
+return $result;
+}

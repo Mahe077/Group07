@@ -111,7 +111,7 @@ httprequest.onreadystatechange = function()
                     <td>    ${obj[i].category_name}    </td> 
                     <td>    ${obj[i].status}    </td>
                     <td class="text-center"> 
-                              <a href="Categorylist/Delete_cat/${obj[i].id}"class='btn-del'> Delete </a>
+                              <a href="Categorylist/Delete_cat/${obj[i].id}"class='btn-res'> Remove </a>
                    </td>   
                     </tr> 
                     </tbody>`

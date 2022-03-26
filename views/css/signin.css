@@ -8,10 +8,6 @@ header {
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
-main {
-  margin-top: 0 !important;
-  padding: 0 !important;
-}
 form {
   display: flex;
   align-items: center;
@@ -22,9 +18,8 @@ form {
 }
 
 .form-content .row form {
-  flex: 1 1 30rem !important;
-  width: 40%;
-  max-width: 30%;
+  min-width: 30%;
+  width: 30%;
   height: 70%;
 }
 
@@ -34,8 +29,8 @@ form {
   left: 800px;
   right: 100px;
   transform: translate(-10%, -50%);
-  width: 40%;
-  max-width: 30%;
+  min-width: 30%;
+  width: 30%;
   height: 70%;
   padding-top: 25px;
   border-radius: 0.5rem;
@@ -123,9 +118,9 @@ img {
   height: auto;
   width: 450px;
   position: absolute;
-top: 120px;
-left: 100px;
-z-index: 0;
+  top: 120px;
+  left: 100px;
+  z-index: 0;
 }
 .gif {
   padding-left: 100px;
@@ -166,4 +161,77 @@ nav {
   height: 50px;
   padding-left: 20px;
   line-height: 50px;
+}
+.page_container{
+  height: 100%;
+  width: 100%;
+}
+@media (max-width: 1240px) {
+  .form-signin{
+    top: 400px;
+    height: 500px;
+    right: 100px;
+    left: 700px;
+  }
+}
+@media (max-width: 1000px) {
+  .form-signin{
+    top: 400px;
+    height: 500px;
+    left: 600px;
+    width: 40%;
+  }
+  img {
+    width: 400px;
+    left: 50px;
+  }
+}
+@media (max-width: 700px) {
+  .form-signin{
+    top: 750px;
+    left: 150px;
+    width: 60%;
+    height: 80%;
+  }
+  img {
+    height: auto;
+    width: 400px;
+    left: 120px;
+  }
+  .content{
+  padding-left: 200px;
+  }
+}
+@media (max-width: 550px) {
+  .form-signin{
+    top: 750px;
+    left: 110px;
+    width: 65%;
+    height: 80%;
+  }
+  img {
+    height: auto;
+    width: 350px;
+    left: 50px;
+  }
+  .content{
+  padding-left: 100px;
+  }
+}
+
+@media (max-width: 500px) {
+  .form-signin{
+    top: 750px;
+    left: 110px;
+    width: 65%;
+    height: 80%;
+  }
+  img {
+    height: auto;
+    width: 350px;
+    left: 50px;
+  }
+  .content{
+  padding-left: 100px;
+  }
 }

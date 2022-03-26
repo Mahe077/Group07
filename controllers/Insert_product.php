@@ -22,11 +22,14 @@
                 $name=$_POST['name'];
                 $type=$_POST['type'];
                 $description=$_POST['description'];
-                            $data = $this->model->insert_product($name,$type,$description);
-                            $id = $data[0][0];
-                            $_SESSION['error'] = "Successfully entered";
-                            header("location:".$localhost."Insert_item/load/$id");
-                            exit();
+
+                $data = $this->model->insert_product($name,$type,$description);
+
+                $id = $data[0][0];
+                $_SESSION['error'] = "Successfully entered";
+                
+                header("location:".$localhost."Insert_item/insert_data/$id");
+                exit();
                
             }
         }

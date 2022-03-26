@@ -31,13 +31,12 @@
             
             $image = Deteminesize($_FILES['image_path'], 'users');
                     if($imgSize <=1000000){
-                        var_dump($fname);
                         $this->model->update_owner($fname,$lname,$username,$image,$email,$contact,$address);
-                        $_SESSION['error'] = "Successfully entered";
+                        $_SESSION['error2'] = "Successfully entered";
                         header("location:".$localhost."Settings");
                         exit();
                     }else{
-                        $_SESSION['error'] = "Image is too big";
+                        $_SESSION['error2'] = "Image is too big";
                     }
 
            

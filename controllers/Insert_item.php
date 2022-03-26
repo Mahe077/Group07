@@ -5,18 +5,26 @@
         {
             parent::__construct();
         }
-        public function load($id)
+        public function index()
         { 
             $data = $this->model->Displaynoti();
             $this->view->data=$data;
             $value= $this->model->Display();
             $this->view->value=$value;
             $this->view->render('owner/Insert_item');
-            $this->insert_data($id);
         }
 
     public function insert_data($id)
     {
+        $data = $this->model->Displaynoti();
+        $this->view->data=$data;
+        $value= $this->model->Display();
+        $this->view->value=$value;
+        $this->view->id=$id;
+        $this->view->render('owner/Insert_item');
+     
+    }
+    function insert($id){
         require 'config/Functionconfig.php';
         require 'config/PathConf.php';
         if(isset($_POST['submit'])){
@@ -30,10 +38,8 @@
             $amount=$_POST['amount'];
 
             $image = Deteminesize($_FILES['img'], 'parts');
-
                         $this->model->createItem($id,$brand,$type,$price,$size,$partNo,$partNo_Manufacturer,$amount);
-                        $_SESSION['error'] = "Successfully entered";
-                        //header("location:".$localhost."Productlist");
+                        header("location:".$localhost."Productlist");
                         exit();
            
         }

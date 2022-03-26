@@ -60,8 +60,9 @@
       </div>
     </nav>
    <div class="form-container">
+   
         <div class="item-content">
-            <form  method="POST" action="insert_item/insert_data" enctype="multipart/form-data">
+            <form  method="POST" action="<?php echo $localhost; ?>insert_item/insert/<?php echo $this->id; ?>" enctype="multipart/form-data">
                   <div class="input-box-container">
                     <div class="input-boxes">
                       <div class="item-form">

@@ -111,7 +111,7 @@ httprequest.onreadystatechange = function()
                     <td>   ${obj[i].contact}  </td> 
                     <td>  ${obj[i].address} </td> 
                     <td class="text-center"> 
-                              <a href="Stock_manager/delete_stock/${obj[i].id}"class='btn-del'> Delete </a>
+                              <a href="Stock_manager/delete_stock/${obj[i].id}"class='btn-res'> Remove </a>
                     </td> 
                     </tr>  
 

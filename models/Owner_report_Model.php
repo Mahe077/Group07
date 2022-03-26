@@ -7,10 +7,10 @@ class Owner_report_Model extends Model
     }
     public function Displaynoti(){
         return  $this->db->select("SELECT count(*)FROM `notification` WHERE status = '0'");
-    }
-    public function Display(){
-         return  $this->db->select("SELECT *FROM `notification` WHERE status = '0'");
-    }
+      }
+      public function Display(){
+          return  $this->db->select("SELECT *FROM `notification` WHERE status = '0'");
+        }
 // username
     function getinfo($username = null)
     {
@@ -22,53 +22,57 @@ class Owner_report_Model extends Model
         return $this->db->select2("SELECT id FROM warehouse_details WHERE stockmanager_id = :stockmanager_id", ['stockmanager_id' => $idn]);
     }
 // year report
-    function reportsyear($duration = null , $wh = null)
+    function reportsyear($duration = null )
     {
-        return   $this->db->select2("SELECT * FROM orders WHERE YEAR(order_date)= :year AND warehouse_id = :warehouse_id" , ['year'=>$duration , 'warehouse_id' => $wh]);
+        return   $this->db->select2("SELECT * FROM orders WHERE YEAR(order_date)= :year" , ['year'=>$duration]);
     }
 // count year
-    function countyear($duration = null , $wh = null)
+    function countyear($duration = null )
     {
-        return   $this->db->select2("SELECT COUNT(order_id) AS cou FROM orders WHERE YEAR(order_date)= :year AND warehouse_id = :warehouse_id" , ['year'=>$duration , 'warehouse_id' => $wh]);
+        return   $this->db->select2("SELECT COUNT(order_id) AS cou FROM orders WHERE YEAR(order_date)= :year" , ['year'=>$duration]);
     }
 // sum year    
-    function sumyear($duration = null , $wh = null)
+    function sumyear($duration = null )
     {
-        return   $this->db->select2("SELECT SUM(total_payment) AS tot FROM orders WHERE YEAR(order_date)= :year AND warehouse_id = :warehouse_id" , ['year'=>$duration , 'warehouse_id' => $wh]);
+        return   $this->db->select2("SELECT SUM(total_payment) AS tot FROM orders WHERE YEAR(order_date)= :year" , ['year'=>$duration]);
     }
 // month report
     function reportsmonth($duration = null ,$year= null ,  $wh = null)
     {
-        return   $this->db->select2("SELECT * FROM orders WHERE MONTH(order_date)= :month AND YEAR(order_date)= :year AND warehouse_id = :warehouse_id" , ['month'=>$duration , 'year'=>$year ,  'warehouse_id' => $wh]);
+        return   $this->db->select2("SELECT * FROM orders WHERE MONTH(order_date)= :month AND YEAR(order_date)= :year" , ['month'=>$duration , 'year'=>$year ,  'warehouse_id' => $wh]);
     }
 // count month    
-    function countmonth($duration = null ,$year = null, $wh = null)
+    function countmonth($duration = null ,$year = null)
     {
-        return   $this->db->select2("SELECT COUNT(order_id) AS cou FROM orders WHERE MONTH(order_date)= :month AND YEAR(order_date)= :year AND warehouse_id = :warehouse_id" , ['month'=>$duration , 'year'=>$year, 'warehouse_id' => $wh]);
+        return   $this->db->select2("SELECT COUNT(order_id) AS cou FROM orders WHERE MONTH(order_date)= :month AND YEAR(order_date)= :year" , ['month'=>$duration , 'year'=>$yea]);
+        echo "pavi";
     }
 // sum month
-    function summonth($duration = null ,$year = null , $wh = null)
+    function summonth($duration = null ,$year = null )
     {
-        return   $this->db->select2("SELECT SUM(total_payment) AS tot FROM orders WHERE MONTH(order_date)= :month AND YEAR(order_date)= :year AND warehouse_id = :warehouse_id" , ['month'=>$duration , 'year'=>$year , 'warehouse_id' => $wh]);
+        return   $this->db->select2("SELECT SUM(total_payment) AS tot FROM orders WHERE MONTH(order_date)= :month AND YEAR(order_date)= :year" , ['month'=>$duration , 'year'=>$year]);
     }
 // return year
-    function retrunyear($duration = null , $wh = null, $statereturn = null)
+    function retrunyear($duration = null , $statereturn = null)
     {
-        return $this->db->select2("SELECT SUM(total_payment) AS returnsum FROM orders WHERE YEAR(order_date)= :year AND warehouse_id = :warehouse_id AND order_type = :order_type" , ['year' =>$duration , 'warehouse_id' =>$wh , 'order_type' =>$statereturn]);
+        return $this->db->select2("SELECT SUM(total_payment) AS returnsum FROM orders WHERE YEAR(order_date)= :year AND order_type = :order_type" , ['year' =>$duration , 'order_type' =>$statereturn]);
     }
 // cancel year
-    function cancelyear($duration = null , $wh = null , $statecancel = null )
+    function cancelyear($duration = null  , $statecancel = null )
     {
-        return $this->db->select2("SELECT SUM(total_payment) AS cancelsum FROM orders WHERE YEAR(order_date)= :year AND warehouse_id = :warehouse_id AND order_type = :order_type" , ['year' =>$duration , 'warehouse_id' =>$wh , 'order_type' =>$statecancel]);
+        return $this->db->select2("SELECT SUM(total_payment) AS cancelsum FROM orders WHERE YEAR(order_date)= :year AND order_type = :order_type" , ['year' =>$duration , 'order_type' =>$statecancel]);
     }
 // return month
-    function retrunmonth($duration = null ,$year = null, $wh = null, $statereturn = null)
+    function returnmonth($duration = null ,$year = null, $statereturn = null)
     {
-        return $this->db->select2("SELECT SUM(total_payment) AS returnsum FROM orders WHERE YEAR(order_date)= :year AND MONTH(order_date) = :month AND warehouse_id = :warehouse_id AND order_type = :order_type" , ['month' =>$duration , 'warehouse_id' =>$wh , 'order_type' =>$statereturn , 'year' =>$year]);
+        return $this->db->select2("SELECT SUM(total_payment) AS returnsum FROM orders WHERE YEAR(order_date)= :year AND MONTH(order_date) = :month AND order_type = :order_type" , ['month' =>$duration , 'order_type' =>$statereturn , 'year' =>$year]);
     }
 // cancel month
-    function cancelmonth($duration = null ,$year = null, $wh = null , $statecancel = null )
+    function cancelmonth($duration = null ,$year = null , $statecancel = null )
     {
-        return $this->db->select2("SELECT SUM(total_payment) AS cancelsum FROM orders WHERE YEAR(order_date)= :year AND MONTH(order_date) = :month AND warehouse_id = :warehouse_id AND order_type = :order_type" , ['month' =>$duration , 'warehouse_id' =>$wh , 'order_type' =>$statecancel , 'year' =>$year]);
+        return $this->db->select2("SELECT SUM(total_payment) AS cancelsum FROM orders WHERE YEAR(order_date)= :year AND MONTH(order_date) = :month AND order_type = :order_type" , ['month' =>$duration , 'order_type' =>$statecancel , 'year' =>$year]);
     }
+
+
+    
 }

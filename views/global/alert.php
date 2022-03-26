@@ -278,6 +278,22 @@ if (isset($_SESSION['error'])) {
                     <strong>Success!</strong> You have successfully submit the return request,Sorry for the inconvenience.
               </div>
           </div>";
+     }else if ($_SESSION['error'] == 'Cancel_order_Accepted') {
+          echo "
+          <div class='floating-container'>
+          <div class='alert alert-success alert-dismissible popup'>
+                    <a href='#'  class='remove-alert' data-dismiss='alert' aria-label='close'>&times;</a>
+                    <strong>Success!</strong> Cancel order accepted.
+              </div>
+          </div>";
+     }else if ($_SESSION['error'] == 'Cancel_order_Rejected') {
+          echo "
+          <div class='floating-container'>
+          <div class='alert alert-warning alert-dismissible popup'>
+                    <a href='#'  class='remove-alert' data-dismiss='alert' aria-label='close'>&times;</a>
+                    <strong>Warning!</strong> Cancel order rejected .
+              </div>
+          </div>";
      }
      elseif ($_SESSION['error'] == 'Delivery_assigned_succesfully') {
           echo "
@@ -387,6 +403,7 @@ if (isset($_SESSION['error'])) {
                          </div>
                     </div>";
                     }
+     
      
 }
 $_SESSION['error'] = "";

@@ -4,7 +4,7 @@
     </div>
     <ul class="nav-links">
         <li>
-             <a href="Owner_updated">
+             <a href="<?php $localhost ?>Owner_updated">
              <i class="fa fa-th-large" aria-hidden="true"></i>
                  <span class="link_name">Dashboard</span>
              </a>
