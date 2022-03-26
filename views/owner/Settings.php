@@ -13,6 +13,7 @@ require 'config/PathConf.php';
     <title> Owner Dashboard |SL MINI Spares  </title>
     <link rel="stylesheet" type="text/css" href="<?php echo $localhost; ?>views/css/owner/owner_updated.css">
     <link rel="stylesheet" type="text/css" href="<?php echo $localhost; ?>views/css/owner/owner-test.css">
+    <link rel="stylesheet" type='text/css' href="<?php echo $localhost; ?>views/css/alert.css">
     <script src="https://kit.fontawesome.com/9c5a05f882.js" crossorigin="anonymous"></script>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -58,6 +59,10 @@ require 'config/PathConf.php';
         </div>
       </div>
     </nav>
+    <!--  error alerting will display here -->
+    <?php
+        include_once 'views/global/alert.php';
+      ?>
     <?php 
       $details  = $this->details;
     ?>
@@ -102,6 +107,6 @@ require 'config/PathConf.php';
         </div>
       </div>" ?>
     </section> 
-    <script type="text/javascript" src="views/js/owner/owner-reports.js"></script>
+    <script type="text/javascript" src="<?php echo $localhost; ?>views/js/alert.js"></script>
 </body>
 </html>

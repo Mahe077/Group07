@@ -27,6 +27,7 @@
         }
         public function Delete_item($id){
             $this->model->Delete_item($id);
+            $_SESSION['error'] = "Product_list_deleted";
             header("location:".$localhost."\G7/Group07/Productlist");
         }
     }

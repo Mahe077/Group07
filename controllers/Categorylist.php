@@ -21,6 +21,7 @@
         }
         public function Delete_cat($id){
             $this->model->Delete_cat($id);
+            $_SESSION['error'] = "Category_list_deleted";
             header("location:".$localhost."\G7/Group07/Categorylist");
         }
     }
