@@ -35,6 +35,7 @@ padding-bottom: 10px;
   justify-content: space-between;
   font-size: 15px;
 }
+
 #ddlViewBy  , #ddlViewBy1 {
   font-size: 15px;
   padding: 10px;
@@ -93,7 +94,7 @@ padding-bottom: 10px;
 }
 .card-container .card-topic{
   color: #fff;
-  text-decoration: underline;
+  /* text-decoration: underline; */
   font-size: 20px;
   padding-bottom: 10px;
 }

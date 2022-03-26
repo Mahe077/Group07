@@ -89,7 +89,7 @@
         <div class="home-content">
 
         <div class="content">
-      <form action="Stockmanagerdelivery/updatedelivery" method="POST" enctype="multipart/form-data">
+      <form action="Stockmanagerprofile/updateUser" method="POST" enctype="multipart/form-data">
         <div class="user-details">
         <div class="prof-img">
                     <img src="<?php echo $_SESSION['image_path']; ?>">

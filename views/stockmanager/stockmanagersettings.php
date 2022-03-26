@@ -102,7 +102,7 @@
 <div class="mySlides fade">
   <div class="numbertext">1 / 3</div>
   <div class="slides">
-  <img  src="assets/pagecontains/picture_06.jpg" >
+  <img  src="assets/pagecontains/picture_06.jpg" style="width:800px;height:500px;" >
   </div>
   
 </div>
@@ -110,7 +110,7 @@
 <div class="mySlides fade">
   <div class="numbertext">2 / 3</div>
   <div claas="slides">
-  <img  src="assets/pagecontains/picture_07.jpg" >
+  <img  src="assets/pagecontains/picture_07.jpg" style="width:800px;height:500px;">
   </div>
   
 </div>
@@ -118,7 +118,7 @@
 <div class="mySlides fade">
   <div class="numbertext">3 / 3</div>
   <div class="slides">
-  <img src="assets/pagecontains/picture_08.jpg">
+  <img src="assets/pagecontains/picture_08.jpg" style="width:800px;height:500px;">
   </div>
   </div>
   

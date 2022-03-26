@@ -20,7 +20,7 @@
   width: calc(100% / 4 - 15px);
   background: #63c44d;
   padding: 15px 14px;
-  /* border-radius: 12px; */
+  border-radius: 10px;
   color: #fff;
   box-shadow: 0 5px 10px rgba(0,0,0,0.3);
   height: 150px;
@@ -30,10 +30,10 @@
   align-items: center;
   justify-content: center;
   width: calc(100% / 4 - 15px);
-  background: #28a6a8;
+  background: #fec52d;
   padding: 15px 14px;
   color: #fff;
-  /* border-radius: 12px; */
+  border-radius: 10px;
   box-shadow: 0 5px 10px rgba(0,0,0,0.3);
   height: 150px;
 }
@@ -45,7 +45,7 @@
   background: #fec52d;
   padding: 15px 14px;
   color: #fff;
-  /* border-radius: 12px; */
+  border-radius: 10px;
   box-shadow: 0 5px 10px rgba(0,0,0,0.3);
   height: 150px;
 }
@@ -57,7 +57,7 @@
   background: #ca5e5a;
   padding: 15px 14px;
   color: #fff;
-  /* border-radius: 12px; */
+  border-radius: 10px;
   box-shadow: 0 5px 10px rgba(0,0,0,0.3);
   height: 150px;
 }
@@ -81,7 +81,7 @@
 .home-content .box1 .indicator i{
   height: 20px;
   width: 20px;
-  background: #042434;
+  background: #acb4b8;
   line-height: 20px;
   text-align: center;
   border-radius: 50%;
@@ -90,7 +90,7 @@
   margin-right: 5px;
 }
 .box1 .indicator .fa-arrow-down{
-  background: #042434;
+  background: #acb4b8;
 }
 .home-content .box1 .indicator .text{
   font-size: 12px;
@@ -113,7 +113,7 @@
 .home-content .box2 .indicator i{
   height: 20px;
   width: 20px;
-  background: #042434;
+  background: #acb4b8;
   line-height: 20px;
   text-align: center;
   border-radius: 50%;
@@ -122,7 +122,7 @@
   margin-right: 5px;
 }
 .box2 .indicator .fa-arrow-down{
-  background: #042434;
+  background: #acb4b8;
 }
 .home-content .box2 .indicator .text{
   font-size: 12px;
@@ -145,7 +145,7 @@
 .home-content .box3 .indicator i{
   height: 20px;
   width: 20px;
-  background: #042434;
+  background: #acb4b8;
   line-height: 20px;
   text-align: center;
   border-radius: 50%;
@@ -154,7 +154,7 @@
   margin-right: 5px;
 }
 .box3 .indicator .fa-arrow-down{
-  background: #042434;
+  background: #acb4b8;
 }
 .home-content .box3 .indicator .text{
   font-size: 12px;
@@ -177,7 +177,7 @@
 .home-content .box4 .indicator i{
   height: 20px;
   width: 20px;
-  background: #042434;
+  background: #acb4b8;
   line-height: 20px;
   text-align: center;
   border-radius: 50%;
@@ -186,7 +186,7 @@
   margin-right: 5px;
 }
 .box4 .indicator .fa-arrow-down{
-  background: #042434;
+  background: #acb4b8;
 }
 .home-content .box4 .indicator .text{
   font-size: 12px;
