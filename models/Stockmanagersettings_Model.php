@@ -27,7 +27,6 @@ class Stockmanagersettings_Model extends Model
          return $query;
         
     }
-
     // public function Displaynoti(){
     //     return  $this->db->select("SELECT count(*)FROM `notification` WHERE status = '0'");
     // }
