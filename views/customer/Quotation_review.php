@@ -23,17 +23,17 @@ require 'config/PathConf.php';
 
 <body>
     <?php
-    $this_page = "Review.php";
+    $this_page = "Quotation_review.php";
     include_once 'views/global/header-ws.php';
     ?>
     <main>
         <section class="form-content">
-            <h2 class="heading">Add <span>review</span></h2>
+            <h2 class="heading">Add <span>Quotation review </span></h2>
             <div class="row">
                 <div class="image">
                 <img src="<?php echo $localhost; ?>assets/car/animated/2.jpg" alt="">
                 </div>
-                <form class="form" method="post" action="<?php echo $localhost; ?>/Review/insert">
+                <form class="form" method="post" action="<?php echo $localhost; ?>Review/special_order_review_insert/<?php echo $this->orderid;?>">
                     <div class="inputBox">
                         <input type="text" name="first_name" value="<?php echo $_SESSION['fname']; ?>" required>
                         <input type="text" name="last_name" value="<?php echo $_SESSION['lname']; ?>" required>

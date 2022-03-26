@@ -57,7 +57,7 @@ if (!isset($_SESSION['userid'])) {
                     </div>
                     <div class="inputBox">
                         <input type="hidden" id="item_id_1" name="item_id_1" value="<?php echo $this->itemId; ?>">
-                        <input type="number" class="quantity_1" name="quantity_1" value="1" min="1" max="5" placeholder=" Enter quantity" onchange="changeprice(1)">
+                        <input type="number" class="quantity_1" name="quantity_1" value="1" min="1" max="5" placeholder=" Enter quantity" onchange="changeprice(1,1)">
                         <input class="amount_1" type="text" name="amount_1" placeholder="Enter the amount" value="1" readonly="readonly"> 
                         <input class="unit_price_1" type="hidden" name="unit_price_1" value="1">
                     </div>

@@ -27,7 +27,7 @@ function display_orders(id, orderType) {
     Total = 0;
     let products = document.querySelector(".table-body");
     var search = JSON.parse(this.response);
-    // console.log(search);
+    console.log(this.response);
     products.innerHTML = "";
     if (search !== null) {
       let count = 0;
@@ -87,7 +87,7 @@ function display_orders(id, orderType) {
                           s.status == 4
                             ? `<i class='fas fa-check-circle' style='color:red'></i>`
                             : s.status == 8
-                            ? `<a href='Review/loadpage/${s.id}/Special_order'><i class='fas fa-comment'></i></a>`
+                            ? `<a href='Review/load_special_order_page/${s.id}'><i class='fas fa-comment'></i></a>`
                             : `<i class='fas fa-check-circle'></i>`
                         }
                     </div>

@@ -21,6 +21,7 @@
             return $data;
         }
         public function Accept_order($id,$user_id){
+            require 'config/PathConf.php';
             $order_id=$id;
             $this->model->Accept_order($order_id);
             $result = $this->model->Notify_send($user_id);
@@ -44,6 +45,7 @@
             
         }
         public function Reject_order($id,$user_id){
+            require 'config/PathConf.php';
             $order_id=$id;
             $this->model->Reject_order($order_id);
             $result = $this->model->Notify_send($user_id);

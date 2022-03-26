@@ -135,7 +135,7 @@
                         <input type="email" name="email" placeholder="Email">
                     </div>
                     <div class="inputBox">
-                        <input type="text" name="tp" placeholder="Contact number"><!-- look here  -->
+                        <input type="tel" pattern="[0-9]{10}" name="tp"  placeholder="Contact number"><!-- look here  -->
                         <input type="text" name="subject" placeholder="Subject">
                     </div>
                     <textarea placeholder="Message" name="msg" id="" cols="30" rows="10"></textarea>

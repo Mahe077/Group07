@@ -15,7 +15,7 @@ function invalidToday($date)
 }
 function invalidName($tmp)
 {
-  if (!preg_match("/^[a-zA-Z]*$/", $tmp)) {
+  if (!preg_match("/^[a-z A-Z]*$/", $tmp)) {
     $result = true;
   } elseif (empty($tmp)) {
     $result = true;

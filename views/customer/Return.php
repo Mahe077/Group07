@@ -41,7 +41,7 @@ if (!isset($_SESSION['userid'])) {
                 <form class="form" method="post" action="<?php echo $localhost; ?>Order/AddReturn">
                     <h3>Payment Details</h3>
                     <div class="inputBox">
-                        <input type="number" min="1" name="order_id" placeholder="Enter Order  id">
+                        <input type="number" min="1" name="order_id" placeholder="Enter Order id">
                     </div>
                     <textarea placeholder="Enter the reason" name="reason" id="" cols="30" rows="10" style="font-size: 1.5rem;"></textarea>
 
