@@ -123,7 +123,8 @@ class Stockmanagerproduct extends Controller{
             // $url = $localhost.'Deliverycompany';
             $to              = $mail;
             echo $to;
-            $sender          = 'pavithrasandamini283@gmail.com';
+            // $sender          = 'pavithrasandamini283@gmail.com';
+            $sender          = 'slminisparescompany@gmail.com';
             echo $sender;
             $email_subject   = 'Inform About Less Stocks';
             echo $email_subject;
