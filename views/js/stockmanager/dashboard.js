@@ -86,8 +86,8 @@ httprequest5.onreadystatechange = function()
         {
           countmonth.innerHTML +=
 
-                    '<p class="box-topic">' + 'Total Orders   ' + '</p>'
-                      + obj5[i].cou 
+                    '<p class="box-topic">' + 'Total Orders   '  + '<br>' +
+                      + obj5[i].cou + '</p>'
                  
         }
   }
@@ -111,8 +111,8 @@ httprequest6.onreadystatechange = function()
         for(var i = 0 ; i< obj6.length ; i++)
         {
           summonth.innerHTML +=
-                    '<p class="box-topic">' + ' Total Payments  ' + '</p>'
-                      + obj6[i].tot
+                    '<p class="box-topic">' + ' Total Payments  ' + '<br>' +
+                      +  obj6[i].tot + '</p>'
         }
   }
 };
@@ -133,8 +133,8 @@ httprequest7.onreadystatechange = function()
         for(var i = 0 ; i< obj7.length ; i++)
         {
           returnmonth.innerHTML +=
-                    '<p class="box-topic">' + 'Total Returns   ' + '</p>'
-                      + obj7[i].returnsum
+                    '<p class="box-topic">' + 'Total Returns   '  + '<br>' +
+                      + obj7[i].returnsum + '</p>'
         }
   }
 };

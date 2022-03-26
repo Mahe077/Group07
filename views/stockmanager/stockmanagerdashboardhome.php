@@ -54,7 +54,7 @@
           </div>
           <i class="fa fa-cart-plus" aria-hidden="true"></i>
         </div>
-        <div class="box3" id="box3">
+        <!-- <div class="box3" id="box3">
           <div class="right-side" >
            
             <div class="indicator">
@@ -63,7 +63,7 @@
             </div>
           </div>
           <i class="fa fa-cart-plus" aria-hidden="true"></i>
-        </div>
+        </div> -->
         <div class="box4" id="box4">
           <div class="right-side">
            
