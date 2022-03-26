@@ -18,7 +18,7 @@ class Stockmanagerorderlist_Model extends Model
 
     function Neworders($type , $wh)
     {
-        return  $this->db->select2("SELECT `order_ID` , `order_date` , `payment` , `total_payment` , `approximate_d_date` FROM `orders` WHERE order_type = :order_type AND warehouse_id = :warehouse_id ORDER BY order_ID  DESC  LIMIT 10 ",   ['order_type' => $type , 'warehouse_id' => $wh ]);
+        return  $this->db->select2("SELECT `order_ID` , `order_date` , `payment` , `total_payment` , `approximated_date` FROM `orders` WHERE order_type = :order_type AND warehouse_id = :warehouse_id ORDER BY order_ID  DESC  LIMIT 10 ",   ['order_type' => $type , 'warehouse_id' => $wh ]);
     }
 
     public function Pendingorders($type , $wh)
@@ -28,12 +28,12 @@ class Stockmanagerorderlist_Model extends Model
 
     public function Cancelorders($type , $wh)
     {
-        return  $this->db->select2("SELECT `order_ID` , `order_date` , `approximate_d_date`  , `total_payment`  FROM `orders` WHERE `order_type` = :order_type  AND warehouse_id = :warehouse_id ORDER BY order_ID DESC LIMIT 10 ", ['order_type' => $type , 'warehouse_id' => $wh]);
+        return  $this->db->select2("SELECT `order_ID` , `order_date` , `approximated_date`  , `total_payment`  FROM `orders` WHERE `order_type` = :order_type  AND warehouse_id = :warehouse_id ORDER BY order_ID DESC LIMIT 10 ", ['order_type' => $type , 'warehouse_id' => $wh]);
     }
 
     public function Returnorders($type,$wh)
     {
-        return  $this->db->select2("SELECT `order_ID` , `order_date` , `payment` , `total_payment` , `approximate_d_date`  FROM `orders` WHERE `order_type` = :order_type  AND warehouse_id = :warehouse_id ORDER BY order_ID DESC LIMIT 10 ", ['order_type' => $type , 'warehouse_id' => $wh]);
+        return  $this->db->select2("SELECT `order_ID` , `order_date` , `payment` , `total_payment` , `approximated_date`  FROM `orders` WHERE `order_type` = :order_type  AND warehouse_id = :warehouse_id ORDER BY order_ID DESC LIMIT 10 ", ['order_type' => $type , 'warehouse_id' => $wh]);
     }
 
     public function callwarehouse($id)
