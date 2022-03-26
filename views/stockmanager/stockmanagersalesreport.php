@@ -37,6 +37,7 @@
   <option value="2016">2016</option>
 </select>
 
+
 <select id="ddlViewBy1" onChange="select_month()">
   <option value="0">month</option>
   <option value="1">January</option>

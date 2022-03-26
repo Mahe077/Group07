@@ -96,8 +96,9 @@ class Database extends PDO
     {
         try {
             $this->beginTransaction();
-            $stmt = $this->prepare("INSERT INTO `orders`(`user_id`, `total_payment`, `payment`) VALUES ( :user_id, :total_payment, :payment)");
-            $stmt->execute(['user_id' => $user_id, 'total_payment' => $total, 'payment' => $Advanced]);
+            
+            $stmt = $this->prepare("INSERT INTO `orders`(`user_id`, `order_type`, `total_payment`, `delivery_request` , `payment`) VALUES ( :user_id, :order_type, :total_payment, :delivery_request, :payment)");
+            $stmt->execute(['user_id' => $user_id, 'order_type' => 0, 'total_payment' => $total, 'delivery_request'=> 1 , 'payment' => $Advanced]);
             $stmt->closeCursor();
 
             $id = $this->lastInsertId();
@@ -105,7 +106,6 @@ class Database extends PDO
             $stmt = $this->prepare("INSERT INTO `order_item`(`OrderId`, `ItemId`, `Qty`, `Cost`) VALUES (:id,:item_id, :qty, :Cost)");
             $stmt->execute(['id' => $id, 'item_id' => $item_id, 'qty' => $qty, 'Cost' => $Cost]);
             $stmt->closeCursor();
-
 
             $stmt = $this->prepare("INSERT INTO `delivery`(`order_id`, `address`, `status`, `accept`) VALUES (:id,:address,:status,:accept)");
             $stmt->execute(['address' => $address, 'id' => $id, 'status' => 0, 'accept' => 0]);
@@ -127,8 +127,9 @@ class Database extends PDO
     {
         try {
             $this->beginTransaction();
-            $stmt = $this->prepare("INSERT INTO `orders`(`user_id`, `total_payment`, `payment`) VALUES ( :user_id, :total_payment, :payment)");
-            $stmt->execute(['user_id' => $user_id, 'total_payment' => $total, 'payment' => $Advanced]);
+
+            $stmt = $this->prepare("INSERT INTO `orders`(`user_id`, `order_type`, `total_payment`, `delivery_request` , `payment`) VALUES ( :user_id, :order_type, :total_payment, :delivery_request, :payment)");
+            $stmt->execute(['user_id' => $user_id, 'order_type' => 0, 'total_payment' => $total, 'delivery_request'=> 0 , 'payment' => $Advanced]);
             $stmt->closeCursor();
 
             $id = $this->lastInsertId();
@@ -153,8 +154,8 @@ class Database extends PDO
     {
         try {
             $this->beginTransaction();
-            $stmt = $this->prepare("INSERT INTO `orders`(`user_id`, `total_payment`, `payment`) VALUES ( :user_id, :total_payment, :payment)");
-            $stmt->execute(['user_id' => $user_id, 'total_payment' => $total, 'payment' => $Advanced]);
+            $stmt = $this->prepare("INSERT INTO `orders`(`user_id`, `order_type`, `total_payment`, `delivery_request` , `payment`) VALUES ( :user_id, :order_type, :total_payment, :delivery_request, :payment)");
+            $stmt->execute(['user_id' => $user_id, 'order_type' => 0, 'total_payment' => $total, 'delivery_request'=> 1 , 'payment' => $Advanced]);
             $stmt->closeCursor();
 
             $id = $this->lastInsertId();
@@ -184,8 +185,8 @@ class Database extends PDO
     {
         try {
             $this->beginTransaction();
-            $stmt = $this->prepare("INSERT INTO `orders`(`user_id`, `total_payment`, `payment`) VALUES ( :user_id, :total_payment, :payment)");
-            $stmt->execute(['user_id' => $user_id, 'total_payment' => $total, 'payment' => $Advanced]);
+            $stmt = $this->prepare("INSERT INTO `orders`(`user_id`, `order_type`, `total_payment`, `delivery_request` , `payment`) VALUES ( :user_id, :order_type, :total_payment, :delivery_request, :payment)");
+            $stmt->execute(['user_id' => $user_id, 'order_type' => 0, 'total_payment' => $total, 'delivery_request'=> 0 , 'payment' => $Advanced]);
             $stmt->closeCursor();
 
             $id = $this->lastInsertId();

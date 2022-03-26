@@ -15,7 +15,6 @@ class Stockmanagersettings extends Controller{
     }
 
     function insert(){
-
         require 'config/PathConf.php';
         $username =  $_SESSION['username'];
         $id = $this->model->getinfo($username);
@@ -31,11 +30,7 @@ class Stockmanagersettings extends Controller{
         if (isset($_POST['submit'])) {
             $item_id = $_POST['item_id'];
             $amount = $_POST['amount'];
-
-            
-            
             $insert = $this->model->insert1($wh, $item_id , $amount);
-
             if($insert)
             {
                 $_SESSION['error'] =  "item_inserted_succesfully";
@@ -46,14 +41,10 @@ class Stockmanagersettings extends Controller{
             else
             {
                 $_SESSION['error']= "item_inserted_failed";
-                echo $insert;
-                // header("Location:".$localhost."Stockmanagersettings");
+                header("Location:".$localhost."Stockmanagersettings");
                 exit();
               
             }
-            
-
-
         }
 
     }
@@ -130,7 +121,8 @@ class Stockmanagersettings extends Controller{
                 $item_id = htmlentities($row1['item_id']); 
             }
             $lastsolddetails = $this->model->amountitems($item_id);
-            echo json_encode(count($lastsolddetails) == 0 ? null : $lastsolddetails);
+            echo $lastsolddetails;
+            // echo json_encode(count($lastsolddetails) == 0 ? null : $lastsolddetails);
           
 
 }

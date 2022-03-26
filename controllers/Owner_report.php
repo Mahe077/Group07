@@ -1,4 +1,5 @@
 <?php
+
     class Owner_report extends Controller
     {
         function __construct()
@@ -17,8 +18,8 @@
     function reportyear($year)
     {
         require 'config/PathConf.php';
-        $username =  $_SESSION['username'];
-        $id = $this->model->getinfo($username);
+        // $username =  $_SESSION['username'];
+        // $id = $this->model->getinfo($username);
             $date = $this->model->reportsyear($year);
             echo json_encode(count($date) == 0 ? null : $date);
             if(empty($date))
@@ -33,8 +34,8 @@
     function reportmonth($month)
     {
         require 'config/PathConf.php';
-        $username = $_SESSION['username'];
-        $id = $this->model->getinfo($username);
+        // $username = $_SESSION['username'];
+        // $id = $this->model->getinfo($username);
             $year = "2021";
             $date = $this->model->reportsmonth($month,$year);
             echo json_encode(count($date) == 0 ? null : $date);
@@ -47,8 +48,8 @@
     function sum($duration)
     {
         require 'config/PathConf.php';
-        $username =  $_SESSION['username'];
-        $id = $this->model->getinfo($username);
+        // $username =  $_SESSION['username'];
+        // $id = $this->model->getinfo($username);
             
         if($duration == "2021" || $duration == "2020" || $duration == "2019" || $duration == "2018" || $duration == "2017" || $duration == "2016")
         {
@@ -61,7 +62,7 @@
         {
 
            
-            $year = "2021";
+            $year = "2022";
             $sum = $this->model->summonth($duration,$year);
             echo json_encode(count($sum) == 0 ? null : $sum);
         }
@@ -75,9 +76,9 @@
     {
         require 'config/PathConf.php';
         
-        $username =  $_SESSION['username'];
+        // $username =  $_SESSION['username'];
       
-        $id = $this->model->getinfo($username);
+        // $id = $this->model->getinfo($username);
         if($duration == "2021" || $duration == "2020" || $duration == "2019" || $duration == "2018" || $duration == "2017" || $duration == "2016")
         {
             $count = $this->model->countyear($duration);
@@ -86,7 +87,7 @@
         elseif($duration == "1" || $duration == "2" || $duration == "3" || $duration == "4" || $duration == "5" || $duration == "6" || $duration == "7" || $duration == "8" || $duration == "9" || $duration == "10" || $duration == "11" || $duration == "12")
         {
            
-            $year = "2021";
+            $year = "2022";
             $count = $this->model->countmonth($duration,$year);
             echo json_encode(count($count) == 0 ? null : $count);
         }
@@ -101,8 +102,8 @@
     {
         require 'config/PathConf.php';
         
-        $username =  $_SESSION['username'];
-        $id = $this->model->getinfo($username);
+        // $username =  $_SESSION['username'];
+        // $id = $this->model->getinfo($username);
             $statecancel = "2";
             $statereturn = "5";
             if($duration == "2021" || $duration == "2020" || $duration == "2019" || $duration == "2018" || $duration == "2017" || $duration == "2016")
@@ -138,7 +139,7 @@
             }
             elseif($duration == "1" || $duration == "2" || $duration == "3" || $duration == "4" || $duration == "5" || $duration == "6" || $duration == "7" || $duration == "8" || $duration == "9" || $duration == "10" || $duration == "11" || $duration == "12")
             {
-                $year = "2021";
+                $year = "2022";
                 $all = $this->model->summonth($duration,$year);
                 foreach($all as $row3)
                 { 
@@ -180,8 +181,8 @@ function cancelsum($duration)
 {
     require 'config/PathConf.php';
         
-        $username =  $_SESSION['username'];
-        $id = $this->model->getinfo($username);
+        // $username =  $_SESSION['username'];
+        // $id = $this->model->getinfo($username);
             foreach($id as $row)
             { 
                 $idn = htmlentities($row['id']);
@@ -200,7 +201,7 @@ function cancelsum($duration)
             }
             elseif($duration == "1" || $duration == "2" || $duration == "3" || $duration == "4" || $duration == "5" || $duration == "6" || $duration == "7" || $duration == "8" || $duration == "9" || $duration == "10" || $duration == "11" || $duration == "12")
             {
-                $year = "2021";
+                $year = "2022";
                 $cancel = $this->model->cancelmonth($duration,$year,$statecancel);
                 
             }
@@ -212,16 +213,16 @@ function cancelsum($duration)
 
 function returnsum($duration){
     $username =  $_SESSION['username'];
-    $id = $this->model->getinfo($username);
-        foreach($id as $row)
-        { 
-            $idn = htmlentities($row['id']);
-        }
-        $warehouse = $this->model->getwarehouse($idn);
-        foreach($warehouse as $rows)
-        {
-            $wh = htmlentities($rows['id']);
-        }
+    // $id = $this->model->getinfo($username);
+    //     foreach($id as $row)
+    //     { 
+    //         $idn = htmlentities($row['id']);
+    //     }
+    //     $warehouse = $this->model->getwarehouse($idn);
+    //     foreach($warehouse as $rows)
+    //     {
+    //         $wh = htmlentities($rows['id']);
+    //     }
         $statecancel = "2";
         
         if($duration == "2021" || $duration == "2020" || $duration == "2019" || $duration == "2018" || $duration == "2017" || $duration == "2016")
@@ -231,7 +232,7 @@ function returnsum($duration){
         }
         elseif($duration == "1" || $duration == "2" || $duration == "3" || $duration == "4" || $duration == "5" || $duration == "6" || $duration == "7" || $duration == "8" || $duration == "9" || $duration == "10" || $duration == "11" || $duration == "12")
         {
-            $year = "2021";
+            $year = "2022";
             $cancel = $this->model->returnmonth($duration,$year,$statecancel);
             echo json_encode(count($cancel) == 0 ? null : $cancel);
         }
