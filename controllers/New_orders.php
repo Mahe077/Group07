@@ -137,11 +137,7 @@
             $email_body = "Your order has been rejected due to lack of items";
             $header = "From: {$email}\r\nContent-type: text/html;";
             $resul = mail($to,$mail_subject, $email_body,$header);
-            if($resul){
-                echo  "success";
-            }else{
-                echo "unsuccess";
-            }
+            $_SESSION['error'] = "New_order_Rejected";
             header("location:".$localhost."\G7/Group07/New_orders");
         }
 

@@ -20,7 +20,7 @@
             $estimate=$_POST['Estimate'];
             $id= $_POST['Id'];
             $this->model->Respond_quo($id,$estimate);
-            $_SESSION['error'] = "Successfully entered";
+            $_SESSION['error'] = "Quotation_accepted";
             header("location:".$localhost."Owner_quotation");
             exit();
             }
@@ -28,7 +28,7 @@
 
         public function Reject_quotation($id){
             $this->model->Reject_quotation($id);
-            $_SESSION['error'] = "Successfully entered";
+            $_SESSION['error'] = "Quotation_rejected";
             header("location:".$localhost."\G7/Group07/Owner_quotation");
             exit();
         }

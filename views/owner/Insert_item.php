@@ -16,6 +16,7 @@
     <title> Owner Dashboard |SL MINI Spares  </title>
     <link rel="stylesheet" type="text/css" href="<?php echo $localhost; ?>views/css/owner/owner_updated.css">
     <link rel="stylesheet" type="text/css" href="<?php echo $localhost; ?>views/css/owner/owner-test.css">
+    <link rel="stylesheet" type='text/css' href="<?php echo $localhost; ?>views/css/alert.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/9c5a05f882.js" crossorigin="anonymous"></script>
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -62,6 +63,10 @@
    <div class="form-container">
    
         <div class="item-content">
+            <!--  error alerting will display here -->
+          <?php
+            include_once 'views/global/alert.php';
+            ?>
             <form  method="POST" action="<?php echo $localhost; ?>insert_item/insert/<?php echo $this->id; ?>" enctype="multipart/form-data">
                   <div class="input-box-container">
                     <div class="input-boxes">
@@ -83,7 +88,7 @@
                     </div>
                     <div class="input-boxes">
                       <div class="slt">
-                        <select name="type" id="select-opt" class="input" required>
+                        <select name="genuine" id="select-opt" class="input" required>
                         <option value="">Select type</option>
                           <option value="Genuin">Genuin</option>
                           <option value="Compatible">Compatible</option>
@@ -108,7 +113,6 @@
           </div>  
       </div>
   </section>
-  <script type="text/javascript" src="views/js/owner/owner-reports.js"></script>
-  <script type="text/javascript" src="views/js/owner/form.js"></script> 
+  <script type="text/javascript" src="<?php echo $localhost; ?>views/js/alert.js"></script>
 </body>
 </html>

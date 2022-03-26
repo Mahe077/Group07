@@ -20,8 +20,10 @@
         if(isset($_POST['submit'])){
 
             $category=$_POST['category'];
+            
+
             $this->model->insertcat($category);
-            $_SESSION['error'] = "Successfully entered";
+            $_SESSION['error'] = "Category_item";
             header("location:".$localhost."Categorylist");
             exit();
        

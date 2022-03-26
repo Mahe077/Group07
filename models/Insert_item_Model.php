@@ -5,15 +5,40 @@ class Insert_item_Model extends Model
     {
         parent::__construct();
     }
-    public function createItem($productId,$brand,$type,$price,$size,$partNo,$partNo_Manufacturer,$amount)
+    public function createItem($productId,$brand,$genuine,$price,$size,$partNo,$partNo_Manufacturer,$amount)
     {
        
         $this->db->alter(
             "INSERT INTO `item`
-           (`productId` , `brand`, `type`,`price`, `size`, `partNo`, `partNo_Manufacturer`,`amount`)  
+           (`productId` , `brand`, `genuine`,`price`, `size`, `partNo`, `partNo_Manufacturer`,`amount`)  
             VALUES 
-            (:productId , :brand, :type,:price, :size, :partNo, :partNo_Manufacturer,:amount)",
-            ['productId' => $productId,'brand' => $brand,'type' => $type,'price' => $price,'size' => $size,'partNo' => $partNo,'partNo_Manufacturer' => $partNo_Manufacturer,'amount' => $amount]
+            (:productId , :brand, :genuine,:price, :size, :partNo, :partNo_Manufacturer,:amount)",
+            ['productId' => $productId,'brand' => $brand,'genuine' => $genuine,'price' => $price,'size' => $size,'partNo' => $partNo,'partNo_Manufacturer' => $partNo_Manufacturer,'amount' => $amount]
+        );
+        return  $this->db->select("SELECT item.id FROM item WHERE productId ='$productId' AND brand = '$brand' AND genuine = '$genuine' AND price = '$price' AND size = '$size'AND partNo = '$partNo' AND partNo_Manufacturer = '$partNo_Manufacturer' AND amount = ' $amount'");
+        
+    }
+
+    public function createimage($id,$image)
+    {
+       
+        $this->db->alter(
+            "INSERT INTO `itemimage`
+           (`id` , `image_path`)  
+            VALUES 
+            (:id , :image_path)",
+            ['id' => $id,'image_path' => $image]
+        );
+    }
+    public function createcolor($id,$color)
+    {
+       
+        $this->db->alter(
+            "INSERT INTO `itemcolor`
+           (`id` , `color`)  
+            VALUES 
+            (:id , :color)",
+            ['id' => $id,'color' => $color]
         );
     }
 

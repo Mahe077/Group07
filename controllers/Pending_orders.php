@@ -33,11 +33,9 @@
             $email_body = "Your order is in progress check the account to continue the process";
             $header = "From: {$email}\r\nContent-type: text/html;";
             $resul = mail($to,$mail_subject, $email_body,$header);
-            if($resul){
-                echo  "success";
-            }else{
-                echo "unsuccess";
-            }
+
+                $_SESSION['error'] = "Pending_order_Accepted";
+           
             header("location:".$localhost."\G7/Group07/Pending_orders");
         }
         public function Reject_order($id,$user_id){
@@ -55,11 +53,9 @@
             $email_body = "Your order has been rejected due to lack of items";
             $header = "From: {$email}\r\nContent-type: text/html;";
             $resul = mail($to,$mail_subject, $email_body,$header);
-            if($resul){
-                echo  "success";
-            }else{
-                echo "unsuccess";
-            }
+
+            $_SESSION['error'] = "Pending_order_Rejected";
+            
             header("location:".$localhost."\G7/Group07/Pending_orders");
         }
     }

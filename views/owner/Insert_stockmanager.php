@@ -14,6 +14,7 @@ require 'config/PathConf.php';
     <title> Owner Dashboard |SL MINI Spares  </title>
     <link rel="stylesheet" type="text/css" href="<?php echo $localhost; ?>views/css/owner/owner_updated.css">
     <link rel="stylesheet" type="text/css" href="<?php echo $localhost; ?>views/css/owner/owner-stock.css">
+    <link rel="stylesheet" type='text/css' href="<?php echo $localhost; ?>views/css/alert.css">
     <script src="https://kit.fontawesome.com/9c5a05f882.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -61,22 +62,26 @@ require 'config/PathConf.php';
     </nav>
 
     <div class="home-content">
+      <!--  error alerting will display here -->
+      <?php
+          include_once 'views/global/alert.php';
+      ?>
         <div class="form-container">
             <div class="item-content">
             <form  method="POST" action="Insert_stockmanager/insert_stock" enctype="multipart/form-data">
                 <div class="input-box-container">
                 <div class="input-boxes">
                     <div class="item-form">
-                        <input class="input" name="position" type="text" placeholder="Position" required>
+                        <input class="input" name="position" type="text" placeholder="Position" >
                     </div><br>
                     <div class="item-form">
-                        <input class="input" name="fname"type="text" placeholder="fname" required>
+                        <input class="input" name="fname"type="text" placeholder="fname" >
                     </div><br>
                     <div class="item-form">
-                        <input class="input" name="lname"  type="text" placeholder="lname" required>
+                        <input class="input" name="lname"  type="text" placeholder="lname" >
                     </div><br>
                     <div class="item-form">
-                        <input class="input" name="username" type="text" placeholder="Username" required>
+                        <input class="input" name="username" type="text" placeholder="Username" >
                     </div><br>
                     <div class="img-file">
                     <input class="input" name="img" id= "file" type="file" accept="image/*">
@@ -86,19 +91,19 @@ require 'config/PathConf.php';
                 </div>
                 <div class="input-boxes"> 
                 <div class="item-form">
-                        <input class="input" name="password" type="text" placeholder="Password" required>
+                        <input class="input" name="password" type="text" placeholder="Password" >
                     </div><br>
                     <div class="item-form">
-                        <input class="input" name="email" type="text" placeholder="email" required>
+                        <input class="input" name="email" type="text" placeholder="email" >
                     </div><br>  
                     <div class="item-form">
-                    <input class="input" name="address" type="text" placeholder="Address" required>
+                    <input class="input" name="address" type="text" placeholder="Address" >
                     </div><br>
                     <div class="item-form">
-                    <input class="input" name="contact" type="text" placeholder="contact" required>
+                    <input class="input" name="contact" type="text" placeholder="contact" >
                     </div><br>
                     <div class="item-form">
-                    <input class="input" name="district" type="text" placeholder="district" required>
+                    <input class="input" name="district" type="text" placeholder="district" >
                     </div><br>
                     <input type="submit" name="submit" class="item-btn" value="submit">
                 </div>
@@ -109,6 +114,6 @@ require 'config/PathConf.php';
     </div>
     
 </section> 
-<script type="text/javascript" src="views/js/owner/owner-reports.js"></script>
+<script type="text/javascript" src="<?php echo $localhost; ?>views/js/alert.js"></script>
 </body>
 </html>

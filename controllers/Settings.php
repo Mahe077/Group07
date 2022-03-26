@@ -12,7 +12,6 @@
             $value= $this->model->Display();
             $this->view->value=$value;
             $details = $this->model->UpdateUser();
-            //print_r($details);
             $this->view->details=$details;
             $this->view->render('owner/Settings');
         }
@@ -32,11 +31,11 @@
             $image = Deteminesize($_FILES['image_path'], 'users');
                     if($imgSize <=1000000){
                         $this->model->update_owner($fname,$lname,$username,$image,$email,$contact,$address);
-                        $_SESSION['error2'] = "Successfully entered";
+                        $_SESSION['error'] = "updated_success";
                         header("location:".$localhost."Settings");
                         exit();
                     }else{
-                        $_SESSION['error2'] = "Image is too big";
+                        $_SESSION['error'] = "toobig";
                     }
 
            

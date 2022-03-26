@@ -85,7 +85,7 @@ require 'config/PathConf.php';
                         </select>
                       </div></div>
                         <div class="item-form">
-                        <textarea id="dec" name="description" placeholder="Write something.." required></textarea>
+                        <textarea id="dec" name="description" placeholder="Description..." required></textarea>
                         </div>
                      </div><br>
                      <input type="submit" name="submit" class="item-btn" value="Next     >>">

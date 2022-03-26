@@ -29,7 +29,7 @@
         require 'config/PathConf.php';
         if(isset($_POST['submit'])){
             $brand=$_POST['brand'];
-            $type=$_POST['type'];
+            $genuine=$_POST['genuine'];
             $price=$_POST['price'];
             $size=$_POST['size'];
             $partNo=$_POST['partNo'];
@@ -38,7 +38,14 @@
             $amount=$_POST['amount'];
 
             $image = Deteminesize($_FILES['img'], 'parts');
-                        $this->model->createItem($id,$brand,$type,$price,$size,$partNo,$partNo_Manufacturer,$amount);
+
+                        $data=$this->model->createItem($id,$brand,$genuine,$price,$size,$partNo,$partNo_Manufacturer,$amount,$image);
+                        $id = $data[0][0];
+                        // echo $id;
+                        $this->model->createimage($id,$image);
+                        $this->model->createcolor($id,$color);
+                        
+                        $_SESSION['error'] = "insert_item";
                         header("location:".$localhost."Productlist");
                         exit();
            

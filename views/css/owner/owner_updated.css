@@ -1177,8 +1177,12 @@ input[type=submit]:hover {
   border: none;
 }
 .item-form #dec::placeholder{
-  color: #022131;
-  font-size: 13px;
+  color: #075061;
+  font-weight: 500;
+  width: auto;
+  text-align: left;
+  padding-left: 10px;
+  font-size: 0.8rem;
 }
 
 /*front page slider*/

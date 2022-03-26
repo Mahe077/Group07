@@ -402,9 +402,136 @@ if (isset($_SESSION['error'])) {
                               <strong>Success!</strong> password updated succesfully .
                          </div>
                     </div>";
-                    }
-     
-     
+               }else if ($_SESSION['error'] == 'Pending_order_Accepted') {
+                    echo "
+                    <div class='floating-container'>
+                    <div class='alert alert-success alert-dismissible popup'>
+                              <a href='#'  class='remove-alert' data-dismiss='alert' aria-label='close'>&times;</a>
+                              <strong>Success!</strong> Pending order accepted.
+                        </div>
+                    </div>";
+               }else if ($_SESSION['error'] == 'Pending_order_Rejected') {
+                    echo "
+                    <div class='floating-container'>
+                    <div class='alert alert-warning alert-dismissible popup'>
+                              <a href='#'  class='remove-alert' data-dismiss='alert' aria-label='close'>&times;</a>
+                              <strong>Warning!</strong> Pending order rejected .
+                        </div>
+                    </div>";
+               }
+               else if ($_SESSION['error'] == 'New_order_Accepted') {
+                    echo "
+                    <div class='floating-container'>
+                    <div class='alert alert-success alert-dismissible popup'>
+                              <a href='#'  class='remove-alert' data-dismiss='alert' aria-label='close'>&times;</a>
+                              <strong>Success!</strong> New order accepted.
+                        </div>
+                    </div>";
+               }else if ($_SESSION['error'] == 'New_order_Rejected') {
+                    echo "
+                    <div class='floating-container'>
+                    <div class='alert alert-warning alert-dismissible popup'>
+                              <a href='#'  class='remove-alert' data-dismiss='alert' aria-label='close'>&times;</a>
+                              <strong>Warning!</strong> New order rejected .
+                        </div>
+                    </div>";
+               } else if ($_SESSION['error'] == 'Return_order_Accepted') {
+                    echo "
+                    <div class='floating-container'>
+                    <div class='alert alert-success alert-dismissible popup'>
+                              <a href='#'  class='remove-alert' data-dismiss='alert' aria-label='close'>&times;</a>
+                              <strong>Success!</strong> Return order accepted.
+                        </div>
+                    </div>";
+               }else if ($_SESSION['error'] == 'Return_order_Rejected') {
+                    echo "
+                    <div class='floating-container'>
+                    <div class='alert alert-warning alert-dismissible popup'>
+                              <a href='#'  class='remove-alert' data-dismiss='alert' aria-label='close'>&times;</a>
+                              <strong>Warning!</strong> Return order rejected .
+                        </div>
+                    </div>";
+               }else if ($_SESSION['error'] == 'Product_list_deleted') {
+                    echo "
+                    <div class='floating-container'>
+                    <div class='alert alert-success alert-dismissible popup'>
+                              <a href='#'  class='remove-alert' data-dismiss='alert' aria-label='close'>&times;</a>
+                              <strong>Success!</strong> Product removed.
+                        </div>
+                    </div>";
+               }else if ($_SESSION['error'] == 'insert_item') {
+                    echo "
+                    <div class='floating-container'>
+                    <div class='alert alert-success alert-dismissible popup'>
+                              <a href='#'  class='remove-alert' data-dismiss='alert' aria-label='close'>&times;</a>
+                              <strong>Success!</strong> Item inserted.
+                        </div>
+                    </div>";
+               }else if ($_SESSION['error'] == 'Category_list_deleted') {
+                    echo "
+                    <div class='floating-container'>
+                    <div class='alert alert-success alert-dismissible popup'>
+                              <a href='#'  class='remove-alert' data-dismiss='alert' aria-label='close'>&times;</a>
+                              <strong>Success!</strong> Category removed.
+                        </div>
+                    </div>";
+               }else if ($_SESSION['error'] == 'Category_item') {
+                    echo "
+                    <div class='floating-container'>
+                    <div class='alert alert-success alert-dismissible popup'>
+                              <a href='#'  class='remove-alert' data-dismiss='alert' aria-label='close'>&times;</a>
+                              <strong>Success!</strong> Category inserted.
+                        </div>
+                    </div>";
+               }else if ($_SESSION['error'] == 'Stockmanager_deleted') {
+                    echo "
+                    <div class='floating-container'>
+                    <div class='alert alert-success alert-dismissible popup'>
+                              <a href='#'  class='remove-alert' data-dismiss='alert' aria-label='close'>&times;</a>
+                              <strong>Success!</strong> Stockmanager removed.
+                        </div>
+                    </div>";
+               }else if ($_SESSION['error'] == 'Stockmanager_item') {
+                    echo "
+                    <div class='floating-container'>
+                    <div class='alert alert-success alert-dismissible popup'>
+                              <a href='#'  class='remove-alert' data-dismiss='alert' aria-label='close'>&times;</a>
+                              <strong>Success!</strong> Stockmanager inserted.
+                        </div>
+                    </div>";
+               }else if ($_SESSION['error'] == 'Quotation_accepted') {
+                    echo "
+                    <div class='floating-container'>
+                    <div class='alert alert-success alert-dismissible popup'>
+                              <a href='#'  class='remove-alert' data-dismiss='alert' aria-label='close'>&times;</a>
+                              <strong>Success!</strong> Quotation accepted.
+                        </div>
+                    </div>";
+               }else if ($_SESSION['error'] == 'Quotation_rejected') {
+                    echo "
+                    <div class='floating-container'>
+                    <div class='alert alert-success alert-dismissible popup'>
+                              <a href='#'  class='remove-alert' data-dismiss='alert' aria-label='close'>&times;</a>
+                              <strong>Success!</strong> Quotation rejected.
+                        </div>
+                    </div>";
+               }else if ($_SESSION['error'] == 'updated_success') {
+                    echo "
+                    <div class='floating-container'>
+                    <div class='alert alert-success alert-dismissible popup'>
+                              <a href='#'  class='remove-alert' data-dismiss='alert' aria-label='close'>&times;</a>
+                              <strong>Success!</strong> Updated the user account.
+                        </div>
+                    </div>";
+               }else if ($_SESSION['error'] == 'Stock_delete') {
+                    echo "
+                    <div class='floating-container'>
+                    <div class='alert alert-success alert-dismissible popup'>
+                              <a href='#'  class='remove-alert' data-dismiss='alert' aria-label='close'>&times;</a>
+                              <strong>Success!</strong> Stock manager deleted.
+                        </div>
+                    </div>";
+               }    
 }
 $_SESSION['error'] = "";
 ?>

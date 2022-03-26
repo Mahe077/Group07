@@ -21,6 +21,7 @@
         }
         public function delete_stock($id){
             $this->model->delete_stock($id);
+            $_SESSION['error'] = "Stock_delete";
             header("location:".$localhost."\G7/Group07/Stock_manager");
         }
     }
