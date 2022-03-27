@@ -531,7 +531,23 @@ if (isset($_SESSION['error'])) {
                               <strong>Success!</strong> Stock manager deleted.
                         </div>
                     </div>";
-               }    
+               }elseif ($_SESSION['error'] == "Verification_mail_sent_succesfully") {
+                    echo "
+                    <div class='floating-container'>
+                         <div class='alert alert-success alert-dismissible popup'>
+                              <a href='#'  class='remove-alert' data-dismiss='alert' aria-label='close'>&times;</a>
+                              <strong>Success!</strong> Verification_mail_sent_succesfully .
+                         </div>
+                    </div>";
+               }elseif ($_SESSION['error']== "Verification_mail_sent_failed") {
+                    echo "
+                    <div class='floating-container'>
+                         <div class='alert alert-warning alert-dismissible popup'>
+                              <a href='#'  class='remove-alert' data-dismiss='alert' aria-label='close'>&times;</a>
+                              <strong>Warning!</strong> Verification mail sent failed .
+                         </div>
+                    </div>";
+                    }
 }
 $_SESSION['error'] = "";
 ?>

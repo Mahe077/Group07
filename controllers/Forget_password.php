@@ -54,20 +54,20 @@ class Forget_password extends Controller{
              $header = "From: {$mail}\r\nContent-Type: text/html;";
                     
             $sentmailresult = mail($to , $email_subject , $email_body , $header);
-            
-                     if($sentmailresult)
-                   {
+           
                         
-                    $status = '<p class = "success"> Message sent succesfully </p>';
-                    
+                    // $status = '<p class = "success"> Message sent succesfully </p>';
+                    $_SESSION['error'] == "Verification_mail_sent_succesfully";
                     header("Location:".$localhost."forget_password");
-                    }
-                    else
-                  {
+                //     }
+                //     else
+                //   {
                      
-                         $status = '<p class = "fail"> Message sent failed </p>';
-                         $_SESSION['error'] = $status;
-                     }
+                //         //  $status = '<p class = "fail"> Message sent failed </p>';
+                //         //  $_SESSION['error'] = $status;
+                //         $_SESSION['error']== "Verification_mail_sent_failed";
+                //         header("Location:".$localhost."forget_password");
+                //      }
             
         echo $_SESSION['error'];
 
