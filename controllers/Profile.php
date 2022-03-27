@@ -24,7 +24,7 @@ class Profile extends Controller
             $postalcode = $_POST['postalcode'];
             $contact = $_POST['contact'];
 
-            print_r($_FILES['image']);
+            // print_r($_FILES['image']['name']);
             if (isset($_SESSION['userid'])) {
                 if (empty($fname) || empty($sname) || empty($email) || empty($city) || empty($contact) || empty($district) || empty($address) || empty($postalcode)) {
                     $_SESSION['error'] = "emptyinput";
@@ -40,7 +40,7 @@ class Profile extends Controller
                     exit();
                 } else {
                     $userEmail = $this->userEmail($email);
-                    print_r(empty($_FILES['image']['name']));
+                    // print_r(($_FILES['image']));
 
                     if ($userEmail != null && $userEmail[0][6] != $email) {
                         $_SESSION['error'] = "invlidemail";
@@ -63,7 +63,7 @@ class Profile extends Controller
                         header("location:" . $localhost . "Profile");
                         exit();
                     } elseif (empty($_FILES['image']['name'])) {
-                        $status1 = $this->model->updateUserInfo($fname, $sname, $email, $city, $contact, $district, $address, $postalcode, $_FILES['image']);
+                        $status1 = $this->model->updateUserInfo($fname, $sname, $email, $city, $contact, $district, $address, $postalcode, $_FILES['image']['size']);
                         $this->updateSessions($status1, $fname, $sname, $email, $city, $contact, $district, $address, $postalcode, 0);
                         $_SESSION['error'] = "UpdateSuccess";
                         header("location:" . $localhost . "Profile");
