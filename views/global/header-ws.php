@@ -63,7 +63,9 @@
             <!-- cart items render here -->
 
         </div>
-        <a href="Checkout" class="btn">checkout now</a>
+        <?php
+            echo "<a href='".$localhost."Checkout' class='btn'>checkout now</a>";
+        ?>
     </div>
 </header>
 

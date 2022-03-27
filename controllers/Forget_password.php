@@ -64,7 +64,7 @@ class Forget_password extends Controller{
                     }
                     else
                   {
-                     
+                    header("Location:".$localhost."forget_password");
                          $status = '<p class = "fail"> Message sent failed </p>';
                          $_SESSION['error'] = $status;
                      }

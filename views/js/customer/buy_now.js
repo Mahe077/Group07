@@ -29,6 +29,9 @@ function paymethod() {
 function changeprice(cout, np_Of_Items_To_Buy) {
   let amount = document.querySelector(".amount");
   let total_amount = 0;
+  console.log(count);
+  count = 0;
+  console.log(count);
 
   for (let index = 1; index <= np_Of_Items_To_Buy; index++) {
     let quantity = document.querySelector(".quantity_" + index);
@@ -68,8 +71,8 @@ function renderPage(itemId) {
       amount.value = (
         cartItems[itemId].InCart * cartItems[itemId].price
       ).toFixed(2);
-      inCart.max = parseInt(cartItems[itemId].amount);
-      console.log(inCart.max);
+      // inCart.max = parseInt(cartItems[itemId].amount);
+      // console.log(inCart.max);
     } else {
       getdata(itemId);
     }
@@ -95,7 +98,7 @@ function renderPageALL() {
       item_info.innerHTML += `<div class="inputBox">
                                 <input type="hidden" id="item_id_${cout}" name="item_id_${cout}" value="${item.id}">
                                 <input type="text" id="item_name_${cout}" name="item_name_${cout}" value="${item.name} " readonly="readonly">
-                                <input type="number" class="quantity_${cout}" name="quantity_${cout}" value="${item.InCart}" min="1" max="${item.amount}" placeholder=" Enter quntity" onchange="changeprice(${cout},${np_Of_Items_To_Buy})">
+                                <input type="number" class="quantity_${cout}" name="quantity_${cout}" value="${item.InCart}" min="1" placeholder=" Enter quntity" onchange="changeprice(${cout},${np_Of_Items_To_Buy})">
                                 <input class="amount_${cout}" type="text" name="amount_${cout}" placeholder="Enter the amount" value="${item.price}" readonly="readonly" >
                                 <input class="unit_price_${cout}" type="hidden" name="unit_price_${cout}" value="${item.price}">
                               </div>`;
@@ -125,7 +128,7 @@ function getdata(itemId) {
     let unit_price = document.querySelector(".unit_price_1");
     unit_price.value = parseFloat(item[0]["price"]);
     let inCart = document.querySelector(".quantity_1");
-    inCart.max = item[0]["amount"];
+    // inCart.max = item[0]["amount"];
     // console.log(typeof item[0]["amount"], parseInt(item[0]),inCart);
   };
   xhr.send(data);
