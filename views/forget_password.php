@@ -11,6 +11,7 @@
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <script src="https://kit.fontawesome.com/9c5a05f882.js" crossorigin="anonymous"></script>
     <link rel='stylesheet' type='text/css' href="<?php echo $localhost; ?>views/css/forget_password.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo $localhost; ?>views/css/alert.css">
     <title>Document</title>
     
 </head>
@@ -19,7 +20,11 @@
     $this_page = "forget_password.php";
     
 ?>
-
+<!--  error alerting will display here -->
+<?php
+        include_once 'views/global/alert.php';
+        ?>
+        
 <header class="header">
     <img class="logo" src="assets/logo.png">
   </header>
@@ -55,5 +60,6 @@
         </div>
     </div>
     <script type="text/javascript" src="views/js/forget.js"></script>
+    <script type="text/javascript" src="<?php echo $localhost; ?>views/js/alert.js"></script>
 </body>
 </html>

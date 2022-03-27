@@ -30,7 +30,7 @@
   align-items: center;
   justify-content: center;
   width: calc(100% / 4 - 15px);
-  background: #fec52d;
+  background: #28a6a8;
   padding: 15px 14px;
   color: #fff;
   border-radius: 10px;
@@ -79,14 +79,16 @@
   align-items: center;
 }
 .home-content .box1 .indicator i{
-  height: 20px;
-  width: 20px;
-  background: #acb4b8;
+  height: 30px;
+  width: 30px;
+  background: #98db88;
   line-height: 20px;
   text-align: center;
-  border-radius: 50%;
+  margin: 0 auto;
+  border-radius: 20%;
   color: #fff;
   font-size: 20px;
+  padding: 4px;
   margin-right: 5px;
 }
 .box1 .indicator .fa-arrow-down{
@@ -111,14 +113,16 @@
   align-items: center;
 }
 .home-content .box2 .indicator i{
-  height: 20px;
-  width: 20px;
-  background: #acb4b8;
+  height: 30px;
+  width: 30px;
+  background: rgb(150, 198, 221);
   line-height: 20px;
   text-align: center;
-  border-radius: 50%;
+  margin: 0 auto;
+  border-radius: 20%;
   color: #fff;
   font-size: 20px;
+  padding: 4px;
   margin-right: 5px;
 }
 .box2 .indicator .fa-arrow-down{
@@ -143,14 +147,16 @@
   align-items: center;
 }
 .home-content .box3 .indicator i{
-  height: 20px;
-  width: 20px;
-  background: #acb4b8;
+  height: 30px;
+  width: 30px;
+  background: #e9cd81;
   line-height: 20px;
   text-align: center;
-  border-radius: 50%;
+  margin: 0 auto;
+  border-radius: 20%;
   color: #fff;
   font-size: 20px;
+  padding: 4px;
   margin-right: 5px;
 }
 .box3 .indicator .fa-arrow-down{
@@ -175,14 +181,16 @@
   align-items: center;
 }
 .home-content .box4 .indicator i{
-  height: 20px;
-  width: 20px;
-  background: #acb4b8;
+  height: 30px;
+  width: 30px;
+  background: #cf8a87;
   line-height: 20px;
   text-align: center;
-  border-radius: 50%;
+  margin: 0 auto;
+  border-radius: 20%;
   color: #fff;
   font-size: 20px;
+  padding: 4px;
   margin-right: 5px;
 }
 .box4 .indicator .fa-arrow-down{
