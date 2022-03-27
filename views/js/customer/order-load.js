@@ -39,7 +39,7 @@ function display_orders(id, orderType) {
     if (search !== null) {
       let count = 0;
       for (let s of search) {
-        if (s.status == 0 || s.status == 6) {
+        if (s.order_type == 0 || s.order_type == 6) {
           cartItems = localStorage.getItem("productInCart");
           cartItems = JSON.parse(cartItems);
           if (cartItems != null) {

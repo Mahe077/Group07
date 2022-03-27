@@ -72,8 +72,7 @@ require 'config/PathConf.php';
                     <div class="description">
 
                         <h3>Description</h3>
-
-                        <p><?php echo ($_SESSION['item'][0][13]); ?></p>
+                        <p style="text-transform: none;"><?php echo ($_SESSION['item'][0][13]); ?></p>
 
                         </br>
                         <ul>

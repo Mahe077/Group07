@@ -9,7 +9,7 @@ function doSearch() {
         let products = document.querySelector(".product-items");
 
         var search = JSON.parse(this.response);
-
+        // console.log(search)
         products.innerHTML = "";
         if (search !== null) {
             for (let s of search) {
@@ -43,6 +43,8 @@ function doSearch() {
                                   <h2 class = "sm-title">${s.genuine}</h2>
                                  </div>
                           </div>`;
+                // console.log(s);
+                // console.log(document.querySelector(".btn-cart"));
             }
         } else {
             products.innerHTML = `<div class="product">
@@ -54,6 +56,7 @@ function doSearch() {
                                        </form>
                                   </div>`;
         }
+        loadItemOptions(search);
     };
     xhr.send(data);
     return false;
@@ -75,9 +78,9 @@ function productload() {
                                               <img src = "${s.image_path}" alt = "product image">
                                           </div>
                                           <div class = "product-btns">
-                                              <button type = "button" class = "btn-cart"> add to cart
-                                                  <span><i class = "fas fa-plus"></i></span>
-                                              </button>
+                                          <button type = "button" class = "btn-cart"> add to cart
+                                                <span><i class = "fas fa-plus"></i></span>
+                                            </button>
                                               <form action="Payment/RenderBuy/${s.id}" method="post">
                                                   <button type = "submit" class = "btn-buy"> buy now
                                                       <span><i class = "fas fa-shopping-cart"></i></span>

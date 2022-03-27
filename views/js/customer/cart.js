@@ -66,7 +66,7 @@ function onloadCart() {
   xhr.onload = function () {
     // console.log(this.response,"HERE");
     if (JSON.parse(this.response) != null) {
-      console.log(JSON.parse(this.response));
+      // console.log(JSON.parse(this.response));
       var cart = JSON.parse(this.response);
       for (let l = 0; l < cart[0].length; l++) {
         for (let k = 0; k < cart[1].length; k++) {
@@ -203,7 +203,7 @@ function setItems(product_item, i) {
       AddUpdate(product_item.id, 1, 0);
 
     } else {
-      console.log("here");
+      // console.log("here");
       if (
         cartItems[product_item.id].amount > cartItems[product_item.id].InCart
       ) {
