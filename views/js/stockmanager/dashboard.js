@@ -142,26 +142,22 @@ httprequest7.send();
 
 
 // load sum
-// const httprequest8  = new XMLHttpRequest();
-// const profit = document.getElementById("box3");
-// httprequest8.open("POST", "Stockmanagersalesreport/profit/" + value_select1 , true);
-// httprequest8.onreadystatechange = function()
-// {
-//   console.log("onreadystatechange");
-//   if( httprequest8.readyState === 4 && httprequest8.status === 200)
-//   {
-//     console.log(httprequest8.responseText);
-//     const obj8 = JSON.parse(httprequest8.responseText);
-//         console.log(obj8);
-//         for(var i = 0 ; i< obj7.length ; i++)
-//         {
-//           returnmonth.innerHTML +=
-//                     '<p class="box-topic">' + 'Profit ' + '</p>'
-//                       +  httprequest8.responseText
-//         }
-//   }
-// };
-// httprequest8.send();
+const httprequest8  = new XMLHttpRequest();
+const profit = document.getElementById("box3");
+httprequest8.open("POST", "Stockmanagersalesreport/profit/" + value_select1 , true);
+httprequest8.onreadystatechange = function()
+{
+  console.log("onreadystatechange");
+  if( httprequest8.readyState === 4 && httprequest8.status === 200)
+  {
+    console.log(httprequest8.responseText);
+          profit.innerHTML +=
+                    '<p class="box-topic">' + 'Total Profit ' + '</br>' +
+          httprequest8.responseText + '.00' + '</p>'
+        
+  }
+};
+httprequest8.send();
 
 
 

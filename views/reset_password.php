@@ -9,6 +9,7 @@
     <script src="https://kit.fontawesome.com/9c5a05f882.js" crossorigin="anonymous"></script>
     <link rel='stylesheet' type='text/css' href="<?php echo $localhost; ?>views/css/reset_password.css">
     <link rel="stylesheet" type="text/css" href="<?php echo $localhost; ?>views/css/alert.css">
+    <!-- <link rel="stylesheet" type="text/css" href="<?php echo $localhost; ?>views/css/alert.css"> -->
     <title>Document</title>
 </head>
 <body>
@@ -21,7 +22,7 @@
     <img class="logo" src="assets/logo.png">
   </header>
 <div class="container">
-    <!--  error alerting will display here -->
+  <!--  error alerting will display here -->
 <?php
         include_once 'views/global/alert.php';
         ?>

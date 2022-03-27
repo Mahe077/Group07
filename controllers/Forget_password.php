@@ -37,37 +37,37 @@ class Forget_password extends Controller{
 
             $verification_code = sha1($mail . time());
             echo $verification_code;
-            $verification_url = $localhost.'Verify/index';
-            echo "<br>";
-            echo $verification_url;
+            // $verification_url = $localhost.'Verify/index';
+            // echo "<br>";
+            // echo $verification_url;
 
 
-             $to              = $mail;
+             $to              = $mail; 
              $sender          = 'pavithrasandamini283@gmail.com';
              $email_subject   = 'Verify email address';
              $email_body      = '<p> Dear ' . $username . ',' . '</p>';
              $email_body     .= '<p> Here the verification code for verify your Email Address </p>';
-            //  $email_body     .= '<p>' . $verification_url . ' </p>';
              $email_body     .= '<p>' . $verification_code . '</p>';
              $email_body     .= '<p> thank you, <br> SL MINI Spares </p>';
+            
             
              $header = "From: {$mail}\r\nContent-Type: text/html;";
                     
             $sentmailresult = mail($to , $email_subject , $email_body , $header);
-            
-                     if($sentmailresult)
-                   {
+           
                         
-                    $status = '<p class = "success"> Message sent succesfully </p>';
-                    
+                    // $status = '<p class = "success"> Message sent succesfully </p>';
+                    $_SESSION['error'] == "Verification_mail_sent_succesfully";
                     header("Location:".$localhost."forget_password");
-                    }
-                    else
-                  {
-                    header("Location:".$localhost."forget_password");
-                         $status = '<p class = "fail"> Message sent failed </p>';
-                         $_SESSION['error'] = $status;
-                     }
+                //     }
+                //     else
+                //   {
+                     
+                //         //  $status = '<p class = "fail"> Message sent failed </p>';
+                //         //  $_SESSION['error'] = $status;
+                //         $_SESSION['error']== "Verification_mail_sent_failed";
+                //         header("Location:".$localhost."forget_password");
+                //      }
             
         echo $_SESSION['error'];
 
