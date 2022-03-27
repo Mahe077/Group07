@@ -70,8 +70,8 @@ if (!isset($_SESSION['userid'])) {
                             <input type="text" name="last_name" value="<?php echo $_SESSION['lname']; ?>">
                         </div>
                         <div class="inputBox">
-                            <input type="text" name="email" value="<?php echo $_SESSION['email']; ?>">
-                            <input type="text" name="phone" value="<?php echo $_SESSION['contact']; ?>">
+                            <input type="email" name="email" value="<?php echo $_SESSION['email']; ?>">
+                            <input type="tel" name="phone" pattern="[0-9]{10}" value="<?php echo $_SESSION['contact']; ?>">
                         </div>
                         <div class="inputBox">
                             <input type="text" name="address" value="<?php echo $_SESSION['address']; ?>">
