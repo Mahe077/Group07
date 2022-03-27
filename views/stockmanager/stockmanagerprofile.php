@@ -15,7 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='stylesheet' type='text/css' href="<?php echo $localhost; ?>views/css/stockmanager/stockmanagerprofile.css">
     <!-- <link rel='stylesheet' type='text/css' href="<?php echo $localhost; ?>views/css/form.css"> -->
-    
+    <link rel="stylesheet" type='text/css' href="<?php echo $localhost; ?>views/css/alert.css">
     <title>SL MINI SPARES</title>
 </head>
 <body>
@@ -23,7 +23,10 @@
     $this_page = "stockmanagerprofile.php";
     include_once 'stockmanagerdashboard.php';
 ?> 
-
+ <!--  error alerting will display here -->
+ <?php
+        include_once 'views/global/alert.php';
+        ?>
 <!-- <section class="information"> -->
 
     <!-- <div class="profile-container">
@@ -88,6 +91,7 @@
 
         <div class="home-content">
 
+
         <div class="content">
       <form action="Stockmanagerprofile/updateUser" method="POST" enctype="multipart/form-data">
         <div class="user-details">
@@ -150,6 +154,6 @@
 </div>
 
 </section>
-
+<script type="text/javascript" src="<?php echo $localhost; ?>views/js/alert.js"></script>
 </body>
 </html>

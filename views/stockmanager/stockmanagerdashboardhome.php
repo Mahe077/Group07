@@ -39,66 +39,65 @@
           
             <div class="indicator">
                 <i class="fa fa-arrow-up" aria-hidden="true"></i>
-              
+                <i class="fa fa-cart-plus" aria-hidden="true"></i>
             </div>
           </div>
-          <i class="fa fa-cart-plus" aria-hidden="true"></i>
+         
         </div>
         <div class="box2" id="box2">
           <div class="right-side">
           
             <div class="indicator">
             <i class="fa fa-arrow-up" aria-hidden="true"></i>
-              
+            <i class="fa fa-cart-plus" aria-hidden="true"></i>  
             </div>
           </div>
-          <i class="fa fa-cart-plus" aria-hidden="true"></i>
+        
         </div>
-        <!-- <div class="box3" id="box3">
+        <div class="box3" id="box3">
           <div class="right-side" >
            
             <div class="indicator">
             <i class="fa fa-arrow-up" aria-hidden="true"></i>
-              
+            <i class="fa fa-cart-plus" aria-hidden="true"></i>  
             </div>
           </div>
-          <i class="fa fa-cart-plus" aria-hidden="true"></i>
-        </div> -->
+          
+        </div>
         <div class="box4" id="box4">
           <div class="right-side">
            
             <div class="indicator">
                 <i class="fa fa-arrow-down" aria-hidden="true"></i>
-         
+                <i class="fa fa-cart-plus" aria-hidden="true"></i>
             </div>
           </div>
-          <i class="fa fa-cart-plus" aria-hidden="true"></i>
+          
         </div>
       </div>
 
 
 <!--  flext container -->
 <div class="flex-container">
-    <div class="flex-right" id="right">
+  <div class="flex-right" id="right">
 
     <div class="table_body_new">
-<table class="tbl" id="table3" collapsing="0" >
-<thead>
-<tr >
-<th>Delivery Company</th>
-<th>Rating</th>
-<!-- <th>More</th> -->
-
-</tr>
-<tr class="bordered"></tr>
-</thead>
-
-</table>
-
-</div>
- 
+      <table class="tbl" id="table3" collapsing="0" >
+      <thead>
+      <tr >
+      <th>Delivery Company</th>
+      <th>Rating</th>
+      <!-- <th>More</th> -->
+      </tr>
+      <tr class="bordered"></tr>
+      </thead>
+      </table>
     </div>
-   
+ </div>
+ <div class="flex-left" id="left">
+ <img  src="assets/pagecontains/part.jpg" style="width:400px;height:350px;">
+ </div>
+</div>  
   </section> 
       </section> 
       <script type="text/javascript" src="views/js/stockmanager/dashboard.js"></script>

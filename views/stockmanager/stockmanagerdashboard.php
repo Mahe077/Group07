@@ -88,14 +88,14 @@
 
           <div class="right">
          <div class="profile-details">
-        
+         <img src="<?php echo $_SESSION['image_path'] ?>" alt=""  >
             </div>
-            <!-- <img src="<?php echo $_SESSION['image_path'] ?>" alt=""> -->
+            
             <div class="navbar">
             <div class="dropdown">
   <button class="dropbtn"><?php echo $_SESSION['username'] ?></button>
   <div class="dropdown-content">
-    <a href="stockmanagerinfo.php">Services</a>
+    <!-- <a href="stockmanagerinfo.php">Services</a> -->
     <a href="Log_out">Log Out</a>
   </div>
 </div>
