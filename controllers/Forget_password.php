@@ -57,7 +57,7 @@ class Forget_password extends Controller{
            
                         
                     // $status = '<p class = "success"> Message sent succesfully </p>';
-                    $_SESSION['error'] == "Verification_mail_sent_succesfully";
+                    $_SESSION['error'] = "Verification_mail_sent_succesfully";
                     header("Location:".$localhost."forget_password");
                 //     }
                 //     else
