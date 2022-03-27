@@ -122,7 +122,7 @@ function display_orders(id, orderType) {
                     <div class="col col-5">
                     ${
                       s.order_type == 2
-                        ? `<i class='fas fa-check-circle' style='color:red'>`
+                        ? `<i class='fas fa-check-circle' style='color:red;'>`
                         : s.order_type == 8
                         ? `<a href='Review/loadpage/${s.order_id}'><i class='fas fa-comment'></i></a>`
                         : "<i class='fas fa-check-circle'>"

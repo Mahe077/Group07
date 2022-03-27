@@ -107,8 +107,8 @@ class Database extends PDO
             $stmt->execute(['id' => $id, 'item_id' => $item_id, 'qty' => $qty, 'Cost' => $Cost]);
             $stmt->closeCursor();
 
-            $stmt = $this->prepare("INSERT INTO `delivery`(`order_id`, `address`, `status`, `accept`) VALUES (:id,:address,:status,:accept)");
-            $stmt->execute(['address' => $address, 'id' => $id, 'status' => 0, 'accept' => 0]);
+            $stmt = $this->prepare("INSERT INTO `delivery`(`order_id`, `address`, `status`) VALUES (:id,:address,:status)");
+            $stmt->execute(['address' => $address, 'id' => $id, 'status' => 0]);
             $stmt->closeCursor();
 
             $stmt = $this->prepare("DELETE FROM `cart_item` WHERE `cartId`=(SELECT id FROM cart WHERE cart.userId = :user_id) AND `itemId`= :item_id;");
@@ -169,8 +169,8 @@ class Database extends PDO
                 $stmt->closeCursor();
             }
 
-            $stmt = $this->prepare("INSERT INTO `delivery`(`order_id`, `address`, `status`, `accept`) VALUES (:id,:address,:status,:accept)");
-            $stmt->execute(['address' => $address, 'id' => $id, 'status' => 0, 'accept' => 0]);
+            $stmt = $this->prepare("INSERT INTO `delivery`(`order_id`, `address`, `status`) VALUES (:id,:address,:status)");
+            $stmt->execute(['address' => $address, 'id' => $id, 'status' => 0]);
             $stmt->closeCursor();
 
             $this->commit();
